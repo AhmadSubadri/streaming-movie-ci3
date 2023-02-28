@@ -15,10 +15,10 @@ class Dashboard extends MY_controller
 			'title' => 'Bismillah Siakad UPY New version'
 			 );
 		
-		$this->load->view('template/app',$data);
-        // $this->load->view('template/sidemenu',$data);
+		$this->load->view('template/header',$data);
+        $this->load->view('template/sidemenu',$data);
         $this->load->view('dashboard_view',$data);
-        // $this->load->view('template/footer',$data);
+        $this->load->view('template/footer',$data);
     }
     
 }

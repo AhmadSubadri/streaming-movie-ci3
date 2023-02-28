@@ -6,7 +6,7 @@
             <!-- footer -->
             <!-- ============================================================== -->
             <footer class="footer">
-                © 2019 Admin Press Admin by themedesigner.in
+                © 2023 Admin Press Admin by themedesigner.in
             </footer>
             <!-- ============================================================== -->
             <!-- End footer -->
