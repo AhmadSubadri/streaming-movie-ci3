@@ -4,9 +4,8 @@
 
 ## Getting started
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
-
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
+Ini adalah Repos Pengembangan Akademik Universitas PGRI Yogyakarta.
+Dilarang push, tanpa commit !!!!
 
 ## Add your files
 
@@ -17,6 +16,7 @@ Already a pro? Just edit this README.md and make it your own. Want to make it ea
 cd existing_repo
 git remote add origin https://gitlab.com/it-teams-upy/siakad-new-version.git
 git branch -M main
+git commit -m 'Pesan Perubahahan'
 git push -uf origin main
 ```
 
