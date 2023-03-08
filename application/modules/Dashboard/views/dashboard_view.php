@@ -11,8 +11,8 @@
                 </div>
                 <div class="col-md-7 align-self-center">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
-                        <li class="breadcrumb-item active">Fix-header-sidebar</li>
+                        <li class="breadcrumb-item"><a href="javascript:void(0)"><i class="mdi mdi-home"></i></a></li>
+                        <li class="breadcrumb-item active"><?php echo $title ?></li>
                     </ol>
                 </div>
                 <div>

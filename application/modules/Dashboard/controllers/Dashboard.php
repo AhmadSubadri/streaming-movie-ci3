@@ -12,7 +12,7 @@ class Dashboard extends MY_controller
     function index()
     {
 		$data = array(
-			'title' => 'Bismillah Siakad UPY New version'
+			'title' => 'Dashboard'
 			 );
 		
 		$this->load->view('template/header',$data);
