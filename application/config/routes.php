@@ -54,4 +54,7 @@ $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
 // Master Data
+// Yayasan
 $route['dashboard/data-yayasan'] = 'Master_data/Yayasan_master';
+// Perguruan Tinggi
+$route['dashboard/data-perguruan-tinggi'] = 'Master_data/Perguruantinggi_master';
