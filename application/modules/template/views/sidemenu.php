@@ -46,9 +46,9 @@
                             <ul aria-expanded="false" class="collapse">
                                 <li><a href="<?= site_url('dashboard/data-yayasan');?>">Data Yayasan</a></li>
                                 <li><a href="<?= site_url('dashboard/data-perguruan-tinggi');?>">Data Perguruan Tinggi</a></li>
-                                <li><a href="index2.html">Data Fakultas</a></li>
-                                <li><a href="index2.html">Data Program Studi</a></li>
-                                <li><a href="index.html">Data Dosen </a></li>
+                                <li><a href="<?= site_url('dashboard/data-fakultas');?>">Data Fakultas</a></li>
+                                <li><a href="<?= site_url('dashboard/data-program-studi');?>">Data Program Studi</a></li>
+                                <li><a href="<?= site_url('dashboard/data-dosen');?>">Data Dosen </a></li>
                             </ul>
                         </li>
                         <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-school"></i><span class="hide-menu">Mahasiswa</span></a>

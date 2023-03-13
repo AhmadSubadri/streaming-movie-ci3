@@ -1,5 +1,5 @@
 <?php
-class Perguruantinggi_master extends MY_controller
+class Prodi_master extends MY_controller
 {
     function __construct()
     {
@@ -9,13 +9,13 @@ class Perguruantinggi_master extends MY_controller
     function index()
     {
 		$data = array(
-			'title' => 'Data Perguruan Tinggi',
+			'title' => 'Data Program Studi',
 			'data' => 'Data Yayasan',
 		);
 		
 		$this->load->view('template/header',$data);
         $this->load->view('template/sidemenu',$data);
-        $this->load->view('perguruan_tinggi/data_perguruan_tinggi',$data);
+        $this->load->view('prodi/data_prodi',$data);
         $this->load->view('template/footer',$data);
     }
     
