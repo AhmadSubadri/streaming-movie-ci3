@@ -43,60 +43,19 @@
                     <div class="card-body">
                         <form action="#">
                             <div class="form-body">
-                                <h3 class="card-title"><?= $title ?> Info</h3>
+                                <h3 class="card-title"><?= $title ?>
+                                    Info</h3>
                                 <hr>
                                 <div class="row p-t-20">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="control-label">Kode Badan Hukum.</label>
+                                            <label class="control-label">Kode PT</label>
                                             <input
                                                 type="text"
-                                                id="kode_badanhukum"
-                                                name="kode_badanhukum"
+                                                id="kode_pt"
+                                                name="kode_pt"
                                                 class="form-control"
                                                 placeholder="1234">
-                                        </div>
-                                    </div>
-                                    <!--/span-->
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label class="control-label">Telepon</label>
-                                            <input
-                                                type="text"
-                                                id="telepon"
-                                                name="telepon"
-                                                class="form-control"
-                                                placeholder="0812***">
-                                        </div>
-                                    </div>
-                                    <!--/span-->
-                                </div>
-                                <!--/row-->
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label class="control-label">Nama Badan Hukum/Yayasan</label>
-                                            <input
-                                                type="text"
-                                                id="nama_badanhukum"
-                                                name="nama_badanhukum"
-                                                class="form-control">
-                                        </div>
-                                    </div>
-                                    <!--/span-->
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label class="control-label">Fax.</label>
-                                            <input type="text" id="fax" name="fax" class="form-control">
-                                        </div>
-                                    </div>
-                                    <!--/span-->
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label class="control-label">Alamat</label>
-                                            <input type="text" id="alamat" name="alamat" class="form-control">
                                         </div>
                                     </div>
                                     <!--/span-->
@@ -113,6 +72,39 @@
                                                 <div class="input-group-append">
                                                     <span class="input-group-text" id="basic-addon2">
                                                         <i class="ti-email"></i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--/span-->
+                                </div>
+                                <!--/row-->
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="control-label">Perguruan Tinggi</label>
+                                            <input
+                                                type="text"
+                                                id="perguruan_tinggi"
+                                                name="perguruan_tinggi"
+                                                class="form-control">
+                                        </div>
+                                    </div>
+                                    <!--/span-->
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="awal_berdiri">Awal Berdiri</label>
+                                            <div class="input-group">
+                                                <input
+                                                    type="date"
+                                                    class="form-control"
+                                                    id="awal_berdiri"
+                                                    name="awal_berdiri"
+                                                    placeholder="Enter kode pos">
+                                                <div class="input-group-append">
+                                                    <span class="input-group-text" id="basic-addon2">
+                                                        <i class="mdi mdi-code-tags-check"></i>
                                                     </span>
                                                 </div>
                                             </div>
@@ -141,14 +133,53 @@
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <label for="kota">Kota</label>
+                                            <label for="telpon">Telepon</label>
                                             <div class="input-group">
                                                 <input
                                                     type="text"
                                                     class="form-control"
-                                                    id="kota"
-                                                    name="kota"
-                                                    placeholder="Enter kota">
+                                                    id="telpon"
+                                                    name="telpon"
+                                                    placeholder="Enter telpon">
+                                                <div class="input-group-append">
+                                                    <span class="input-group-text" id="basic-addon2">
+                                                        <i class="mdi mdi-phone-in-talk"></i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="fax">Fax</label>
+                                            <div class="input-group">
+                                                <input
+                                                    type="text"
+                                                    class="form-control"
+                                                    id="fax"
+                                                    name="fax"
+                                                    placeholder="Enter fax">
+                                                <div class="input-group-append">
+                                                    <span class="input-group-text" id="basic-addon2">
+                                                        <i class="mdi mdi-fax"></i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--/span-->
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="alamat">Alamat</label>
+                                            <div class="input-group">
+                                                <input
+                                                    type="link"
+                                                    class="form-control"
+                                                    id="alamat"
+                                                    name="alamat"
+                                                    placeholder="Enter alamat">
                                                 <div class="input-group-append">
                                                     <span class="input-group-text" id="basic-addon2">
                                                         <i class="mdi mdi-pin"></i>
@@ -175,27 +206,21 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <!--/span-->
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-12">
+                                    <div class="col-md-4">
                                         <div class="form-group">
-                                            <label for="awal_berdiri">Awal Berdiri</label>
-                                            <div class="input-group">
+                                            <label for="logo">Logo Instansi</label>
+                                            <div class="custom-file">
                                                 <input
-                                                    type="date"
-                                                    class="form-control"
-                                                    id="awal_berdiri"
-                                                    name="awal_berdiri"
-                                                    placeholder="Enter kode pos">
-                                                <div class="input-group-append">
-                                                    <span class="input-group-text" id="basic-addon2">
-                                                        <i class="mdi mdi-code-tags-check"></i>
-                                                    </span>
-                                                </div>
+                                                    type="file"
+                                                    class="custom-file-input"
+                                                    id="inputGroupFile01"
+                                                    name="logo"
+                                                    aria-describedby="inputGroupFileAddon01">
+                                                <label class="custom-file-label form-control" for="inputGroupFile01">Choose file</label>
                                             </div>
                                         </div>
                                     </div>
+                                    <!--/span-->
                                 </div>
                             </div>
                             <div class="form-actions">
