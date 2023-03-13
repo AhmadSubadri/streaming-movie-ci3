@@ -5,9 +5,7 @@ class Data_mahasiswa extends MY_controller
     function __construct()
     {
         parent:: __construct();
-        // $this->API = "http://upy_frontend.test/api/Api_camaba";
         $this->API = "http://upy_frontend.test/api/Api_camaba";
-        // $this->load->model('Dosen_model', 'm_dosen');
     }
 
     public function Index()
@@ -20,9 +18,6 @@ class Data_mahasiswa extends MY_controller
         curl_close($ch);
         $result = json_decode($semua_data, true);
         $item = $result['biodata'];
-        // for($i=0; $i < count($item); $i++){
-        //     $dataa = $item[$i];
-        // }
         $data = array(
             'title' => 'Data Mahasiswa',
             'data' => $item,
