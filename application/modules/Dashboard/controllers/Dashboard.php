@@ -4,10 +4,10 @@ class Dashboard extends MY_controller
     function __construct()
     {
         parent:: __construct();
-        // if ($this->session->userdata('username') == '') {
-		// 	# code...
-		// 	redirect(base_url('auth'));
-		// }
+        if ($this->session->userdata('username') == '') {
+			# code...
+			redirect(base_url('auth'));
+		}
     }
     function index()
     {
