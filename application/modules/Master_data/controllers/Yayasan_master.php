@@ -15,7 +15,7 @@ class Yayasan_master extends MY_controller
 		
 		$this->load->view('template/header',$data);
         $this->load->view('template/sidemenu',$data);
-        $this->load->view('data_yayasan',$data);
+        $this->load->view('yayasan/data_yayasan',$data);
         $this->load->view('template/footer',$data);
     }
     

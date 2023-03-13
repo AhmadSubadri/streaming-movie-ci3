@@ -43,6 +43,8 @@
     <!-- Style switcher -->
     <!-- ============================================================== -->
     <script src="<?= base_url();?>assets/plugins/styleswitcher/jQuery.style.switcher.js"></script>
+    <script src="<?= base_url();?>assets/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="<?= base_url();?>assets/js/datatable.js"></script>
 </body>
 
 </html>
