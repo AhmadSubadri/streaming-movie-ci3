@@ -9,7 +9,4 @@ class M_auth extends CI_Model {
 
 		return $query;
 	}
-
-	
-
 }

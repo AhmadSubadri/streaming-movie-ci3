@@ -56,6 +56,7 @@ $route['translate_uri_dashes'] = FALSE;
 // Master Data
 // Yayasan
 $route['dashboard/data-yayasan'] = 'Master_data/Yayasan_master';
+$route['dashboard/data-yayasan/insert'] = 'Master_data/Yayasan_master/Insert';
 // Perguruan Tinggi
 $route['dashboard/data-perguruan-tinggi'] = 'Master_data/Perguruantinggi_master';
 // Fakultas
