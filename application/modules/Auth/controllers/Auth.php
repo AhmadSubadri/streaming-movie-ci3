@@ -23,8 +23,8 @@ class Auth extends MY_Controller {
 
 		if ($this->form_validation->run() == FALSE ) {
 			# code...
-			$this->session->set_flashdata('error', 'something wrong, please check username or password');
-
+			$this->session->set_flashdata('error','Login Failed, Incorrect username or password');
+			
 			redirect(base_url('auth'));
 		} else {
 			# code...
@@ -47,8 +47,7 @@ class Auth extends MY_Controller {
 
 			} else {
 				# code...
-				$this->session->set_flashdata('error', 'something wrong, please check username or password');
-
+				$this->session->set_flashdata('error','Login Failed, Incorrect username or password');
 			redirect(base_url('auth'));
 			}
 			

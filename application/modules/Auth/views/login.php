@@ -41,7 +41,18 @@
             <div class="login-box card">
                 <div class="card-body">
                     <form class="form-horizontal form-material" id="loginform" method="POST" action="auth/login">
-                    <a href="javascript:void(0)" class="text-center db"><img src="<?= base_url();?>assets/images/logo-upy.png" alt="Home" /><br/><h4> Universitas PGRI Yogyakarta </h4><h5> Sistem Informasi Akademik </h5><br/></a>
+                    <a href="<?= base_url();?>" class="text-center db"><img src="<?= base_url();?>assets/images/logo-upy-large.png" alt="Home" width="75" height="75"/><br/><h6>Sistem Informasi Akademik </h6> <h5>Universitas PGRI Yogyakarta </h5></a> <br/>
+                    <?php
+                        if ($this->session->flashdata('error')) {
+                            # code...
+                            echo 
+                            '    <div class="alert alert-danger" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+                            '.$this->session->flashdata("error").'
+                            </div>
+                            ';
+                            } 
+                    ?> 
+
                         <div class="form-group ">
                             <div class="col-xs-12">
                                 <input class="form-control" type="text" name="username" id="username" required="" placeholder="Username"> </div>
@@ -63,18 +74,15 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-xs-12 col-sm-12 col-md-12 m-t-10 text-center">
-                                <div class="social">
-                                    <a href="javascript:void(0)" class="btn  btn-facebook" data-toggle="tooltip" title="Login with Facebook"> <i aria-hidden="true" class="fa fa-facebook"></i> </a>
-                                    <a href="javascript:void(0)" class="btn btn-googleplus" data-toggle="tooltip" title="Login with Google"> <i aria-hidden="true" class="fa fa-google-plus"></i> </a>
-                                </div>
+                            <div class="alert alert-warning">
+                                <h5 class="text-warning"><i class="fa fa-exclamation-triangle"></i> WARNING</h5><h6>Dihimbau kepada seluruh pengguna (termasuk dosen) untuk TIDAK memberikan informasi terkait username dan atau password kepada siapapun.</h6>
                             </div>
                         </div>
-                        <div class="form-group m-b-0">
+                        <!-- <div class="form-group m-b-0">
                             <div class="col-sm-12 text-center">
                                 <div>Don't have an account? <a href="pages-register.html" class="text-info m-l-5"><b>Sign Up</b></a></div>
                             </div>
-                        </div>
+                        </div> -->
                     </form>
                     <form class="form-horizontal" id="recoverform" action="index.html">
                         <div class="form-group ">
@@ -122,6 +130,10 @@
     <!-- Style switcher -->
     <!-- ============================================================== -->
     <script src="<?= base_url();?>assets/plugins/styleswitcher/jQuery.style.switcher.js"></script>
+    <!-- Sweet-Alert  -->
+    <script src="<?= base_url();?>assets/plugins/sweetalert/sweetalert.min.js"></script>
+    <script src="<?= base_url();?>assets/plugins/sweetalert/jquery.sweet-alert.custom.js"></script>
+    
 </body>
 
 </html>
