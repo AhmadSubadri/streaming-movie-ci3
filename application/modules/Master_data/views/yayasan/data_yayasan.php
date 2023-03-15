@@ -7,7 +7,7 @@
                     <h4 class="m-b-0 text-white"><?php echo $title ?></h4>
                 </div>
                 <div class="card-body">
-                    <form action="<?= site_url('dashboard/data-yayasan/insert')?>" method="post">
+                    <form action="<?= site_url('data-yayasan/insert')?>" method="post">
                         <div class="form-body">
                             <h3 class="card-title"><?= $title ?>
                                 Info</h3>

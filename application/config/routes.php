@@ -55,14 +55,14 @@ $route['translate_uri_dashes'] = FALSE;
 
 // Master Data
 // Yayasan
-$route['dashboard/data-yayasan'] = 'Master_data/Yayasan_master';
-$route['dashboard/data-yayasan/insert'] = 'Master_data/Yayasan_master/Insert';
+$route['data-yayasan'] = 'Master_data/Yayasan_master';
+$route['data-yayasan/insert'] = 'Master_data/Yayasan_master/Insert';
 // Perguruan Tinggi
-$route['dashboard/data-perguruan-tinggi'] = 'Master_data/Perguruantinggi_master';
-$route['dashboard/data-perguruan-tinggi/insert'] = 'Master_data/Perguruantinggi_master/Insert';
+$route['data-perguruan-tinggi'] = 'Master_data/Perguruantinggi_master';
+$route['data-perguruan-tinggi/insert'] = 'Master_data/Perguruantinggi_master/Insert';
 // Fakultas
-$route['dashboard/data-fakultas'] = 'Master_data/Fakultas_master';
+$route['data-fakultas'] = 'Master_data/Fakultas_master';
 // Program studi
-$route['dashboard/data-program-studi'] = 'Master_data/Prodi_master';
+$route['data-program-studi'] = 'Master_data/Prodi_master';
 // Data dosen
-$route['dashboard/data-dosen'] = 'Master_data/Dosen_master';
+$route['data-dosen'] = 'Master_data/Dosen_master';

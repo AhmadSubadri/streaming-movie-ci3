@@ -63,7 +63,7 @@ class Perguruantinggi_master extends MY_controller
                     $this->m_pt->insert($data);
                     $this->session->set_flashdata('msg', "Insert Data Perguruan Tinggi no pictures Success!");
                     $this->session->set_flashdata('msg_class', 'alert-success');
-                    redirect(site_url('dashboard/data-perguruan-tinggi'));
+                    redirect(site_url('data-perguruan-tinggi'));
                 }else{
                     $logo = $this->upload->data();
                     $data = [
@@ -81,7 +81,7 @@ class Perguruantinggi_master extends MY_controller
                     $this->m_pt->insert($data);
                     $this->session->set_flashdata('msg', "Insert Data Perguruan Tinggi with pictures Success!");
                     $this->session->set_flashdata('msg_class', 'alert-success');
-                    redirect(site_url('dashboard/data-perguruan-tinggi'));
+                    redirect(site_url('data-perguruan-tinggi'));
                 }
             }else{
                 if(!$this->upload->do_upload('logo_pt')){
@@ -99,7 +99,7 @@ class Perguruantinggi_master extends MY_controller
                     $this->m_pt->update($data, $id);
                     $this->session->set_flashdata('msg', "Update Data Perguruan Tinggi no pictures Success!");
                     $this->session->set_flashdata('msg_class', 'alert-success');
-                    redirect(site_url('dashboard/data-perguruan-tinggi'));
+                    redirect(site_url('data-perguruan-tinggi'));
                 }else{
                     $path = './uploads/'.$check_data->logo_pt;
                     chmod($path, 0777);
@@ -120,7 +120,7 @@ class Perguruantinggi_master extends MY_controller
                     $this->m_pt->update($data, $id);
                     $this->session->set_flashdata('msg', "Update Data Perguruan Tinggi with pictures Success!");
                     $this->session->set_flashdata('msg_class', 'alert-success');
-                    redirect(site_url('dashboard/data-perguruan-tinggi'));
+                    redirect(site_url('data-perguruan-tinggi'));
                 }
             }
         }

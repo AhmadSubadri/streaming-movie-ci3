@@ -7,7 +7,7 @@
                     <h4 class="m-b-0 text-white"><?php echo $title ?></h4>
                 </div>
                 <div class="card-body">
-                <?php echo form_open_multipart('dashboard/data-perguruan-tinggi/insert');?>
+                <?php echo form_open_multipart('data-perguruan-tinggi/insert');?>
                         <div class="form-body">
                             <h3 class="card-title"><?= $title ?>
                                 Info</h3>
