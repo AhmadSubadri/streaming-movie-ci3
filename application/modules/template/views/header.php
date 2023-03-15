@@ -13,6 +13,7 @@
     <title>Sistem Informasi Akademik UPY</title>
     <!-- Bootstrap Core CSS -->
     <link href="<?= base_url();?>assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?= base_url();?>assets/plugins/morrisjs/morris.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="<?= base_url();?>assets/css/style.css" rel="stylesheet">
     <!-- You can change the theme colors from here -->
