@@ -8,12 +8,6 @@ if($msg = $this->session->flashdata('msg')){
         id="msg"
         data-from="top"
         data-align="text-center">
-        <a
-            href="#"
-            class="closebtn"
-            aria-label="Close"
-            onclick="this.parentElement.style.display='none';"
-            data-dismiss="alert">&times;</a>
         <strong><?php echo $msg; ?></strong>
     </div>
 </div>
@@ -21,23 +15,8 @@ if($msg = $this->session->flashdata('msg')){
 
 <script type="text/javascript">
     setTimeout(function() {
-      document.getElementById('msg').style.display = 'none';
+        document.addEventListener('DOMContentLoaded', function() {  
+            document.getElementById('msg').style.display = 'none';
+        });
     }, 4000);
 </script>
-
-<style>
-    .closebtn {
-        margin-left: 15px;
-        color: white;
-        font-weight: bold;
-        float: right;
-        font-size: 22px;
-        line-height: 20px;
-        cursor: pointer;
-        transition: 0.3s;
-    }
-
-    .closebtn:hover {
-        color: black;
-    }
-</style>
