@@ -24,6 +24,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-12">
+                <?php $this->load->view('template/alert.php');?>
                 <div class="card card-outline-info">
                     <div class="card-header">
                         <h4 class="m-b-0 text-white"><?php echo $title ?></h4>
