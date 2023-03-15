@@ -59,6 +59,7 @@ $route['dashboard/data-yayasan'] = 'Master_data/Yayasan_master';
 $route['dashboard/data-yayasan/insert'] = 'Master_data/Yayasan_master/Insert';
 // Perguruan Tinggi
 $route['dashboard/data-perguruan-tinggi'] = 'Master_data/Perguruantinggi_master';
+$route['dashboard/data-perguruan-tinggi/insert'] = 'Master_data/Perguruantinggi_master/Insert';
 // Fakultas
 $route['dashboard/data-fakultas'] = 'Master_data/Fakultas_master';
 // Program studi

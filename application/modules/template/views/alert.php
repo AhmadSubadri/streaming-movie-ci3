@@ -22,7 +22,7 @@ if($msg = $this->session->flashdata('msg')){
 <script type="text/javascript">
     setTimeout(function() {
       document.getElementById('msg').style.display = 'none';
-    }, 3000);
+    }, 4000);
 </script>
 
 <style>
