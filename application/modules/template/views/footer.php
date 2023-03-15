@@ -79,6 +79,8 @@
     <script src="<?= base_url();?>assets/plugins/raphael/raphael-min.js"></script>
     <script src="<?= base_url();?>assets/plugins/morrisjs/morris.min.js"></script>
     <script src="<?= base_url();?>assets/js/dashboard1.js"></script>
+    <script src="<?= base_url();?>assets/plugins/sweetalert/sweetalert.min.js"></script>
+    <script src="<?= base_url();?>assets/plugins/sweetalert/mysweetalert.js"></script>
 </body>
 
 </html>

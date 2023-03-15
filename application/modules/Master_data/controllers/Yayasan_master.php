@@ -54,12 +54,12 @@ class Yayasan_master extends MY_controller
             if(!$check_data){
                 $this->m_yayasan->insert($data);
                 $this->session->set_flashdata('msg', "Insert Data Yayasan Success!");
-                $this->session->set_flashdata('msg_class', 'alert-success');
+                // $this->session->set_flashdata('msg_class', 'alert-success');
                 redirect(site_url('data-yayasan'));
             }else{
                 $this->m_yayasan->update($data, $id);
                 $this->session->set_flashdata('msg', "Update Data Yayasan Success!");
-                $this->session->set_flashdata('msg_class', 'alert-success');
+                // $this->session->set_flashdata('msg_class', 'alert-success');
                 redirect(site_url('data-yayasan'));
             }
         }

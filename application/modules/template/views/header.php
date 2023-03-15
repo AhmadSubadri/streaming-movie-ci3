@@ -14,6 +14,7 @@
     <!-- Bootstrap Core CSS -->
     <link href="<?= base_url();?>assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="<?= base_url();?>assets/plugins/morrisjs/morris.css" rel="stylesheet">
+    <link href="<?= base_url();?>assets/plugins/sweetalert/sweetalert.css" rel="stylesheet" type="text/css">
     <!-- Custom CSS -->
     <link href="<?= base_url();?>assets/css/style.css" rel="stylesheet">
     <!-- You can change the theme colors from here -->
