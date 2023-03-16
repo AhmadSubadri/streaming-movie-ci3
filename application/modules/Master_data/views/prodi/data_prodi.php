@@ -1,5 +1,5 @@
 <div class="container-fluid">
-<div
+    <div
         class="flash-data"
         data-flashdata="<?= $this->session->flashdata('msg');?>"></div>
     <div class="row">
