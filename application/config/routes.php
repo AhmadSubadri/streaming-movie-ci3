@@ -63,6 +63,8 @@ $route['data-perguruan-tinggi/insert'] = 'Master_data/Perguruantinggi_master/Ins
 // Fakultas
 $route['data-fakultas'] = 'Master_data/Fakultas_master';
 $route['data-fakultas/insert'] = 'Master_data/Fakultas_master/Insert';
+$route['data-fakultas/update'] = 'Master_data/Fakultas_master/Update';
+$route['data-fakultas/delete'] = 'Master_data/Fakultas_master/Delete';
 // Program studi
 $route['data-program-studi'] = 'Master_data/Prodi_master';
 // Data dosen
