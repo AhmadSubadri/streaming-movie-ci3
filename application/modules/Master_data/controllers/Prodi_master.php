@@ -55,7 +55,7 @@ class Prodi_master extends MY_controller
     public function Delete()
     {
         $id = $this->input->post('id');
-        $this->session->set_flashdata('msg', "Delete data Fakultas Success!");
+        $this->session->set_flashdata('msg', "Delete data Program Studi Success!");
         $this->m_prodi->Delete($id);
         redirect(site_url('data-program-studi'));
     }
