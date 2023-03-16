@@ -81,6 +81,8 @@
     <script src="<?= base_url();?>assets/js/dashboard1.js"></script>
     <script src="<?= base_url();?>assets/plugins/sweetalert/sweetalert.min.js"></script>
     <script src="<?= base_url();?>assets/plugins/sweetalert/mysweetalert.js"></script>
+    <script src="<?= base_url();?>assets/plugins/toast-master/js/jquery.toast.js"></script>
+    <script src="<?= base_url();?>assets/js/mytoastr.js"></script>
 </body>
 
 </html>

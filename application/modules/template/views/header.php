@@ -15,6 +15,7 @@
     <link href="<?= base_url();?>assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="<?= base_url();?>assets/plugins/morrisjs/morris.css" rel="stylesheet">
     <link href="<?= base_url();?>assets/plugins/sweetalert/sweetalert.css" rel="stylesheet" type="text/css">
+    <link href="<?= base_url();?>assets/plugins/toast-master/css/jquery.toast.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="<?= base_url();?>assets/css/style.css" rel="stylesheet">
     <!-- You can change the theme colors from here -->

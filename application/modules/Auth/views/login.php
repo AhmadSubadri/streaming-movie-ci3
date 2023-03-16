@@ -43,7 +43,7 @@
                 <div class="card-body">
                     <form class="form-horizontal form-material" id="loginform" method="POST" action="auth/login">
                     <a href="<?= base_url();?>" class="text-center db"><img src="<?= base_url();?>assets/images/logo-upy-large.png" alt="Home" width="75" height="75"/><br/><h6>Sistem Informasi Akademik </h6> <h5>Universitas PGRI Yogyakarta </h5></a> <br/>
-                    <div class="flash-data" data-flashdata="<?= $this->session->flashdata('error');?>"> 
+                    <div class="flash-data2" data-flashdata="<?= $this->session->flashdata('msg');?>"> 
     </div>
                         <div class="form-group ">
                             <div class="col-xs-12">

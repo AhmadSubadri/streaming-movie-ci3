@@ -1,4 +1,6 @@
 <div class="container-fluid">
+<div class="flash-data2" data-flashdata="<?= $this->session->flashdata('msg');?>"> 
+    </div>
                 <!-- ============================================================== -->
                 <!-- Start Page Content -->
                 <!-- ============================================================== -->

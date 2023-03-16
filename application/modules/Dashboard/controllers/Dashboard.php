@@ -14,7 +14,6 @@ class Dashboard extends MY_controller
 		$data = array(
 			'title' => 'Dashboard'
 			 );
-		
 		$this->load->view('template/header',$data);
         $this->load->view('template/sidemenu',$data);
         $this->load->view('dashboard_view',$data);

@@ -23,7 +23,7 @@ class Auth extends MY_Controller {
 
 		if ($this->form_validation->run() == FALSE ) {
 			# code...
-			$this->session->set_flashdata('error','Login Failed, Incorrect username or password');
+			$this->session->set_flashdata('msg','Login Failed');
 			
 			redirect(base_url('auth'));
 		} else {
@@ -41,12 +41,13 @@ class Auth extends MY_Controller {
 						'username' => $data->username , 
 						'level' => $data->level 
 					));
+					$this->session->set_flashdata('msg', 'Login Success');
 					redirect(base_url('dashboard'));
 				}
 
 			} else {
 				# code...
-				$this->session->set_flashdata('error','Login Failed, Incorrect username or password');
+				$this->session->set_flashdata('msg','Login Failed');
 			redirect(base_url('auth'));
 			}
 			
