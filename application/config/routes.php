@@ -67,5 +67,9 @@ $route['data-fakultas/update'] = 'Master_data/Fakultas_master/Update';
 $route['data-fakultas/delete'] = 'Master_data/Fakultas_master/Delete';
 // Program studi
 $route['data-program-studi'] = 'Master_data/Prodi_master';
+$route['data-program-studi/insert'] = 'Master_data/Prodi_master/Insert';
+$route['data-program-studi/update'] = 'Master_data/Prodi_master/Update';
+$route['data-program-studi/delete'] = 'Master_data/Prodi_master/Delete';
+
 // Data dosen
 $route['data-dosen'] = 'Master_data/Dosen_master';
