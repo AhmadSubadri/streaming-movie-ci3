@@ -46,4 +46,9 @@ class Fakultas_model extends CI_Model {
     {
         return $this->db->update('tb_fakultas', $data, ['id' => $id]);
     }
+
+    public function Delete($id)
+    {
+        return $this->db->delete('tb_fakultas', ['id' => $id]);
+    }
 }

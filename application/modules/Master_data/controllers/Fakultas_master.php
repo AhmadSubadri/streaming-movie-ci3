@@ -20,7 +20,7 @@ class Fakultas_master extends MY_controller
         $this->load->view('fakultas/data_fakultas',$data);
         $this->load->view('template/footer',$data);
     }
-    
+
     public function Insert()
     {
         $data = [
@@ -31,5 +31,26 @@ class Fakultas_master extends MY_controller
         $this->session->set_flashdata('msg', "Insert Data Fakultas Success!");
         $this->m_fakultas->Insert($data);
         redirect(site_url('data-fakultas'));
-    } 
+    }
+
+    public function Update()
+    {
+        $id = $this->input->post('id');
+        $data = [
+            'kode_fak' => $this->input->post('kode_fak'),
+            'nama_fak' => $this->input->post('nama_fak'),
+        ];
+
+        $this->session->set_flashdata('msg', "Update data Fakultas Success!");
+        $this->m_fakultas->Update($data, $id);
+        redirect(site_url('data-fakultas'));
+    }
+
+    public function Delete()
+    {
+        $id = $this->input->post('id');
+        $this->session->set_flashdata('msg', "Delete data Fakultas Success!");
+        $this->m_fakultas->Delete($id);
+        redirect(site_url('data-fakultas'));
+    }
 }
