@@ -1,13 +1,11 @@
-# You can override the included template(s) by including variable overrides
-# SAST customization: https://docs.gitlab.com/ee/user/application_security/sast/#customizing-the-sast-settings
-# Secret Detection customization: https://docs.gitlab.com/ee/user/application_security/secret_detection/#customizing-settings
-# Dependency Scanning customization: https://docs.gitlab.com/ee/user/application_security/dependency_scanning/#customizing-the-dependency-scanning-settings
-# Container Scanning customization: https://docs.gitlab.com/ee/user/application_security/container_scanning/#customizing-the-container-scanning-settings
-# Note that environment variables can be set in several places
-# See https://docs.gitlab.com/ee/ci/variables/#cicd-variable-precedence
-stages:
-- test
-sast:
-  stage: test
-include:
-- template: Security/SAST.gitlab-ci.yml
+image: debian:latest
+ 
+before_script:
+     - mkdir -p ~/.ssh
+     - echo -e "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+     - chmod 600 ~/.ssh/id_rsa
+     - echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
+ 
+deploy:
+  script:
+    - ssh -i ~/.ssh/id_rsa root@$IP_SERVER "bash /home/newakademikupyac/script/deploy/codeigniter.sh"
