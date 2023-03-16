@@ -41,7 +41,6 @@ class Auth extends MY_Controller {
 						'username' => $data->username , 
 						'level' => $data->level 
 					));
-
 					redirect(base_url('dashboard'));
 				}
 

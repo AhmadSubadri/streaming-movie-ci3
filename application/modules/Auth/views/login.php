@@ -15,6 +15,7 @@
     <link href="<?= base_url();?>assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="<?= base_url();?>assets/css/style.css" rel="stylesheet">
+    <link href="<?= base_url();?>assets/plugins/toast-master/css/jquery.toast.css" rel="stylesheet">
     <!-- You can change the theme colors from here -->
     <link href="<?= base_url();?>assets/css/colors/blue.css" id="theme" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -42,17 +43,8 @@
                 <div class="card-body">
                     <form class="form-horizontal form-material" id="loginform" method="POST" action="auth/login">
                     <a href="<?= base_url();?>" class="text-center db"><img src="<?= base_url();?>assets/images/logo-upy-large.png" alt="Home" width="75" height="75"/><br/><h6>Sistem Informasi Akademik </h6> <h5>Universitas PGRI Yogyakarta </h5></a> <br/>
-                    <?php
-                        if ($this->session->flashdata('error')) {
-                            # code...
-                            echo 
-                            '    <div class="alert alert-danger" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
-                            '.$this->session->flashdata("error").'
-                            </div>
-                            ';
-                            } 
-                    ?> 
-
+                    <div class="flash-data" data-flashdata="<?= $this->session->flashdata('error');?>"> 
+    </div>
                         <div class="form-group ">
                             <div class="col-xs-12">
                                 <input class="form-control" type="text" name="username" id="username" required="" placeholder="Username"> </div>
@@ -133,6 +125,8 @@
     <!-- Sweet-Alert  -->
     <script src="<?= base_url();?>assets/plugins/sweetalert/sweetalert.min.js"></script>
     <script src="<?= base_url();?>assets/plugins/sweetalert/jquery.sweet-alert.custom.js"></script>
+    <script src="<?= base_url();?>assets/plugins/toast-master/js/jquery.toast.js"></script>
+    <script src="<?= base_url();?>assets/js/mytoastr.js"></script>
     
 </body>
 
