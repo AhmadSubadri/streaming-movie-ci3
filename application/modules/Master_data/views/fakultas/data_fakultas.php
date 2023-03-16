@@ -15,7 +15,7 @@
                                 href="javascript:void(0)"
                                 data-toggle="modal"
                                 data-target="#AddFakultas"
-                                class="btn btn-info text-white">+ Create
+                                class="btn btn-warning btn-sm text-white">+ Create
                                 <?= $title ?></a>
                         </div>
                     </div>
@@ -213,17 +213,3 @@
 </div>
 <?php endforeach;?>
 <?php endif;?>
-
-<!-- Modal spinner -->
-<div id="ModalConfirm" class="modal">
-    <div
-        id="spinner"
-        class="show position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-        <div
-            class="spinner-border text-primary"
-            style="width: 3rem; height: 3rem;"
-            role="status">
-            <span class="sr-only">Loading...</span>
-        </div>
-    </div>
-</div>

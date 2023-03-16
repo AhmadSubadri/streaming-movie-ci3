@@ -15,10 +15,9 @@ function DeleteFakultas(id) {
         type: "warning",   
         showCancelButton: true,   
         confirmButtonColor: "#DD6B55",   
-        confirmButtonText: "Yes, delete it!",   
         cancelButtonText: "No, cancel!",   
-        closeOnConfirm: false,   
-        closeOnCancel: false 
+        confirmButtonText: "Yes, delete it!",   
+        closeOnConfirm: false,
     }, function(isConfirm){   
         if (isConfirm) {
             $.ajax({
@@ -28,13 +27,55 @@ function DeleteFakultas(id) {
                     id: id
                 },
                 success: function(response) {
-                    // swal("Deleted!", "Your data faculty has been deleted.", "success");
-                    window.location.href = 'data-fakultas/delete';
+                    swal({   
+                        title: "Deleted!",   
+                        text: "Your faculty has been deleted.",   
+                        type: "success", 
+                        confirmButtonColor: "#DD6B55",  
+                        confirmButtonText: "Ok",
+                    }, function(isConfirm){
+                        if (isConfirm) {
+                            window.location.href = 'data-fakultas';
+                        }
+                    });
                 }
             });
-            // return swal("Error!", "Your deleted fail.", "success");
-        } else {     
-            swal("Cancelled", "Your data Faculty is safe :)", "error");   
-        } 
+        }
+    });
+}
+
+function DeleteProdi(id) {
+    swal({   
+        title: "Are you sure?",   
+        text: "Anda yakin akan menghapus Prodi tersebut?",   
+        type: "warning",   
+        showCancelButton: true,   
+        confirmButtonColor: "#DD6B55",   
+        cancelButtonText: "No, cancel!",   
+        confirmButtonText: "Yes, delete it!",   
+        closeOnConfirm: false,
+    }, function(isConfirm){   
+        if (isConfirm) {
+            $.ajax({
+                url: 'data-program-studi/delete',
+                method: "POST",
+                data: {
+                    id: id
+                },
+                success: function(response) {
+                    swal({   
+                        title: "Deleted!",   
+                        text: "Your major has been deleted.",   
+                        type: "success", 
+                        confirmButtonColor: "#DD6B55",  
+                        confirmButtonText: "Ok",
+                    }, function(isConfirm){
+                        if (isConfirm) {
+                            window.location.href = 'data-program-studi';
+                        }
+                    });
+                }
+            });
+        }
     });
 }
