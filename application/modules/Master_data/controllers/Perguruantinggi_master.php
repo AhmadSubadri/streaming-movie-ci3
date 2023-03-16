@@ -101,10 +101,15 @@ class Perguruantinggi_master extends MY_controller
                     // $this->session->set_flashdata('msg_class', 'alert-success');
                     redirect(site_url('data-perguruan-tinggi'));
                 }else{
-                    $path = './uploads/'.$check_data->logo_pt;
-                    chmod($path, 0777);
-                    unlink($path);
                     $logo = $this->upload->data();
+                    if(!$check_data->logo_pt){
+                        $logo_pt = $logo['file_name'];
+                    }else{
+                        $path = './uploads/'.$check_data->logo_pt;
+                        chmod($path, 0777);
+                        unlink($path);
+                        $logo_pt = $logo['file_name'];
+                    }
                     $data = [
                         'kode_pt' => $this->input->post('kode_pt'),
                         'email_pt' => $this->input->post('email_pt'),
@@ -115,7 +120,7 @@ class Perguruantinggi_master extends MY_controller
                         'fax_pt' => $this->input->post('fax_pt'),
                         'alamat_pt' => $this->input->post('alamat_pt'),
                         'kode_pos_pt' => $this->input->post('kode_pos_pt'),
-                        'logo_pt' => $logo['file_name'],
+                        'logo_pt' => $logo_pt,
                     ];
                     $this->m_pt->update($data, $id);
                     $this->session->set_flashdata('msg', "Update Data Perguruan Tinggi with pictures Success!");
