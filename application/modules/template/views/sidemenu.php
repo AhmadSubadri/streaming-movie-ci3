@@ -100,17 +100,17 @@
                 </li>
                 <li>
                     <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false">
-                        <i class="mdi mdi-email"></i>
-                        <span class="hide-menu">Inbox</span></a>
+                        <i class="mdi mdi-newspaper"></i>
+                        <span class="hide-menu">Akademik</span></a>
                     <ul aria-expanded="false" class="collapse">
                         <li>
-                            <a href="app-email.html">Mailbox</a>
+                            <a href="<?= site_url('tahun-akademik');?>">Tahun Akademik</a>
                         </li>
                         <li>
-                            <a href="app-email-detail.html">Mailbox Detail</a>
+                            <a href="app-email-detail.html">Data Matakuliah</a>
                         </li>
                         <li>
-                            <a href="app-compose.html">Compose Mail</a>
+                            <a href="app-compose.html">Data Kurikulum</a>
                         </li>
                     </ul>
                 </li>

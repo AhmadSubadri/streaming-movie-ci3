@@ -76,3 +76,9 @@ $route['data-dosen'] = 'Master_data/Dosen_master';
 $route['data-dosen/insert'] = 'Master_data/Dosen_master/Insert';
 $route['data-dosen/update'] = 'Master_data/Dosen_master/Update';
 $route['data-dosen/delete'] = 'Master_data/Dosen_master/Delete';
+
+// Data tahun akademik
+$route['tahun-akademik'] = 'Akademik/Tahun_akademik';
+$route['tahun-akademik/insert'] = 'Akademik/Tahun_akademik/Insert';
+$route['tahun-akademik/update'] = 'Akademik/Tahun_akademik/Update';
+$route['tahun-akademik/delete/(:any)'] = 'Akademik/Tahun_akademik/Delete/$1';

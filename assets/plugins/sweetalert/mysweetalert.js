@@ -8,6 +8,23 @@ if (flashData) {
     });
 }
 
+$('.tombol-hapus').on('click', function(e) {
+	e.preventDefault();
+    const href = $(this).attr('href');
+    swal({   
+        title: "Are you sure?",   
+        text: "You will not be able to recover this imaginary file!",   
+        type: "warning",   
+        showCancelButton: true,   
+        confirmButtonColor: "#DD6B55",   
+        confirmButtonText: "Yes, delete it!",   
+        closeOnConfirm: false 
+    }, function(){   
+        document.location.href = href;
+    });
+//     
+});
+
 function DeleteFakultas(id) {
     swal({   
         title: "Are you sure?",   
