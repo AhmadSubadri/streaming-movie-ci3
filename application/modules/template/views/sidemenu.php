@@ -94,7 +94,7 @@
                         <span class="hide-menu">Mahasiswa</span></a>
                     <ul aria-expanded="false" class="collapse">
                         <li>
-                            <a href="app-calendar.html">Data Mahasiswa</a>
+                            <a href="<?= site_url('data-mahasiswa');?>">Data Mahasiswa</a>
                         </li>
                     </ul>
                 </li>
