@@ -62,7 +62,7 @@
                          <!-- dark Logo text -->
                          <img src="<?= base_url();?>assets/images/logo-upy-text.png" alt="homepage" class="dark-logo" />
                          <!-- Light Logo text -->    
-                         <img src="<?= base_url();?>assets/images/logo-upy-text-light.png" widht="175" height="40" class="light-logo" alt="homepage" /></span> </a>
+                         <img src="<?= base_url();?>assets/images/logo-upy-text-light.png" class="light-logo" alt="homepage" /></span> </a>
                 </div>
                 <!-- ============================================================== -->
                 <!-- End Logo -->
