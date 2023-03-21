@@ -4,9 +4,28 @@ if (flashData) {
     swal({
         title : 'Berhasil',
         text : flashData,
-        type : 'success'
+        type : 'success',
+        timer: 1500,   
+        showConfirmButton: false 
     });
 }
+
+$('.tombol-hapus').on('click', function(e) {
+	e.preventDefault();
+    const href = $(this).attr('href');
+    swal({   
+        title: "Are you sure?",   
+        text: "Anda Yakin akan menghapus data tersebut?",   
+        type: "warning",   
+        showCancelButton: true,   
+        confirmButtonColor: "#DD6B55",   
+        confirmButtonText: "Yes, delete it!",   
+        closeOnConfirm: false 
+    }, function(){   
+        document.location.href = href;
+    });
+//     
+});
 
 function DeleteFakultas(id) {
     swal({   
