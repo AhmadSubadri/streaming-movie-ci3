@@ -107,7 +107,7 @@
                             <a href="<?= site_url('tahun-akademik');?>">Tahun Akademik</a>
                         </li>
                         <li>
-                            <a href="app-email-detail.html">Data Matakuliah</a>
+                            <a href="<?= site_url('data-matakuliah');?>">Data Matakuliah</a>
                         </li>
                         <li>
                             <a href="app-compose.html">Data Kurikulum</a>
