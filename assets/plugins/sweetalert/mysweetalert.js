@@ -115,3 +115,39 @@ function DeleteDosen(id) {
         }
     });
 }
+
+function DeleteMatakuliah(id) {
+    swal({   
+        title: "Are you sure?",   
+        text: "Anda yakin akan menghapus Data Matakuliah tersebut?",   
+        type: "warning",   
+        showCancelButton: true,   
+        confirmButtonColor: "#DD6B55",   
+        cancelButtonText: "No, cancel!",   
+        confirmButtonText: "Yes, delete it!",   
+        closeOnConfirm: false,
+    }, function(isConfirm){   
+        if (isConfirm) {
+            $.ajax({
+                url: 'data-matakuliah/delete',
+                method: "POST",
+                data: {
+                    id: id
+                },
+                success: function(response) {
+                    swal({   
+                        title: "Deleted!",   
+                        text: "Your data matakuliah has been deleted.",   
+                        type: "success", 
+                        confirmButtonColor: "#DD6B55",  
+                        confirmButtonText: "Ok",
+                    }, function(isConfirm){
+                        if (isConfirm) {
+                            window.location.href = 'data-matakuliah';
+                        }
+                    });
+                }
+            });
+        }
+    });
+}

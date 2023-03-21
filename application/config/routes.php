@@ -76,3 +76,9 @@ $route['data-dosen'] = 'Master_data/Dosen_master';
 $route['data-dosen/insert'] = 'Master_data/Dosen_master/Insert';
 $route['data-dosen/update'] = 'Master_data/Dosen_master/Update';
 $route['data-dosen/delete'] = 'Master_data/Dosen_master/Delete';
+
+// Data Matakuliah
+$route['data-matakuliah'] = 'Akademik/Data_matakuliah';
+$route['data-matakuliah/insert'] = 'Akademik/Data_matakuliah/Insert';
+$route['data-matakuliah/update'] = 'Akademik/Data_matakuliah/Update';
+$route['data-matakuliah/delete'] = 'Akademik/Data_matakuliah/Delete';

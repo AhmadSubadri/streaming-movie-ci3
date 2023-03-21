@@ -100,6 +100,22 @@
                 </li>
                 <li>
                     <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false">
+                        <i class="mdi mdi-newspaper"></i>
+                        <span class="hide-menu">Akademik</span></a>
+                    <ul aria-expanded="false" class="collapse">
+                        <li>
+                            <a href="<?= site_url('tahun-akademik');?>">Tahun Akademik</a>
+                        </li>
+                        <li>
+                            <a href="<?= site_url('data-matakuliah');?>">Data Matakuliah</a>
+                        </li>
+                        <li>
+                            <a href="app-compose.html">Data Kurikulum</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false">
                         <i class="mdi mdi-email"></i>
                         <span class="hide-menu">Inbox</span></a>
                     <ul aria-expanded="false" class="collapse">
