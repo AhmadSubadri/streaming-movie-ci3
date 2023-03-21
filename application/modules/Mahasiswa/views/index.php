@@ -10,16 +10,6 @@
                         <div>
                             <h4 class="m-b-0 text-white card-title"><?php echo $title ?></h4>
                         </div>
-                        <div class="ml-auto">
-                            <a
-                                href="javascript:void(0)"
-                                data-toggle="modal"
-                                data-target="#Adddosen"
-                                class="btn-warning btn-sm">
-                                <i class="mdi mdi-plus"></i>
-                                Create
-                                <?= $title ?></a>
-                        </div>
                     </div>
                 </div>
                 <div class="card-body">
@@ -59,11 +49,10 @@
                                             class="btn btn-sm btn-outline-warning">
                                             <i class="fa fa-pencil"></i>
                                             Edit</a>
-                                        <a
-                                            onclick="DeleteDosen(<?= $item['id'];?>)"
-                                            class="btn btn-sm btn-outline-danger">
-                                            <i class="fa fa-trash"></i>
-                                            Delete</a>
+                                        <button data-id="<?= $item['id'];?>"
+                                            class="detail-mahasiswa btn btn-sm btn-outline-info">
+                                            <i class="fa fa-eye"></i>
+                                            Detail</button>
                                     </td>
                                 </tr>
                                 <?php endforeach;?>
@@ -75,6 +64,7 @@
         </div>
     </div>
 </div>
+
 
 
 <!-- Modal Edit dosen -->

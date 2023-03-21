@@ -46,4 +46,24 @@ class Data_mahasiswa extends MY_controller
         $this->session->set_flashdata('msg', "Update Data Student Success!");
         redirect(site_url('data-mahasiswa'));
     }
+
+    public function detail()
+    {
+        $url = $this->API.'/index_get';
+        $data = [
+            'id' => $this->input->post('id'),
+        ];
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
+        curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data));
+        $result = curl_exec($ch);
+        curl_close($ch);
+        return json_decode($result, true);
+        // echo $result;
+
+        // $this->session->set_flashdata('msg', "Update Data Student Success!");
+        // redirect(site_url('data-mahasiswa'));
+    }
 }

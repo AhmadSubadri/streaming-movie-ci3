@@ -83,6 +83,13 @@ $route['tahun-akademik/insert'] = 'Akademik/Tahun_akademik/Insert';
 $route['tahun-akademik/update'] = 'Akademik/Tahun_akademik/Update';
 $route['tahun-akademik/delete/(:any)'] = 'Akademik/Tahun_akademik/Delete/$1';
 
+// Data Matakuliah
+$route['data-matakuliah'] = 'Akademik/Data_matakuliah';
+$route['data-matakuliah/insert'] = 'Akademik/Data_matakuliah/insert';
+$route['data-matakuliah/update'] = 'Akademik/Data_matakuliah/update';
+$route['data-matakuliah/delete'] = 'Akademik/Data_matakuliah/delete';
+
 // Data Mahasiswa
 $route['data-mahasiswa'] = 'Mahasiswa/Data_mahasiswa/Index';
 $route['data-mahasiswa/update'] = 'Mahasiswa/Data_mahasiswa/update';
+$route['data-mahasiswa/detail'] = 'Mahasiswa/Data_mahasiswa/detail';
