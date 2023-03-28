@@ -38,7 +38,8 @@ class Auth extends MY_Controller {
 				foreach ($query->result() as $data) {
 					# code...
 					$sess_data = $this->session->set_userdata(array(
-						'username' => $data->username , 
+						'username' => $data->username ,
+						'name' => $data->nama_users ,
 						'level' => $data->level 
 					));
 					$this->session->set_flashdata('msg', 'Login Success');
