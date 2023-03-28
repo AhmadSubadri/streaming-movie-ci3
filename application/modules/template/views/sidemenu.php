@@ -14,7 +14,7 @@
             </div>
             <!-- User profile text-->
             <div class="profile-text">
-                <h5>Markarn Doe</h5>
+                <h5><?= $this->session->userdata('name');?></h5>
                 <a
                     href="#"
                     class="dropdown-toggle u-dropdown"

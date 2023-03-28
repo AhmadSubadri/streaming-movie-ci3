@@ -5,9 +5,9 @@
     <div class="row">
         <div class="col-12">
             <div class="card card-outline-info">
-                <div class="card-header">
-                    <div class="d-flex flex-wrap">
-                        <div>
+                <div class="nduwur rounded-top">
+                    <div class="py-3 px-3">
+                        <div class="d-flex flex-wrap">
                             <h4 class="m-b-0 text-white card-title"><?php echo $title ?></h4>
                         </div>
                     </div>
