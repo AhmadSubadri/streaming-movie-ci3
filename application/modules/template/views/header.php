@@ -60,9 +60,11 @@
                         <!--End Logo icon -->
                         <!-- Logo text --><span>
                          <!-- dark Logo text -->
-                         <img src="<?= base_url();?>assets/images/logo-upy-text.png" alt="homepage" class="dark-logo" />
+                         <!-- dark Logo text -->
+                         <img src="<?= base_url();?>assets/images/logo-upy-text.png" height="30px" alt="homepage" class="dark-logo" />
                          <!-- Light Logo text -->    
-                         <img src="<?= base_url();?>assets/images/logo-upy-text-light.png" class="light-logo" alt="homepage" /></span> </a>
+                         <img src="<?= base_url();?>assets/images/logo-upy-text-light.png" height="30px" class="light-logo" alt="homepage" /></span>
+                    </a>
                 </div>
                 <!-- ============================================================== -->
                 <!-- End Logo -->

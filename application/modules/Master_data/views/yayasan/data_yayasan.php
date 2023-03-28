@@ -4,7 +4,7 @@
     <div class="row">
         <div class="col-12">
             <div class="card card-outline-info">
-                <div class="card-header">
+                <div class="nduwur rounded-top py-3 px-3">
                     <h4 class="m-b-0 text-white"><?php echo $title ?></h4>
                 </div>
                 <div class="card-body">

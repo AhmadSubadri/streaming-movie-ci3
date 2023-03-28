@@ -31,12 +31,10 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php $i=1; foreach($data as $item):?>
+                                <?php $i=1; foreach($data->result() as $item):?>
                                 <tr>
                                     <td><?= $i++;?></td>
-                                    <td><?= $item['nama_mahasiswa'];?><br>
-                                        <i class="text-primary small"><?= $item['npm_mahasiswa'];?></i>
-                                    </td>
+                                    <td><?= $item['nama_mahasiswa'];?><br><i class="text-primary small"><?= $item['npm_mahasiswa'];?></i></td>
                                     <td><?= $item['email_mahasiswa'];?><br><?= $item['telp_mahasiswa'];?></td>
                                     <td><?= $item['nama_prodi'];?></td>
                                     <td><?= $item['periode'];?></td>
@@ -51,8 +49,7 @@
                                             class="btn btn-sm btn-outline-warning">
                                             <i class="fa fa-pencil"></i>
                                             Edit</a>
-                                        <button
-                                            data-id="<?= $item['id'];?>"
+                                        <button data-id="<?= $item['id'];?>"
                                             class="detail-mahasiswa btn btn-sm btn-outline-info">
                                             <i class="fa fa-eye"></i>
                                             Detail</button>
@@ -67,8 +64,11 @@
         </div>
     </div>
 </div>
+
+
+
 <!-- Modal Edit dosen -->
-<?php $i=1; foreach($data as $item):?>
+<?php $i=1; foreach($data->result() as $item):?>
 <div
     id="EditMahasiswa<?= $item['id'];?>"
     class="modal fade in"
@@ -97,16 +97,14 @@
                                 name="nama_mahasiswa"
                                 value="<?= $item['nama_mahasiswa'];?>"
                                 placeholder="Enter numeric value"
-                                required="required"
-                                readonly="readonly">
+                                required="required" readonly>
                             <input
                                 type="number"
                                 class="form-control"
                                 name="id"
                                 value="<?= $item['id'];?>"
                                 placeholder="Enter numeric value"
-                                required="required"
-                                hidden="hidden">
+                                required="required" hidden>
                         </div>
                     </div>
                     <div class="form-group col-sm-6">
@@ -124,18 +122,10 @@
                     <div class="form-group col-sm-6">
                         <label class="col-md-12">Jenis Kelamin</label>
                         <div class="col-md-12">
-                            <select
-                                class="form-control"
-                                name="jenis_kelamin_mahasiswa"
-                                readonly="readonly"
-                                disabled="disabled">
+                            <select class="form-control" name="jenis_kelamin_mahasiswa" readonly disabled>
                                 <option>--- Select Gender ---</option>
-                                <option
-                                    value="Laki-Laki"
-                                    <?= ($item['jenis_kelamin_mahasiswa'] == "L") ? 'selected' : '';?>>Laki-Laki</option>
-                                <option
-                                    value="Perempuan"
-                                    <?= ($item['jenis_kelamin_mahasiswa'] == "P") ? 'selected' : '';?>>Perempuan</option>
+                                <option value="Laki-Laki" <?= ($item['jenis_kelamin_mahasiswa'] == "L") ? 'selected' : '';?>>Laki-Laki</option>
+                                <option value="Perempuan" <?= ($item['jenis_kelamin_mahasiswa'] == "P") ? 'selected' : '';?>>Perempuan</option>
                             </select>
                         </div>
                     </div>
@@ -148,8 +138,7 @@
                                 name="tempat_lahir_mahasiswa"
                                 value="<?= $item['tempat_lahir_mahasiswa'];?>"
                                 placeholder="type place of birth"
-                                required="required"
-                                readonly="readonly">
+                                required="required" readonly>
                         </div>
                     </div>
                     <div class="form-group col-sm-6">
@@ -161,8 +150,7 @@
                                 name="tanggal_lahir_mahasiswa"
                                 value="<?= $item['tanggal_lahir_mahasiswa'];?>"
                                 placeholder="type date of birth"
-                                required="required"
-                                readonly="readonly">
+                                required="required" readonly>
                         </div>
                     </div>
                     <div class="form-group col-sm-6">
@@ -174,8 +162,7 @@
                                 name="email_mahasiswa"
                                 value="<?= $item['email_mahasiswa'];?>"
                                 placeholder="type pos code"
-                                required="required"
-                                readonly="readonly">
+                                required="required" readonly>
                         </div>
                     </div>
                     <div class="form-group col-sm-6">
@@ -187,8 +174,7 @@
                                 name="telp_mahasiswa"
                                 value="<?= $item['telp_mahasiswa'];?>"
                                 placeholder="type phone number"
-                                required="required"
-                                readonly="readonly">
+                                required="required" readonly>
                         </div>
                     </div>
                     <div class="form-group col-sm-6">
@@ -200,8 +186,7 @@
                                 name="kode_prodi"
                                 value="<?= $item['nama_prodi'];?>"
                                 placeholder="type phone number"
-                                required="required"
-                                readonly="readonly">
+                                required="required" readonly>
                         </div>
                     </div>
                 </div>

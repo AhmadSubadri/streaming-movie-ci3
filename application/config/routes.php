@@ -89,7 +89,12 @@ $route['data-matakuliah/insert'] = 'Akademik/Data_matakuliah/insert';
 $route['data-matakuliah/update'] = 'Akademik/Data_matakuliah/update';
 $route['data-matakuliah/delete'] = 'Akademik/Data_matakuliah/delete';
 
-// Data Mahasiswa
+// Data Camaba from api's
+$route['data-camaba'] = 'Mahasiswa/Data_camaba/Index';
+$route['data-camaba/update'] = 'Mahasiswa/Data_camaba/update';
+$route['data-camaba/detail'] = 'Mahasiswa/Data_camaba/detail';
+
+// Data Mahasiswa from BAK
 $route['data-mahasiswa'] = 'Mahasiswa/Data_mahasiswa/Index';
 $route['data-mahasiswa/update'] = 'Mahasiswa/Data_mahasiswa/update';
 $route['data-mahasiswa/detail'] = 'Mahasiswa/Data_mahasiswa/detail';
