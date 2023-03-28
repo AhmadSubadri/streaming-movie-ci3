@@ -1,7 +1,8 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class Auth extends MY_Controller {
+class Auth extends MY_Controller
+{
 
 	public function __construct()
 	{
@@ -11,54 +12,57 @@ class Auth extends MY_Controller {
 
 	public function index()
 	{
-		
+
 		$this->load->view('auth/login');
-		}
+	}
 
 
 	public function login()
 	{
 		$this->form_validation->set_rules('username', 'username', 'trim|required|xss_clean');
-		$this->form_validation->set_rules('password', 'password', 'trim|required|xss_clean');
+		$this->form_validation->set_rules('password', 'password', 'trim|required');
 
-		if ($this->form_validation->run() == FALSE ) {
+		if ($this->form_validation->run() == FALSE) {
 			# code...
-			$this->session->set_flashdata('msg','Login Failed');
-			
+			$this->session->set_flashdata('msg', 'Login Failed');
+
 			redirect(base_url('auth'));
 		} else {
 			# code...
 			$username = $this->input->post('username');
 			$password = md5($this->input->post('password'));
 
-			$query = $this->M_auth->cek_user($username,$password);
+			$query = $this->M_auth->cek_user($username, $password)->row_array();
 
-			if ($query->num_rows() > 0 ) {
-				# code...
-				foreach ($query->result() as $data) {
+			if ($query) {
+				if ($query['is_active'] == 1) {
 					# code...
-					$sess_data = $this->session->set_userdata(array(
-						'username' => $data->username , 
-						'level' => $data->level 
-					));
+					$data = [
+						'username' => $query['username'],
+						'users_level' => $query['users_level'],
+					];
+					$this->session->set_userdata($data);
 					$this->session->set_flashdata('msg', 'Login Success');
 					redirect(base_url('dashboard'));
+				} else {
+					$this->session->set_flashdata('msg', 'Not Activated');
+					redirect(base_url('auth'));
 				}
-
+				# code...
 			} else {
 				# code...
-				$this->session->set_flashdata('msg','Login Failed');
-			redirect(base_url('auth'));
+				$this->session->set_flashdata('msg', 'Login Failed');
+				redirect(base_url('auth'));
 			}
-			
 		}
 	}
 
 
 	public function logout()
 	{
-		$this->session->sess_destroy();
+		$this->session->unset_userdata('username');
+		$this->session->unset_userdata('users_level');
+		$this->session->set_flashdata('msg', 'Logout');
 		redirect(base_url('auth'));
 	}
-
 }

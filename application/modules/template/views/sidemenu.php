@@ -5,7 +5,7 @@
         <div class="user-profile">
             <!-- User profile image -->
             <div class="profile-img">
-                <img src="<?= base_url();?>assets/images/users/profile.png" alt="user"/>
+                <img src="<?= base_url(); ?>assets/images/users/profile.png" alt="user" />
                 <!-- this is blinking heartbit-->
                 <div class="notify setpos">
                     <span class="heartbit"></span>
@@ -15,13 +15,7 @@
             <!-- User profile text-->
             <div class="profile-text">
                 <h5>Markarn Doe</h5>
-                <a
-                    href="#"
-                    class="dropdown-toggle u-dropdown"
-                    data-toggle="dropdown"
-                    role="button"
-                    aria-haspopup="true"
-                    aria-expanded="true">
+                <a href="#" class="dropdown-toggle u-dropdown" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">
                     <i class="mdi mdi-settings"></i>
                 </a>
                 <a href="app-email.html" class="" data-toggle="tooltip" title="Email">
@@ -71,19 +65,19 @@
                         <span class="hide-menu">Master Data</span></a>
                     <ul aria-expanded="false" class="collapse">
                         <li>
-                            <a href="<?= site_url('data-yayasan');?>">Data Yayasan</a>
+                            <a href="<?= site_url('data-yayasan'); ?>">Data Yayasan</a>
                         </li>
                         <li>
-                            <a href="<?= site_url('data-perguruan-tinggi');?>">Data Perguruan Tinggi</a>
+                            <a href="<?= site_url('data-perguruan-tinggi'); ?>">Data Perguruan Tinggi</a>
                         </li>
                         <li>
-                            <a href="<?= site_url('data-fakultas');?>">Data Fakultas</a>
+                            <a href="<?= site_url('data-fakultas'); ?>">Data Fakultas</a>
                         </li>
                         <li>
-                            <a href="<?= site_url('data-program-studi');?>">Data Program Studi</a>
+                            <a href="<?= site_url('data-program-studi'); ?>">Data Program Studi</a>
                         </li>
                         <li>
-                            <a href="<?= site_url('data-dosen');?>">Data Dosen
+                            <a href="<?= site_url('data-dosen'); ?>">Data Dosen
                             </a>
                         </li>
                     </ul>
@@ -94,7 +88,7 @@
                         <span class="hide-menu">Mahasiswa</span></a>
                     <ul aria-expanded="false" class="collapse">
                         <li>
-                            <a href="<?= site_url('data-mahasiswa');?>">Data Mahasiswa</a>
+                            <a href="<?= site_url('data-mahasiswa'); ?>">Data Mahasiswa</a>
                         </li>
                     </ul>
                 </li>
@@ -104,13 +98,26 @@
                         <span class="hide-menu">Akademik</span></a>
                     <ul aria-expanded="false" class="collapse">
                         <li>
-                            <a href="<?= site_url('tahun-akademik');?>">Tahun Akademik</a>
+                            <a href="<?= site_url('tahun-akademik'); ?>">Tahun Akademik</a>
                         </li>
                         <li>
-                            <a href="<?= site_url('data-matakuliah');?>">Data Matakuliah</a>
+                            <a href="<?= site_url('data-matakuliah'); ?>">Data Matakuliah</a>
                         </li>
                         <li>
                             <a href="app-compose.html">Data Kurikulum</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false">
+                        <i class="mdi mdi-account-key"></i>
+                        <span class="hide-menu">Users Management</span></a>
+                    <ul aria-expanded="false" class="collapse">
+                        <li>
+                            <a href="<?= site_url('users'); ?>">Data Users</a>
+                        </li>
+                        <li>
+                            <a href="<?= site_url('users/users_level'); ?>">Data Users Level</a>
                         </li>
                     </ul>
                 </li>
@@ -561,18 +568,17 @@
         <div class="col-md-7 align-self-center">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item">
-                    <a href="<?= base_url();?>dashboard">
+                    <a href="<?= base_url(); ?>dashboard">
                         <i class="mdi mdi-home"></i>
                     </a>
-                </a>
-            </li>
-            <li class="breadcrumb-item active"><?php echo $title ?></li>
-        </ol>
+                    </a>
+                </li>
+                <li class="breadcrumb-item active"><?php echo $title ?></li>
+            </ol>
+        </div>
+        <div>
+            <button class="right-side-toggle waves-effect waves-light btn-inverse btn btn-circle btn-sm pull-right m-l-10">
+                <i class="ti-settings text-white"></i>
+            </button>
+        </div>
     </div>
-    <div>
-        <button
-            class="right-side-toggle waves-effect waves-light btn-inverse btn btn-circle btn-sm pull-right m-l-10">
-            <i class="ti-settings text-white"></i>
-        </button>
-    </div>
-</div>
