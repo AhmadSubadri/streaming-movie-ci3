@@ -40,6 +40,7 @@ class Auth extends MY_Controller
 					$data = [
 						'username' => $query['username'],
 						'users_level' => $query['users_level'],
+						'nama_users' => $query['nama_users'],
 					];
 					$this->session->set_userdata($data);
 					$this->session->set_flashdata('msg', 'Login Success');
