@@ -31,7 +31,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php $i=1; foreach($data as $item):?>
+                                <?php $i=1; foreach($data->result() as $item):?>
                                 <tr>
                                     <td><?= $i++;?></td>
                                     <td><?= $item['nama_mahasiswa'];?><br><i class="text-primary small"><?= $item['npm_mahasiswa'];?></i></td>
@@ -68,7 +68,7 @@
 
 
 <!-- Modal Edit dosen -->
-<?php $i=1; foreach($data as $item):?>
+<?php $i=1; foreach($data->result() as $item):?>
 <div
     id="EditMahasiswa<?= $item['id'];?>"
     class="modal fade in"

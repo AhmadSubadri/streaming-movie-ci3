@@ -94,6 +94,9 @@
                         <span class="hide-menu">Mahasiswa</span></a>
                     <ul aria-expanded="false" class="collapse">
                         <li>
+                            <a href="<?= site_url('data-camaba');?>">Data Camaba</a>
+                        </li>
+                        <li>
                             <a href="<?= site_url('data-mahasiswa');?>">Data Mahasiswa</a>
                         </li>
                     </ul>
