@@ -1,3 +1,57 @@
+<!-- Filter matakuliah start -->
+<div class="container-fluid">
+    <div
+        class="flash-data"
+        data-flashdata="<?= $this->session->flashdata('msg');?>"></div>
+    <div class="row">
+        <div class="col-12">
+            <div class="card card-outline-danger">
+                <div class="card-header">
+                    <div class="d-flex flex-wrap">
+                        <div>
+                            <h4 class="m-b-0 text-white card-title">Filter <?php echo $title ?></h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                <form
+                class="form-horizontal"
+                action="<?= site_url('data-matakuliah')?>"
+                method="get">
+                <div class="modal-body row">
+                    <div class="form-group col-sm-12">
+                        <div class="row">
+                            <label class="col-md-2">Program Studi</label>
+                            <div class="col-md-6">
+                                <select class="form-control" name="kode_prodi">
+                                <?php if(empty($prodi)):?>
+                                <?php else:?>
+                                    <option value="<?=null;?>">--- Pilih Kode Prodi ---</option>
+                                    <?php $i=1; foreach($prodi->result() as $item_prodi):?>
+                                        <?php if(isset($_GET['kode_prodi'])) {?>
+                                            <option value="<?= $item_prodi->kode_prodi;?>" <?= ($item_prodi->kode_prodi == $_GET['kode_prodi']) ? 'selected' : '' ?>><?= $item_prodi->nama_prodi;?></option>
+                                        <?php }else {?>
+                                            <option value="<?= $item_prodi->kode_prodi;?>"><?= $item_prodi->nama_prodi;?></option>
+                                        <?php };?>
+                                    <?php endforeach;?>
+                                <?php endif;?>
+                                </select>
+                            </div>
+                            <div class="col-md-3">
+                                <button type="submit" class="btn btn-danger waves-effect btn-sm">Filter</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </form> 
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Filter matakuliah end -->
+
+<!-- Menampilkan isi tabel matakuliah -->
 <div class="container-fluid">
     <div
         class="flash-data"
@@ -59,6 +113,7 @@
                                             class="btn btn-sm btn-outline-warning">
                                             <i class="fa fa-pencil"></i>
                                             Edit</a>
+                                        <!-- Fungsi Onclick delete ada di folder plugins>>sweetalert>>mysweetalert.js -->
                                         <a onclick="DeleteMatakuliah(<?= $item->id;?>)" class="btn btn-sm btn-outline-danger">
                                             <i class="fa fa-trash"></i>
                                             Delete</a>
