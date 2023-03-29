@@ -9,11 +9,22 @@ class Data_matakuliah extends MY_controller
 
     function index()
     {
-		$data = array(
-			'title' => 'Data Matakuliah',
-			'data' => $this->m_matkul->Index(),
-            'prodi' => $this->m_matkul->Get_Nama_Prodi(),
-		);
+        $kode_prodi = $this->input->get('kode_prodi');
+        // Cek apakah filter prodi ada atau tidak
+        if($kode_prodi!=null){
+            $data = array(
+                'title' => 'Data Matakuliah',
+                'data' => $this->m_matkul->Filter_Prodi($kode_prodi),
+                'prodi' => $this->m_matkul->Get_Nama_Prodi(),
+            );
+
+        }else{
+            $data = array(
+                'title' => 'Data Matakuliah',
+                'data' => $this->m_matkul->Index(),
+                'prodi' => $this->m_matkul->Get_Nama_Prodi(),
+            );
+        }
 		
 		$this->load->view('template/header',$data);
         $this->load->view('template/sidemenu',$data);
