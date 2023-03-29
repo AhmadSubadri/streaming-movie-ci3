@@ -9,11 +9,26 @@ class Matakuliah_model extends CI_Model {
 
     public function Index()
     {
-        $this->db->select('matakuliah.id as id, matakuliah.kode_mk as kode_mk, matakuliah.nama_mk as nama_mk, matakuliah.sks_mk as sks_mk, matakuliah.kode_prodi as kode_prodi, tb_prodi.nama_prodi as nama_prodi, matakuliah.type_mk as type_mk')->from('matakuliah')->join('tb_prodi', 'tb_prodi.kode_prodi = matakuliah.kode_prodi')->order_by('matakuliah.kode_prodi', 'DESC');
+        $this->db->select('matakuliah.id as id, matakuliah.kode_mk as kode_mk, matakuliah.nama_mk as nama_mk, matakuliah.sks_mk as sks_mk, matakuliah.kode_prodi as kode_prodi, tb_prodi.nama_prodi as nama_prodi, matakuliah.type_mk as type_mk')
+        ->from('matakuliah')
+        ->join('tb_prodi', 'tb_prodi.kode_prodi = matakuliah.kode_prodi')
+        ->order_by('matakuliah.kode_prodi', 'DESC');
         $query = $this->db->get();
         return $query;
     }
 
+    // Fungsi untuk get matakuliah berdasarkan filter kode prodi
+    public function Filter_Prodi($kode_prodi){
+        $this->db->select('matakuliah.id as id, matakuliah.kode_mk as kode_mk, matakuliah.nama_mk as nama_mk, matakuliah.sks_mk as sks_mk, matakuliah.kode_prodi as kode_prodi, tb_prodi.nama_prodi as nama_prodi, matakuliah.type_mk as type_mk')
+        ->from('matakuliah')
+        ->join('tb_prodi', 'tb_prodi.kode_prodi = matakuliah.kode_prodi')
+        ->order_by('matakuliah.kode_prodi', 'DESC')
+        ->where('matakuliah.kode_prodi', $kode_prodi);
+        $query = $this->db->get();
+        return $query;
+    }
+
+    // Fungsi untuk get nama prodi
     public function Get_Nama_Prodi()
     {
         $this->db->select('*')->from('tb_prodi');
