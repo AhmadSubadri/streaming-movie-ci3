@@ -11,9 +11,8 @@ class Auth extends MY_Controller {
 
 	public function index()
 	{
-		
 		$this->load->view('auth/login');
-		}
+	}
 
 
 	public function login()
@@ -45,11 +44,10 @@ class Auth extends MY_Controller {
 					$this->session->set_flashdata('msg', 'Login Success');
 					redirect(base_url('dashboard'));
 				}
-
 			} else {
 				# code...
 				$this->session->set_flashdata('msg','Login Failed');
-			redirect(base_url('auth'));
+				redirect(base_url('auth'));
 			}
 			
 		}

@@ -16,12 +16,13 @@ class Data_camaba extends MY_controller
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         $semua_data = curl_exec($ch);
         curl_close($ch);
-
         $result = json_decode($semua_data, true);
         $item = $result['biodata'];
+
         $data = array(
             'title' => 'Data Camaba Lulus',
             'data' => $item,
+            // 'detail' => $item2,
         );
         $this->load->view('template/header',$data);
         $this->load->view('template/sidemenu',$data);

@@ -27,7 +27,7 @@
                 <a href="app-email.html" class="" data-toggle="tooltip" title="Email">
                     <i class="mdi mdi-gmail"></i>
                 </a>
-                <a href="pages-login.html" class="" data-toggle="tooltip" title="Logout">
+                <a href="<?php echo base_url()?>auth/logout" class="" data-toggle="tooltip" title="Logout">
                     <i class="mdi mdi-power"></i>
                 </a>
                 <div class="dropdown-menu animated flipInY">
