@@ -87,10 +87,47 @@ function DeleteProdi(id) {
                         text: "Your major has been deleted.",   
                         type: "success", 
                         confirmButtonColor: "#DD6B55",  
-                        confirmButtonText: "Ok",
+                        confirmButtonText: "Ok",e
                     }, function(isConfirm){
                         if (isConfirm) {
                             window.location.href = 'data-program-studi';
+                        }
+                    });
+                }
+            });
+        }
+    });
+}
+
+
+function DeleteLevelUser(id) {
+    swal({   
+        title: "Are you sure?",   
+        text: "Anda yakin akan menghapus Level tersebut?",   
+        type: "warning",   
+        showCancelButton: true,   
+        confirmButtonColor: "#DD6B55",   
+        cancelButtonText: "No, cancel!",   
+        confirmButtonText: "Yes, delete it!",   
+        closeOnConfirm: false,
+    }, function(isConfirm){   
+        if (isConfirm) {
+            $.ajax({
+                url: 'data-user-level/delete',
+                method: "POST",
+                data: {
+                    id: id
+                },
+                success: function() {
+                    swal({   
+                        title: "Deleted!",   
+                        text: "Your level has been deleted.",   
+                        type: "success", 
+                        confirmButtonColor: "#DD6B55",  
+                        confirmButtonText: "Ok",
+                    }, function(isConfirm){
+                        if (isConfirm) {
+                            window.location.href = 'data-user-level';
                         }
                     });
                 }

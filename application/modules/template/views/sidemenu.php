@@ -118,10 +118,10 @@
                         <span class="hide-menu">Users Management</span></a>
                     <ul aria-expanded="false" class="collapse">
                         <li>
-                            <a href="<?= site_url('users'); ?>">Data Users</a>
+                            <a href="<?= site_url('data-users'); ?>">Data Users</a>
                         </li>
                         <li>
-                            <a href="<?= site_url('users/users_level'); ?>">Data Users Level</a>
+                            <a href="<?= site_url('data-user-level'); ?>">Data Users Level</a>
                         </li>
                     </ul>
                 </li>

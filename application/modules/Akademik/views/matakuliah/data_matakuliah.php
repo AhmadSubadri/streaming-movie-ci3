@@ -6,7 +6,7 @@
     <div class="row">
         <div class="col-12">
             <div class="card card-outline-danger">
-                <div class="card-header">
+                <div class="nduwur rounded-top py-3 px-3">
                     <div class="d-flex flex-wrap">
                         <div>
                             <h4 class="m-b-0 text-white card-title">Filter <?php echo $title ?></h4>
