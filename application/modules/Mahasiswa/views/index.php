@@ -46,16 +46,19 @@
                                         <a
                                             href="javascript:void(0)"
                                             data-toggle="modal"
-                                            data-target="#EditMahasiswa<?=$item['id'];?>"
+                                            data-target="#EditCamaba<?=$item['id'];?>"
                                             data-id="<?= $item['id'];?>"
                                             class="btn btn-sm btn-outline-warning">
                                             <i class="fa fa-pencil"></i>
                                             Edit</a>
-                                        <button
+                                        <a
+                                        href="javascript:void(0)"
+                                            data-toggle="modal"
+                                            data-target="#DetailCamaba<?=$item['id'];?>"
                                             data-id="<?= $item['id'];?>"
-                                            class="detail-mahasiswa btn btn-sm btn-outline-info">
+                                            class="btn btn-sm btn-outline-info">
                                             <i class="fa fa-eye"></i>
-                                            Detail</button>
+                                            Detail</a>
                                     </td>
                                 </tr>
                                 <?php endforeach;?>
@@ -70,16 +73,16 @@
 <!-- Modal Edit dosen -->
 <?php $i=1; foreach($data as $item):?>
 <div
-    id="EditMahasiswa<?= $item['id'];?>"
+    id="EditCamaba<?= $item['id'];?>"
     class="modal fade in"
     tabindex="-1"
     role="dialog"
-    aria-labelledby="EditMahasiswaLabel"
+    aria-labelledby="EditCamabaLabel"
     aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title" id="EditMahasiswaLabel">Edit
+                <h4 class="modal-title" id="EditCamabaLabel">Edit
                     <?= $title ?></h4>
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
             </div>

@@ -28,9 +28,9 @@ class Users_level extends MY_Controller
         $data = [
             'users_level' => $this->input->post('users_level'),
         ];
-        $this->session->set_flashdata('msg', "Insert Tahun Akademik Success!");
+        $this->session->set_flashdata('msg', "Insert Users Level Success!");
         $this->m_level->Insert($data);
-        redirect(site_url('users/users_level'));
+        redirect(site_url('data-user-level'));
     }
 
     public function Update()
@@ -40,15 +40,16 @@ class Users_level extends MY_Controller
             'users_level' => $this->input->post('users_level'),
         ];
 
-        $this->session->set_flashdata('msg', "Update Tahun Akademik Success!");
+        $this->session->set_flashdata('msg', "Update Users Level Success!");
         $this->m_level->Update($data, $id);
-        redirect(site_url('users/users_level'));
+        redirect(site_url('data-user-level'));
     }
 
-    function Delete($id)
+    function Delete()
     {
+        $id = $this->input->post('id');
         $this->m_level->Delete($id);
-        $this->session->set_flashdata('msg', 'Data Succes Delete');
-        redirect(base_url('users/users_level'));
+        $this->session->set_flashdata('msg', 'Data Users Level Succes Delete');
+        redirect(base_url('data-user-level'));
     }
 }
