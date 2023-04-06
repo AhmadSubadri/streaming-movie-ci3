@@ -54,6 +54,7 @@ $route['data-mahasiswa/detail'] = 'Mahasiswa/Data_mahasiswa/detail';
 // User Management
 $route['data-users'] = 'Users/Users/index';
 $route['data-users/insert'] = 'Users/Users/Insert';
+$route['data-users/update'] = 'Users/Users/Update';
 
 $route['data-user-level'] = 'Users/Users_level/index';
 $route['data-user-level/delete'] = 'Users/Users_level/Delete';

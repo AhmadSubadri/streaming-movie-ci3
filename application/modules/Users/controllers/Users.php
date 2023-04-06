@@ -26,11 +26,12 @@ class Users extends MY_Controller
 
     public function Insert()
     {
+        $password = $this->input->post('password');
         $datausers = [
             'nama_users' => $this->input->post('nama_users'),
             'username' => $this->input->post('username'),
             'email_users' => $this->input->post('email_users'),
-            'pass_users' => $this->input->post('password'),
+            'pass_users' => md5($password),
         ];
         $this->m_users->Insert('tb_users', $datausers);
         $user_id = $this->db->insert_id();
@@ -48,21 +49,25 @@ class Users extends MY_Controller
 
     public function Update()
     {
-        $id = $this->input->post('id_tahun');
-        $data = [
-            'kode_tahun_akademik' => $this->input->post('kode_tahun'),
-            'nama_tahun_akademik' => $this->input->post('nama_tahun'),
-            'tgl_mulai_krs' => $this->input->post('tgl_awal_krs'),
-            'tgl_akhir_krs' => $this->input->post('tgl_akhir_krs'),
-            'tgl_awal_ubah' => $this->input->post('tgl_awal_ubah'),
-            'tgl_akhir_ubah' => $this->input->post('tgl_akhir_ubah'),
-            'tgl_kuliah_awal' => $this->input->post('tgl_kuliah_awal'),
-            'tgl_kuliah_akhir' => $this->input->post('tgl_kuliah_akhir'),
-            'semester' => $this->input->post('semester'),
+        $id = $this->input->post('id_users');
+        $password = $this->input->post('password');
+        $datausers = [
+            'nama_users' => $this->input->post('nama_users'),
+            'username' => $this->input->post('username'),
+            'email_users' => $this->input->post('email_users'),
+            'pass_users' => md5($password),
         ];
-
+        $this->db->update('tb_users', $datausers, ['id_users' => $id]);
+        $this->db->delete('tb_users_levels', ['id_users' => $id]);
+        $level = $this->input->post('level');
+        foreach($level as $lv){
+            $datalevel = [
+                'id_users' => $id,
+                'id_level' => $lv
+            ];
+            $this->m_users->Insert('tb_users_levels', $datalevel);
+        }
         $this->session->set_flashdata('msg', "Update Users Success!");
-        $this->m_tahun->Update($data, $id);
         redirect(site_url('data-users'));
     }
 

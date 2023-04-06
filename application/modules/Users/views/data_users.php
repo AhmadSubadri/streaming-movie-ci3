@@ -49,7 +49,9 @@
                                     <td>
                                         <?php $level = $this->db->where('id_users', $item->id_users)->join('tb_users_level', 'tb_users_level.id_level = tb_users_levels.id_level')->get('tb_users_levels');?>
                                         <?php foreach($level->result() as $lvl):?>
-                                            <span class="label label-info"> <?= $lvl->users_level;?> </span>
+                                        <span class="label label-info">
+                                            <?= $lvl->users_level;?>
+                                        </span>
                                         <?php endforeach;?>
                                     </td>
                                     <td>
@@ -68,9 +70,7 @@
                                             class="btn btn-sm btn-outline-warning">
                                             <i class="fa fa-pencil"></i>
                                             Edit</a>
-                                        <a
-                                            onclick="DeleteLevelUser(<?= $item->id_users;?>)"
-                                            class="btn btn-sm btn-outline-danger">
+                                        <a onclick="(<?= $item->id_users;?>)" class="btn btn-sm btn-outline-danger">
                                             <i class="fa fa-trash"></i>
                                             Delete</a>
                                     </td>
@@ -86,7 +86,7 @@
     </div>
 </div>
 
-<!-- Modal Add Fakultas -->
+<!-- Modal Add Users -->
 <div
     id="Addusers"
     class="modal fade in"
@@ -148,8 +148,13 @@
                             <?php if (empty($ulevel)) : ?>
                         <?php else : ?>
                             <?php foreach ($ulevel->result() as $lev) : ?>
-                                <input type="checkbox" name="level[]" id="md<?= $lev->id_level; ?>" class="filled-in chk-col-red" value="<?= $lev->id_level;?>" />
-                                <label for="md<?= $lev->id_level; ?>"><?= $lev->users_level; ?></label><br>
+                            <input
+                                type="checkbox"
+                                name="level[]"
+                                id="mds<?= $lev->id_level; ?>"
+                                class="chk-col-red"
+                                value="<?= $lev->id_level;?>"/>
+                            <label for="mds<?= $lev->id_level; ?>"><?= $lev->users_level; ?></label><br>
                             <?php endforeach; ?>
                             <?php endif; ?>
                         </div>
@@ -190,10 +195,11 @@
     <!-- /.modal-dialog -->
 </div>
 
-<!-- Modal Edit Fakultas -->
+
+<!-- Modal Edit Users -->
 <?php if(empty($data)):?>
 <?php else:?>
-<?php $i=1; foreach($data->result() as $item):?>
+    <?php $i=1; foreach($data->result() as $item):?>
 <div
     id="Editusers<?= $item->id_users;?>"
     class="modal fade in"
@@ -204,13 +210,13 @@
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title" id="EditusersLabel">Edit
+                <h4 class="modal-title" id="EditusersLabel">Add
                     <?= $title ?></h4>
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
             </div>
             <form
                 class="form-horizontal"
-                action="<?= site_url('data-users/insert') ?>"
+                action="<?= site_url('data-users/update') ?>"
                 method="post">
                 <div class="modal-body row">
                     <div class="form-group col-sm-12">
@@ -220,9 +226,16 @@
                                 type="text"
                                 class="form-control"
                                 name="nama_users"
-                                value=""
+                                value="<?= $item->nama_users;?>"
                                 placeholder="Enter Name of Users"
                                 required="required">
+                            <input
+                                type="text"
+                                class="form-control"
+                                name="id_users"
+                                value="<?= $item->id_users;?>"
+                                placeholder="Enter Name of Users"
+                                required="required" hidden>
                         </div>
                     </div>
                     <div class="form-group col-sm-12">
@@ -232,7 +245,7 @@
                                 type="text"
                                 class="form-control"
                                 name="username"
-                                value=""
+                                value="<?= $item->username;?>"
                                 placeholder="Enter Username"
                                 required="required">
                         </div>
@@ -244,7 +257,7 @@
                                 type="email"
                                 class="form-control"
                                 name="email_users"
-                                value=""
+                                value="<?= $item->email_users;?>"
                                 placeholder="Enter Email"
                                 required="required">
                         </div>
@@ -253,10 +266,16 @@
                         <label class="col-md-12">Users Level</label>
                         <div class="col-md-12">
                             <?php if (empty($ulevel)) : ?>
-                        <?php else : ?>
-                            <?php foreach ($ulevel->result() as $lev) : ?>
-                                <input type="checkbox" name="level[]" id="md<?= $lev->id_level; ?>" class="filled-in chk-col-red" value="<?= $lev->id_level;?>" />
-                                <label for="md<?= $lev->id_level; ?>"><?= $lev->users_level; ?></label><br>
+                                <?php else : ?>
+                                <?php $i=1; foreach ($ulevel->result() as $lev) : ?>
+                                    <?php $le = $this->db->where('id_users', $item->id_users)->where('id_level', $lev->id_level)->get('tb_users_levels');?>
+                                <input
+                                    type="checkbox"
+                                    name="level[]"
+                                    id="mdu<?= $lev->id_level;?><?=$item->id_users?>"
+                                    class="chk-col-red"
+                                    value="<?= $lev->id_level;?>" <?= $le->num_rows() > 0 ? 'checked' : ' '; ?>/>
+                                <label for="mdu<?= $lev->id_level;?><?= $item->id_users;?>"><?= $lev->users_level; ?></label><br>
                             <?php endforeach; ?>
                             <?php endif; ?>
                         </div>
@@ -268,7 +287,7 @@
                                 type="password"
                                 class="form-control"
                                 name="password"
-                                value=""
+                                value="<?= $item->pass_users;?>"
                                 placeholder="Enter Password"
                                 required="required">
                         </div>
@@ -292,7 +311,9 @@
                 </div>
             </form>
         </div>
+        <!-- /.modal-content -->
     </div>
+    <!-- /.modal-dialog -->
 </div>
 <?php endforeach;?>
 <?php endif;?>
