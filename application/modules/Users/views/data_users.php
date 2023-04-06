@@ -280,6 +280,16 @@
                             <?php endif; ?>
                         </div>
                     </div>
+                    <div class="form-group col-sm-12">
+                        <label class="col-md-12">Status Users</label>
+                        <div class="col-md-12">
+                        <select class="form-control custom-select" name="is_active" required="required">
+                                <option>--Select your Faculty--</option>
+                                <option value="0" <?= ($item->is_active == "0") ? 'selected' : '' ?>>Non Active</option>
+                                <option value="1" <?= ($item->is_active == "1") ? 'selected' : '' ?>>Active</option>
+                            </select>
+                        </div>
+                    </div>
                     <div class="form-group col-sm-6">
                         <label class="col-md-12">Password</label>
                         <div class="col-md-12">

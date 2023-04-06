@@ -55,6 +55,7 @@ class Users extends MY_Controller
             'nama_users' => $this->input->post('nama_users'),
             'username' => $this->input->post('username'),
             'email_users' => $this->input->post('email_users'),
+            'is_active' => $this->input->post('is_active'),
             'pass_users' => md5($password),
         ];
         $this->db->update('tb_users', $datausers, ['id_users' => $id]);
