@@ -8,9 +8,46 @@ class Users_model extends CI_Model
         parent::__construct();
     }
 
+    public function rules()
+    {
+        return [
+            [
+                'field' => 'nama_users',
+                'label' => 'User Name',
+                'rules' => 'required',
+            ],
+            [
+                'field' => 'username',
+                'label' => 'Username',
+                'rules' => 'required|is_unique[tb_users.username]'
+            ],
+            [
+                'field' => 'email_users',
+                'label' => 'Email',
+                'rules' => 'required|is_unique[tb_users.email_users]'
+            ],
+            [
+                'field' => 'level',
+                'label' => 'level',
+                'rules' => 'required'
+            ],
+            [
+                'field' => 'pass_users',
+                'label' => 'Password',
+                'rules' => 'required|min_length[8]'
+            ],
+            [
+                'field' => 'Conf_pass',
+                'label' => 'Match Password',
+                'rules' => 'required|matches[pass_users]|min_length[8]'
+            ],
+        ];
+    }
+
     public function Index()
     {
-        $this->db->select('*')->from('tb_users')->join('tb_users_levels', 'tb_users.id_users = tb_users_levels.id_users')->order_by('tb_users.id_users', 'DESC');
+        $this->db->select('*')->from('tb_users')
+        ->order_by('tb_users.id_users', 'DESC');
         $query = $this->db->get();
         return $query;
     }
@@ -29,9 +66,9 @@ class Users_model extends CI_Model
         return $query;
     }
 
-    public function Insert($data)
+    public function Insert($tb, $data)
     {
-        return $this->db->insert('tb_users', $data);
+        return $this->db->insert($tb, $data);
     }
 
     public function Update($data, $id)

@@ -12,11 +12,9 @@ class Users extends MY_Controller
 
     public function index()
     {
-
         $data = array(
             'title' => 'Data Users',
             'data' => $this->m_users->Index(),
-            'level' => $this->m_users->Get_Users_Level()->row(),
             'ulevel' => $this->m_users->Get_Name_Level(),
         );
 
@@ -28,46 +26,55 @@ class Users extends MY_Controller
 
     public function Insert()
     {
-        $data = [
-            'kode_tahun_akademik' => $this->input->post('kode_tahun'),
-            'nama_tahun_akademik' => $this->input->post('nama_tahun'),
-            'tgl_mulai_krs' => $this->input->post('tgl_awal_krs'),
-            'tgl_akhir_krs' => $this->input->post('tgl_akhir_krs'),
-            'tgl_awal_ubah' => $this->input->post('tgl_awal_ubah'),
-            'tgl_akhir_ubah' => $this->input->post('tgl_akhir_ubah'),
-            'tgl_kuliah_awal' => $this->input->post('tgl_kuliah_awal'),
-            'tgl_kuliah_akhir' => $this->input->post('tgl_kuliah_akhir'),
-            'semester' => $this->input->post('semester'),
+        $password = $this->input->post('password');
+        $datausers = [
+            'nama_users' => $this->input->post('nama_users'),
+            'username' => $this->input->post('username'),
+            'email_users' => $this->input->post('email_users'),
+            'pass_users' => md5($password),
         ];
-        $this->session->set_flashdata('msg', "Insert Tahun Akademik Success!");
-        $this->m_tahun->Insert($data);
-        redirect(site_url('tahun-akademik'));
+        $this->m_users->Insert('tb_users', $datausers);
+        $user_id = $this->db->insert_id();
+        $level = $this->input->post('level');
+        foreach($level as $lv){
+            $datalevel = [
+                'id_users' => $user_id,
+                'id_level' => $lv
+            ];
+            $this->m_users->Insert('tb_users_levels', $datalevel);
+        }
+        $this->session->set_flashdata('msg', "Insert Users Success!");
+        redirect(site_url('data-users'));
     }
 
     public function Update()
     {
-        $id = $this->input->post('id_tahun');
-        $data = [
-            'kode_tahun_akademik' => $this->input->post('kode_tahun'),
-            'nama_tahun_akademik' => $this->input->post('nama_tahun'),
-            'tgl_mulai_krs' => $this->input->post('tgl_awal_krs'),
-            'tgl_akhir_krs' => $this->input->post('tgl_akhir_krs'),
-            'tgl_awal_ubah' => $this->input->post('tgl_awal_ubah'),
-            'tgl_akhir_ubah' => $this->input->post('tgl_akhir_ubah'),
-            'tgl_kuliah_awal' => $this->input->post('tgl_kuliah_awal'),
-            'tgl_kuliah_akhir' => $this->input->post('tgl_kuliah_akhir'),
-            'semester' => $this->input->post('semester'),
+        $id = $this->input->post('id_users');
+        $password = $this->input->post('password');
+        $datausers = [
+            'nama_users' => $this->input->post('nama_users'),
+            'username' => $this->input->post('username'),
+            'email_users' => $this->input->post('email_users'),
+            'pass_users' => md5($password),
         ];
-
-        $this->session->set_flashdata('msg', "Update Tahun Akademik Success!");
-        $this->m_tahun->Update($data, $id);
-        redirect(site_url('tahun-akademik'));
+        $this->db->update('tb_users', $datausers, ['id_users' => $id]);
+        $this->db->delete('tb_users_levels', ['id_users' => $id]);
+        $level = $this->input->post('level');
+        foreach($level as $lv){
+            $datalevel = [
+                'id_users' => $id,
+                'id_level' => $lv
+            ];
+            $this->m_users->Insert('tb_users_levels', $datalevel);
+        }
+        $this->session->set_flashdata('msg', "Update Users Success!");
+        redirect(site_url('data-users'));
     }
 
     function Delete($id)
     {
         $this->m_tahun->Delete($id);
-        $this->session->set_flashdata('msg', 'Data Succes Delete');
-        redirect(base_url('tahun-akademik'));
+        $this->session->set_flashdata('msg', 'Data Users Success Delete');
+        redirect(base_url('data-users'));
     }
 }
