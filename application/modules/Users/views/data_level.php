@@ -67,7 +67,7 @@
     </div>
 </div>
 
-<!-- Modal Add Fakultas -->
+<!-- Modal Add Level -->
 <div
     id="Addlevel"
     class="modal fade in"
@@ -111,7 +111,7 @@
     <!-- /.modal-dialog -->
 </div>
 
-<!-- Modal Edit Fakultas -->
+<!-- Modal Edit Level -->
 <?php if(empty($data)):?>
 <?php else:?>
 <?php $i=1; foreach($data->result() as $item):?>

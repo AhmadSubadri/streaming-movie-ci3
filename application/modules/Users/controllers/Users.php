@@ -72,9 +72,11 @@ class Users extends MY_Controller
         redirect(site_url('data-users'));
     }
 
-    function Delete($id)
+    public function Delete()
     {
-        $this->m_tahun->Delete($id);
+        $id = $this->input->post('id');
+        $this->m_users->Delete($id);
+        $this->db->delete('tb_users_levels', ['id_users' => $id]);
         $this->session->set_flashdata('msg', 'Data Users Success Delete');
         redirect(base_url('data-users'));
     }

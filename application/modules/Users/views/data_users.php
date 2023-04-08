@@ -70,7 +70,7 @@
                                             class="btn btn-sm btn-outline-warning">
                                             <i class="fa fa-pencil"></i>
                                             Edit</a>
-                                        <a onclick="(<?= $item->id_users;?>)" class="btn btn-sm btn-outline-danger">
+                                        <a onclick="DeleteUsersData(<?= $item->id_users;?>)" class="btn btn-sm btn-outline-danger">
                                             <i class="fa fa-trash"></i>
                                             Delete</a>
                                     </td>
