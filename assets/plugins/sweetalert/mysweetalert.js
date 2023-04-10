@@ -23,8 +23,7 @@ $('.tombol-hapus').on('click', function(e) {
         closeOnConfirm: false 
     }, function(){   
         document.location.href = href;
-    });
-//     
+    });  
 });
 
 function DeleteFakultas(id) {
@@ -99,7 +98,6 @@ function DeleteProdi(id) {
     });
 }
 
-
 function DeleteLevelUser(id) {
     swal({   
         title: "Are you sure?",   
@@ -128,6 +126,42 @@ function DeleteLevelUser(id) {
                     }, function(isConfirm){
                         if (isConfirm) {
                             window.location.href = 'data-user-level';
+                        }
+                    });
+                }
+            });
+        }
+    });
+}
+
+function DeleteUsersData(id) {
+    swal({   
+        title: "Are you sure?",   
+        text: "Anda yakin akan menghapus User tersebut?",
+        type: "warning",   
+        showCancelButton: true,   
+        confirmButtonColor: "#DD6B55",   
+        cancelButtonText: "No, cancel!",   
+        confirmButtonText: "Yes, delete it!",   
+        closeOnConfirm: false,
+    }, function(isConfirm){   
+        if (isConfirm) {
+            $.ajax({
+                url: 'data-users/delete',
+                method: "POST",
+                data: {
+                    id: id
+                },
+                success: function() {
+                    swal({   
+                        title: "Deleted!",   
+                        text: "Your user has been deleted.",   
+                        type: "success", 
+                        confirmButtonColor: "#DD6B55",  
+                        confirmButtonText: "Ok",
+                    }, function(isConfirm){
+                        if (isConfirm) {
+                            window.location.href = 'data-users';
                         }
                     });
                 }
