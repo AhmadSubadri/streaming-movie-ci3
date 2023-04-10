@@ -108,7 +108,7 @@
                             <a href="<?= site_url('data-matakuliah'); ?>">Data Matakuliah</a>
                         </li>
                         <li>
-                            <a href="app-compose.html">Data Kurikulum</a>
+                            <a href="<?= site_url('data-kurikulum'); ?>">Data Kurikulum</a>
                         </li>
                     </ul>
                 </li>
