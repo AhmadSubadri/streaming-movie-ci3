@@ -113,6 +113,9 @@
                                 <li>
                                     <a href="<?= site_url('data-matakuliah'); ?>">Data Matakuliah</a>
                                 </li>
+                                <li>
+                                    <a href="<?= site_url('kurikulum-prodi'); ?>">Kurikulum Prodi</a>
+                                </li>
                             </ul>
                         </li>
                     </ul>

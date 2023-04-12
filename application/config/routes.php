@@ -46,6 +46,9 @@ $route['data-kurikulum/insert'] = 'Akademik/Data_kurikulum/Insert';
 $route['data-kurikulum/update'] = 'Akademik/Data_kurikulum/Update';
 $route['data-kurikulum/delete'] = 'Akademik/Data_kurikulum/Delete';
 
+// Kurikulum prodi
+$route['kurikulum-prodi'] = 'Akademik/Kurikulum_prodi';
+
 // Data Camaba from api's
 $route['data-camaba'] = 'Mahasiswa/Data_camaba/Index';
 $route['data-camaba/update'] = 'Mahasiswa/Data_camaba/update';
