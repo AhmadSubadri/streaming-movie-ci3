@@ -132,7 +132,7 @@
             <form class="form-horizontal" action="<?= site_url('data-matakuliah/insert') ?>" method="post">
                 <div class="modal-body row">
                     <div class="form-group col-sm-12">
-                        <label class="col-md-12">Kode Prodi</label>
+                        <label class="col-md-12">Tahun Kurikulum</label>
                         <div class="col-md-12">
                             <select class="form-control" name="tahun_kurikulum" required>
                             <?php if(empty($kurikulum)):?>
@@ -220,7 +220,7 @@
                 method="post">
                 <div class="modal-body">
                     <div class="form-group">
-                        <label class="col-md-12">Kode Prodi</label>
+                        <label class="col-md-12">Tahun Kurikulum</label>
                         <div class="col-md-12">
                             <select class="form-control" name="tahun_kurikulum" required>
                             <?php if(empty($kurikulum)):?>
