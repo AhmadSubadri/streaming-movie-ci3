@@ -1,5 +1,5 @@
 <?php
-class Data_matakuliah extends MY_controller
+class Bank_matakuliah extends MY_controller
 {
     function __construct()
     {
@@ -13,14 +13,14 @@ class Data_matakuliah extends MY_controller
         // Cek apakah filter prodi ada atau tidak
         if($kode_prodi!=null){
             $data = array(
-                'title' => 'Data Matakuliah',
+                'title' => 'Bank Matakuliah',
                 'data' => $this->m_matkul->Filter_Prodi($kode_prodi),
                 'prodi' => $this->m_matkul->Get_Nama_Prodi(),
             );
 
         }else{
             $data = array(
-                'title' => 'Data Matakuliah',
+                'title' => 'Bank Matakuliah',
                 'data' => $this->m_matkul->Index(),
                 'prodi' => $this->m_matkul->Get_Nama_Prodi(),
             );
@@ -28,7 +28,7 @@ class Data_matakuliah extends MY_controller
 		
 		$this->load->view('template/header',$data);
         $this->load->view('template/sidemenu',$data);
-        $this->load->view('matakuliah/data_matakuliah',$data);
+        $this->load->view('matakuliah/bank_matakuliah',$data);
         $this->load->view('template/footer',$data);
     }
     
@@ -43,7 +43,7 @@ class Data_matakuliah extends MY_controller
         ];
         $this->session->set_flashdata('msg', "Insert Matakuliah Success!");
         $this->m_matkul->Insert($data);
-        redirect(site_url('data-matakuliah'));
+        redirect(site_url('bank-matakuliah'));
     }
 
     public function Update()
@@ -59,7 +59,7 @@ class Data_matakuliah extends MY_controller
 
         $this->session->set_flashdata('msg', "Update Matakuliah Success!");
         $this->m_matkul->Update($data, $id);
-        redirect(site_url('data-matakuliah'));
+        redirect(site_url('bank-matakuliah'));
     }
 
     public function Delete()
@@ -67,6 +67,6 @@ class Data_matakuliah extends MY_controller
 		$id = $this->input->post('id');
         $this->session->set_flashdata('msg', "Delete data Matakuliah Success!");
         $this->m_matkul->Delete($id);
-		redirect(site_url('data-matakuliah'));
+		redirect(site_url('bank-matakuliah'));
 	}
 }

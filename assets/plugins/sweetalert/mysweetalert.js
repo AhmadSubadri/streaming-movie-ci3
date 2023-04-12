@@ -219,7 +219,7 @@ function DeleteMatakuliah(id) {
     }, function(isConfirm){   
         if (isConfirm) {
             $.ajax({
-                url: 'data-matakuliah/delete',
+                url: 'bank-matakuliah/delete',
                 method: "POST",
                 data: {
                     id: id
@@ -233,7 +233,43 @@ function DeleteMatakuliah(id) {
                         confirmButtonText: "Ok",
                     }, function(isConfirm){
                         if (isConfirm) {
-                            window.location.href = 'data-matakuliah';
+                            window.location.href = 'bank-matakuliah';
+                        }
+                    });
+                }
+            });
+        }
+    });
+}
+
+function DeleteKurikulum(id) {
+    swal({
+        title: "Are you sure?",   
+        text: "Anda yakin akan menghapus Data Kurikulum tersebut?",   
+        type: "warning",   
+        showCancelButton: true,   
+        confirmButtonColor: "#DD6B55",   
+        cancelButtonText: "No, cancel!",   
+        confirmButtonText: "Yes, delete it!",   
+        closeOnConfirm: false,
+    },function(isConfirm){   
+        if (isConfirm) {
+            $.ajax({
+                url: 'data-kurikulum/delete',
+                method: "POST",
+                data: {
+                    id: id
+                },
+                success: function(response) {
+                    swal({   
+                        title: "Deleted!",   
+                        text: "Your data kurikulum has been deleted.",   
+                        type: "success", 
+                        confirmButtonColor: "#DD6B55",  
+                        confirmButtonText: "Ok",
+                    }, function(isConfirm){
+                        if (isConfirm) {
+                            window.location.href = 'data-kurikulum';
                         }
                     });
                 }

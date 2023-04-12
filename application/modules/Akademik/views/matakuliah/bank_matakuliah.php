@@ -16,7 +16,7 @@
                 <div class="card-body">
                 <form
                 class="form-horizontal"
-                action="<?= site_url('data-matakuliah')?>"
+                action="<?= site_url('bank-matakuliah')?>"
                 method="get">
                 <div class="modal-body row">
                     <div class="form-group col-sm-12">
@@ -145,7 +145,7 @@
             </div>
             <form
                 class="form-horizontal"
-                action="<?= site_url('data-matakuliah/insert')?>"
+                action="<?= site_url('bank-matakuliah/insert')?>"
                 method="post">
                 <div class="modal-body row">
                     <div class="form-group col-sm-12">
@@ -242,7 +242,7 @@
             </div>
             <form
                 class="form-horizontal"
-                action="<?= site_url('data-matakuliah/update')?>"
+                action="<?= site_url('bank-matakuliah/update')?>"
                 method="post">
                 <div class="modal-body">
                     <div class="form-group">

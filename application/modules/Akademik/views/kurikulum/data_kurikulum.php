@@ -30,12 +30,11 @@
                         <table id="myTable" class="table table-bordered table-striped">
                             <thead>
                                 <tr>
-                                    <th>No.</th>
-                                    <th>Kode / kurikulum Akademik</th>
-                                    <th>Batas Pengisian KRS</th>
-                                    <th>Batas Perubahan KRS</th>
-                                    <th>Tanggal Perkuliahan</th>
-                                    <th>Semester</th>
+                                    <th>#</th>
+                                    <th>Tahun kurikulum</th>
+                                    <th>Keterangan</th>
+                                    <th>Tanggal Start</th>
+                                    <th>Tanggal End</th>
                                     <th>Aksi</th>
                                 </tr>
                             </thead>
@@ -45,24 +44,22 @@
                                 <?php $i=1; foreach($data->result() as $item):?>
                                 <tr>
                                     <td><?= $i++;?></td>
-                                    <td><?= $item->kode_kurikulum_akademik;?> <br> <?= $item->nama_kurikulum_akademik;?></td>
-                                    <td><?= $item->tgl_mulai_krs;?><i class="mdi mdi-arrow-down-bold"><br><?= $item->tgl_akhir_krs;?></td>
-                                    <td><?= $item->tgl_awal_ubah;?><i class="mdi mdi-arrow-down-bold"><br><?= $item->tgl_akhir_ubah;?></td>
-                                    <td><?= $item->tgl_kuliah_awal;?><i class="mdi mdi-arrow-down-bold"><br><?= $item->tgl_kuliah_akhir;?></td>
-                                    <td><?php if ($item->semester == "1") { echo "Ganjil"; } else if ($item->semester == "2") { echo "Genap"; }
-                                    ?></td>
+                                    <td><?= $item->tahun_kurikulum;?></td>
+                                    <td><?= $item->nama_kurikulum;?></td>
+                                    <td><?= $item->tanggal_awal;?></td>
+                                    <td><?= $item->tanggal_akhir;?></td>
                                     <td>
                                         <a
                                             href="javascript:void(0)"
                                             data-toggle="modal"
-                                            data-target="#Editkurikulum<?=$item->id_kurikulum;?>"
-                                            data-id="<?= $item->id_kurikulum;?>"
+                                            data-target="#Editkurikulum<?=$item->id;?>"
+                                            data-id="<?= $item->id;?>"
                                             class="btn btn-sm btn-outline-warning">
                                             <i class="fa fa-pencil"></i>
                                             Edit</a>
                                         <a
-                                            href="<?= site_url()?>kurikulum-akademik/delete/<?= $item->id_kurikulum;?>"
-                                            class="btn btn-sm btn-outline-danger tombol-hapus">
+                                            onclick="DeleteKurikulum(<?= $item->id;?>)"
+                                            class="btn btn-sm btn-outline-danger">
                                             <i class="fa fa-trash"></i>
                                             Delete</a>
                                     </td>
@@ -95,23 +92,24 @@
             </div>
             <form
                 class="form-horizontal"
-                action="<?= site_url('kurikulum-akademik/insert')?>"
+                action="<?= site_url('data-kurikulum/insert')?>"
                 method="post">
                 <div class="modal-body row">
-                    <div class="form-group col-sm-12">
-                        <label class="col-md-12">Kode kurikulum Akademik</label>
+                    <div class="form-group col-sm-6">
+                        <label class="col-md-12">Tahun kurikulum</label>
                         <div class="col-md-12">
                             <input
                                 type="number"
                                 class="form-control"
-                                name="kode_kurikulum"
+                                name="tahun_kurikulum"
                                 value=""
+                                min="1900" max="2099"
                                 placeholder="Enter Numeric value only"
                                 required="required">
                         </div>
                     </div>
-                    <div class="form-group col-sm-12">
-                        <label class="col-md-12">Nama kurikulum Akademik</label>
+                    <div class="form-group col-sm-6">
+                        <label class="col-md-12">Nama kurikulum</label>
                         <div class="col-md-12">
                             <input
                                 type="text"
@@ -123,48 +121,14 @@
                         </div>
                     </div>
                     <div class="form-group col-sm-12">
-                        <label class="col-md-12">Semester</label>
-                        <div class="col-md-12">
-                        <select class="form-control" name="semester" required>
-                                <option>--- Pilih Semester ---</option>
-                                <option value="1">Ganjil</option>
-                                <option value="2">Genap</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-group col-sm-12">
-                        <label class="col-md-12">Batas KRS</label>
+                        <label class="col-md-12">Batas Kurikulum</label>
                         <div class="col-md-12">
                             <div class="input-daterange input-group" id="date-range">
-                                <input type="date" class="form-control" name="tgl_awal_krs" required>
+                                <input type="date" class="form-control" name="tanggal_awal" required>
                                     <div class="input-group-append">
-                                        <span class="input-group-text bg-info b-0 text-white">s/d</span>
+                                        <span class="input-group-text bg-success b-0 text-white">s/d</span>
                                     </div>
-                                <input type="date" class="form-control" name="tgl_akhir_krs">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group col-sm-12">
-                        <label class="col-md-12">Batas Perubahan KRS</label>
-                        <div class="col-md-12">
-                            <div class="input-daterange input-group" id="date-range">
-                                <input type="date" class="form-control" name="tgl_awal_ubah">
-                                    <div class="input-group-append">
-                                        <span class="input-group-text bg-info b-0 text-white">s/d</span>
-                                    </div>
-                                <input type="date" class="form-control" name="tgl_akhir_ubah">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group col-sm-12">
-                        <label class="col-md-12">Tanggal Perkuliahan</label>
-                        <div class="col-md-12">
-                            <div class="input-daterange input-group" id="date-range">
-                                <input type="date" class="form-control" name="tgl_kuliah_awal">
-                                    <div class="input-group-append">
-                                        <span class="input-group-text bg-info b-0 text-white">s/d</span>
-                                    </div>
-                                <input type="date" class="form-control" name="tgl_kuliah_akhir">
+                                <input type="date" class="form-control" name="tanggal_akhir">
                             </div>
                         </div>
                     </div>
@@ -185,7 +149,7 @@
 <?php else:?>
 <?php $i=1; foreach($data->result() as $item):?>
 <div
-    id="Editkurikulum<?= $item->id_kurikulum;?>"
+    id="Editkurikulum<?= $item->id;?>"
     class="modal fade in"
     tabindex="-1"
     role="dialog"
@@ -200,88 +164,54 @@
             </div>
             <form
                 class="form-horizontal"
-                action="<?= site_url('kurikulum-akademik/update')?>"
+                action="<?= site_url('data-kurikulum/update')?>"
                 method="post">
                 <div class="modal-body row">
                     <div class="form-group col-sm-12">
-                        <label class="col-md-12">Kode kurikulum Akademik</label>
+                    <label class="col-md-12">Tahun kurikulum</label>
                         <div class="col-md-12">
                             <input
                                 type="number"
                                 class="form-control"
-                                name="kode_kurikulum"
-                                value="<?= $item->kode_kurikulum_akademik;?>"
+                                name="tahun_kurikulum"
+                                value="<?= $item->tahun_kurikulum;?>"
                                 placeholder="Enter Numeric value only"
                                 required="required">
                             <input
                                 hidden
                                 class="form-control"
-                                name="id_kurikulum"
-                                value="<?= $item->id_kurikulum;?>"
+                                name="id"
+                                value="<?= $item->id;?>"
                                 required="required">
                         </div>
                     </div>
                     <div class="form-group col-sm-12">
-                        <label class="col-md-12">Nama kurikulum Akademik</label>
+                        <label class="col-md-12">Nama kurikulum</label>
                         <div class="col-md-12">
                             <input
                                 type="text"
                                 class="form-control"
                                 name="nama_kurikulum"
-                                value="<?= $item->nama_kurikulum_akademik;?>"
-                                placeholder="type nama kurikulum akademik"
+                                value="<?= $item->nama_kurikulum;?>"
+                                placeholder="type nama kurikulum"
                                 required="required">
-                        </div>
-                    </div>
-                    <div class="form-group col-sm-12">
-                        <label class="col-md-12">Semester</label>
-                        <div class="col-md-12">
-                        <select class="form-control" name="semester">
-                                <option>--- Pilih Semester ---</option>
-                                <option value="1" <?= ($item->semester == "1") ? 'selected' : '';?>>Ganjil</option>
-                                <option value="2" <?= ($item->semester == "2") ? 'selected' : '';?>>Genap</option>
-                            </select>
                         </div>
                     </div>
                     <div class="form-group col-sm-12">
                         <label class="col-md-12">Batas KRS</label>
                         <div class="col-md-12">
                             <div class="input-daterange input-group" id="date-range">
-                                <input type="date" class="form-control" name="tgl_awal_krs" value="<?= $item->tgl_mulai_krs;?>">
+                                <input type="date" class="form-control" name="tanggal_awal" value="<?= $item->tanggal_awal;?>">
                                     <div class="input-group-append">
                                         <span class="input-group-text bg-info b-0 text-white">s/d</span>
                                     </div>
-                                <input type="date" class="form-control" name="tgl_akhir_krs" value="<?= $item->tgl_akhir_krs;?>">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group col-sm-12">
-                        <label class="col-md-12">Batas Perubahan KRS</label>
-                        <div class="col-md-12">
-                            <div class="input-daterange input-group" id="date-range">
-                                <input type="date" class="form-control" name="tgl_awal_ubah" value="<?= $item->tgl_awal_ubah;?>">
-                                    <div class="input-group-append">
-                                        <span class="input-group-text bg-info b-0 text-white">s/d</span>
-                                    </div>
-                                <input type="date" class="form-control" name="tgl_akhir_ubah" value="<?= $item->tgl_akhir_ubah;?>">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group col-sm-12">
-                        <label class="col-md-12">Tanggal Perkuliahan</label>
-                        <div class="col-md-12">
-                            <div class="input-daterange input-group" id="date-range">
-                                <input type="date" class="form-control" name="tgl_kuliah_awal" value="<?= $item->tgl_kuliah_awal;?>">
-                                    <div class="input-group-append">
-                                        <span class="input-group-text bg-info b-0 text-white">s/d</span>
-                                    </div>
-                                <input type="date" class="form-control" name="tgl_kuliah_akhir" value="<?= $item->tgl_kuliah_akhir;?>">
+                                <input type="date" class="form-control" name="tanggal_akhir" value="<?= $item->tanggal_akhir;?>">
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="submit" class="btn btn-info waves-effect btn-sm">Save</button>
+                    <button type="submit" class="btn btn-info waves-effect btn-sm">Update</button>
                     <button type="button" class="btn btn-default waves-effect btn-sm">Cancel</button>
                 </div>
             </form>
