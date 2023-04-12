@@ -219,7 +219,7 @@ function DeleteMatakuliah(id) {
     }, function(isConfirm){   
         if (isConfirm) {
             $.ajax({
-                url: 'bank-matakuliah/delete',
+                url: 'data-matakuliah/delete',
                 method: "POST",
                 data: {
                     id: id
@@ -233,7 +233,7 @@ function DeleteMatakuliah(id) {
                         confirmButtonText: "Ok",
                     }, function(isConfirm){
                         if (isConfirm) {
-                            window.location.href = 'bank-matakuliah';
+                            window.location.href = 'data-matakuliah';
                         }
                     });
                 }

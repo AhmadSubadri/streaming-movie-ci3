@@ -36,10 +36,10 @@ $route['tahun-akademik/update'] = 'Akademik/Tahun_akademik/Update';
 $route['tahun-akademik/delete/(:any)'] = 'Akademik/Tahun_akademik/Delete/$1';
 
 // Data Matakuliah
-$route['bank-matakuliah'] = 'Akademik/Bank_matakuliah';
-$route['bank-matakuliah/insert'] = 'Akademik/Bank_matakuliah/insert';
-$route['bank-matakuliah/update'] = 'Akademik/Bank_matakuliah/update';
-$route['bank-matakuliah/delete'] = 'Akademik/Bank_matakuliah/delete';
+$route['data-matakuliah'] = 'Akademik/Data_matakuliah';
+$route['data-matakuliah/insert'] = 'Akademik/Data_matakuliah/insert';
+$route['data-matakuliah/update'] = 'Akademik/Data_matakuliah/update';
+$route['data-matakuliah/delete'] = 'Akademik/Data_matakuliah/delete';
 // Kurikulum
 $route['data-kurikulum'] = 'Akademik/Data_kurikulum/index';
 $route['data-kurikulum/insert'] = 'Akademik/Data_kurikulum/Insert';

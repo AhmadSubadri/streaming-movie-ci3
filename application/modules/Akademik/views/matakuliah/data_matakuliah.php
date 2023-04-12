@@ -16,7 +16,7 @@
                 <div class="card-body">
                 <form
                 class="form-horizontal"
-                action="<?= site_url('bank-matakuliah')?>"
+                action="<?= site_url('data-matakuliah')?>"
                 method="get">
                 <div class="modal-body row">
                     <div class="form-group col-sm-12">
@@ -83,7 +83,8 @@
                             <thead>
                                 <tr>
                                     <th>No.</th>
-                                    <th>Kode Matakuliah</th>
+                                    <th>Tahun KK.</th>
+                                    <th>Kode MK</th>
                                     <th>Nama Matakuliah</th>
                                     <th>SKS Matakuliah</th>
                                     <th>Kode Prodi</th>
@@ -97,6 +98,7 @@
                                 <?php $i=1; foreach($data->result() as $item):?>
                                 <tr>
                                     <td><?= $i++;?></td>
+                                    <td><?= $item->tahun_kurikulum;?></td>
                                     <td><?= $item->kode_mk;?></td>
                                     <td><?= $item->nama_mk;?></td>
                                     <td><?= $item->sks_mk;?></td>
@@ -111,7 +113,6 @@
                                             class="btn btn-sm btn-outline-warning">
                                             <i class="fa fa-pencil"></i>
                                             Edit</a>
-                                        <!-- Fungsi Onclick delete ada di folder plugins>>sweetalert>>mysweetalert.js -->
                                         <a onclick="DeleteMatakuliah(<?= $item->id;?>)" class="btn btn-sm btn-outline-danger">
                                             <i class="fa fa-trash"></i>
                                             Delete</a>
@@ -145,9 +146,23 @@
             </div>
             <form
                 class="form-horizontal"
-                action="<?= site_url('bank-matakuliah/insert')?>"
+                action="<?= site_url('data-matakuliah/insert')?>"
                 method="post">
                 <div class="modal-body row">
+                    <div class="form-group col-sm-12">
+                        <label class="col-md-12">Kode Prodi</label>
+                        <div class="col-md-12">
+                            <select class="form-control" name="tahun_kurikulum" required>
+                            <?php if(empty($kurikulum)):?>
+                            <?php else:?>
+                                <option>--- Pilih Kurikulum ---</option>
+                                <?php $i=1; foreach($kurikulum->result() as $itemkk):?>
+                                <option value="<?= $itemkk->tahun_kurikulum;?>"><?= $itemkk->tahun_kurikulum;?></option>
+                                <?php endforeach;?>
+                            <?php endif;?>
+                            </select>
+                        </div>
+                    </div>
                     <div class="form-group col-sm-12">
                         <label class="col-md-12">Kode Matakuliah</label>
                         <div class="col-md-12">
@@ -242,9 +257,23 @@
             </div>
             <form
                 class="form-horizontal"
-                action="<?= site_url('bank-matakuliah/update')?>"
+                action="<?= site_url('data-matakuliah/update')?>"
                 method="post">
                 <div class="modal-body">
+                    <div class="form-group">
+                        <label class="col-md-12">Kode Prodi</label>
+                        <div class="col-md-12">
+                            <select class="form-control" name="tahun_kurikulum" required>
+                            <?php if(empty($kurikulum)):?>
+                            <?php else:?>
+                                <option>--- Pilih Kurikulum ---</option>
+                                <?php $i=1; foreach($kurikulum->result() as $itemkk):?>
+                                <option value="<?= $itemkk->tahun_kurikulum;?>" <?= ($item->tahun_kurikulum == $itemkk->tahun_kurikulum) ? 'selected' : '' ?>><?= $itemkk->tahun_kurikulum;?></option>
+                                <?php endforeach;?>
+                            <?php endif;?>
+                            </select>
+                        </div>
+                    </div>
                     <div class="form-group">
                         <label class="col-md-12">Kode Matakuliah</label>
                         <div class="col-md-12">
