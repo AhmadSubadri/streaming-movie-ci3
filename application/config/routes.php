@@ -40,6 +40,11 @@ $route['data-matakuliah'] = 'Akademik/Data_matakuliah';
 $route['data-matakuliah/insert'] = 'Akademik/Data_matakuliah/insert';
 $route['data-matakuliah/update'] = 'Akademik/Data_matakuliah/update';
 $route['data-matakuliah/delete'] = 'Akademik/Data_matakuliah/delete';
+// Kurikulum
+$route['data-kurikulum'] = 'Akademik/Data_kurikulum/index';
+$route['data-kurikulum/insert'] = 'Akademik/Data_kurikulum/Insert';
+$route['data-kurikulum/update'] = 'Akademik/Data_kurikulum/Update';
+$route['data-kurikulum/delete'] = 'Akademik/Data_kurikulum/Delete';
 
 // Data Camaba from api's
 $route['data-camaba'] = 'Mahasiswa/Data_camaba/Index';

@@ -16,6 +16,7 @@ class Data_matakuliah extends MY_controller
                 'title' => 'Data Matakuliah',
                 'data' => $this->m_matkul->Filter_Prodi($kode_prodi),
                 'prodi' => $this->m_matkul->Get_Nama_Prodi(),
+                'kurikulum' => $this->m_matkul->Get_Kurikulum(),
             );
 
         }else{
@@ -23,6 +24,7 @@ class Data_matakuliah extends MY_controller
                 'title' => 'Data Matakuliah',
                 'data' => $this->m_matkul->Index(),
                 'prodi' => $this->m_matkul->Get_Nama_Prodi(),
+                'kurikulum' => $this->m_matkul->Get_Kurikulum(),
             );
         }
 		
@@ -35,6 +37,7 @@ class Data_matakuliah extends MY_controller
     public function Insert()
     {
         $data = [
+            'tahun_kurikulum' => $this->input->post('tahun_kurikulum'),
             'kode_mk' => $this->input->post('kode_mk'),
             'nama_mk' => $this->input->post('nama_mk'),
             'sks_mk' => $this->input->post('sks_mk'),
@@ -50,6 +53,7 @@ class Data_matakuliah extends MY_controller
     {
         $id = $this->input->post('id');
         $data = [
+            'tahun_kurikulum' => $this->input->post('tahun_kurikulum'),
             'kode_mk' => $this->input->post('kode_mk'),
             'nama_mk' => $this->input->post('nama_mk'),
             'sks_mk' => $this->input->post('sks_mk'),

@@ -74,7 +74,8 @@
                             <thead>
                                 <tr>
                                     <th>No.</th>
-                                    <th>Kode Matakuliah</th>
+                                    <th>Tahun KK.</th>
+                                    <th>Kode MK</th>
                                     <th>Nama Matakuliah</th>
                                     <th>SKS Matakuliah</th>
                                     <th>Kode Prodi</th>
@@ -83,29 +84,33 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php if (empty($data)) : ?>
-                                <?php else : ?>
-                                    <?php $i = 1;
-                                    foreach ($data->result() as $item) : ?>
-                                        <tr>
-                                            <td><?= $i++; ?></td>
-                                            <td><?= $item->kode_mk; ?></td>
-                                            <td><?= $item->nama_mk; ?></td>
-                                            <td><?= $item->sks_mk; ?></td>
-                                            <td><?= $item->kode_prodi; ?>- <?= $item->nama_prodi; ?></td>
-                                            <td><?= $item->type_mk; ?></td>
-                                            <td>
-                                                <a href="javascript:void(0)" data-toggle="modal" data-target="#Editmatkul<?= $item->id; ?>" data-id="<?= $item->id; ?>" class="btn btn-sm btn-outline-warning">
-                                                    <i class="fa fa-pencil"></i>
-                                                    Edit</a>
-                                                <!-- Fungsi Onclick delete ada di folder plugins>>sweetalert>>mysweetalert.js -->
-                                                <a onclick="DeleteMatakuliah(<?= $item->id; ?>)" class="btn btn-sm btn-outline-danger">
-                                                    <i class="fa fa-trash"></i>
-                                                    Delete</a>
-                                            </td>
-                                        </tr>
-                                    <?php endforeach; ?>
-                                <?php endif; ?>
+                                <?php if(empty($data)):?>
+                            <?php else:?>
+                                <?php $i=1; foreach($data->result() as $item):?>
+                                <tr>
+                                    <td><?= $i++;?></td>
+                                    <td><?= $item->tahun_kurikulum;?></td>
+                                    <td><?= $item->kode_mk;?></td>
+                                    <td><?= $item->nama_mk;?></td>
+                                    <td><?= $item->sks_mk;?></td>
+                                    <td><?= $item->kode_prodi;?>- <?= $item->nama_prodi;?></td>
+                                    <td><?= $item->type_mk;?></td>
+                                    <td>
+                                        <a
+                                            href="javascript:void(0)"
+                                            data-toggle="modal"
+                                            data-target="#Editmatkul<?=$item->id;?>"
+                                            data-id="<?= $item->id;?>"
+                                            class="btn btn-sm btn-outline-warning">
+                                            <i class="fa fa-pencil"></i>
+                                            Edit</a>
+                                        <a onclick="DeleteMatakuliah(<?= $item->id;?>)" class="btn btn-sm btn-outline-danger">
+                                            <i class="fa fa-trash"></i>
+                                            Delete</a>
+                                    </td>
+                                </tr>
+                                <?php endforeach;?>
+                                <?php endif;?>
                             </tbody>
                         </table>
                     </div>
@@ -126,6 +131,20 @@
             </div>
             <form class="form-horizontal" action="<?= site_url('data-matakuliah/insert') ?>" method="post">
                 <div class="modal-body row">
+                    <div class="form-group col-sm-12">
+                        <label class="col-md-12">Kode Prodi</label>
+                        <div class="col-md-12">
+                            <select class="form-control" name="tahun_kurikulum" required>
+                            <?php if(empty($kurikulum)):?>
+                            <?php else:?>
+                                <option>--- Pilih Kurikulum ---</option>
+                                <?php $i=1; foreach($kurikulum->result() as $itemkk):?>
+                                <option value="<?= $itemkk->tahun_kurikulum;?>"><?= $itemkk->tahun_kurikulum;?></option>
+                                <?php endforeach;?>
+                            <?php endif;?>
+                            </select>
+                        </div>
+                    </div>
                     <div class="form-group col-sm-12">
                         <label class="col-md-12">Kode Matakuliah</label>
                         <div class="col-md-12">
@@ -178,17 +197,60 @@
 </div>
 
 <!-- Modal Edit matakuliah -->
-<?php if (empty($data)) : ?>
-<?php else : ?>
-    <?php $i = 1;
-    foreach ($data->result() as $item) : ?>
-        <div id="Editmatkul<?= $item->id; ?>" class="modal fade in" tabindex="-1" role="dialog" aria-labelledby="Editmatkul" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h4 class="modal-title" id="Editmatkul">Edit
-                            <?= $title ?></h4>
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+<?php if(empty($data)):?>
+<?php else:?>
+<?php $i=1; foreach($data->result() as $item):?>
+<div
+    id="Editmatkul<?= $item->id;?>"
+    class="modal fade in"
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="Editmatkul"
+    aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="Editmatkul">Edit
+                    <?= $title ?></h4>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            </div>
+            <form
+                class="form-horizontal"
+                action="<?= site_url('data-matakuliah/update')?>"
+                method="post">
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label class="col-md-12">Kode Prodi</label>
+                        <div class="col-md-12">
+                            <select class="form-control" name="tahun_kurikulum" required>
+                            <?php if(empty($kurikulum)):?>
+                            <?php else:?>
+                                <option>--- Pilih Kurikulum ---</option>
+                                <?php $i=1; foreach($kurikulum->result() as $itemkk):?>
+                                <option value="<?= $itemkk->tahun_kurikulum;?>" <?= ($item->tahun_kurikulum == $itemkk->tahun_kurikulum) ? 'selected' : '' ?>><?= $itemkk->tahun_kurikulum;?></option>
+                                <?php endforeach;?>
+                            <?php endif;?>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-12">Kode Matakuliah</label>
+                        <div class="col-md-12">
+                            <input
+                                type="number"
+                                class="form-control"
+                                name="kode_mk"
+                                value="<?= $item->kode_mk;?>"
+                                placeholder="Enter numeric value"
+                                required="required">
+                            <input
+                                type="number"
+                                class="form-control"
+                                name="id"
+                                value="<?= $item->id;?>"
+                                placeholder="Enter numeric value"
+                                hidden="hidden">
+                        </div>
                     </div>
                     <form class="form-horizontal" action="<?= site_url('data-matakuliah/update') ?>" method="post">
                         <div class="modal-body">

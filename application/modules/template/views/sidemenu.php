@@ -105,10 +105,15 @@
                             <a href="<?= site_url('tahun-akademik'); ?>">Tahun Akademik</a>
                         </li>
                         <li>
-                            <a href="<?= site_url('data-matakuliah'); ?>">Data Matakuliah</a>
-                        </li>
-                        <li>
-                            <a href="app-compose.html">Data Kurikulum</a>
+                            <a href="#" class="has-arrow">Data Kurikulum</a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li>
+                                    <a href="<?= site_url('data-kurikulum'); ?>">Tahun Kurikulum</a>
+                                </li>
+                                <li>
+                                    <a href="<?= site_url('data-matakuliah'); ?>">Data Matakuliah</a>
+                                </li>
+                            </ul>
                         </li>
                     </ul>
                 </li>
