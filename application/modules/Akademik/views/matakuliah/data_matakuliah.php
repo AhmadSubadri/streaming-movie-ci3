@@ -168,9 +168,9 @@
                     </div>
                     <div class="form-group col-sm-6">
                         <label class="col-md-12">Dosen Pengampu</label>
-                        <div class="col-md-12">
-                            <input type="text" id="autokodedosen" class="typeahead form-control" placeholder="type name" required="required">
-                            <!-- <input type="text" class="form-control" id="iddosen" name="iddosen" placeholder="type name" required="required"> -->
+                        <div class="col-md-12" id="autokodedosen">
+                            <input type="text" class="typeahead form-control" name="dosennama" placeholder="type name" required="required">
+                            <input type="text" class="form-control" id="iddosen" name="iddosen" hidden>
                         </div>
                     </div>
                 </div>
@@ -255,17 +255,3 @@
             </div>
         <?php endforeach; ?>
     <?php endif; ?>
-
-    <script>
-        $('#autokodedosen').typeahead({
-            source: function(query, process) {
-                return $.get('data-matakuliah/autocomplete', {
-                    query: query
-                }, function(data) {
-                    console.log(data);
-                    data = $.parseJSON(data);
-                    return process(data);
-                }, 'json');
-            }
-        });
-    </script>

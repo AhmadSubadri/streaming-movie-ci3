@@ -38,11 +38,11 @@ class Data_matakuliah extends MY_controller
         $query = $this->m_matkul->search_data($keyword);
         if (!empty($query)) {
             $data['response'] = 'true';
-            $data['message'] = array();
+            // $data['message'] = array();
             foreach ($query as $row) {
-                $data['message'][] = array(
+                $data[]= array(
                     'id' => $row->id,
-                    'value' => $row->nama_dosen,
+                    'nama' => $row->nama_dosen,
                 );
             }
         }
@@ -52,7 +52,7 @@ class Data_matakuliah extends MY_controller
     public function Insert()
     {
         $data = [
-            'tahun_kurikulum' => $this->input->post('tahun_kurikulum'),
+            'kode_dosen' => $this->input->post('iddosen'),
             'kode_mk' => $this->input->post('kode_mk'),
             'nama_mk' => $this->input->post('nama_mk'),
             'sks_mk' => $this->input->post('sks_mk'),
@@ -68,7 +68,7 @@ class Data_matakuliah extends MY_controller
     {
         $id = $this->input->post('id');
         $data = [
-            'tahun_kurikulum' => $this->input->post('tahun_kurikulum'),
+            'kode_dosen' => $this->input->post('iddosen'),
             'kode_mk' => $this->input->post('kode_mk'),
             'nama_mk' => $this->input->post('nama_mk'),
             'sks_mk' => $this->input->post('sks_mk'),
