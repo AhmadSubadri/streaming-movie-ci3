@@ -2,41 +2,41 @@ const flashData = $('.flash-data').data('flashdata');
 // console.log (flashData);
 if (flashData) {
     swal({
-        title : 'Berhasil',
-        text : flashData,
-        type : 'success',
-        timer: 1500,   
-        showConfirmButton: false 
+        title: 'Berhasil',
+        text: flashData,
+        type: 'success',
+        timer: 1500,
+        showConfirmButton: false
     });
 }
 
-$('.tombol-hapus').on('click', function(e) {
-	e.preventDefault();
+$('.tombol-hapus').on('click', function (e) {
+    e.preventDefault();
     const href = $(this).attr('href');
-    swal({   
-        title: "Are you sure?",   
-        text: "Anda Yakin akan menghapus data tersebut?",   
-        type: "warning",   
-        showCancelButton: true,   
-        confirmButtonColor: "#DD6B55",   
-        confirmButtonText: "Yes, delete it!",   
-        closeOnConfirm: false 
-    }, function(){   
+    swal({
+        title: "Are you sure?",
+        text: "Anda Yakin akan menghapus data tersebut?",
+        type: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#DD6B55",
+        confirmButtonText: "Yes, delete it!",
+        closeOnConfirm: false
+    }, function () {
         document.location.href = href;
-    });  
+    });
 });
 
 function DeleteFakultas(id) {
-    swal({   
-        title: "Are you sure?",   
-        text: "Anda yakin akan menghapus fakultas tersebut?",   
-        type: "warning",   
-        showCancelButton: true,   
-        confirmButtonColor: "#DD6B55",   
-        cancelButtonText: "No, cancel!",   
-        confirmButtonText: "Yes, delete it!",   
+    swal({
+        title: "Are you sure?",
+        text: "Anda yakin akan menghapus fakultas tersebut?",
+        type: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#DD6B55",
+        cancelButtonText: "No, cancel!",
+        confirmButtonText: "Yes, delete it!",
         closeOnConfirm: false,
-    }, function(isConfirm){   
+    }, function (isConfirm) {
         if (isConfirm) {
             $.ajax({
                 url: 'data-fakultas/delete',
@@ -44,14 +44,14 @@ function DeleteFakultas(id) {
                 data: {
                     id: id
                 },
-                success: function(response) {
-                    swal({   
-                        title: "Deleted!",   
-                        text: "Your faculty has been deleted.",   
-                        type: "success", 
-                        confirmButtonColor: "#DD6B55",  
+                success: function (response) {
+                    swal({
+                        title: "Deleted!",
+                        text: "Your faculty has been deleted.",
+                        type: "success",
+                        confirmButtonColor: "#DD6B55",
                         confirmButtonText: "Ok",
-                    }, function(isConfirm){
+                    }, function (isConfirm) {
                         if (isConfirm) {
                             window.location.href = 'data-fakultas';
                         }
@@ -63,16 +63,16 @@ function DeleteFakultas(id) {
 }
 
 function DeleteProdi(id) {
-    swal({   
-        title: "Are you sure?",   
-        text: "Anda yakin akan menghapus Prodi tersebut?",   
-        type: "warning",   
-        showCancelButton: true,   
-        confirmButtonColor: "#DD6B55",   
-        cancelButtonText: "No, cancel!",   
-        confirmButtonText: "Yes, delete it!",   
+    swal({
+        title: "Are you sure?",
+        text: "Anda yakin akan menghapus Prodi tersebut?",
+        type: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#DD6B55",
+        cancelButtonText: "No, cancel!",
+        confirmButtonText: "Yes, delete it!",
         closeOnConfirm: false,
-    }, function(isConfirm){   
+    }, function (isConfirm) {
         if (isConfirm) {
             $.ajax({
                 url: 'data-program-studi/delete',
@@ -80,14 +80,14 @@ function DeleteProdi(id) {
                 data: {
                     id: id
                 },
-                success: function(response) {
-                    swal({   
-                        title: "Deleted!",   
-                        text: "Your major has been deleted.",   
-                        type: "success", 
-                        confirmButtonColor: "#DD6B55",  
-                        confirmButtonText: "Ok",e
-                    }, function(isConfirm){
+                success: function (response) {
+                    swal({
+                        title: "Deleted!",
+                        text: "Your major has been deleted.",
+                        type: "success",
+                        confirmButtonColor: "#DD6B55",
+                        confirmButtonText: "Ok", e
+                    }, function (isConfirm) {
                         if (isConfirm) {
                             window.location.href = 'data-program-studi';
                         }
@@ -99,16 +99,16 @@ function DeleteProdi(id) {
 }
 
 function DeleteLevelUser(id) {
-    swal({   
-        title: "Are you sure?",   
-        text: "Anda yakin akan menghapus Level tersebut?",   
-        type: "warning",   
-        showCancelButton: true,   
-        confirmButtonColor: "#DD6B55",   
-        cancelButtonText: "No, cancel!",   
-        confirmButtonText: "Yes, delete it!",   
+    swal({
+        title: "Are you sure?",
+        text: "Anda yakin akan menghapus Level tersebut?",
+        type: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#DD6B55",
+        cancelButtonText: "No, cancel!",
+        confirmButtonText: "Yes, delete it!",
         closeOnConfirm: false,
-    }, function(isConfirm){   
+    }, function (isConfirm) {
         if (isConfirm) {
             $.ajax({
                 url: 'data-user-level/delete',
@@ -116,14 +116,14 @@ function DeleteLevelUser(id) {
                 data: {
                     id: id
                 },
-                success: function() {
-                    swal({   
-                        title: "Deleted!",   
-                        text: "Your level has been deleted.",   
-                        type: "success", 
-                        confirmButtonColor: "#DD6B55",  
+                success: function () {
+                    swal({
+                        title: "Deleted!",
+                        text: "Your level has been deleted.",
+                        type: "success",
+                        confirmButtonColor: "#DD6B55",
                         confirmButtonText: "Ok",
-                    }, function(isConfirm){
+                    }, function (isConfirm) {
                         if (isConfirm) {
                             window.location.href = 'data-user-level';
                         }
@@ -135,16 +135,16 @@ function DeleteLevelUser(id) {
 }
 
 function DeleteUsersData(id) {
-    swal({   
-        title: "Are you sure?",   
+    swal({
+        title: "Are you sure?",
         text: "Anda yakin akan menghapus User tersebut?",
-        type: "warning",   
-        showCancelButton: true,   
-        confirmButtonColor: "#DD6B55",   
-        cancelButtonText: "No, cancel!",   
-        confirmButtonText: "Yes, delete it!",   
+        type: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#DD6B55",
+        cancelButtonText: "No, cancel!",
+        confirmButtonText: "Yes, delete it!",
         closeOnConfirm: false,
-    }, function(isConfirm){   
+    }, function (isConfirm) {
         if (isConfirm) {
             $.ajax({
                 url: 'data-users/delete',
@@ -152,14 +152,14 @@ function DeleteUsersData(id) {
                 data: {
                     id: id
                 },
-                success: function() {
-                    swal({   
-                        title: "Deleted!",   
-                        text: "Your user has been deleted.",   
-                        type: "success", 
-                        confirmButtonColor: "#DD6B55",  
+                success: function () {
+                    swal({
+                        title: "Deleted!",
+                        text: "Your user has been deleted.",
+                        type: "success",
+                        confirmButtonColor: "#DD6B55",
                         confirmButtonText: "Ok",
-                    }, function(isConfirm){
+                    }, function (isConfirm) {
                         if (isConfirm) {
                             window.location.href = 'data-users';
                         }
@@ -171,16 +171,16 @@ function DeleteUsersData(id) {
 }
 
 function DeleteDosen(id) {
-    swal({   
-        title: "Are you sure?",   
-        text: "Anda yakin akan menghapus Data Dosen tersebut?",   
-        type: "warning",   
-        showCancelButton: true,   
-        confirmButtonColor: "#DD6B55",   
-        cancelButtonText: "No, cancel!",   
-        confirmButtonText: "Yes, delete it!",   
+    swal({
+        title: "Are you sure?",
+        text: "Anda yakin akan menghapus Data Dosen tersebut?",
+        type: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#DD6B55",
+        cancelButtonText: "No, cancel!",
+        confirmButtonText: "Yes, delete it!",
         closeOnConfirm: false,
-    }, function(isConfirm){   
+    }, function (isConfirm) {
         if (isConfirm) {
             $.ajax({
                 url: 'data-dosen/delete',
@@ -188,14 +188,14 @@ function DeleteDosen(id) {
                 data: {
                     id: id
                 },
-                success: function(response) {
-                    swal({   
-                        title: "Deleted!",   
-                        text: "Your data lecturer has been deleted.",   
-                        type: "success", 
-                        confirmButtonColor: "#DD6B55",  
+                success: function (response) {
+                    swal({
+                        title: "Deleted!",
+                        text: "Your data lecturer has been deleted.",
+                        type: "success",
+                        confirmButtonColor: "#DD6B55",
                         confirmButtonText: "Ok",
-                    }, function(isConfirm){
+                    }, function (isConfirm) {
                         if (isConfirm) {
                             window.location.href = 'data-dosen';
                         }
@@ -207,16 +207,16 @@ function DeleteDosen(id) {
 }
 
 function DeleteMatakuliah(id) {
-    swal({   
-        title: "Are you sure?",   
-        text: "Anda yakin akan menghapus Data Matakuliah tersebut?",   
-        type: "warning",   
-        showCancelButton: true,   
-        confirmButtonColor: "#DD6B55",   
-        cancelButtonText: "No, cancel!",   
-        confirmButtonText: "Yes, delete it!",   
+    swal({
+        title: "Are you sure?",
+        text: "Anda yakin akan menghapus Data Matakuliah tersebut?",
+        type: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#DD6B55",
+        cancelButtonText: "No, cancel!",
+        confirmButtonText: "Yes, delete it!",
         closeOnConfirm: false,
-    }, function(isConfirm){   
+    }, function (isConfirm) {
         if (isConfirm) {
             $.ajax({
                 url: 'data-matakuliah/delete',
@@ -224,14 +224,14 @@ function DeleteMatakuliah(id) {
                 data: {
                     id: id
                 },
-                success: function(response) {
-                    swal({   
-                        title: "Deleted!",   
-                        text: "Your data matakuliah has been deleted.",   
-                        type: "success", 
-                        confirmButtonColor: "#DD6B55",  
+                success: function (response) {
+                    swal({
+                        title: "Deleted!",
+                        text: "Your data matakuliah has been deleted.",
+                        type: "success",
+                        confirmButtonColor: "#DD6B55",
                         confirmButtonText: "Ok",
-                    }, function(isConfirm){
+                    }, function (isConfirm) {
                         if (isConfirm) {
                             window.location.href = 'data-matakuliah';
                         }
@@ -244,15 +244,15 @@ function DeleteMatakuliah(id) {
 
 function DeleteKurikulum(id) {
     swal({
-        title: "Are you sure?",   
-        text: "Anda yakin akan menghapus Data Kurikulum tersebut?",   
-        type: "warning",   
-        showCancelButton: true,   
-        confirmButtonColor: "#DD6B55",   
-        cancelButtonText: "No, cancel!",   
-        confirmButtonText: "Yes, delete it!",   
+        title: "Are you sure?",
+        text: "Anda yakin akan menghapus Data Kurikulum tersebut?",
+        type: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#DD6B55",
+        cancelButtonText: "No, cancel!",
+        confirmButtonText: "Yes, delete it!",
         closeOnConfirm: false,
-    },function(isConfirm){   
+    }, function (isConfirm) {
         if (isConfirm) {
             $.ajax({
                 url: 'data-kurikulum/delete',
@@ -260,14 +260,14 @@ function DeleteKurikulum(id) {
                 data: {
                     id: id
                 },
-                success: function(response) {
-                    swal({   
-                        title: "Deleted!",   
-                        text: "Your data kurikulum has been deleted.",   
-                        type: "success", 
-                        confirmButtonColor: "#DD6B55",  
+                success: function (response) {
+                    swal({
+                        title: "Deleted!",
+                        text: "Your data kurikulum has been deleted.",
+                        type: "success",
+                        confirmButtonColor: "#DD6B55",
                         confirmButtonText: "Ok",
-                    }, function(isConfirm){
+                    }, function (isConfirm) {
                         if (isConfirm) {
                             window.location.href = 'data-kurikulum';
                         }

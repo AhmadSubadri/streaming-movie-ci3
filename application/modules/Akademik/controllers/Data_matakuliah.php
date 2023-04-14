@@ -3,7 +3,7 @@ class Data_matakuliah extends MY_controller
 {
     function __construct()
     {
-        parent:: __construct();
+        parent::__construct();
         $this->load->model('Matakuliah_model', 'm_matkul');
     }
 
@@ -11,29 +11,44 @@ class Data_matakuliah extends MY_controller
     {
         $kode_prodi = $this->input->get('kode_prodi');
         // Cek apakah filter prodi ada atau tidak
-        if($kode_prodi!=null){
+        if ($kode_prodi != null) {
             $data = array(
                 'title' => 'Data Matakuliah',
                 'data' => $this->m_matkul->Filter_Prodi($kode_prodi),
                 'prodi' => $this->m_matkul->Get_Nama_Prodi(),
-                'kurikulum' => $this->m_matkul->Get_Kurikulum(),
             );
-
-        }else{
+        } else {
             $data = array(
                 'title' => 'Data Matakuliah',
                 'data' => $this->m_matkul->Index(),
                 'prodi' => $this->m_matkul->Get_Nama_Prodi(),
-                'kurikulum' => $this->m_matkul->Get_Kurikulum(),
             );
         }
-		
-		$this->load->view('template/header',$data);
-        $this->load->view('template/sidemenu',$data);
-        $this->load->view('matakuliah/data_matakuliah',$data);
-        $this->load->view('template/footer',$data);
+
+        $this->load->view('template/header', $data);
+        $this->load->view('template/sidemenu', $data);
+        $this->load->view('matakuliah/data_matakuliah', $data);
+        $this->load->view('template/footer', $data);
     }
-    
+
+    public function get_autocomplete_dosen()
+    {
+        $keyword = $this->input->post('query');
+        $data['response'] = 'false';
+        $query = $this->m_matkul->search_data($keyword);
+        if (!empty($query)) {
+            $data['response'] = 'true';
+            $data['message'] = array();
+            foreach ($query as $row) {
+                $data['message'][] = array(
+                    'id' => $row->id,
+                    'value' => $row->nama_dosen,
+                );
+            }
+        }
+        echo json_encode($data);
+    }
+
     public function Insert()
     {
         $data = [
@@ -67,10 +82,10 @@ class Data_matakuliah extends MY_controller
     }
 
     public function Delete()
-	{
-		$id = $this->input->post('id');
+    {
+        $id = $this->input->post('id');
         $this->session->set_flashdata('msg', "Delete data Matakuliah Success!");
         $this->m_matkul->Delete($id);
-		redirect(site_url('data-matakuliah'));
-	}
+        redirect(site_url('data-matakuliah'));
+    }
 }

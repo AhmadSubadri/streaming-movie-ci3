@@ -9,17 +9,18 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="<?= base_url();?>assets/images/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="<?= base_url(); ?>assets/images/favicon.png">
     <title>Sistem Informasi Akademik UPY</title>
     <!-- Bootstrap Core CSS -->
-    <link href="<?= base_url();?>assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="<?= base_url();?>assets/plugins/morrisjs/morris.css" rel="stylesheet">
-    <link href="<?= base_url();?>assets/plugins/sweetalert/sweetalert.css" rel="stylesheet" type="text/css">
-    <link href="<?= base_url();?>assets/plugins/toast-master/css/jquery.toast.css" rel="stylesheet">
+    <link href="<?= base_url(); ?>assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?= base_url(); ?>assets/plugins/morrisjs/morris.css" rel="stylesheet">
+    <link href="<?= base_url(); ?>assets/plugins/sweetalert/sweetalert.css" rel="stylesheet" type="text/css">
+    <link href="<?= base_url(); ?>assets/plugins/toast-master/css/jquery.toast.css" rel="stylesheet">
     <!-- Custom CSS -->
-    <link href="<?= base_url();?>assets/css/style.css" rel="stylesheet">
+    <link href="<?= base_url(); ?>assets/css/style.css" rel="stylesheet">
     <!-- You can change the theme colors from here -->
-    <link href="<?= base_url();?>assets/css/colors/blue.css" id="theme" rel="stylesheet">
+    <link href="<?= base_url(); ?>assets/css/colors/blue.css" id="theme" rel="stylesheet">
+    <link href="<?= base_url(); ?>assets/plugins/typeahead.js-master/dist/typehead-min.css" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -34,7 +35,8 @@
     <!-- ============================================================== -->
     <div class="preloader">
         <svg class="circular" viewBox="25 25 50 50">
-            <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" /> </svg>
+            <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" />
+        </svg>
     </div>
     <!-- ============================================================== -->
     <!-- Main wrapper - style you can find in pages.scss -->
@@ -49,21 +51,21 @@
                 <!-- Logo -->
                 <!-- ============================================================== -->
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="<?= site_url('dashboard');?>">
+                    <a class="navbar-brand" href="<?= site_url('dashboard'); ?>">
                         <!-- Logo icon --><b>
                             <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
                             <!-- Dark Logo icon -->
-                            <img src="<?= base_url();?>assets/images/logo-upy.png" alt="homepage" class="dark-logo" />
+                            <img src="<?= base_url(); ?>assets/images/logo-upy.png" alt="homepage" class="dark-logo" />
                             <!-- Light Logo icon -->
-                            <img src="<?= base_url();?>assets/images/logo-upy.png" alt="homepage" class="light-logo" />
+                            <img src="<?= base_url(); ?>assets/images/logo-upy.png" alt="homepage" class="light-logo" />
                         </b>
                         <!--End Logo icon -->
                         <!-- Logo text --><span>
-                         <!-- dark Logo text -->
-                         <!-- dark Logo text -->
-                         <img src="<?= base_url();?>assets/images/logo-upy-text.png" height="30px" alt="homepage" class="dark-logo" />
-                         <!-- Light Logo text -->    
-                         <img src="<?= base_url();?>assets/images/logo-upy-text-light.png" height="30px" class="light-logo" alt="homepage" /></span>
+                            <!-- dark Logo text -->
+                            <!-- dark Logo text -->
+                            <img src="<?= base_url(); ?>assets/images/logo-upy-text.png" height="30px" alt="homepage" class="dark-logo" />
+                            <!-- Light Logo text -->
+                            <img src="<?= base_url(); ?>assets/images/logo-upy-text-light.png" height="30px" class="light-logo" alt="homepage" /></span>
                     </a>
                 </div>
                 <!-- ============================================================== -->
@@ -95,25 +97,29 @@
                                             <a href="#">
                                                 <div class="btn btn-danger btn-circle"><i class="fa fa-link"></i></div>
                                                 <div class="mail-contnet">
-                                                    <h5>Luanch Admin</h5> <span class="mail-desc">Just see the my new admin!</span> <span class="time">9:30 AM</span> </div>
+                                                    <h5>Luanch Admin</h5> <span class="mail-desc">Just see the my new admin!</span> <span class="time">9:30 AM</span>
+                                                </div>
                                             </a>
                                             <!-- Message -->
                                             <a href="#">
                                                 <div class="btn btn-success btn-circle"><i class="ti-calendar"></i></div>
                                                 <div class="mail-contnet">
-                                                    <h5>Event today</h5> <span class="mail-desc">Just a reminder that you have event</span> <span class="time">9:10 AM</span> </div>
+                                                    <h5>Event today</h5> <span class="mail-desc">Just a reminder that you have event</span> <span class="time">9:10 AM</span>
+                                                </div>
                                             </a>
                                             <!-- Message -->
                                             <a href="#">
                                                 <div class="btn btn-info btn-circle"><i class="ti-settings"></i></div>
                                                 <div class="mail-contnet">
-                                                    <h5>Settings</h5> <span class="mail-desc">You can customize this template as you want</span> <span class="time">9:08 AM</span> </div>
+                                                    <h5>Settings</h5> <span class="mail-desc">You can customize this template as you want</span> <span class="time">9:08 AM</span>
+                                                </div>
                                             </a>
                                             <!-- Message -->
                                             <a href="#">
                                                 <div class="btn btn-primary btn-circle"><i class="ti-user"></i></div>
                                                 <div class="mail-contnet">
-                                                    <h5>Pavan kumar</h5> <span class="mail-desc">Just see the my admin!</span> <span class="time">9:02 AM</span> </div>
+                                                    <h5>Pavan kumar</h5> <span class="mail-desc">Just see the my admin!</span> <span class="time">9:02 AM</span>
+                                                </div>
                                             </a>
                                         </div>
                                     </li>
@@ -142,27 +148,31 @@
                                         <div class="message-center">
                                             <!-- Message -->
                                             <a href="#">
-                                                <div class="user-img"> <img src="<?= base_url();?>assets/images/users/1.jpg" alt="user" class="img-circle"> <span class="profile-status online pull-right"></span> </div>
+                                                <div class="user-img"> <img src="<?= base_url(); ?>assets/images/users/1.jpg" alt="user" class="img-circle"> <span class="profile-status online pull-right"></span> </div>
                                                 <div class="mail-contnet">
-                                                    <h5>Pavan kumar</h5> <span class="mail-desc">Just see the my admin!</span> <span class="time">9:30 AM</span> </div>
+                                                    <h5>Pavan kumar</h5> <span class="mail-desc">Just see the my admin!</span> <span class="time">9:30 AM</span>
+                                                </div>
                                             </a>
                                             <!-- Message -->
                                             <a href="#">
-                                                <div class="user-img"> <img src="<?= base_url();?>assets/images/users/2.jpg" alt="user" class="img-circle"> <span class="profile-status busy pull-right"></span> </div>
+                                                <div class="user-img"> <img src="<?= base_url(); ?>assets/images/users/2.jpg" alt="user" class="img-circle"> <span class="profile-status busy pull-right"></span> </div>
                                                 <div class="mail-contnet">
-                                                    <h5>Sonu Nigam</h5> <span class="mail-desc">I've sung a song! See you at</span> <span class="time">9:10 AM</span> </div>
+                                                    <h5>Sonu Nigam</h5> <span class="mail-desc">I've sung a song! See you at</span> <span class="time">9:10 AM</span>
+                                                </div>
                                             </a>
                                             <!-- Message -->
                                             <a href="#">
-                                                <div class="user-img"> <img src="<?= base_url();?>assets/images/users/3.jpg" alt="user" class="img-circle"> <span class="profile-status away pull-right"></span> </div>
+                                                <div class="user-img"> <img src="<?= base_url(); ?>assets/images/users/3.jpg" alt="user" class="img-circle"> <span class="profile-status away pull-right"></span> </div>
                                                 <div class="mail-contnet">
-                                                    <h5>Arijit Sinh</h5> <span class="mail-desc">I am a singer!</span> <span class="time">9:08 AM</span> </div>
+                                                    <h5>Arijit Sinh</h5> <span class="mail-desc">I am a singer!</span> <span class="time">9:08 AM</span>
+                                                </div>
                                             </a>
                                             <!-- Message -->
                                             <a href="#">
-                                                <div class="user-img"> <img src="<?= base_url();?>assets/images/users/4.jpg" alt="user" class="img-circle"> <span class="profile-status offline pull-right"></span> </div>
+                                                <div class="user-img"> <img src="<?= base_url(); ?>assets/images/users/4.jpg" alt="user" class="img-circle"> <span class="profile-status offline pull-right"></span> </div>
                                                 <div class="mail-contnet">
-                                                    <h5>Pavan kumar</h5> <span class="mail-desc">Just see the my admin!</span> <span class="time">9:02 AM</span> </div>
+                                                    <h5>Pavan kumar</h5> <span class="mail-desc">Just see the my admin!</span> <span class="time">9:02 AM</span>
+                                                </div>
                                             </a>
                                         </div>
                                     </li>
@@ -187,13 +197,13 @@
                                         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                                             <div class="carousel-inner" role="listbox">
                                                 <div class="carousel-item active">
-                                                    <div class="container"> <img class="d-block img-fluid" src="<?= base_url();?>assets/images/big/img1.jpg" alt="First slide"></div>
+                                                    <div class="container"> <img class="d-block img-fluid" src="<?= base_url(); ?>assets/images/big/img1.jpg" alt="First slide"></div>
                                                 </div>
                                                 <div class="carousel-item">
-                                                    <div class="container"><img class="d-block img-fluid" src="<?= base_url();?>assets/images/big/img2.jpg" alt="Second slide"></div>
+                                                    <div class="container"><img class="d-block img-fluid" src="<?= base_url(); ?>assets/images/big/img2.jpg" alt="Second slide"></div>
                                                 </div>
                                                 <div class="carousel-item">
-                                                    <div class="container"><img class="d-block img-fluid" src="<?= base_url();?>assets/images/big/img3.jpg" alt="Third slide"></div>
+                                                    <div class="container"><img class="d-block img-fluid" src="<?= base_url(); ?>assets/images/big/img3.jpg" alt="Third slide"></div>
                                                 </div>
                                             </div>
                                             <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev"> <span class="carousel-control-prev-icon" aria-hidden="true"></span> <span class="sr-only">Previous</span> </a>
@@ -208,10 +218,11 @@
                                             <div class="card">
                                                 <div class="card-header" role="tab" id="headingOne">
                                                     <h5 class="mb-0">
-                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                                  Collapsible Group Item #1
-                                                </a>
-                                              </h5> </div>
+                                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                            Collapsible Group Item #1
+                                                        </a>
+                                                    </h5>
+                                                </div>
                                                 <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
                                                     <div class="card-body"> Anim pariatur cliche reprehenderit, enim eiusmod high. </div>
                                                 </div>
@@ -219,10 +230,11 @@
                                             <div class="card">
                                                 <div class="card-header" role="tab" id="headingTwo">
                                                     <h5 class="mb-0">
-                                                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                                  Collapsible Group Item #2
-                                                </a>
-                                              </h5> </div>
+                                                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                                            Collapsible Group Item #2
+                                                        </a>
+                                                    </h5>
+                                                </div>
                                                 <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
                                                     <div class="card-body"> Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. </div>
                                                 </div>
@@ -230,10 +242,11 @@
                                             <div class="card">
                                                 <div class="card-header" role="tab" id="headingThree">
                                                     <h5 class="mb-0">
-                                                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                                  Collapsible Group Item #3
-                                                </a>
-                                              </h5> </div>
+                                                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                                            Collapsible Group Item #3
+                                                        </a>
+                                                    </h5>
+                                                </div>
                                                 <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree">
                                                     <div class="card-body"> Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. </div>
                                                 </div>
@@ -245,9 +258,11 @@
                                         <!-- Contact -->
                                         <form>
                                             <div class="form-group">
-                                                <input type="text" class="form-control" id="exampleInputname1" placeholder="Enter Name"> </div>
+                                                <input type="text" class="form-control" id="exampleInputname1" placeholder="Enter Name">
+                                            </div>
                                             <div class="form-group">
-                                                <input type="email" class="form-control" placeholder="Enter email"> </div>
+                                                <input type="email" class="form-control" placeholder="Enter email">
+                                            </div>
                                             <div class="form-group">
                                                 <textarea class="form-control" id="exampleTextarea" rows="3" placeholder="Message"></textarea>
                                             </div>
@@ -281,9 +296,10 @@
                         <!-- ============================================================== -->
                         <li class="nav-item hidden-sm-down search-box"> <a class="nav-link hidden-sm-down text-muted waves-effect waves-dark" href="javascript:void(0)"><i class="ti-search"></i></a>
                             <form class="app-search">
-                                <input type="text" class="form-control" placeholder="Search & enter"> <a class="srh-btn"><i class="ti-close"></i></a> </form>
+                                <input type="text" class="form-control" placeholder="Search & enter"> <a class="srh-btn"><i class="ti-close"></i></a>
+                            </form>
                         </li>
-                        
+
                         <!-- ============================================================== -->
                         <!-- Language -->
                         <!-- ============================================================== -->
@@ -295,15 +311,16 @@
                         <!-- Profile -->
                         <!-- ============================================================== -->
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="<?= base_url();?>assets/images/users/1.jpg" alt="user" class="profile-pic" /></a>
+                            <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="<?= base_url(); ?>assets/images/users/1.jpg" alt="user" class="profile-pic" /></a>
                             <div class="dropdown-menu dropdown-menu-right scale-up">
                                 <ul class="dropdown-user">
                                     <li>
                                         <div class="dw-user-box">
-                                            <div class="u-img"><img src="<?= base_url();?>assets/images/users/1.jpg" alt="user"></div>
+                                            <div class="u-img"><img src="<?= base_url(); ?>assets/images/users/1.jpg" alt="user"></div>
                                             <div class="u-text">
                                                 <h4>Steave Jobs</h4>
-                                                <p class="text-muted">varun@gmail.com</p><a href="pages-profile.html" class="btn btn-rounded btn-danger btn-sm">View Profile</a></div>
+                                                <p class="text-muted">varun@gmail.com</p><a href="pages-profile.html" class="btn btn-rounded btn-danger btn-sm">View Profile</a>
+                                            </div>
                                         </div>
                                     </li>
                                     <li role="separator" class="divider"></li>
@@ -313,7 +330,7 @@
                                     <li role="separator" class="divider"></li>
                                     <li><a href="#"><i class="ti-settings"></i> Account Setting</a></li>
                                     <li role="separator" class="divider"></li>
-                                    <li><a href="<?php echo base_url()?>auth/logout"><i class="fa fa-power-off"></i> Logout</a></li>
+                                    <li><a href="<?php echo base_url() ?>auth/logout"><i class="fa fa-power-off"></i> Logout</a></li>
                                 </ul>
                             </div>
                         </li>

@@ -1,5 +1,5 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
 $route['default_controller'] = 'dashboard';
 $route['404_override'] = '';
@@ -40,6 +40,7 @@ $route['data-matakuliah'] = 'Akademik/Data_matakuliah';
 $route['data-matakuliah/insert'] = 'Akademik/Data_matakuliah/insert';
 $route['data-matakuliah/update'] = 'Akademik/Data_matakuliah/update';
 $route['data-matakuliah/delete'] = 'Akademik/Data_matakuliah/delete';
+$route['data-matakuliah/autocomplete'] = 'Akademik/Data_matakuliah/get_autocomplete_dosen';
 // Kurikulum
 $route['data-kurikulum'] = 'Akademik/Data_kurikulum/index';
 $route['data-kurikulum/insert'] = 'Akademik/Data_kurikulum/Insert';
