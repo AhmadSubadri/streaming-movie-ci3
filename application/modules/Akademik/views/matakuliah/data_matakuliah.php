@@ -77,7 +77,7 @@
                                     <th>Kode MK</th>
                                     <th>Nama Matakuliah</th>
                                     <th>SKS Matakuliah</th>
-                                    <th>Kode Prodi</th>
+                                    <th>Prodi</th>
                                     <th>Tipe Matakuliah</th>
                                     <th>Dosen Pengampu</th>
                                     <th>Aksi</th>
@@ -170,7 +170,7 @@
                         <label class="col-md-12">Dosen Pengampu</label>
                         <div class="col-md-12" id="autokodedosen">
                             <input type="text" class="typeahead form-control" name="dosennama" placeholder="type name" required="required">
-                            <input type="text" class="form-control" id="iddosen" name="iddosen" hidden>
+                            <input type="text" class="form-control" id="iddosen" value="" name="iddosen" hidden>
                         </div>
                     </div>
                 </div>
@@ -241,8 +241,9 @@
                             </div>
                             <div class="form-group col-sm-6">
                                 <label class="col-md-12">Dosen Pengampu</label>
-                                <div class="col-md-12">
-                                    <input type="text" class="form-control" name="kode_dosen" value="<?= $item->nama_dosen; ?>" placeholder="type name" required="required">
+                                <div class="col-md-12" id="autokodedosen">
+                                    <input type="text" class="typeahead form-control" name="dosennama" value="<?= $item->nama_dosen; ?>" placeholder="type name" required="required">
+                                    <input type="text" class="form-control" id="iddosen" value="<?= $item->kode_dosen; ?>" name="iddosen">
                                 </div>
                             </div>
                         </div>
@@ -253,5 +254,6 @@
                     </form>
                 </div>
             </div>
-        <?php endforeach; ?>
-    <?php endif; ?>
+        </div>
+    <?php endforeach; ?>
+<?php endif; ?>

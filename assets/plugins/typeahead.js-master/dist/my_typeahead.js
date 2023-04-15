@@ -2,12 +2,12 @@
 // Autocomplete Dosen select
 var dosen = new Bloodhound({
     remote: {
-        url: 'data-matakuliah/autocomplete',
+        url: 'data-matakuliah/autocomplete?query=%QUERY',
         wildcard: '%QUERY'
     },
     datumTokenizer: Bloodhound
         .tokenizers
-        .whitespace('dosennama'),
+        .whitespace('query'),
     queryTokenizer: Bloodhound.tokenizers.whitespace
 });
 
@@ -17,18 +17,13 @@ $('#autokodedosen .typeahead').typeahead({
     minLength: 1
 }, {
     name: 'dosennama',
-    display: 'nama',
+    display: 'nama_dosen',
     source: dosen,
     templates: {
         suggestion: function (data) {
-            return '<div><strong>' + data.id + '</strong> - ' + data.nama + '</div>';
+            return '<div><strong>' + data.id + '</strong> - ' + data.nama_dosen + '</div>';
         }
     }
+}).on('typeahead:selected', function(event, data) {
+    $('#iddosen').val(data.id);
 });
-$('#autokodedosen .typeahead').bind(
-    'typeahead:select',
-    function (ev, suggestion) {
-        $('#iddosen').val(suggestion.id);
-        $('#dosennama').val(suggestion.nama);
-    }
-);

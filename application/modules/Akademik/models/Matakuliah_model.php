@@ -61,9 +61,11 @@ class Matakuliah_model extends CI_Model
         return $this->db->delete('tb_matakuliah', ['id' => $id]);
     }
 
-    public function search_data($keyword)
+    public function search_data($query)
     {
-        $this->db->select('*')->from('tb_dosen')->like('nama_dosen', $keyword)->order_by('nama_dosen', 'ASC');
+        $this->db->select('id, nama_dosen');
+        $this->db->from('tb_dosen');
+        $this->db->like('nama_dosen', $query);
         $query = $this->db->get();
         return $query->result();
     }
