@@ -50,6 +50,9 @@
                                                 <?php endif; ?>
                                             </td>
                                             <td>
+                                                <a href="javascript:void(0)" data-toggle="modal" data-target="#<?= $item->id_kur; ?>" data-id="<?= $item->id_kur; ?>" class="btn btn-sm btn-outline-success">
+                                                    <i class="mdi mdi-information-outline"></i>
+                                                    Detail</a>
                                                 <a href="javascript:void(0)" data-toggle="modal" data-target="#Editkurikulum<?= $item->id_kur; ?>" data-id="<?= $item->id_kur; ?>" class="btn btn-sm btn-outline-warning">
                                                     <i class="fa fa-pencil"></i>
                                                     Edit</a>

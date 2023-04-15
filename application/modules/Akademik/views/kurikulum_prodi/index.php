@@ -9,7 +9,7 @@
                             <h4 class="m-b-0 text-white card-title"><?php echo $title ?></h4>
                         </div>
                         <div class="ml-auto">
-                            <a href="javascript:void(0)" data-toggle="modal" data-target="#Addkurikulum" class="btn-warning btn-sm">
+                            <a href="javascript:void(0)" data-toggle="modal" data-target="#AddkurikulumProdi" class="btn-warning btn-sm">
                                 <i class="mdi mdi-plus"></i>
                                 Create
                                 <?= $title ?></a>
@@ -25,10 +25,9 @@
                             <thead>
                                 <tr>
                                     <th>#</th>
-                                    <th>Tahun kurikulum</th>
-                                    <th>Keterangan</th>
-                                    <th>Tanggal Start</th>
-                                    <th>Tanggal End</th>
+                                    <th>Program Studi</th>
+                                    <th>Kode Kurikulum</th>
+                                    <th>Nama Kurikulum</th>
                                     <th>Aksi</th>
                                 </tr>
                             </thead>
@@ -39,15 +38,14 @@
                                     foreach ($data->result() as $item) : ?>
                                         <tr>
                                             <td><?= $i++; ?></td>
-                                            <td><?= $item->tahun_kurikulum; ?></td>
+                                            <td><?= $item->nama_prodi; ?></td>
+                                            <td><?= $item->kode_kurikulum; ?></td>
                                             <td><?= $item->nama_kurikulum; ?></td>
-                                            <td><?= $item->tanggal_awal; ?></td>
-                                            <td><?= $item->tanggal_akhir; ?></td>
                                             <td>
-                                                <a href="javascript:void(0)" data-toggle="modal" data-target="#Editkurikulum<?= $item->id; ?>" data-id="<?= $item->id; ?>" class="btn btn-sm btn-outline-warning">
+                                                <a href="javascript:void(0)" data-toggle="modal" data-target="#AddkurikulumProd<?= $item->id_kp; ?>" data-id="<?= $item->id_kp; ?>" class="btn btn-sm btn-outline-warning">
                                                     <i class="fa fa-pencil"></i>
                                                     Edit</a>
-                                                <a onclick="DeleteKurikulum(<?= $item->id; ?>)" class="btn btn-sm btn-outline-danger">
+                                                <a onclick="DeleteKurikulumProdi(<?= $item->id_kp; ?>)" class="btn btn-sm btn-outline-danger">
                                                     <i class="fa fa-trash"></i>
                                                     Delete</a>
                                             </td>
@@ -64,11 +62,11 @@
 </div>
 
 <!-- Modal Add kurikulum -->
-<div id="Addkurikulum" class="modal fade in" tabindex="-1" role="dialog" aria-labelledby="AddkurikulumLabel" aria-hidden="true">
+<div id="AddkurikulumProdi" class="modal fade in" tabindex="-1" role="dialog" aria-labelledby="AddkurikulumProdiLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title" id="AddkurikulumLabel">Add
+                <h4 class="modal-title" id="AddkurikulumProdiLabel">Add
                     <?= $title ?></h4>
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
             </div>
@@ -115,11 +113,11 @@
 <?php else : ?>
     <?php $i = 1;
     foreach ($data->result() as $item) : ?>
-        <div id="Editkurikulum<?= $item->id; ?>" class="modal fade in" tabindex="-1" role="dialog" aria-labelledby="EditkurikulumLabel" aria-hidden="true">
+        <div id="AddkurikulumProd<?= $item->id; ?>" class="modal fade in" tabindex="-1" role="dialog" aria-labelledby="AddkurikulumProdLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h4 class="modal-title" id="EditkurikulumLabel">Edit
+                        <h4 class="modal-title" id="AddkurikulumProdLabel">Edit
                             <?= $title ?></h4>
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                     </div>
