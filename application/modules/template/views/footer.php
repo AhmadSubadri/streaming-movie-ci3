@@ -90,8 +90,7 @@
  <script src="<?= base_url(); ?>assets/js/mytoastr.js"></script>
 
  <script src="<?= base_url(); ?>assets/plugins/typeahead.js-master/dist/typeahead.bundle.min.js"></script>
- <script src="<?= base_url(); ?>assets/plugins/typeahead.js-master/dist/typeahead-init.js"></script>
- <script src="<?= base_url(); ?>assets/plugins/typeahead.js-master/dist/typeheadmy.js"></script>
+<script src="<?= base_url(); ?>assets/plugins/typeahead.js-master/dist/my_typeahead.js"></script>
  </body>
 
  </html>

@@ -33,26 +33,15 @@ class Data_matakuliah extends MY_controller
 
     public function get_autocomplete_dosen()
     {
-        $keyword = $this->input->post('query');
-        $data['response'] = 'false';
-        $query = $this->m_matkul->search_data($keyword);
-        if (!empty($query)) {
-            $data['response'] = 'true';
-            $data['message'] = array();
-            foreach ($query as $row) {
-                $data['message'][] = array(
-                    'id' => $row->id,
-                    'value' => $row->nama_dosen,
-                );
-            }
-        }
+        $query = $this->input->get('query');
+        $data = $this->m_matkul->search_data($query);
         echo json_encode($data);
     }
 
     public function Insert()
     {
         $data = [
-            'tahun_kurikulum' => $this->input->post('tahun_kurikulum'),
+            'kode_dosen' => $this->input->post('iddosen'),
             'kode_mk' => $this->input->post('kode_mk'),
             'nama_mk' => $this->input->post('nama_mk'),
             'sks_mk' => $this->input->post('sks_mk'),
@@ -66,19 +55,20 @@ class Data_matakuliah extends MY_controller
 
     public function Update()
     {
-        $id = $this->input->post('id');
-        $data = [
-            'tahun_kurikulum' => $this->input->post('tahun_kurikulum'),
-            'kode_mk' => $this->input->post('kode_mk'),
-            'nama_mk' => $this->input->post('nama_mk'),
-            'sks_mk' => $this->input->post('sks_mk'),
-            'kode_prodi' => $this->input->post('kode_prodi'),
-            'type_mk' => $this->input->post('type_mk'),
-        ];
+        echo $this->input->post('iddosen');
+        // $id = $this->input->post('id');
+        // $data = [
+        //     'kode_dosen' => $this->input->post('iddosen'),
+        //     'kode_mk' => $this->input->post('kode_mk'),
+        //     'nama_mk' => $this->input->post('nama_mk'),
+        //     'sks_mk' => $this->input->post('sks_mk'),
+        //     'kode_prodi' => $this->input->post('kode_prodi'),
+        //     'type_mk' => $this->input->post('type_mk'),
+        // ];
 
-        $this->session->set_flashdata('msg', "Update Matakuliah Success!");
-        $this->m_matkul->Update($data, $id);
-        redirect(site_url('data-matakuliah'));
+        // $this->session->set_flashdata('msg', "Update Matakuliah Success!");
+        // $this->m_matkul->Update($data, $id);
+        // redirect(site_url('data-matakuliah'));
     }
 
     public function Delete()

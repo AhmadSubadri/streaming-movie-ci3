@@ -13,6 +13,7 @@
     <title>Sistem Informasi Akademik UPY</title>
     <!-- Bootstrap Core CSS -->
     <link href="<?= base_url(); ?>assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?= base_url(); ?>assets/plugins/typeahead.js-master/dist/typehead-min.css" rel="stylesheet">
     <link href="<?= base_url(); ?>assets/plugins/morrisjs/morris.css" rel="stylesheet">
     <link href="<?= base_url(); ?>assets/plugins/sweetalert/sweetalert.css" rel="stylesheet" type="text/css">
     <link href="<?= base_url(); ?>assets/plugins/toast-master/css/jquery.toast.css" rel="stylesheet">
@@ -20,13 +21,6 @@
     <link href="<?= base_url(); ?>assets/css/style.css" rel="stylesheet">
     <!-- You can change the theme colors from here -->
     <link href="<?= base_url(); ?>assets/css/colors/blue.css" id="theme" rel="stylesheet">
-    <link href="<?= base_url(); ?>assets/plugins/typeahead.js-master/dist/typehead-min.css" rel="stylesheet">
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-<![endif]-->
 </head>
 
 <body class="fix-sidebar fix-header card-no-border">
