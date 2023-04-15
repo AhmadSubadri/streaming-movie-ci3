@@ -24,6 +24,6 @@ $('#autokodedosen .typeahead').typeahead({
             return '<div><strong>' + data.id + '</strong> - ' + data.nama_dosen + '</div>';
         }
     }
-}).on('typeahead:selected', function(event, data) {
+}).on('typeahead:selected', function (event, data) {
     $('#iddosen').val(data.id);
 });

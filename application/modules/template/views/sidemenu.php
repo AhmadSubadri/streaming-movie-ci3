@@ -108,10 +108,10 @@
                             <a href="#" class="has-arrow">Data Kurikulum</a>
                             <ul aria-expanded="false" class="collapse">
                                 <li>
-                                    <a href="<?= site_url('data-kurikulum'); ?>">Tahun Kurikulum</a>
+                                    <a href="<?= site_url('data-matakuliah'); ?>">Data Matakuliah</a>
                                 </li>
                                 <li>
-                                    <a href="<?= site_url('data-matakuliah'); ?>">Data Matakuliah</a>
+                                    <a href="<?= site_url('data-kurikulum'); ?>">Data Kurikulum</a>
                                 </li>
                                 <li>
                                     <a href="<?= site_url('kurikulum-prodi'); ?>">Kurikulum Prodi</a>
