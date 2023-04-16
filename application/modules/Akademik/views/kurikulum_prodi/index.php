@@ -77,10 +77,9 @@
                                                 <th>Aksi</th>
                                             </tr>
                                         </thead>
-                                        <tbody>
+                                        <tbody id="persebaran_fields<?= $i;?>">
                                             <tr>
-                                                <div id="persebaran_fields<?= $i;?>"></div>
-                                                <td></td>
+                                                <td>1</td>
                                                 <td><input type="text" class="form-control" id="Schoolname" name="Schoolname[]" value="" placeholder="School name"></td>
                                                 <td><input type="text" class="form-control" id="Schoolname" name="Schoolname[]" value="" placeholder="School name"></td>
                                                 <td><input type="text" class="form-control" id="Schoolname" name="Schoolname[]" value="" placeholder="School name"></td>
