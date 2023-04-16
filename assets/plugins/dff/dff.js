@@ -32,18 +32,17 @@ function remove_education_fields(rid) {
 var start = 1;
 
 function persebaran_fields(id) {
-
     start++;
     var objTo = document.getElementById('persebaran_fields' + id)
     var divtest = document.createElement("tr");
     divtest.setAttribute("class", "form-group removeclass" + start);
     var rdiv = 'removeclass' + start;
-    divtest.innerHTML = '<td>'+ start +'</td>'+
-    '<td><input type="text" class="form-control" id="Schoolname" name="Schoolname[]" value="" placeholder="School name"></td>'+
-    '<td><input type="text" class="form-control" id="Schoolname" name="Schoolname[]" value="" placeholder="School name"></td>'+
-    '<td><input type="text" class="form-control" id="Schoolname" name="Schoolname[]" value="" placeholder="School name"></td>'+
-    '<td><input type="text" class="form-control" id="Schoolname" name="Schoolname[]" value="" placeholder="School name"></td>'+
-    '<td><button class="btn btn-danger" type="button" onclick="remove_education_fields(' + start + ');"><i class="fa fa-minus"></i></button></td>';
+    divtest.innerHTML = 
+    '<td><input type="text" class="form-control form-control-sm" id="Schoolname" name="Schoolname[]" value="" placeholder="School name"></td>'+
+    '<td><input type="text" class="form-control form-control-sm" id="Schoolname" name="Schoolname[]" value="" placeholder="School name"></td>'+
+    '<td><input type="text" class="form-control form-control-sm" id="Schoolname" name="Schoolname[]" value="" placeholder="School name"></td>'+
+    '<td><input type="text" class="form-control form-control-sm" id="Schoolname" name="Schoolname[]" value="" placeholder="School name"></td>'+
+    '<td><button class="btn btn-danger btn-sm" type="button" onclick="remove_education_fields(' + start + ');"><i class="fa fa-minus"></i></button></td>';
 
     objTo.appendChild(divtest)
 }

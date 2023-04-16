@@ -45,7 +45,7 @@
                         <div class="form-group col-sm-6">
                             <label class="col-md-12">kurikulum</label>
                             <div class="col-md-12">
-                                <select class="form-control" name="kode_prodi" required="required">
+                                <select class="form-control" name="kode_kurikulum" required="required">
                                     <?php if (empty($kurikulum)) : ?>
                                 <?php else : ?>
                                     <option>--- Pilih Kurikulum ---</option>
@@ -69,7 +69,6 @@
                                     <table id="myTable<?= $i;?>" class="table table-bordered table-striped">
                                         <thead>
                                             <tr>
-                                                <th>No.</th>
                                                 <th>Matakuliah</th>
                                                 <th>Semester</th>
                                                 <th>MK. Wajib</th>
@@ -79,12 +78,11 @@
                                         </thead>
                                         <tbody id="persebaran_fields<?= $i;?>">
                                             <tr>
-                                                <td>1</td>
-                                                <td><input type="text" class="form-control" id="Schoolname" name="Schoolname[]" value="" placeholder="School name"></td>
-                                                <td><input type="text" class="form-control" id="Schoolname" name="Schoolname[]" value="" placeholder="School name"></td>
-                                                <td><input type="text" class="form-control" id="Schoolname" name="Schoolname[]" value="" placeholder="School name"></td>
-                                                <td><input type="text" class="form-control" id="Schoolname" name="Schoolname[]" value="" placeholder="School name"></td>
-                                                <td><button class="btn btn-success" type="button" onclick="persebaran_fields(<?= $i;?>);"><i class="fa fa-plus"></i></button></td>
+                                                <td><input type="text" class="form-control form-control-sm" id="Schoolname" name="Schoolname[]" value="" placeholder="School name"></td>
+                                                <td><input type="text" class="form-control form-control-sm" id="Schoolname" name="Schoolname[]" value="" placeholder="School name"></td>
+                                                <td><input type="text" class="form-control form-control-sm" id="Schoolname" name="Schoolname[]" value="" placeholder="School name"></td>
+                                                <td><input type="text" class="form-control form-control-sm" id="Schoolname" name="Schoolname[]" value="" placeholder="School name"></td>
+                                                <td><button class="btn btn-success btn-sm" type="button" onclick="persebaran_fields(<?= $i;?>);"><i class="fa fa-plus"></i></button></td>
                                             </tr>
                                         </tbody>
                                     </table>
