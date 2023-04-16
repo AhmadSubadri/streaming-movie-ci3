@@ -88,6 +88,7 @@
  <script src="<?= base_url(); ?>assets/plugins/sweetalert/mysweetalert.js"></script>
  <script src="<?= base_url(); ?>assets/plugins/toast-master/js/jquery.toast.js"></script>
  <script src="<?= base_url(); ?>assets/js/mytoastr.js"></script>
+ <script src="<?= base_url(); ?>assets/plugins/dff/dff.js" type="text/javascript"></script>
 
  <script src="<?= base_url(); ?>assets/plugins/typeahead.js-master/dist/typeahead.bundle.min.js"></script>
 <script src="<?= base_url(); ?>assets/plugins/typeahead.js-master/dist/my_typeahead.js"></script>

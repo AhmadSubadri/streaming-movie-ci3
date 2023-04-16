@@ -45,7 +45,7 @@
                         <div class="form-group col-sm-6">
                             <label class="col-md-12">kurikulum</label>
                             <div class="col-md-12">
-                            <select class="form-control" name="kode_prodi" required="required">
+                                <select class="form-control" name="kode_prodi" required="required">
                                     <?php if (empty($kurikulum)) : ?>
                                 <?php else : ?>
                                     <option>--- Pilih Kurikulum ---</option>
@@ -57,21 +57,42 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="form-group col-sm-12">
-                            <label class="col-md-12">kurikulum</label>
-                            <div class="col-md-12">
-                            <select class="form-control" name="kode_prodi" required="required">
-                                    <?php if (empty($kurikulum)) : ?>
-                                <?php else : ?>
-                                    <option>--- Pilih Kurikulum ---</option>
-                                    <?php $i = 1;
-                                    foreach ($kurikulum as $kk) : ?>
-                                    <option value="<?= $kk->kode_kurikulum; ?>"><?= $kk->kode_kurikulum; ?>-<?= $kk->nama_kurikulum ; ?></option>
-                                    <?php endforeach; ?>
-                                    <?php endif; ?>
-                                </select>
+                        <?php for($i=1;$i<=8; $i++):?>
+                        <div class="form-group col-sm-6">
+                            <div class="card card-outline-info">
+                                <div class="nduwur rounded-top py-3 px-3">
+                                    <div class="d-flex flex-wrap">
+                                        <h4 class="m-b-0 text-white card-title">Semester <?= $i;?></h4>
+                                    </div>
+                                </div>
+                                <div class="table-responsive">
+                                    <table id="myTable<?= $i;?>" class="table table-bordered table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>No.</th>
+                                                <th>Matakuliah</th>
+                                                <th>Semester</th>
+                                                <th>MK. Wajib</th>
+                                                <th>MK. Paket</th>
+                                                <th>Aksi</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <div id="persebaran_fields<?= $i;?>"></div>
+                                                <td></td>
+                                                <td><input type="text" class="form-control" id="Schoolname" name="Schoolname[]" value="" placeholder="School name"></td>
+                                                <td><input type="text" class="form-control" id="Schoolname" name="Schoolname[]" value="" placeholder="School name"></td>
+                                                <td><input type="text" class="form-control" id="Schoolname" name="Schoolname[]" value="" placeholder="School name"></td>
+                                                <td><input type="text" class="form-control" id="Schoolname" name="Schoolname[]" value="" placeholder="School name"></td>
+                                                <td><button class="btn btn-success" type="button" onclick="persebaran_fields(<?= $i;?>);"><i class="fa fa-plus"></i></button></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
                         </div>
+                        <?php endfor;?>
                     </div>
                     <div class="modal-footer">
                         <button type="submit" class="btn btn-info waves-effect btn-sm">Save</button>
