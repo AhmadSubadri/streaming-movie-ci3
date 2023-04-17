@@ -10,16 +10,6 @@
                         <div>
                             <h4 class="m-b-0 text-white card-title"><?php echo $title ?></h4>
                         </div>
-                        <div class="ml-auto">
-                            <a
-                                href="javascript:void(0)"
-                                data-toggle="modal"
-                                data-target="#AddkurikulumProdi"
-                                class="btn-warning btn-sm">
-                                <i class="mdi mdi-plus"></i>
-                                Create
-                                <?= $title ?></a>
-                        </div>
                     </div>
                 </div>
                 <form
@@ -27,8 +17,8 @@
                     action="<?= site_url('data-kurikulum/insert') ?>"
                     method="post">
                     <div class="modal-body row">
-                        <div class="form-group col-sm-6">
-                            <label class="col-md-12">Program studi</label>
+                        <div class="form-group col-sm-6 has-danger">
+                            <label class="col-md-12 text-danger">Program studi</label>
                             <div class="col-md-12">
                                 <select class="form-control" name="kode_prodi" required="required">
                                     <?php if (empty($prodi)) : ?>
@@ -42,8 +32,8 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="form-group col-sm-6">
-                            <label class="col-md-12">kurikulum</label>
+                        <div class="form-group col-sm-6 has-danger">
+                            <label class="col-md-12 text-danger">kurikulum</label>
                             <div class="col-md-12">
                                 <select class="form-control" name="kode_kurikulum" required="required">
                                     <?php if (empty($kurikulum)) : ?>
@@ -66,11 +56,11 @@
                                     </div>
                                 </div>
                                 <div class="table-responsive">
+                                    <input type="text" class="form-control form-control-sm" id="semester" name="semester[]" value="<?= $i;?>" placeholder="School name" hidden>
                                     <table id="myTable<?= $i;?>" class="table table-bordered table-striped">
                                         <thead>
                                             <tr>
                                                 <th>Matakuliah</th>
-                                                <th>Semester</th>
                                                 <th>MK. Wajib</th>
                                                 <th>MK. Paket</th>
                                                 <th>Aksi</th>
@@ -78,10 +68,15 @@
                                         </thead>
                                         <tbody id="persebaran_fields<?= $i;?>">
                                             <tr>
-                                                <td><input type="text" class="form-control form-control-sm" id="Schoolname" name="Schoolname[]" value="" placeholder="School name"></td>
-                                                <td><input type="text" class="form-control form-control-sm" id="Schoolname" name="Schoolname[]" value="" placeholder="School name"></td>
-                                                <td><input type="text" class="form-control form-control-sm" id="Schoolname" name="Schoolname[]" value="" placeholder="School name"></td>
-                                                <td><input type="text" class="form-control form-control-sm" id="Schoolname" name="Schoolname[]" value="" placeholder="School name"></td>
+                                                <td><input type="text" class="form-control form-control-sm" id="kode_mk" name="kode_mk[]" value="" placeholder="School name"></td>
+                                                <td>
+                                                    <input name="is_wajib[]" type="checkbox" id="is_wajib" class="chk-col-red" />
+                                                    <label for="is_wajib">Is Wajib</label>
+                                                </td>
+                                                <td>
+                                                    <input name="is_paket[]" type="checkbox" id="is_paket" class="chk-col-red" />
+                                                    <label for="is_paket">Is Paket</label>
+                                                </td>
                                                 <td><button class="btn btn-success btn-sm" type="button" onclick="persebaran_fields(<?= $i;?>);"><i class="fa fa-plus"></i></button></td>
                                             </tr>
                                         </tbody>
