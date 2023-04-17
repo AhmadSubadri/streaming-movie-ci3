@@ -18,6 +18,20 @@ class Kurikulumprodi_model extends CI_Model
         return $query;
     }
 
+    public function get_prodi()
+    {
+        $this->db->select('*')->from('tb_prodi')->order_by('nama_prodi', 'ASC');
+        $query = $this->db->get();
+        return $query->result();
+    }
+
+    public function get_kurikulum()
+    {
+        $this->db->select('*')->from('tb_kurikulum')->order_by('nama_kurikulum', 'ASC')->where('status', '1');
+        $query = $this->db->get();
+        return $query->result();
+    }
+
     // public function Get()
     // {
     //     $this->db->select_dis
