@@ -243,7 +243,7 @@
                                 <label class="col-md-12">Dosen Pengampu</label>
                                 <div class="col-md-12" id="autokodedosen">
                                     <input type="text" class="typeahead form-control" name="dosennama" value="<?= $item->nama_dosen; ?>" placeholder="type name" required="required">
-                                    <input type="text" class="form-control" id="iddosen" value="<?= $item->kode_dosen; ?>" name="iddosen">
+                                    <input type="text" class="form-control" id="iddosen" value="<?= $item->kode_dosen; ?>" name="iddosen" hidden>
                                 </div>
                             </div>
                         </div>

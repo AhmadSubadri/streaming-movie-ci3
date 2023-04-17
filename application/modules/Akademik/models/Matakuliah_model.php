@@ -22,8 +22,9 @@ class Matakuliah_model extends CI_Model
     // Fungsi untuk get tb_matakuliah berdasarkan filter kode prodi
     public function Filter_Prodi($kode_prodi)
     {
-        $this->db->select('tb_matakuliah.id as id, tb_matakuliah.tahun_kurikulum as tahun_kurikulum, tb_matakuliah.kode_mk as kode_mk, tb_matakuliah.nama_mk as nama_mk, tb_matakuliah.sks_mk as sks_mk, tb_matakuliah.kode_prodi as kode_prodi, tb_prodi.nama_prodi as nama_prodi, tb_matakuliah.type_mk as type_mk')
+        $this->db->select('tb_matakuliah.id as id, tb_dosen.nama_dosen as nama_dosen, tb_dosen.id as kode_dosen, tb_matakuliah.kode_mk as kode_mk, tb_matakuliah.nama_mk as nama_mk, tb_matakuliah.sks_mk as sks_mk, tb_matakuliah.kode_prodi as kode_prodi, tb_prodi.nama_prodi as nama_prodi, tb_matakuliah.type_mk as type_mk')
             ->from('tb_matakuliah')
+            ->join('tb_dosen', 'tb_dosen.id = tb_matakuliah.kode_dosen')
             ->join('tb_prodi', 'tb_prodi.kode_prodi = tb_matakuliah.kode_prodi')
             ->order_by('tb_matakuliah.kode_prodi', 'DESC')
             ->where('tb_matakuliah.kode_prodi', $kode_prodi);

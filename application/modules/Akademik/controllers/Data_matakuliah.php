@@ -55,20 +55,20 @@ class Data_matakuliah extends MY_controller
 
     public function Update()
     {
-        echo $this->input->post('iddosen');
-        // $id = $this->input->post('id');
-        // $data = [
-        //     'kode_dosen' => $this->input->post('iddosen'),
-        //     'kode_mk' => $this->input->post('kode_mk'),
-        //     'nama_mk' => $this->input->post('nama_mk'),
-        //     'sks_mk' => $this->input->post('sks_mk'),
-        //     'kode_prodi' => $this->input->post('kode_prodi'),
-        //     'type_mk' => $this->input->post('type_mk'),
-        // ];
+        // echo $this->input->post('iddosen');
+        $id = $this->input->post('id');
+        $data = [
+            'kode_dosen' => $this->input->post('iddosen'),
+            'kode_mk' => $this->input->post('kode_mk'),
+            'nama_mk' => $this->input->post('nama_mk'),
+            'sks_mk' => $this->input->post('sks_mk'),
+            'kode_prodi' => $this->input->post('kode_prodi'),
+            'type_mk' => $this->input->post('type_mk'),
+        ];
 
-        // $this->session->set_flashdata('msg', "Update Matakuliah Success!");
-        // $this->m_matkul->Update($data, $id);
-        // redirect(site_url('data-matakuliah'));
+        $this->session->set_flashdata('msg', "Update Matakuliah Success!");
+        $this->m_matkul->Update($data, $id);
+        redirect(site_url('data-matakuliah'));
     }
 
     public function Delete()
