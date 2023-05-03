@@ -20,7 +20,11 @@
                         <div class="form-group col-sm-6 has-danger">
                             <label class="col-md-12 text-danger">Program studi</label>
                             <div class="col-md-12">
-                                <select class="form-control" name="kode_prodi" required="required">
+                                <select
+                                    class="form-control"
+                                    name="kode_prodi"
+                                    id="kode_prodi"
+                                    required="required">
                                     <?php if (empty($prodi)) : ?>
                                 <?php else : ?>
                                     <option>--- Pilih Kode Prodi ---</option>
@@ -52,11 +56,27 @@
                             <div class="card card-outline-info">
                                 <div class="nduwur rounded-top py-3 px-3">
                                     <div class="d-flex flex-wrap">
-                                        <h4 class="m-b-0 text-white card-title">Semester <?= $i;?></h4>
+                                        <h4 class="m-b-0 text-white card-title">Semester
+                                            <?= $i;?></h4>
+                                        <div class="ml-auto">
+                                            <button
+                                                class="btn btn-warning btn-sm"
+                                                type="button"
+                                                onclick="persebaran_fields(<?= $i;?>);">
+                                                <i class="fa fa-plus"></i>
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="table-responsive">
-                                    <input type="text" class="form-control form-control-sm" id="semester" name="semester[]" value="<?= $i;?>" placeholder="School name" hidden>
+                                    <input
+                                        type="text"
+                                        class="form-control form-control-sm"
+                                        id="semester"
+                                        name="semester[]"
+                                        value="<?= $i;?>"
+                                        placeholder="School name"
+                                        hidden="hidden">
                                     <table id="myTable<?= $i;?>" class="table table-bordered table-striped">
                                         <thead>
                                             <tr>
@@ -67,18 +87,20 @@
                                             </tr>
                                         </thead>
                                         <tbody id="persebaran_fields<?= $i;?>">
-                                            <tr>
-                                                <td><input type="text" class="form-control form-control-sm" id="kode_mk" name="kode_mk[]" value="" placeholder="School name"></td>
-                                                <td>
-                                                    <input name="is_wajib[]" type="checkbox" id="is_wajib" class="chk-col-red" />
-                                                    <label for="is_wajib">Is Wajib</label>
-                                                </td>
-                                                <td>
-                                                    <input name="is_paket[]" type="checkbox" id="is_paket" class="chk-col-red" />
-                                                    <label for="is_paket">Is Paket</label>
-                                                </td>
-                                                <td><button class="btn btn-success btn-sm" type="button" onclick="persebaran_fields(<?= $i;?>);"><i class="fa fa-plus"></i></button></td>
-                                            </tr>
+                                            <!-- <tr> -->
+                                                <!-- <td> <select id="select_MK_option<?= $i;?>" class="form-control
+                                                custom-select form-control-sm" style="width: 100%; height:36px;">
+                                                <option>Select</option> <optgroup label="Alaskan/Hawaiian Time Zone"> <option
+                                                value="AK">Alaska</option> <option value="HI">Hawaii</option> </optgroup>
+                                                </select> </td> <td> <input name="is_wajib[]" type="checkbox" id="is_wajib<?=
+                                                $i;?>" class="form-control chk-col-red form-control-sm" /> <label
+                                                for="is_wajib<?= $i;?>">Is Wajib</label> </td> <td> <input name="is_paket[]"
+                                                type="checkbox" id="is_paket<?= $i;?>" class="form-control chk-col-red
+                                                form-control-sm" /> <label for="is_paket<?= $i;?>">Is Paket</label> </td>
+                                                <td><button class="btn btn-success btn-sm" type="button"
+                                                onclick="persebaran_fields(<?= $i;?>);"><i class="fa fa-plus"></i></button></td>
+                                                -->
+                                            <!-- </tr> -->
                                         </tbody>
                                     </table>
                                 </div>

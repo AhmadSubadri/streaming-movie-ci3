@@ -21,4 +21,11 @@ class Kurikulum_prodi extends MY_controller
         $this->load->view('kurikulum_prodi/index', $data);
         $this->load->view('template/footer', $data);
     }
+
+    public function Get_MK_ByProdi_Kode()
+    {
+        $kode_mk = $this->input->post('id');
+        $data = $this->m_Kurikulumprodi->Get_Matakuliah_ByProdi($kode_mk);
+		echo json_encode($data);
+    }
 }

@@ -32,8 +32,10 @@ class Kurikulumprodi_model extends CI_Model
         return $query->result();
     }
 
-    // public function Get()
-    // {
-    //     $this->db->select_dis
-    // }
+    public function Get_Matakuliah_ByProdi($kode_mk)
+    {
+        $this->db->select('*')->from('tb_matakuliah')->where('kode_mk', $kode_mk)->order_by('nama_mk', 'ASC');
+        $query = $this->db->get();
+        return $query->result();
+    }
 }
