@@ -29,23 +29,3 @@ function remove_education_fields(rid) {
     $('.removeclass' + rid).remove();
 }
 
-var start = 1;
-
-function persebaran_fields(id) {
-    start++;
-    var objTo = document.getElementById('persebaran_fields' + id)
-    var divtest = document.createElement("tr");
-    divtest.setAttribute("class", "form-group removeclass" + start);
-    var rdiv = 'removeclass' + start;
-    divtest.innerHTML = 
-    '<td><input type="text" class="form-control form-control-sm" id="kode_mk" name="kode_mk[]" value="" placeholder="School name"></td>'+
-    '<td><input name="is_wajib[]" type="checkbox" id="is_wajib" class="chk-col-red" /><label for="is_wajib">Is Wajib</label></td>'+
-    '<td><input name="is_paket[]" type="checkbox" id="is_paket" class="chk-col-red" /><label for="is_paket">Is Paket</label></td>'+
-    '<td><button class="btn btn-danger btn-sm" type="button" onclick="remove_education_fields(' + start + ');"><i class="fa fa-minus"></i></button></td>';
-
-    objTo.appendChild(divtest)
-}
-
-function remove_persebaran_fields(rid) {
-    $('.removeclass' + rid).remove();
-}
