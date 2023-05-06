@@ -22,10 +22,17 @@ class Kurikulum_prodi extends MY_controller
         $this->load->view('template/footer', $data);
     }
 
-    public function Get_MK_ByProdi_Kode()
+    // public function Get_MK_ByProdi_Kode()
+    // {
+    //     $kode_prodi = $this->input->post('id');
+    //     $data = $this->m_Kurikulumprodi->Get_Matakuliah_ByProdi($kode_prodi);
+	// 	echo json_encode($data);
+    // }
+
+    public function get_autocomplete_mk()
     {
-        $kode_mk = $this->input->post('id');
-        $data = $this->m_Kurikulumprodi->Get_Matakuliah_ByProdi($kode_mk);
-		echo json_encode($data);
+        $query = $this->input->get('query');
+        $data = $this->m_Kurikulumprodi->search_data($query);
+        echo json_encode($data);
     }
 }

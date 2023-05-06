@@ -146,9 +146,11 @@ function persebaran_fields(id) {
     divtest.setAttribute("class", "form-group removeclass" + start);
     var rdiv = 'removeclass' + start;
     divtest.innerHTML = 
-    '<td><select id="select_MK_option'+ start +'" class="form-control custom-select form-control-sm" style="width: 100%; height:36px;"><option>Select</option> <optgroup label="Alaskan/Hawaiian Time Zone"> <option value="AK">Alaska</option> <option value="HI">Hawaii</option> </optgroup></select></td>'+
-    '<td><input name="is_wajib[]" type="checkbox" id="is_wajib'+ start +'" class="chk-col-red" /><label for="is_wajib'+ start +'">Is Wajib</label></td>'+
-    '<td><input name="is_paket[]" type="checkbox" id="is_paket'+ start +'" class="chk-col-red" /><label for="is_paket'+ start +'">Is Paket</label></td>'+
+    '<td>'+
+    '<div class="col-md-12" id="autokommatakuliah"><input type="text" class="typeahead form-control" name="matakuliah" placeholder="type matakuiah" required="required"><input type="text" class="form-control" id="idmk" value="" name="idmk" hidden></div>'+
+    '</td>'+
+    '<td><input name="is_wajib[]" type="checkbox" id="is_wajib'+ start +'" class="chk-col-red" /><label for="is_wajib'+ start +'"></label></td>'+
+    '<td><input name="is_paket[]" type="checkbox" id="is_paket'+ start +'" class="chk-col-red" /><label for="is_paket'+ start +'"></label></td>'+
     '<td><button class="btn btn-danger btn-sm" type="button" onclick="remove_education_fields(' + start + ');"><i class="fa fa-minus"></i></button></td>';
 
     objTo.appendChild(divtest)
@@ -158,10 +160,12 @@ function remove_persebaran_fields(rid) {
     $('.removeclass' + rid).remove();
 }
 
-    for(let i = 2; i <= 1000; i++){
-        // document.write("<p>Perulangan ke-" + i + "</p>")
-        $("#select_MK_option"+ i).select2();
-    }
+// $(document).ready(function() {
+//     for(let i = start; i < start+1; i++){
+//         $('.select-MK-option'+ i).select2();
+//     }
+// });
+// $("#select_MK_option").select2();
 </script>
 </body>
 
