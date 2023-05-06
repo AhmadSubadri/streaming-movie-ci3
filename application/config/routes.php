@@ -1,9 +1,14 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-$route['default_controller'] = 'dashboard';
+$route['default_controller'] = 'auth';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+
+$route['administrator'] = 'dashboard';
+$route['fakultas'] = 'Back_fakultas/dashboard/dashboard';
+
+$route['404'] = 'Auth/block';
 
 // Master Data
 // Yayasan
@@ -68,3 +73,5 @@ $route['data-users/delete'] = 'Users/Users/Delete';
 
 $route['data-user-level'] = 'Users/Users_level/index';
 $route['data-user-level/delete'] = 'Users/Users_level/Delete';
+
+$route['not-found'] = 'Dashboard/notfound';

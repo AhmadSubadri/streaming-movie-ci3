@@ -11,7 +11,7 @@
                 <div class="row">
                     <div class="col-12">
                         <h2 class="m-b-0"><i class="mdi mdi-briefcase-check text-info"></i></h2>
-                        <h3 class="">20231</h3>
+                        <h3 class="">20231 <?php echo $this->session->userdata('users_level'); ?></h3>
                         <h6 class="card-subtitle">Tahun Akademik</h6>
                     </div>
                     <div class="col-12">

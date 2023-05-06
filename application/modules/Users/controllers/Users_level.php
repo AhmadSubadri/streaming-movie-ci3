@@ -26,7 +26,7 @@ class Users_level extends MY_Controller
     public function Insert()
     {
         $data = [
-            'users_level' => $this->input->post('users_level'),
+            'users_level' => strtolower($this->input->post('users_level')),
         ];
         $this->session->set_flashdata('msg', "Insert Users Level Success!");
         $this->m_level->Insert($data);
@@ -37,7 +37,7 @@ class Users_level extends MY_Controller
     {
         $id = $this->input->post('id_level');
         $data = [
-            'users_level' => $this->input->post('users_level'),
+            'users_level' => strtolower($this->input->post('users_level')),
         ];
 
         $this->session->set_flashdata('msg', "Update Users Level Success!");

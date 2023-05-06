@@ -12,8 +12,11 @@ class Auth extends MY_Controller
 
 	public function index()
 	{
-		
-		$this->load->view('auth/login');
+		if ($this->session->userdata('users_level')) {
+			redirect(site_url('/' . $this->session->userdata('users_level')));
+		} else {
+			$this->load->view('auth/login');
+		}
 	}
 
 
@@ -38,32 +41,37 @@ class Auth extends MY_Controller
 				if ($query['is_active'] == 1) {
 					# code...
 					$data = [
+						'id' => $query['id_users'],
 						'username' => $query['username'],
 						'users_level' => $query['users_level'],
 						'nama_users' => $query['nama_users'],
 					];
 					$this->session->set_userdata($data);
 					$this->session->set_flashdata('msg', 'Login Success');
-					redirect(base_url('dashboard'));
+					if ($this->session->userdata('users_level')) {
+						redirect(base_url('/' . $this->session->userdata('users_level')));
+					}
 				} else {
 					$this->session->set_flashdata('msg', 'Not Activated');
 					redirect(base_url('auth'));
 				}
-
 			} else {
 				# code...
-				$this->session->set_flashdata('msg','Login Failed');
-			redirect(base_url('auth'));
+				$this->session->set_flashdata('msg', 'Login Failed');
+				redirect(base_url('auth'));
 			}
 		}
 	}
 
-
 	public function logout()
 	{
-		$this->session->unset_userdata('username');
-		$this->session->unset_userdata('users_level');
+		$this->session->sess_destroy();
 		$this->session->set_flashdata('msg', 'Logout');
 		redirect(base_url('auth'));
+	}
+
+	public function block()
+	{
+		$this->load->view('404_global');
 	}
 }
