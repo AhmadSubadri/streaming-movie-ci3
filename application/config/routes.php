@@ -13,6 +13,7 @@ $route['fakultas'] = 'Back_fakultas/dashboard/dashboard';
 
 // Prodi Route's
 $route['prodi'] = 'Back_prodi/dashboard/dashboard';
+$route['prodi/profile-prodi'] = 'Back_prodi/dashboard/dashboard/profile';
 $route['prodi/data-mahasiswa'] = 'Back_prodi/data_mahasiswa/data_mahasiswa';
 
 $route['404'] = 'Auth/block';

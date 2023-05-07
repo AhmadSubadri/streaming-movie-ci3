@@ -17,4 +17,15 @@ class Dashboard extends MY_controller
         $this->load->view('Back_prodi/dashboard_view', $data);
         $this->load->view('template/footer', $data);
     }
+
+    public function profile()
+    {
+        $data = array(
+            'title' => 'Profile Program Studi'
+        );
+        $this->load->view('template/header', $data);
+        $this->load->view('template/sidemenu_prodi', $data);
+        $this->load->view('Back_prodi/profile_prodi', $data);
+        $this->load->view('template/footer', $data);
+    }
 }
