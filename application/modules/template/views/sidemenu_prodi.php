@@ -61,22 +61,9 @@
                 <li class="nav-devider"></li>
                 <li class="nav-small-cap">Program Studi</li>
                 <li>
-                    <a class="has-arrow waves-effect waves-dark" href="<?= site_url('fakultas/'); ?>" aria-expanded="false">
-                        <i class="mdi mdi-database"></i>
-                        <span class="hide-menu">Dashboard</span></a>
-                </li>
-                <li>
-                    <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false">
+                    <a class="has-arrow waves-effect waves-dark" href="<?= site_url('prodi/data-mahasiswa'); ?>" aria-expanded="false">
                         <i class="mdi mdi-school"></i>
-                        <span class="hide-menu">Profil Fakultas</span></a>
-                    <ul aria-expanded="false" class="collapse">
-                        <li>
-                            <a href="<?= site_url('data-camaba'); ?>">Data Camaba</a>
-                        </li>
-                        <li>
-                            <a href="<?= site_url('data-mahasiswa'); ?>">Data Mahasiswa</a>
-                        </li>
-                    </ul>
+                        <span class="hide-menu">Data Mahasiswa</span></a>
                 </li>
                 <li>
                     <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false">

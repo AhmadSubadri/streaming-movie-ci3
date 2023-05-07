@@ -5,8 +5,15 @@ $route['default_controller'] = 'auth';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
+// Administrator Route's
 $route['administrator'] = 'dashboard';
+
+// Fakultas Route's
 $route['fakultas'] = 'Back_fakultas/dashboard/dashboard';
+
+// Prodi Route's
+$route['prodi'] = 'Back_prodi/dashboard/dashboard';
+$route['prodi/data-mahasiswa'] = 'Back_prodi/data_mahasiswa/data_mahasiswa';
 
 $route['404'] = 'Auth/block';
 
