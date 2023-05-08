@@ -66,6 +66,11 @@
                         <span class="hide-menu">Data Mahasiswa</span></a>
                 </li>
                 <li>
+                    <a class="has-arrow waves-effect waves-dark" href="<?= site_url('prodi/data-dosen'); ?>" aria-expanded="false">
+                        <i class="mdi mdi-account-key"></i>
+                        <span class="hide-menu">Data Dosen</span></a>
+                </li>
+                <li>
                     <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false">
                         <i class="mdi mdi-newspaper"></i>
                         <span class="hide-menu">Program Studi</span></a>
