@@ -10,22 +10,12 @@ class Dashboard extends MY_controller
     public function index()
     {
         $data = array(
-            'title' => 'Dashboard'
+            'title' => 'Dashboard',
+            'name_profile' => 'Profile ' . $this->session->userdata('nama_users')
         );
         $this->load->view('template/header', $data);
         $this->load->view('template/sidemenu_prodi', $data);
         $this->load->view('Back_prodi/dashboard_view', $data);
-        $this->load->view('template/footer', $data);
-    }
-
-    public function profile()
-    {
-        $data = array(
-            'title' => 'Profile Program Studi'
-        );
-        $this->load->view('template/header', $data);
-        $this->load->view('template/sidemenu_prodi', $data);
-        $this->load->view('Back_prodi/profile_prodi', $data);
         $this->load->view('template/footer', $data);
     }
 }
