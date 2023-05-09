@@ -7,6 +7,7 @@ class Users_level extends MY_Controller
     public function __construct()
     {
         parent::__construct();
+        is_logged_in();
         $this->load->model('Users_level_model', 'm_level');
     }
 
