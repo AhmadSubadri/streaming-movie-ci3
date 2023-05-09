@@ -3,25 +3,26 @@ class Prodi_master extends MY_controller
 {
     function __construct()
     {
-        parent:: __construct();
+        parent::__construct();
+        is_logged_in();
         $this->load->model('Prodi_model', 'm_prodi');
     }
 
     function index()
     {
-		$data = array(
-			'title' => 'Data Program Studi',
-			'data' => $this->m_prodi->Index(),
+        $data = array(
+            'title' => 'Data Program Studi',
+            'data' => $this->m_prodi->Index(),
             'kodePT' => $this->m_prodi->Get_Kode_PT(),
             'fakultas' => $this->m_prodi->Get_Fakultas(),
-		);
-		
-		$this->load->view('template/header',$data);
-        $this->load->view('template/sidemenu',$data);
-        $this->load->view('prodi/data_prodi',$data);
-        $this->load->view('template/footer',$data);
+        );
+
+        $this->load->view('template/header', $data);
+        $this->load->view('template/sidemenu', $data);
+        $this->load->view('prodi/data_prodi', $data);
+        $this->load->view('template/footer', $data);
     }
-    
+
     public function Insert()
     {
         $data = [
