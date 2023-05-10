@@ -4,6 +4,7 @@ class Data_matakuliah extends MY_controller
     function __construct()
     {
         parent::__construct();
+        is_logged_in();
         $this->load->model('Matakuliah_model', 'm_matkul');
     }
 

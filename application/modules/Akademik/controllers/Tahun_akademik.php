@@ -3,23 +3,24 @@ class Tahun_akademik extends MY_controller
 {
     function __construct()
     {
-        parent:: __construct();
+        parent::__construct();
+        is_logged_in();
         $this->load->model('Tahun_model', 'm_tahun');
     }
 
     function index()
     {
-		$data = array(
-			'title' => 'Data Tahun Akdemik',
-			'data' => $this->m_tahun->Index(),
-		);
-		
-		$this->load->view('template/header',$data);
-        $this->load->view('template/sidemenu',$data);
-        $this->load->view('tahun_akademik/data_tahun_akad',$data);
-        $this->load->view('template/footer',$data);
+        $data = array(
+            'title' => 'Data Tahun Akdemik',
+            'data' => $this->m_tahun->Index(),
+        );
+
+        $this->load->view('template/header', $data);
+        $this->load->view('template/sidemenu', $data);
+        $this->load->view('tahun_akademik/data_tahun_akad', $data);
+        $this->load->view('template/footer', $data);
     }
-    
+
     public function Insert()
     {
         $data = [
@@ -59,9 +60,9 @@ class Tahun_akademik extends MY_controller
     }
 
     function Delete($id)
-	{
-		$this->m_tahun->Delete($id);
-		$this->session->set_flashdata('msg', 'Data Succes Delete');
-		redirect(base_url('tahun-akademik'));
-	}
+    {
+        $this->m_tahun->Delete($id);
+        $this->session->set_flashdata('msg', 'Data Succes Delete');
+        redirect(base_url('tahun-akademik'));
+    }
 }

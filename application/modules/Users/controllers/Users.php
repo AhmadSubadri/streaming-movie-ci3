@@ -7,6 +7,7 @@ class Users extends MY_Controller
     public function __construct()
     {
         parent::__construct();
+        is_logged_in();
         $this->load->model('Users_model', 'm_users');
     }
 
@@ -36,7 +37,7 @@ class Users extends MY_Controller
         $this->m_users->Insert('tb_users', $datausers);
         $user_id = $this->db->insert_id();
         $level = $this->input->post('level');
-        foreach($level as $lv){
+        foreach ($level as $lv) {
             $datalevel = [
                 'id_users' => $user_id,
                 'id_level' => $lv
@@ -61,7 +62,7 @@ class Users extends MY_Controller
         $this->db->update('tb_users', $datausers, ['id_users' => $id]);
         $this->db->delete('tb_users_levels', ['id_users' => $id]);
         $level = $this->input->post('level');
-        foreach($level as $lv){
+        foreach ($level as $lv) {
             $datalevel = [
                 'id_users' => $id,
                 'id_level' => $lv

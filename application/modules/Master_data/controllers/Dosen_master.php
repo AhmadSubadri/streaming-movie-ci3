@@ -3,24 +3,25 @@ class Dosen_master extends MY_controller
 {
     function __construct()
     {
-        parent:: __construct();
+        parent::__construct();
+        is_logged_in();
         $this->load->model('Dosen_model', 'm_dosen');
     }
 
     function index()
     {
-		$data = array(
-			'title' => 'Data Dosen',
-			'data' => $this->m_dosen->Index(),
+        $data = array(
+            'title' => 'Data Dosen',
+            'data' => $this->m_dosen->Index(),
             'kodePT' => $this->m_dosen->Get_Kode_PT(),
-		);
-		
-		$this->load->view('template/header',$data);
-        $this->load->view('template/sidemenu',$data);
-        $this->load->view('dosen/data_dosen',$data);
-        $this->load->view('template/footer',$data);
+        );
+
+        $this->load->view('template/header', $data);
+        $this->load->view('template/sidemenu', $data);
+        $this->load->view('dosen/data_dosen', $data);
+        $this->load->view('template/footer', $data);
     }
-    
+
     public function Insert()
     {
         $data = [

@@ -4,6 +4,7 @@ class Kurikulum_prodi extends MY_controller
     function __construct()
     {
         parent::__construct();
+        is_logged_in();
         $this->load->model('Kurikulumprodi_model', 'm_Kurikulumprodi');
     }
 
@@ -26,7 +27,7 @@ class Kurikulum_prodi extends MY_controller
     // {
     //     $kode_prodi = $this->input->post('id');
     //     $data = $this->m_Kurikulumprodi->Get_Matakuliah_ByProdi($kode_prodi);
-	// 	echo json_encode($data);
+    // 	echo json_encode($data);
     // }
 
     public function get_autocomplete_mk()

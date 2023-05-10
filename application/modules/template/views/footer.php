@@ -113,11 +113,31 @@
 <script src="<?= base_url(); ?>assets/plugins/toast-master/js/jquery.toast.js"></script>
 <script src="<?= base_url(); ?>assets/js/mytoastr.js"></script>
 <script src="<?= base_url(); ?>assets/plugins/dff/dff.js" type="text/javascript"></script>
-
+<script src="<?= base_url(); ?>assets/plugins/select2/dist/js/select2.full.min.js" type="text/javascript"></script>
 
 <script src="<?= base_url(); ?>assets/plugins/typeahead.js-master/dist/typeahead.bundle.min.js"></script>
 <script src="<?= base_url(); ?>assets/plugins/typeahead.js-master/dist/my_typeahead.js"></script>
+<script src="<?= base_url(); ?>assets/plugins/tinymce/tinymce.min.js"></script>
 
+<script>
+    $(document).ready(function() {
+
+        if ($("#mymce").length > 0) {
+            tinymce.init({
+                selector: "textarea#mymce",
+                theme: "modern",
+                height: 300,
+                plugins: [
+                    "advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker",
+                    "searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking",
+                    "save table contextmenu directionality emoticons template paste textcolor"
+                ],
+                toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent",
+
+            });
+        }
+    });
+</script>
 <script>
     var start = 1;
 

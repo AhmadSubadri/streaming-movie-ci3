@@ -66,6 +66,7 @@
                                         <li>
                                             <h6 class="text-muted text-success"><i class="fa fa-circle font-10 m-r-10 "></i>20231</h6>
                                         </li>
+                                        <li><i class="mdi mdi-browser-circle text-success"></i></li>
                                     </ul>
                                 </div>
                             </div>
@@ -74,15 +75,15 @@
                             <div class="row">
                                 <div class="col-md-3 col-xs-6 b-r">
                                     <center class="m-t-30">
-                                        <img src="../assets/images/users/5.jpg" class="img-circle" width="150" />
-                                        <h4 class="card-title m-t-10">Hanna Gover</h4>
+                                        <?php if (!$data) : ?>
+                                            <img src="../assets/images/users/5.jpg" class="img-circle" width="150" />
+                                        <?php else : ?>
+                                            <img src="<?= base_url('uploads/profile/' . $data->imagedosen); ?>" class="img-circle" width="150" />
+                                        <?php endif; ?>
+                                        <h4 class="card-title m-t-10"><?php if (!$data) : ?><?php else : ?><?= $data->namadosen; ?><?php endif; ?></h4>
                                         <h6 class="card-subtitle">Head of Study Program</h6>
-                                        <button class="btn btn-circle btn-secondary">
-                                            <i class="mdi mdi-gmail"></i>
-                                        </button>
-                                        <button class="btn btn-circle btn-secondary">
-                                            <i class="fa fa-phone"></i>
-                                        </button>
+                                        <a href="<?php if (!$data) : ?> - <?php else : ?><?= site_url('' . $data->emaildosen); ?><?php endif; ?>" class="btn btn-circle btn-secondary" target="_blank"><i class="mdi mdi-gmail"></i></a>
+                                        <a href="<?php if (!$data) : ?> - <?php else : ?><?= site_url('' . $data->no_telepon_dosen); ?><?php endif; ?>" class="btn btn-circle btn-secondary" target="_blank"><i class="fa fa-phone"></i></a>
                                     </center>
                                 </div>
                                 <div class="col-md-9 col-xs-6 b-r">
@@ -97,87 +98,107 @@
                                     <div class="tab-content">
                                         <div class="tab-pane active" id="profile" role="tabpanel">
                                             <div class="card-body">
-                                                <div class="row">
+                                                <div class="row text-center">
                                                     <div class="col-md-4 col-xs-6 b-r">
                                                         <strong>Program Studi</strong>
                                                         <br>
-                                                        <p class="text-muted"><?= $this->session->userdata('nama_users'); ?></p>
+                                                        <a href="<?php if (!$data) : ?> - <?php else : ?><?= $data->websiteprodi; ?><?php endif; ?>" target="_blank"><i class="mdi mdi-link-variant"></i> <?= $this->session->userdata('nama_users'); ?></a>
                                                     </div>
                                                     <div class="col-md-4 col-xs-6 b-r">
                                                         <strong>Mobile</strong>
                                                         <br>
-                                                        <p class="text-muted">(123) 456 7890</p>
+                                                        <p class="text-muted"><?php if (!$data) : ?> - <?php else : ?><?= $data->telpprodi; ?><?php endif; ?></p>
                                                     </div>
                                                     <div class="col-md-4 col-xs-6 b-r">
                                                         <strong>Email</strong>
                                                         <br>
-                                                        <p class="text-muted">informatika@upy.ac.id</p>
+                                                        <p class="text-muted"><?php if (!$data) : ?> - <?php else : ?><?= $data->emailprodi; ?><?php endif; ?></p>
+                                                    </div>
+                                                </div>
+                                                <hr />
+                                                <div class="row text-center">
+                                                    <div class="col-md-6 col-xs-6 b-r">
+                                                        <strong>Akreditasi</strong>
+                                                        <br>
+                                                        <p class="text-muted"><?php if (!$data) : ?> - <?php else : ?><?= $data->akreditasi; ?><?php endif; ?></p>
+                                                    </div>
+                                                    <div class="col-md-6 col-xs-6 b-r">
+                                                        <strong>No SK Akreditasi</strong>
+                                                        <br>
+                                                        <p class="text-muted"><?php if (!$data) : ?> - <?php else : ?><?= $data->no_sk_akreditasi; ?><?php endif; ?></p>
                                                     </div>
                                                 </div>
                                                 <hr>
-                                                <p class="m-t-30">Donec pede justo, fringilla vel, aliquet nec, vulputate eget,
-                                                    arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam
-                                                    dictum felis eu pede mollis pretium. Integer tincidunt.Cras dapibus. Vivamus
-                                                    elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula,
-                                                    porttitor eu, consequat vitae, eleifend ac, enim.</p>
-                                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                                                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                                                    when an unknown printer took a galley of type and scrambled it to make a type
-                                                    specimen book. It has survived not only five centuries
-                                                </p>
-                                                <p>It was popularised in the 1960s with the release of Letraset sheets
-                                                    containing Lorem Ipsum passages, and more recently with desktop publishing
-                                                    software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                                                <h4 class="font-medium m-t-30 text-center">Visi</h4>
+                                                <hr />
+                                                <p class="m-t-30"><?php if (!$data) : ?> - <?php else : ?><?= $data->visi; ?><?php endif; ?></p>
+                                                <h4 class="font-medium m-t-30 text-center">Misi</h4>
+                                                <hr />
+                                                <p><?php if (!$data) : ?> - <?php else : ?><?= $data->misi; ?><?php endif; ?></p>
                                             </div>
                                         </div>
                                         <div class="tab-pane" id="settings" role="tabpanel">
                                             <div class="card-body">
-                                                <form class="form-horizontal form-material">
-                                                    <div class="form-group">
-                                                        <label class="col-md-12">Full Name</label>
-                                                        <div class="col-md-12">
-                                                            <input type="text" placeholder="Johnathan Doe" class="form-control form-control-line">
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label for="example-email" class="col-md-12">Email</label>
-                                                        <div class="col-md-12">
-                                                            <input type="email" placeholder="johnathan@admin.com" class="form-control form-control-line" name="example-email" id="example-email">
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label class="col-md-12">Password</label>
-                                                        <div class="col-md-12">
-                                                            <input type="password" value="password" class="form-control form-control-line">
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label class="col-md-12">Phone No</label>
-                                                        <div class="col-md-12">
-                                                            <input type="text" placeholder="123 456 7890" class="form-control form-control-line">
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label class="col-md-12">Message</label>
-                                                        <div class="col-md-12">
-                                                            <textarea rows="5" class="form-control form-control-line"></textarea>
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label class="col-sm-12">Select Country</label>
-                                                        <div class="col-sm-12">
-                                                            <select class="form-control form-control-line">
-                                                                <option>London</option>
-                                                                <option>India</option>
-                                                                <option>Usa</option>
-                                                                <option>Canada</option>
-                                                                <option>Thailand</option>
+                                                <form class="form row" action="<?= site_url('prodi/update-detail'); ?>" method="post">
+                                                    <div class="form-group col-md-6">
+                                                        <label>Select Kaprodi</label>
+                                                        <div>
+                                                            <select class="form-control form-control-line" name="kaprodi_kodedosen">
+                                                                <?php foreach ($dosen as $itemdosen) : ?>
+                                                                    <option value="<?= $itemdosen->iddosen; ?>"><?= $itemdosen->nip; ?>-<?= $itemdosen->namadosen; ?></option>
+                                                                <?php endforeach; ?>
                                                             </select>
                                                         </div>
                                                     </div>
+                                                    <div class="form-group col-md-6">
+                                                        <label>Akreditasi</label>
+                                                        <div>
+                                                            <input type="text" value="<?php if (!$data) : ?><?php else : ?><?= $data->akreditasi; ?><?php endif; ?>" name="akreditasi" class="form-control form-control-line" required>
+                                                            <input type="text" value="<?php if (!$prodikode) : ?><?php else : ?><?= $prodikode->kode_prodi; ?><?php endif; ?>" name="kode_prodi" class="form-control form-control-line" hidden>
+                                                        </div>
+                                                    </div>
+                                                    <hr />
+                                                    <div class="form-group col-md-6">
+                                                        <label>No SK Akreditasi</label>
+                                                        <div>
+                                                            <input type="text" name="no_sk_akreditasi" value="<?php if (!$data) : ?><?php else : ?><?= $data->no_sk_akreditasi; ?><?php endif; ?>" class="form-control form-control-line" required>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group col-md-6">
+                                                        <label>Website</label>
+                                                        <div>
+                                                            <input type="url" name="website" value="<?php if (!$data) : ?><?php else : ?><?= $data->website; ?><?php endif; ?>" class="form-control form-control-line" required>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group col-md-6">
+                                                        <label for="example-email">Email</label>
+                                                        <div>
+                                                            <input type="email" name="email" value="<?php if (!$data) : ?><?php else : ?><?= $data->emailprodi; ?><?php endif; ?>" class="form-control form-control-line" name="example-email" id="example-email" required>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group col-md-6">
+                                                        <label>Password</label>
+                                                        <div>
+                                                            <input type="password" name="password" class="form-control form-control-line">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group col-md-12">
+                                                        <label>Phone No</label>
+                                                        <div>
+                                                            <input type="text" name="telp" value="<?php if (!$data) : ?><?php else : ?><?= $data->telpprodi; ?><?php endif; ?>" class="form-control form-control-line" required>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group col-md-12">
+                                                        <label>Visi</label>
+                                                        <textarea id="mymce" name="visi"><?php if (!$data) : ?><?php else : ?><?= $data->visi; ?><?php endif; ?></textarea>
+                                                    </div>
+                                                    <div class="form-group col-md-12">
+                                                        <label>Misi</label>
+                                                        <textarea id="mymce" name="misi"><?php if (!$data) : ?><?php else : ?><?= $data->misi; ?><?php endif; ?></textarea>
+                                                    </div>
                                                     <div class="form-group">
                                                         <div class="col-sm-12">
-                                                            <button class="btn btn-success">Update Profile</button>
+                                                            <button class="btn btn-sm btn-success">Update Profile</button>
                                                         </div>
                                                     </div>
                                                 </form>

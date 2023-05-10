@@ -4,6 +4,7 @@ class Data_kurikulum extends MY_controller
     function __construct()
     {
         parent::__construct();
+        is_logged_in();
         $this->load->model('Kurikulum_model', 'm_kurikulum');
     }
 

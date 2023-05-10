@@ -66,19 +66,19 @@
                         <span class="hide-menu">Master Data</span></a>
                     <ul aria-expanded="false" class="collapse">
                         <li>
-                            <a href="<?= site_url('data-yayasan'); ?>">Data Yayasan</a>
+                            <a href="<?= site_url('administrator/data-yayasan'); ?>">Data Yayasan</a>
                         </li>
                         <li>
-                            <a href="<?= site_url('data-perguruan-tinggi'); ?>">Data Perguruan Tinggi</a>
+                            <a href="<?= site_url('administrator/data-perguruan-tinggi'); ?>">Data Perguruan Tinggi</a>
                         </li>
                         <li>
-                            <a href="<?= site_url('data-fakultas'); ?>">Data Fakultas</a>
+                            <a href="<?= site_url('administrator/data-fakultas'); ?>">Data Fakultas</a>
                         </li>
                         <li>
-                            <a href="<?= site_url('data-program-studi'); ?>">Data Program Studi</a>
+                            <a href="<?= site_url('administrator/data-program-studi'); ?>">Data Program Studi</a>
                         </li>
                         <li>
-                            <a href="<?= site_url('data-dosen'); ?>">Data Dosen
+                            <a href="<?= site_url('administrator/data-dosen'); ?>">Data Dosen
                             </a>
                         </li>
                     </ul>
@@ -92,7 +92,7 @@
                             <a href="<?= site_url('data-camaba'); ?>">Data Camaba</a>
                         </li>
                         <li>
-                            <a href="<?= site_url('data-mahasiswa'); ?>">Data Mahasiswa</a>
+                            <a href="<?= site_url('administrator/data-mahasiswa'); ?>">Data Mahasiswa</a>
                         </li>
                     </ul>
                 </li>
@@ -102,19 +102,19 @@
                         <span class="hide-menu">Akademik</span></a>
                     <ul aria-expanded="false" class="collapse">
                         <li>
-                            <a href="<?= site_url('tahun-akademik'); ?>">Tahun Akademik</a>
+                            <a href="<?= site_url('administrator/tahun-akademik'); ?>">Tahun Akademik</a>
                         </li>
                         <li>
                             <a href="#" class="has-arrow">Data Kurikulum</a>
                             <ul aria-expanded="false" class="collapse">
                                 <li>
-                                    <a href="<?= site_url('data-matakuliah'); ?>">Data Matakuliah</a>
+                                    <a href="<?= site_url('administrator/data-matakuliah'); ?>">Data Matakuliah</a>
                                 </li>
                                 <li>
-                                    <a href="<?= site_url('data-kurikulum'); ?>">Data Kurikulum</a>
+                                    <a href="<?= site_url('administrator/data-kurikulum'); ?>">Data Kurikulum</a>
                                 </li>
                                 <li>
-                                    <a href="<?= site_url('kurikulum-prodi'); ?>">Kurikulum Prodi</a>
+                                    <a href="<?= site_url('administrator/kurikulum-prodi'); ?>">Kurikulum Prodi</a>
                                 </li>
                             </ul>
                         </li>
@@ -126,10 +126,10 @@
                         <span class="hide-menu">Users Management</span></a>
                     <ul aria-expanded="false" class="collapse">
                         <li>
-                            <a href="<?= site_url('data-users'); ?>">Data Users</a>
+                            <a href="<?= site_url('administrator/data-users'); ?>">Data Users</a>
                         </li>
                         <li>
-                            <a href="<?= site_url('data-user-level'); ?>">Data Users Level</a>
+                            <a href="<?= site_url('administrator/data-user-level'); ?>">Data Users Level</a>
                         </li>
                     </ul>
                 </li>
