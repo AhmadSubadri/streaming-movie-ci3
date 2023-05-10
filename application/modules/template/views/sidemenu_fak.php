@@ -84,42 +84,23 @@
                         <span class="hide-menu">Program Studi</span></a>
                     <ul aria-expanded="false" class="collapse">
                         <li>
-                            <a href="<?= site_url('tahun-akademik'); ?>">Tahun Akademik</a>
+                            <a href="<?= site_url('fakultas/data-prodi'); ?>">Data Program Studi</a>
                         </li>
                         <li>
-                            <a href="#" class="has-arrow">Data Dosen</a>
+                            <a href="<?= site_url('fakultas/data-dosen'); ?>">Data Dosen</a>
+                        </li>
+                        <li>
+                            <a href="#" class="has-arrow">Data Kurikulum</a>
                             <ul aria-expanded="false" class="collapse">
                                 <li>
-                                    <a href="<?= site_url('data-matakuliah'); ?>">Data Matakuliah</a>
+                                    <a href="<?= site_url('#'); ?>">Data Matakuliah</a>
                                 </li>
                                 <li>
-                                    <a href="<?= site_url('data-kurikulum'); ?>">Data Kurikulum</a>
-                                </li>
-                                <li>
-                                    <a href="<?= site_url('kurikulum-prodi'); ?>">Kurikulum Prodi</a>
+                                    <a href="<?= site_url('#'); ?>">Data Kurikulum</a>
                                 </li>
                             </ul>
                         </li>
                     </ul>
-                </li>
-                <li>
-                    <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false">
-                        <i class="mdi mdi-account-key"></i>
-                        <span class="hide-menu">Data Kurikulum</span></a>
-                    <ul aria-expanded="false" class="collapse">
-                        <li>
-                            <a href="<?= site_url('data-users'); ?>">Data Users</a>
-                        </li>
-                        <li>
-                            <a href="<?= site_url('data-user-level'); ?>">Data Users Level</a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false">
-                        <i class="mdi mdi-chart-bubble"></i>
-                        <span class="hide-menu">Data Mahasiswa</span></a>
-
                 </li>
             </ul>
         </nav>
