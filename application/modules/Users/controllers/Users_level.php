@@ -30,7 +30,7 @@ class Users_level extends MY_Controller
         ];
         $this->session->set_flashdata('msg', "Insert Users Level Success!");
         $this->m_level->Insert($data);
-        redirect(site_url('data-user-level'));
+        redirect(site_url('administrator/data-user-level'));
     }
 
     public function Update()
@@ -42,7 +42,7 @@ class Users_level extends MY_Controller
 
         $this->session->set_flashdata('msg', "Update Users Level Success!");
         $this->m_level->Update($data, $id);
-        redirect(site_url('data-user-level'));
+        redirect(site_url('administrator/data-user-level'));
     }
 
     function Delete()
@@ -50,6 +50,6 @@ class Users_level extends MY_Controller
         $id = $this->input->post('id');
         $this->m_level->Delete($id);
         $this->session->set_flashdata('msg', 'Data Users Level Succes Delete');
-        redirect(base_url('data-user-level'));
+        redirect(base_url('administrator/data-user-level'));
     }
 }

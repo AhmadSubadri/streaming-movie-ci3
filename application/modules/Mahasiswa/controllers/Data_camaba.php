@@ -4,13 +4,13 @@ class Data_camaba extends MY_controller
     var $API = "";
     function __construct()
     {
-        parent:: __construct();
+        parent::__construct();
         $this->API = "http://upy_frontend.test/api/Api_camaba";
     }
 
     public function Index()
     {
-        $url = $this->API.'/index_get';
+        $url = $this->API . '/index_get';
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -24,15 +24,15 @@ class Data_camaba extends MY_controller
             'data' => $item,
             // 'detail' => $item2,
         );
-        $this->load->view('template/header',$data);
-        $this->load->view('template/sidemenu',$data);
-        $this->load->view('index',$data);
-        $this->load->view('template/footer',$data);
+        $this->load->view('template/header', $data);
+        $this->load->view('template/sidemenu', $data);
+        $this->load->view('index', $data);
+        $this->load->view('template/footer', $data);
     }
 
     public function update()
     {
-        $url = $this->API.'/index_put';
+        $url = $this->API . '/index_put';
         $data = [
             'id_camaba' => $this->input->post('id'),
             'npm' => $this->input->post('npm_mahasiswa')
@@ -45,12 +45,12 @@ class Data_camaba extends MY_controller
         curl_exec($ch);
         curl_close($ch);
         $this->session->set_flashdata('msg', "Update Data Student Success!");
-        redirect(site_url('data-camaba'));
+        redirect(site_url('administrator/data-camaba'));
     }
 
     public function detail()
     {
-        $url = $this->API.'/index_get';
+        $url = $this->API . '/index_get';
         $data = [
             'id' => $this->input->post('id'),
         ];

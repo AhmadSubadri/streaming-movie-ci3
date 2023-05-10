@@ -36,7 +36,7 @@ class Tahun_akademik extends MY_controller
         ];
         $this->session->set_flashdata('msg', "Insert Tahun Akademik Success!");
         $this->m_tahun->Insert($data);
-        redirect(site_url('tahun-akademik'));
+        redirect(site_url('administrator/tahun-akademik'));
     }
 
     public function Update()
@@ -56,13 +56,13 @@ class Tahun_akademik extends MY_controller
 
         $this->session->set_flashdata('msg', "Update Tahun Akademik Success!");
         $this->m_tahun->Update($data, $id);
-        redirect(site_url('tahun-akademik'));
+        redirect(site_url('administrator/tahun-akademik'));
     }
 
     function Delete($id)
     {
         $this->m_tahun->Delete($id);
         $this->session->set_flashdata('msg', 'Data Succes Delete');
-        redirect(base_url('tahun-akademik'));
+        redirect(base_url('administrator/tahun-akademik'));
     }
 }

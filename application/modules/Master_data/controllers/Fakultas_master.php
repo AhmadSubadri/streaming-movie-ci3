@@ -31,7 +31,7 @@ class Fakultas_master extends MY_controller
         ];
         $this->session->set_flashdata('msg', "Insert Data Fakultas Success!");
         $this->m_fakultas->Insert($data);
-        redirect(site_url('data-fakultas'));
+        redirect(site_url('administrator/data-fakultas'));
     }
 
     public function Update()
@@ -44,7 +44,7 @@ class Fakultas_master extends MY_controller
 
         $this->session->set_flashdata('msg', "Update data Fakultas Success!");
         $this->m_fakultas->Update($data, $id);
-        redirect(site_url('data-fakultas'));
+        redirect(site_url('administrator/data-fakultas'));
     }
 
     public function Delete()
@@ -52,6 +52,6 @@ class Fakultas_master extends MY_controller
         $id = $this->input->post('id');
         $this->session->set_flashdata('msg', "Delete data Fakultas Success!");
         $this->m_fakultas->Delete($id);
-        redirect(site_url('data-fakultas'));
+        redirect(site_url('administrator/data-fakultas'));
     }
 }

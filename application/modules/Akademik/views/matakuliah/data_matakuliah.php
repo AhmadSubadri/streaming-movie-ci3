@@ -12,7 +12,7 @@
                     </div>
                 </div>
                 <div class="card-body">
-                    <form class="form-horizontal" action="<?= site_url('data-matakuliah') ?>" method="get">
+                    <form class="form-horizontal" action="<?= site_url('administrator/data-matakuliah') ?>" method="get">
                         <div class="modal-body row">
                             <div class="form-group col-sm-12">
                                 <div class="row">
@@ -35,7 +35,7 @@
                                     </div>
                                     <div class="col-md-3">
                                         <button type="submit" class="btn btn-warning waves-effect btn-sm"><i class="mdi mdi-filter-outline"> </i>Filter</button>
-                                        <a href="<?= base_url(); ?>data-matakuliah" class="btn btn-secondary btn-sm active" role="button" aria-pressed="true">Reset</a>
+                                        <a href="<?= base_url(); ?>administrator/data-matakuliah" class="btn btn-secondary btn-sm active" role="button" aria-pressed="true">Reset</a>
                                     </div>
                                 </div>
                             </div>
@@ -125,7 +125,7 @@
                     <?= $title ?></h4>
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
             </div>
-            <form class="form-horizontal" action="<?= site_url('data-matakuliah/insert') ?>" method="post">
+            <form class="form-horizontal" action="<?= site_url('administrator/data-matakuliah/insert') ?>" method="post">
                 <div class="modal-body row">
                     <div class="form-group col-sm-6">
                         <label class="col-md-12">Kode Matakuliah</label>
@@ -198,7 +198,7 @@
                             <?= $title ?></h4>
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                     </div>
-                    <form class="form-horizontal" action="<?= site_url('data-matakuliah/update') ?>" method="post">
+                    <form class="form-horizontal" action="<?= site_url('administrator/data-matakuliah/update') ?>" method="post">
                         <div class="modal-body row">
                             <div class="form-group col-sm-6">
                                 <label class="col-md-12">Kode Matakuliah</label>

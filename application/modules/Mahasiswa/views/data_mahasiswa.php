@@ -71,7 +71,7 @@ foreach ($data->result_array() as $item) : ?>
                         <?= $title ?></h4>
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                 </div>
-                <form class="form-horizontal" action="<?= site_url('data-camaba/update') ?>" method="post">
+                <form class="form-horizontal" action="<?= site_url('administrator/data-camaba/update') ?>" method="post">
                     <div class="modal-body row">
                         <div class="form-group col-sm-6">
                             <label class="col-md-12">Nama mahasiswa</label>

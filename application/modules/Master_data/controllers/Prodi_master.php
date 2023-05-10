@@ -34,7 +34,7 @@ class Prodi_master extends MY_controller
         ];
         $this->session->set_flashdata('msg', "Insert Data Program Studi Success!");
         $this->m_prodi->Insert($data);
-        redirect(site_url('data-program-studi'));
+        redirect(site_url('administrator/data-program-studi'));
     }
 
     public function Update()
@@ -50,7 +50,7 @@ class Prodi_master extends MY_controller
 
         $this->session->set_flashdata('msg', "Update data Program Studi Success!");
         $this->m_prodi->Update($data, $id);
-        redirect(site_url('data-program-studi'));
+        redirect(site_url('administrator/data-program-studi'));
     }
 
     public function Delete()
@@ -58,6 +58,6 @@ class Prodi_master extends MY_controller
         $id = $this->input->post('id');
         $this->session->set_flashdata('msg', "Delete data Program Studi Success!");
         $this->m_prodi->Delete($id);
-        redirect(site_url('data-program-studi'));
+        redirect(site_url('administrator/data-program-studi'));
     }
 }

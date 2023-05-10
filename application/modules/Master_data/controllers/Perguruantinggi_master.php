@@ -63,7 +63,7 @@ class Perguruantinggi_master extends MY_controller
                     ];
                     $this->m_pt->insert($data);
                     $this->session->set_flashdata('msg', "Insert Data Perguruan Tinggi no pictures Success!");
-                    redirect(site_url('data-perguruan-tinggi'));
+                    redirect(site_url('administrator/data-perguruan-tinggi'));
                 } else {
                     $logo = $this->upload->data();
                     $data = [
@@ -80,7 +80,7 @@ class Perguruantinggi_master extends MY_controller
                     ];
                     $this->m_pt->insert($data);
                     $this->session->set_flashdata('msg', "Insert Data Perguruan Tinggi with pictures Success!");
-                    redirect(site_url('data-perguruan-tinggi'));
+                    redirect(site_url('administrator/data-perguruan-tinggi'));
                 }
             } else {
                 if (!$this->upload->do_upload('logo_pt')) {
@@ -97,7 +97,7 @@ class Perguruantinggi_master extends MY_controller
                     ];
                     $this->m_pt->update($data, $id);
                     $this->session->set_flashdata('msg', "Update Data Perguruan Tinggi no pictures Success!");
-                    redirect(site_url('data-perguruan-tinggi'));
+                    redirect(site_url('administrator/data-perguruan-tinggi'));
                 } else {
                     $logo = $this->upload->data();
                     if (!$check_data->logo_pt) {
@@ -122,7 +122,7 @@ class Perguruantinggi_master extends MY_controller
                     ];
                     $this->m_pt->update($data, $id);
                     $this->session->set_flashdata('msg', "Update Data Perguruan Tinggi with pictures Success!");
-                    redirect(site_url('data-perguruan-tinggi'));
+                    redirect(site_url('administrator/data-perguruan-tinggi'));
                 }
             }
         }

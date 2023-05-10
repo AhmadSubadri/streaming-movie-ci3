@@ -64,7 +64,7 @@
                     <?= $title ?></h4>
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
             </div>
-            <form class="form-horizontal" action="<?= site_url('users/users_level/insert') ?>" method="post">
+            <form class="form-horizontal" action="<?= site_url('administrator/users/users_level/insert') ?>" method="post">
                 <div class="modal-body row">
                     <div class="form-group col-sm-12">
                         <label class="col-md-12">User Level</label>
@@ -97,7 +97,7 @@
                             <?= $title ?></h4>
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                     </div>
-                    <form class="form-horizontal" action="<?= site_url('users/users_level/update') ?>" method="post">
+                    <form class="form-horizontal" action="<?= site_url('administrator/users/users_level/update') ?>" method="post">
                         <div class="modal-body row">
                             <div class="form-group col-sm-12">
                                 <label class="col-md-12">Nama Users</label>
