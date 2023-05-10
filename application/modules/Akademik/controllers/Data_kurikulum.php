@@ -31,7 +31,7 @@ class Data_kurikulum extends MY_controller
         ];
         $this->session->set_flashdata('msg', "Insert Tahun Kurikulum Success!");
         $this->m_kurikulum->Insert($data);
-        redirect(site_url('data-kurikulum'));
+        redirect(site_url('administrator/data-kurikulum'));
     }
 
     public function Update()
@@ -45,7 +45,7 @@ class Data_kurikulum extends MY_controller
         ];
         $this->session->set_flashdata('msg', "Update Tahun Kurikulum Success!");
         $this->m_kurikulum->update($data, $id);
-        redirect(site_url('data-kurikulum'));
+        redirect(site_url('administrator/data-kurikulum'));
     }
 
     public function Delete()
@@ -53,6 +53,6 @@ class Data_kurikulum extends MY_controller
         $id = $this->input->post('id');
         $this->m_kurikulum->Delete($id);
         $this->session->set_flashdata('msg', 'Data Succes Delete');
-        redirect(base_url('data-kurikulum'));
+        redirect(base_url('administrator/data-kurikulum'));
     }
 }

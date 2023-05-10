@@ -38,7 +38,7 @@ class Dosen_master extends MY_controller
         ];
         $this->session->set_flashdata('msg', "Insert Data Lecturer Success!");
         $this->m_dosen->Insert($data);
-        redirect(site_url('data-dosen'));
+        redirect(site_url('administrator/data-dosen'));
     }
 
     public function Update()
@@ -59,7 +59,7 @@ class Dosen_master extends MY_controller
 
         $this->session->set_flashdata('msg', "Update data Lecturer Success!");
         $this->m_dosen->Update($data, $id);
-        redirect(site_url('data-dosen'));
+        redirect(site_url('administrator/data-dosen'));
     }
 
     public function Delete()
@@ -67,6 +67,6 @@ class Dosen_master extends MY_controller
         $id = $this->input->post('id');
         $this->session->set_flashdata('msg', "Delete data Lecturer Success!");
         $this->m_dosen->Delete($id);
-        redirect(site_url('data-dosen'));
+        redirect(site_url('administrator/data-dosen'));
     }
 }

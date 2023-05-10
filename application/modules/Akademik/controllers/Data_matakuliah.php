@@ -51,7 +51,7 @@ class Data_matakuliah extends MY_controller
         ];
         $this->session->set_flashdata('msg', "Insert Matakuliah Success!");
         $this->m_matkul->Insert($data);
-        redirect(site_url('data-matakuliah'));
+        redirect(site_url('administrator/data-matakuliah'));
     }
 
     public function Update()
@@ -69,7 +69,7 @@ class Data_matakuliah extends MY_controller
 
         $this->session->set_flashdata('msg', "Update Matakuliah Success!");
         $this->m_matkul->Update($data, $id);
-        redirect(site_url('data-matakuliah'));
+        redirect(site_url('administrator/data-matakuliah'));
     }
 
     public function Delete()
@@ -77,6 +77,6 @@ class Data_matakuliah extends MY_controller
         $id = $this->input->post('id');
         $this->session->set_flashdata('msg', "Delete data Matakuliah Success!");
         $this->m_matkul->Delete($id);
-        redirect(site_url('data-matakuliah'));
+        redirect(site_url('administrator/data-matakuliah'));
     }
 }
