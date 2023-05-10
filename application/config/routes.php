@@ -21,50 +21,50 @@ $route['404'] = 'Auth/block';
 
 // Master Data
 // Yayasan
-$route['data-yayasan'] = 'Master_data/Yayasan_master';
-$route['data-yayasan/insert'] = 'Master_data/Yayasan_master/Insert';
+$route['administrator/data-yayasan'] = 'Master_data/Yayasan_master';
+$route['administrator/data-yayasan/insert'] = 'Master_data/Yayasan_master/Insert';
 // Perguruan Tinggi
-$route['data-perguruan-tinggi'] = 'Master_data/Perguruantinggi_master';
-$route['data-perguruan-tinggi/insert'] = 'Master_data/Perguruantinggi_master/Insert';
+$route['administrator/data-perguruan-tinggi'] = 'Master_data/Perguruantinggi_master';
+$route['administrator/data-perguruan-tinggi/insert'] = 'Master_data/Perguruantinggi_master/Insert';
 // Fakultas
-$route['data-fakultas'] = 'Master_data/Fakultas_master';
-$route['data-fakultas/insert'] = 'Master_data/Fakultas_master/Insert';
-$route['data-fakultas/update'] = 'Master_data/Fakultas_master/Update';
-$route['data-fakultas/delete'] = 'Master_data/Fakultas_master/Delete';
+$route['administrator/data-fakultas'] = 'Master_data/Fakultas_master';
+$route['administrator/data-fakultas/insert'] = 'Master_data/Fakultas_master/Insert';
+$route['administrator/data-fakultas/update'] = 'Master_data/Fakultas_master/Update';
+$route['administrator/data-fakultas/delete'] = 'Master_data/Fakultas_master/Delete';
 // Program studi
-$route['data-program-studi'] = 'Master_data/Prodi_master';
-$route['data-program-studi/insert'] = 'Master_data/Prodi_master/Insert';
-$route['data-program-studi/update'] = 'Master_data/Prodi_master/Update';
-$route['data-program-studi/delete'] = 'Master_data/Prodi_master/Delete';
+$route['administrator/data-program-studi'] = 'Master_data/Prodi_master';
+$route['administrator/data-program-studi/insert'] = 'Master_data/Prodi_master/Insert';
+$route['administrator/data-program-studi/update'] = 'Master_data/Prodi_master/Update';
+$route['administrator/data-program-studi/delete'] = 'Master_data/Prodi_master/Delete';
 
 // Data dosen
-$route['data-dosen'] = 'Master_data/Dosen_master';
-$route['data-dosen/insert'] = 'Master_data/Dosen_master/Insert';
-$route['data-dosen/update'] = 'Master_data/Dosen_master/Update';
-$route['data-dosen/delete'] = 'Master_data/Dosen_master/Delete';
+$route['administrator/data-dosen'] = 'Master_data/Dosen_master';
+$route['administrator/data-dosen/insert'] = 'Master_data/Dosen_master/Insert';
+$route['administrator/data-dosen/update'] = 'Master_data/Dosen_master/Update';
+$route['administrator/data-dosen/delete'] = 'Master_data/Dosen_master/Delete';
 
 // Data tahun akademik
-$route['tahun-akademik'] = 'Akademik/Tahun_akademik';
-$route['tahun-akademik/insert'] = 'Akademik/Tahun_akademik/Insert';
-$route['tahun-akademik/update'] = 'Akademik/Tahun_akademik/Update';
-$route['tahun-akademik/delete/(:any)'] = 'Akademik/Tahun_akademik/Delete/$1';
+$route['administrator/tahun-akademik'] = 'Akademik/Tahun_akademik';
+$route['administrator/tahun-akademik/insert'] = 'Akademik/Tahun_akademik/Insert';
+$route['administrator/tahun-akademik/update'] = 'Akademik/Tahun_akademik/Update';
+$route['administrator/tahun-akademik/delete/(:any)'] = 'Akademik/Tahun_akademik/Delete/$1';
 
 // Data Matakuliah
-$route['data-matakuliah'] = 'Akademik/Data_matakuliah';
-$route['data-matakuliah/insert'] = 'Akademik/Data_matakuliah/insert';
-$route['data-matakuliah/update'] = 'Akademik/Data_matakuliah/update';
-$route['data-matakuliah/delete'] = 'Akademik/Data_matakuliah/delete';
-$route['data-matakuliah/autocomplete'] = 'Akademik/Data_matakuliah/get_autocomplete_dosen';
+$route['administrator/data-matakuliah'] = 'Akademik/Data_matakuliah';
+$route['administrator/data-matakuliah/insert'] = 'Akademik/Data_matakuliah/insert';
+$route['administrator/data-matakuliah/update'] = 'Akademik/Data_matakuliah/update';
+$route['administrator/data-matakuliah/delete'] = 'Akademik/Data_matakuliah/delete';
+$route['administrator/data-matakuliah/autocomplete'] = 'Akademik/Data_matakuliah/get_autocomplete_dosen';
 // Kurikulum
-$route['data-kurikulum'] = 'Akademik/Data_kurikulum/index';
-$route['data-kurikulum/insert'] = 'Akademik/Data_kurikulum/Insert';
-$route['data-kurikulum/update'] = 'Akademik/Data_kurikulum/Update';
-$route['data-kurikulum/delete'] = 'Akademik/Data_kurikulum/Delete';
+$route['administrator/data-kurikulum'] = 'Akademik/Data_kurikulum/index';
+$route['administrator/data-kurikulum/insert'] = 'Akademik/Data_kurikulum/Insert';
+$route['administrator/data-kurikulum/update'] = 'Akademik/Data_kurikulum/Update';
+$route['administrator/data-kurikulum/delete'] = 'Akademik/Data_kurikulum/Delete';
 
 // Kurikulum prodi
-$route['kurikulum-prodi'] = 'Akademik/Kurikulum_prodi';
-$route['kurikulum-prodi/get-mk-byprodi'] = 'Akademik/Kurikulum_prodi/Get_MK_ByProdi_Kode';
-$route['kurikulum-prodi/autocomplete'] = 'Akademik/Kurikulum_prodi/get_autocomplete_mk';
+$route['administrator/kurikulum-prodi'] = 'Akademik/Kurikulum_prodi';
+$route['administrator/kurikulum-prodi/get-mk-byprodi'] = 'Akademik/Kurikulum_prodi/Get_MK_ByProdi_Kode';
+$route['administrator/kurikulum-prodi/autocomplete'] = 'Akademik/Kurikulum_prodi/get_autocomplete_mk';
 
 // Data Camaba from api's
 $route['data-camaba'] = 'Mahasiswa/Data_camaba/Index';
@@ -72,17 +72,17 @@ $route['data-camaba/update'] = 'Mahasiswa/Data_camaba/update';
 $route['data-camaba/detail'] = 'Mahasiswa/Data_camaba/detail';
 
 // Data Mahasiswa from BAK
-$route['data-mahasiswa'] = 'Mahasiswa/Data_mahasiswa/Index';
-$route['data-mahasiswa/update'] = 'Mahasiswa/Data_mahasiswa/update';
-$route['data-mahasiswa/detail'] = 'Mahasiswa/Data_mahasiswa/detail';
+$route['administrator/data-mahasiswa'] = 'Mahasiswa/Data_mahasiswa/Index';
+$route['administrator/data-mahasiswa/update'] = 'Mahasiswa/Data_mahasiswa/update';
+$route['administrator/data-mahasiswa/detail'] = 'Mahasiswa/Data_mahasiswa/detail';
 
 // User Management
-$route['data-users'] = 'Users/Users/index';
-$route['data-users/insert'] = 'Users/Users/Insert';
-$route['data-users/update'] = 'Users/Users/Update';
-$route['data-users/delete'] = 'Users/Users/Delete';
+$route['administrator/data-users'] = 'Users/Users/index';
+$route['administrator/data-users/insert'] = 'Users/Users/Insert';
+$route['administrator/data-users/update'] = 'Users/Users/Update';
+$route['administrator/data-users/delete'] = 'Users/Users/Delete';
 
-$route['data-user-level'] = 'Users/Users_level/index';
-$route['data-user-level/delete'] = 'Users/Users_level/Delete';
+$route['administrator/data-user-level'] = 'Users/Users_level/index';
+$route['administrator/data-user-level/delete'] = 'Users/Users_level/Delete';
 
 $route['not-found'] = 'Dashboard/notfound';
