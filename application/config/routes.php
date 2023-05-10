@@ -10,6 +10,8 @@ $route['administrator'] = 'dashboard';
 
 // Fakultas Route's
 $route['fakultas'] = 'Back_fakultas/dashboard/dashboard';
+$route['fakultas/data-prodi'] = 'Back_fakultas/data_prodi/data_prodi';
+$route['fakultas/data-dosen'] = 'Back_fakultas/data_dosen/data_dosen';
 
 // Prodi Route's
 $route['prodi'] = 'Back_prodi/dashboard/dashboard';
