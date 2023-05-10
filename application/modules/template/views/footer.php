@@ -82,7 +82,7 @@
 </div>
 </div>
 
-<script src="<?= base_url(); ?>assets/plugins/jquery/jquery.min.js"></script>
+
 <!-- Bootstrap tether Core JavaScript -->
 <script src="<?= base_url(); ?>assets/plugins/bootstrap/js/popper.min.js"></script>
 

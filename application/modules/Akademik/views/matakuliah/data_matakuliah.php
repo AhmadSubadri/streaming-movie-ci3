@@ -97,7 +97,7 @@
                                             <td><?= $item->type_mk; ?></td>
                                             <td><?= $item->nama_dosen; ?></td>
                                             <td>
-                                                <a href="javascript:void(0)" data-toggle="modal" data-target="#Editmatkul<?= $item->id; ?>" data-id="<?= $item->id; ?>" class="btn btn-sm btn-outline-warning">
+                                                <a data-toggle="modal" data-target="#Editmatkul<?= $item->id; ?>" data-id="<?= $item->id; ?>" class="btn btn-sm btn-outline-warning">
                                                     <i class="fa fa-pencil"></i>
                                                     Edit</a>
                                                 <a onclick="DeleteMatakuliah(<?= $item->id; ?>)" class="btn btn-sm btn-outline-danger">
@@ -148,15 +148,12 @@
                     <div class="form-group col-sm-6">
                         <label class="col-md-12">Kode Prodi</label>
                         <div class="col-md-12">
-                            <select class="form-control" name="kode_prodi" required>
-                                <?php if (empty($prodi)) : ?>
-                                <?php else : ?>
-                                    <option>--- Pilih Kode Prodi ---</option>
-                                    <?php $i = 1;
-                                    foreach ($prodi->result() as $item_prodi) : ?>
-                                        <option value="<?= $item_prodi->kode_prodi; ?>"><?= $item_prodi->kode_prodi; ?>-<?= $item_prodi->nama_prodi; ?></option>
-                                    <?php endforeach; ?>
-                                <?php endif; ?>
+                            <select id="selprodi" style="width: 340px" class="form-control" name="kode_prodi" required>
+                                <option value="">--Pilih Prodi--</option>
+                                <?php
+                                foreach ($prodi->result() as $item_prodi) : ?>
+                                    <option value="<?= $item_prodi->kode_prodi; ?>"><?= $item_prodi->kode_prodi; ?>-<?= $item_prodi->nama_prodi; ?></option>
+                                <?php endforeach; ?>
                             </select>
                         </div>
                     </div>
@@ -170,7 +167,7 @@
                         <label class="col-md-12">Dosen Pengampu</label>
                         <div class="col-md-12" id="autokodedosen">
                             <input type="text" class="typeahead form-control" name="dosennama" placeholder="type name" required="required">
-                            <input type="text" class="form-control" id="iddosen" value="" name="iddosen" hidden>
+                            <input type="text" class="form-control" id="iddosen" value="" name="iddosen">
                         </div>
                     </div>
                 </div>
@@ -222,7 +219,7 @@
                             <div class="form-group col-sm-6">
                                 <label class="col-md-12">Kode Prodi</label>
                                 <div class="col-md-12">
-                                    <select class="form-control custom-select" name="kode_prodi" required="required">
+                                    <select id="prodi1" class="form-control custom-select" name="kode_prodi" required="required">
                                         <option>--Select your Kode Prodi--</option>
                                         <?php if (empty($prodi)) : ?>
                                         <?php else : ?>
@@ -242,8 +239,8 @@
                             <div class="form-group col-sm-6">
                                 <label class="col-md-12">Dosen Pengampu</label>
                                 <div class="col-md-12" id="autokodedosen">
-                                    <input type="text" class="typeahead form-control" name="dosennama" value="<?= $item->nama_dosen; ?>" placeholder="type name" required="required">
-                                    <input type="text" class="form-control" id="iddosen" value="<?= $item->kode_dosen; ?>" name="iddosen" hidden>
+                                    <input type="text" class="typeahead form-control" name="dosennama" placeholder="type name" required="required">
+                                    <input type="text" class="form-control" id="iddosen" value="" name="iddosen">
                                 </div>
                             </div>
                         </div>
@@ -257,3 +254,14 @@
         </div>
     <?php endforeach; ?>
 <?php endif; ?>
+
+<script type="text/javascript">
+    $(function() {
+        $(document).ready(function() {
+            $('#selprodi').select2({
+                dropdownParent: $("#Addtahun")
+            });
+
+        });
+    });
+</script>
