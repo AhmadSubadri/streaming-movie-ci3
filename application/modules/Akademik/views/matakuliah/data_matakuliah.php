@@ -76,7 +76,7 @@
                                     <th>No.</th>
                                     <th>Kode MK</th>
                                     <th>Nama Matakuliah</th>
-                                    <th>SKS Matakuliah</th>
+                                    <th>SKS</th>
                                     <th>Prodi</th>
                                     <th>Tipe Matakuliah</th>
                                     <th>Dosen Pengampu</th>
@@ -167,7 +167,7 @@
                         <label class="col-md-12">Dosen Pengampu</label>
                         <div class="col-md-12" id="autokodedosen">
                             <input type="text" class="typeahead form-control" name="dosennama" placeholder="type name" required="required">
-                            <input type="text" class="form-control" id="iddosen" value="" name="iddosen">
+                            <input type="text" class="form-control" id="iddosen" value="" name="iddosen" hidden>
                         </div>
                     </div>
                 </div>

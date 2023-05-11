@@ -113,11 +113,11 @@
 <script src="<?= base_url(); ?>assets/plugins/toast-master/js/jquery.toast.js"></script>
 <script src="<?= base_url(); ?>assets/js/mytoastr.js"></script>
 <script src="<?= base_url(); ?>assets/plugins/dff/dff.js" type="text/javascript"></script>
-<script src="<?= base_url(); ?>assets/plugins/select2/dist/js/select2.full.min.js" type="text/javascript"></script>
 
 <script src="<?= base_url(); ?>assets/plugins/typeahead.js-master/dist/typeahead.bundle.min.js"></script>
 <script src="<?= base_url(); ?>assets/plugins/typeahead.js-master/dist/my_typeahead.js"></script>
 <script src="<?= base_url(); ?>assets/plugins/tinymce/tinymce.min.js"></script>
+<script src="<?= base_url(); ?>assets/plugins/select2/dist/js/select2.full.min.js" type="text/javascript"></script>
 
 <script>
     $(document).ready(function() {
@@ -137,37 +137,6 @@
             });
         }
     });
-</script>
-<script>
-    var start = 1;
-
-    function persebaran_fields(id) {
-        start++;
-        var objTo = document.getElementById('persebaran_fields' + id)
-        var divtest = document.createElement("tr");
-        divtest.setAttribute("class", "form-group removeclass" + start);
-        var rdiv = 'removeclass' + start;
-        divtest.innerHTML =
-            '<td>' +
-            '<div class="col-md-12" id="autokommatakuliah"><input type="text" class="typeahead form-control" name="matakuliah" placeholder="type matakuiah" required="required"><input type="text" class="form-control" id="idmk" value="" name="idmk" hidden></div>' +
-            '</td>' +
-            '<td><input name="is_wajib[]" type="checkbox" id="is_wajib' + start + '" class="chk-col-red" /><label for="is_wajib' + start + '"></label></td>' +
-            '<td><input name="is_paket[]" type="checkbox" id="is_paket' + start + '" class="chk-col-red" /><label for="is_paket' + start + '"></label></td>' +
-            '<td><button class="btn btn-danger btn-sm" type="button" onclick="remove_education_fields(' + start + ');"><i class="fa fa-minus"></i></button></td>';
-
-        objTo.appendChild(divtest)
-    }
-
-    function remove_persebaran_fields(rid) {
-        $('.removeclass' + rid).remove();
-    }
-
-    // $(document).ready(function() {
-    //     for(let i = start; i < start+1; i++){
-    //         $('.select-MK-option'+ i).select2();
-    //     }
-    // });
-    // $("#select_MK_option").select2();
 </script>
 </body>
 

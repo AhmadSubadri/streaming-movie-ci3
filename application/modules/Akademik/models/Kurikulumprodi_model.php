@@ -41,9 +41,10 @@ class Kurikulumprodi_model extends CI_Model
 
     public function search_data($query)
     {
-        $this->db->select('kode_mk, nama_mk');
-        $this->db->from('tb_matakuliah');
-        $this->db->like('nama_mk', $query);
+        $this->db->select('*');
+        $this->db->from('tb_matakuliah')
+            ->where('kode_prodi', $query);
+        // $this->db->like('nama_mk', $query);
         $query = $this->db->get();
         return $query->result();
     }

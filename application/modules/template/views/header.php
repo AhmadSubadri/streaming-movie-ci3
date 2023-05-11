@@ -13,13 +13,13 @@
     <title>Sistem Informasi Akademik UPY</title>
     <!-- Bootstrap Core CSS -->
     <link href="<?= base_url(); ?>assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?= base_url(); ?>assets/plugins/select2/dist/css/select2.min.css" rel="stylesheet" type="text/css" />
     <link href="<?= base_url(); ?>assets/plugins/typeahead.js-master/dist/typehead-min.css" rel="stylesheet">
     <link href="<?= base_url(); ?>assets/plugins/morrisjs/morris.css" rel="stylesheet">
     <link href="<?= base_url(); ?>assets/plugins/sweetalert/sweetalert.css" rel="stylesheet" type="text/css">
     <link href="<?= base_url(); ?>assets/plugins/toast-master/css/jquery.toast.css" rel="stylesheet">
-    <script src="<?= base_url(); ?>assets/plugins/jquery/jquery.min.js"></script>
-    <link href="<?= base_url(); ?>assets/plugins/select2/dist/css/select2.min.css" rel="stylesheet" type="text/css" />
     <script src="<?= base_url(); ?>assets/plugins/select2/dist/js/select2.min.js" type="text/javascript"></script>
+    <script src="<?= base_url(); ?>assets/plugins/jquery/jquery.min.js"></script>
     <!-- Custom CSS -->
     <link href="<?= base_url(); ?>assets/css/style.css" rel="stylesheet">
     <!-- You can change the theme colors from here -->
