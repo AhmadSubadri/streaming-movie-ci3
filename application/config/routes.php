@@ -67,6 +67,7 @@ $route['administrator/data-kurikulum/delete'] = 'Akademik/Data_kurikulum/Delete'
 $route['administrator/kurikulum-prodi'] = 'Akademik/Kurikulum_prodi';
 $route['administrator/kurikulum-prodi/get-mk-byprodi'] = 'Akademik/Kurikulum_prodi/Get_MK_ByProdi_Kode';
 $route['administrator/kurikulum-prodi/autocomplete'] = 'Akademik/Kurikulum_prodi/get_autocomplete_mk';
+$route['administrator/kurikulum-prodi/insert'] = 'Akademik/Kurikulum_prodi/insert';
 
 // Data Camaba from api's
 $route['data-camaba'] = 'Mahasiswa/Data_camaba/Index';
