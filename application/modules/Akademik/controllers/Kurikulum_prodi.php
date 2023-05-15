@@ -78,9 +78,6 @@ class Kurikulum_prodi extends MY_controller
                     }
                 }
             }
-
-
-
             $this->m_Kurikulumprodi->insertMatakuliah($data);
             // var_dump($data);
             $this->session->set_flashdata('msg', "Simpan data persebaran Success!");
