@@ -52,7 +52,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-lg-8 col-xlg-9">
+        <div class="col-lg-12 col-xlg-12">
             <div class="card">
                 <div class="card-body">
                     <div class="row">
@@ -72,21 +72,146 @@
                             </div>
                         </div>
                         <div class="col-lg-12 col-xlg-12 col-md-12">
-                            <div class="row">
-                                <div class="col-md-9 col-xs-6 b-r">
-
-                                </div>
+                            <div class="table-responsive">
+                                <table id="myTable" class="table table-bordered table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Hari</th>
+                                            <th>Mulai</th>
+                                            <th>Selesai</th>
+                                            <th>Ruang</th>
+                                            <th>Nama MK</th>
+                                            <th>Kelas</th>
+                                            <th>Pertemuan</th>
+                                            <th>Pengajar</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>Selasa</td>
+                                            <td>08.00</td>
+                                            <td>10.00</td>
+                                            <td>306</td>
+                                            <td>Informatika</td>
+                                            <td>Reguler</td>
+                                            <td>6</td>
+                                            <td>Ahmad Subadri, S.Kom</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>Selasa</td>
+                                            <td>10.00</td>
+                                            <td>12.00</td>
+                                            <td>205</td>
+                                            <td>Manajemen WEB</td>
+                                            <td>Reguler</td>
+                                            <td>6</td>
+                                            <td>Ade Fitriadin, S.Kom</td>
+                                        </tr>
+                                        <tr>
+                                            <td>3</td>
+                                            <td>Selasa</td>
+                                            <td>13.00</td>
+                                            <td>15.00</td>
+                                            <td>115</td>
+                                            <td>Pengantar Informatika</td>
+                                            <td>Reguler</td>
+                                            <td>6</td>
+                                            <td>Chandra, S.Kom</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
-                    <div>
-                        <hr />
-                    </div>
+                </div>
+                <div>
+                    <hr />
+                </div>
+                <div class="card-body">
                     <div class="row">
                         <div class="col-12">
                             <div class="d-flex flex-wrap">
                                 <div>
-                                    <h4 class="card-title">Statistik Mahasiswa Masuk dan Keluar</h4>
+                                    <h4 class="card-title">Jadwal Perkuliahan Besok</h4>
+                                </div>
+                                <div class="ml-auto">
+                                    <ul class="list-inline">
+                                        <li>
+                                            <h6 class="text-muted text-success"><i class="fa fa-circle font-10 m-r-10 "></i>20231</h6>
+                                        </li>
+                                        <li><i class="mdi mdi-browser-circle text-success"></i></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-12 col-xlg-12 col-md-12">
+                            <div class="table-responsive">
+                                <table id="myTable" class="table table-bordered table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Hari</th>
+                                            <th>Mulai</th>
+                                            <th>Selesai</th>
+                                            <th>Ruang</th>
+                                            <th>Nama MK</th>
+                                            <th>Kelas</th>
+                                            <th>Pertemuan</th>
+                                            <th>Pengajar</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>Selasa</td>
+                                            <td>08.00</td>
+                                            <td>10.00</td>
+                                            <td>306</td>
+                                            <td>Informatika</td>
+                                            <td>Reguler</td>
+                                            <td>6</td>
+                                            <td>Ahmad Subadri, S.Kom</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>Selasa</td>
+                                            <td>10.00</td>
+                                            <td>12.00</td>
+                                            <td>205</td>
+                                            <td>Manajemen WEB</td>
+                                            <td>Reguler</td>
+                                            <td>6</td>
+                                            <td>Ade Fitriadin, S.Kom</td>
+                                        </tr>
+                                        <tr>
+                                            <td>3</td>
+                                            <td>Selasa</td>
+                                            <td>13.00</td>
+                                            <td>15.00</td>
+                                            <td>115</td>
+                                            <td>Pengantar Informatika</td>
+                                            <td>Reguler</td>
+                                            <td>6</td>
+                                            <td>Chandra, S.Kom</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <hr />
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="d-flex flex-wrap">
+                                <div>
+                                    <h4 class="card-title">Statistik Absensi Mahasiswa</h4>
                                 </div>
                                 <div class="ml-auto">
                                     <ul class="list-inline">
@@ -102,51 +227,6 @@
                         </div>
                         <div class="col-12">
                             <div id="earning" style="height: 355px;"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Column -->
-        <div class="col-lg-4 col-xlg-3">
-            <div class="card card-inverse card-dark">
-                <div class="card-body">
-                    <div class="d-flex">
-                        <div class="m-r-20 align-self-center">
-                            <h1 class="text-white"><i class="ti-light-bulb"></i></h1>
-                        </div>
-                        <div>
-                            <h3 class="card-title">Mahasiswa Skripsi</h3>
-                            <h6 class="card-subtitle">Semester Ganjil</h6>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-6 align-self-center">
-                            <h2 class="font-light text-white"><sup><small><i class="ti-arrow-up"></i></small></sup>534</h2>
-                        </div>
-                        <div class="col-6 p-t-10 p-b-20 text-right">
-                            <div class="spark-count" style="height:65px"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card card-inverse card-primary">
-                <div class="card-body">
-                    <div class="d-flex">
-                        <div class="m-r-20 align-self-center">
-                            <h1 class="text-white"><i class="ti-pie-chart"></i></h1>
-                        </div>
-                        <div>
-                            <h3 class="card-title">Rasio Mahasiswa</h3>
-                            <h6 class="card-subtitle">2023</h6>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-6 align-self-center">
-                            <h2 class="font-light text-white"></h2>
-                        </div>
-                        <div class="col-6 p-t-10 p-b-20 text-right align-self-center">
-                            <div class="spark-count2" style="height:65px"></div>
                         </div>
                     </div>
                 </div>
