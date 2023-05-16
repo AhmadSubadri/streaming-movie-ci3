@@ -8,6 +8,9 @@ $route['translate_uri_dashes'] = FALSE;
 // Administrator Route's
 $route['administrator'] = 'dashboard';
 
+// Mahasiswa
+$route['mahasiswa'] = 'Levelmahasiswa/Dashboard/Dashboard_mahasiswa';
+
 // Fakultas Route's
 $route['fakultas'] = 'Back_fakultas/dashboard/dashboard';
 $route['fakultas/data-prodi'] = 'Back_fakultas/data_prodi/data_prodi';
@@ -86,6 +89,7 @@ $route['administrator/data-users/update'] = 'Users/Users/Update';
 $route['administrator/data-users/delete'] = 'Users/Users/Delete';
 
 $route['administrator/data-user-level'] = 'Users/Users_level/index';
+$route['administrator/users/users_level/insert'] = 'Users/Users_level/Insert';
 $route['administrator/data-user-level/delete'] = 'Users/Users_level/Delete';
 
 $route['not-found'] = 'Dashboard/notfound';

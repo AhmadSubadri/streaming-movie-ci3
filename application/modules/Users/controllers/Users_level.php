@@ -23,6 +23,7 @@ class Users_level extends MY_Controller
         $this->load->view('users/data_level', $data);
         $this->load->view('template/footer', $data);
     }
+
     public function Insert()
     {
         $data = [
