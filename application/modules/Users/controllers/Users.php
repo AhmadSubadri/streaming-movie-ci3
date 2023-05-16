@@ -45,7 +45,7 @@ class Users extends MY_Controller
             $this->m_users->Insert('tb_users_levels', $datalevel);
         }
         $this->session->set_flashdata('msg', "Insert Users Success!");
-        redirect(site_url('data-users'));
+        redirect(site_url('administrator/data-users'));
     }
 
     public function Update()
@@ -70,7 +70,7 @@ class Users extends MY_Controller
             $this->m_users->Insert('tb_users_levels', $datalevel);
         }
         $this->session->set_flashdata('msg', "Update Users Success!");
-        redirect(site_url('data-users'));
+        redirect(site_url('administrator/data-users'));
     }
 
     public function Delete()
@@ -79,6 +79,6 @@ class Users extends MY_Controller
         $this->m_users->Delete($id);
         $this->db->delete('tb_users_levels', ['id_users' => $id]);
         $this->session->set_flashdata('msg', 'Data Users Success Delete');
-        redirect(base_url('data-users'));
+        redirect(base_url('administrator/data-users'));
     }
 }

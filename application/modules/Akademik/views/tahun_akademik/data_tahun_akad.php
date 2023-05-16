@@ -54,7 +54,7 @@
                                                 <a href="javascript:void(0)" data-toggle="modal" data-target="#Edittahun<?= $item->id_tahun; ?>" data-id="<?= $item->id_tahun; ?>" class="btn btn-sm btn-outline-warning">
                                                     <i class="fa fa-pencil"></i>
                                                     Edit</a>
-                                                <a href="<?= site_url() ?>tahun-akademik/delete/<?= $item->id_tahun; ?>" class="btn btn-sm btn-outline-danger tombol-hapus">
+                                                <a href="<?= site_url() ?>administrator/tahun-akademik/delete/<?= $item->id_tahun; ?>" class="btn btn-sm btn-outline-danger tombol-hapus">
                                                     <i class="fa fa-trash"></i>
                                                     Delete</a>
                                             </td>
