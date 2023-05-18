@@ -44,7 +44,7 @@ function DeleteFakultas(id) {
 		function (isConfirm) {
 			if (isConfirm) {
 				$.ajax({
-					url: "administrator/data-fakultas/delete",
+					url: "data-fakultas/delete",
 					method: "POST",
 					data: {
 						id: id,
@@ -60,7 +60,7 @@ function DeleteFakultas(id) {
 							},
 							function (isConfirm) {
 								if (isConfirm) {
-									window.location.href = "administrator/data-fakultas";
+									window.location.href = "data-fakultas";
 								}
 							}
 						);
@@ -86,7 +86,7 @@ function DeleteProdi(id) {
 		function (isConfirm) {
 			if (isConfirm) {
 				$.ajax({
-					url: "administrator/data-program-studi/delete",
+					url: "data-program-studi/delete",
 					method: "POST",
 					data: {
 						id: id,
@@ -103,7 +103,7 @@ function DeleteProdi(id) {
 							},
 							function (isConfirm) {
 								if (isConfirm) {
-									window.location.href = "administrator/data-program-studi";
+									window.location.href = "data-program-studi";
 								}
 							}
 						);
@@ -129,7 +129,7 @@ function DeleteLevelUser(id) {
 		function (isConfirm) {
 			if (isConfirm) {
 				$.ajax({
-					url: "administrator/data-user-level/delete",
+					url: "data-user-level/delete",
 					method: "POST",
 					data: {
 						id: id,
@@ -145,7 +145,7 @@ function DeleteLevelUser(id) {
 							},
 							function (isConfirm) {
 								if (isConfirm) {
-									window.location.href = "administrator/data-user-level";
+									window.location.href = "data-user-level";
 								}
 							}
 						);
@@ -171,7 +171,7 @@ function DeleteUsersData(id) {
 		function (isConfirm) {
 			if (isConfirm) {
 				$.ajax({
-					url: "administrator/data-users/delete",
+					url: "data-users/delete",
 					method: "POST",
 					data: {
 						id: id,
@@ -187,7 +187,7 @@ function DeleteUsersData(id) {
 							},
 							function (isConfirm) {
 								if (isConfirm) {
-									window.location.href = "administrator/data-users";
+									window.location.href = "data-users";
 								}
 							}
 						);
@@ -213,7 +213,7 @@ function DeleteDosen(id) {
 		function (isConfirm) {
 			if (isConfirm) {
 				$.ajax({
-					url: "administrator/data-dosen/delete",
+					url: "data-dosen/delete",
 					method: "POST",
 					data: {
 						id: id,
@@ -229,7 +229,7 @@ function DeleteDosen(id) {
 							},
 							function (isConfirm) {
 								if (isConfirm) {
-									window.location.href = "administrator/data-dosen";
+									window.location.href = "data-dosen";
 								}
 							}
 						);
@@ -255,7 +255,7 @@ function DeleteMatakuliah(id) {
 		function (isConfirm) {
 			if (isConfirm) {
 				$.ajax({
-					url: "administrator/data-matakuliah/delete",
+					url: "data-matakuliah/delete",
 					method: "POST",
 					data: {
 						id: id,
@@ -271,7 +271,7 @@ function DeleteMatakuliah(id) {
 							},
 							function (isConfirm) {
 								if (isConfirm) {
-									window.location.href = "administrator/data-matakuliah";
+									window.location.href = "data-matakuliah";
 								}
 							}
 						);
@@ -297,7 +297,7 @@ function DeleteKurikulum(id) {
 		function (isConfirm) {
 			if (isConfirm) {
 				$.ajax({
-					url: "administrator/data-kurikulum/delete",
+					url: "data-kurikulum/delete",
 					method: "POST",
 					data: {
 						id: id,
@@ -313,7 +313,7 @@ function DeleteKurikulum(id) {
 							},
 							function (isConfirm) {
 								if (isConfirm) {
-									window.location.href = "administrator/data-kurikulum";
+									window.location.href = "data-kurikulum";
 								}
 							}
 						);

@@ -45,11 +45,12 @@ class Auth extends MY_Controller
 						'username' => $query['username'],
 						'users_level' => $query['users_level'],
 						'nama_users' => $query['nama_users'],
+						'email_users' => $query['email_users'],
 					];
 					$this->session->set_userdata($data);
 					$this->session->set_flashdata('msg', 'Login Success');
 					if ($this->session->userdata('users_level')) {
-						redirect(base_url('/' . $this->session->userdata('users_level')));
+						redirect(site_url('/' . $this->session->userdata('users_level')));
 					}
 				} else {
 					$this->session->set_flashdata('msg', 'Not Activated');

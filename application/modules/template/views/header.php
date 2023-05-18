@@ -315,8 +315,8 @@
                                         <div class="dw-user-box">
                                             <div class="u-img"><img src="<?= base_url(); ?>assets/images/users/1.jpg" alt="user"></div>
                                             <div class="u-text">
-                                                <h4>Steave Jobs</h4>
-                                                <p class="text-muted">varun@gmail.com</p><a href="pages-profile.html" class="btn btn-rounded btn-danger btn-sm">View Profile</a>
+                                                <h4><?= $this->session->userdata('nama_users'); ?></h4>
+                                                <p class="text-muted"><?= $this->session->userdata('email_users'); ?></p><a href="pages-profile.html" class="btn btn-rounded btn-danger btn-sm">View Profile</a>
                                             </div>
                                         </div>
                                     </li>
