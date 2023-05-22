@@ -56,24 +56,21 @@ class Kurikulum_prodi extends MY_controller
             $kode_kurikulum = $this->input->post('kode_kurikulum');
             $semester = $this->input->post('semester');
             $matakuliah = $this->input->post('matakuliah');
-            $is_wajib = $this->input->post('is_wajib');
-            $is_paket = $this->input->post('is_paket');
+            $is_pilihan = $this->input->post('is_pilihan');
 
             $data = array();
 
             foreach ($semester as $semesterIndex => $sem) {
                 if (isset($matakuliah[$semesterIndex])) {
                     foreach ($matakuliah[$semesterIndex] as $index => $mk) {
-                        $isWajib = isset($is_wajib[$semesterIndex][$index]) ? $is_wajib[$semesterIndex][$index] : 0;
-                        $isPaket = isset($is_paket[$semesterIndex][$index]) ? $is_paket[$semesterIndex][$index] : 0;
+                        $ispilihan = isset($is_pilihan[$semesterIndex][$index]) ? $is_pilihan[$semesterIndex][$index] : 0;
 
                         $data[] = array(
                             'kode_prodi' => $kode_prodi,
                             'kode_kurikulum' => $kode_kurikulum,
                             'semester' => $sem,
                             'kode_matakuliah' => $mk,
-                            'is_wajib' => $isWajib,
-                            'is_paket' => $isPaket
+                            'is_pilihan' => $ispilihan,
                         );
                     }
                 }
