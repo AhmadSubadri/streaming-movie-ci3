@@ -139,10 +139,10 @@
                         <span class="hide-menu">Ruang Master</span></a>
                     <ul aria-expanded="false" class="collapse">
                         <li>
-                            <a href="<?= site_url('administrator/data-ruang') ?>">Data Ruang</a>
+                            <a href="<?= site_url('administrator/data-ruang'); ?>">Data Ruang</a>
                         </li>
                         <li>
-                            <a href="ui-user-card.html">User Cards</a>
+                            <a href="<?= site_url('administrator/set-data-ruang'); ?>">Set Ruangan</a>
                         </li>
                     </ul>
                 </li>

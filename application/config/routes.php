@@ -29,6 +29,10 @@ $route['administrator/data-ruang'] = 'Ruang/Data_ruang';
 $route['administrator/data-ruang/insert'] = 'Ruang/Data_ruang/insert';
 $route['administrator/data-ruang/update'] = 'Ruang/Data_ruang/update';
 $route['administrator/data-ruang/delete/(:any)'] = 'Ruang/Data_ruang/delete/$1';
+
+// set ruangan
+$route['administrator/set-data-ruang'] = 'Ruang/Set_ruang';
+
 // Master Data
 // Yayasan
 $route['administrator/data-yayasan'] = 'Master_data/Yayasan_master';
