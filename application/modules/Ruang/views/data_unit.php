@@ -59,7 +59,7 @@
 
 <!-- Modal Add unit -->
 <div id="Addunit" class="modal fade in" tabindex="-1" role="dialog" aria-labelledby="AddunitLabel" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
                 <h4 class="modal-title" id="AddunitLabel">Add
@@ -72,12 +72,14 @@
                         <label class="col-md-12">Nama unit</label>
                         <div class="col-md-12">
                             <input type="text" class="form-control" name="nama_unit" value="" placeholder="type name unit" required="required">
+                            <code>Example : Unit 1 (Perhatikan huruf besar kecil)</code>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-md-12">Nama Gedung</label>
                         <div class="col-md-12">
                             <input type="text" class="form-control" name="nama_gedung" value="" placeholder="type name gedung" required="required">
+                            <code>Example : Gedung A (Perhatikan huruf besar kecil)</code>
                         </div>
                     </div>
                 </div>
@@ -95,7 +97,7 @@
     <?php $i = 1;
     foreach ($data->result() as $item) : ?>
         <div id="Editunit<?= $item->id; ?>" class="modal fade in" tabindex="-1" role="dialog" aria-labelledby="EditunitLabel" aria-hidden="true">
-            <div class="modal-dialog">
+            <div class="modal-dialog modal-lg">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h4 class="modal-title" id="EditunitLabel">Edit
@@ -109,12 +111,14 @@
                                 <div class="col-md-12">
                                     <input type=" number" class="form-control" name="id" value="<?= $item->id; ?>" placeholder="Enter numeric value" hidden="hidden">
                                     <input type="text" class="form-control" name="nama_unit" value="<?= $item->nama_unit; ?>" placeholder="type name unit" required="required">
+                                    <code>Example : Unit 1 (Perhatikan huruf besar kecil)</code>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-md-12">Nama Gedung</label>
                                 <div class="col-md-12">
                                     <input type="text" class="form-control" name="nama_gedung" value="<?= $item->nama_gedung; ?>" placeholder="type name gedung" required="required">
+                                    <code>Example : Gedung A (Perhatikan huruf besar kecil)</code>
                                 </div>
                             </div>
                         </div>

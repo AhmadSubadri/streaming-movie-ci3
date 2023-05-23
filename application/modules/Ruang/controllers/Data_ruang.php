@@ -13,12 +13,21 @@ class Data_ruang extends MY_controller
         $data = array(
             'title' => 'Data Ruang',
             'data' => $this->m_ruang->get_ruang(),
+            'unit' => $this->m_ruang->get_unit(),
         );
 
         $this->load->view('template/header', $data);
         $this->load->view('template/sidemenu', $data);
         $this->load->view('ruang/data_ruang', $data);
         $this->load->view('template/footer', $data);
+    }
+
+    public function get_autocomplete_unit()
+    {
+        $query = $this->input->post('id');
+        $data = $this->m_ruang->search_data($query);
+        header('Content-Type: application/json');
+        echo json_encode($data);
     }
 
     public function insert()
