@@ -24,6 +24,12 @@ $route['prodi/data-dosen'] = 'Back_prodi/data_dosen/data_dosen';
 
 $route['404'] = 'Auth/block';
 
+// Data Unit
+$route['administrator/data-unit'] = 'Ruang/Data_unit';
+$route['administrator/data-unit/insert'] = 'Ruang/Data_unit/insert';
+$route['administrator/data-unit/update'] = 'Ruang/Data_unit/update';
+$route['administrator/data-unit/delete/(:any)'] = 'Ruang/Data_unit/delete/$1';
+
 // MAster Ruang
 $route['administrator/data-ruang'] = 'Ruang/Data_ruang';
 $route['administrator/data-ruang/insert'] = 'Ruang/Data_ruang/insert';

@@ -7,7 +7,7 @@
                     <div class="d-flex flex-wrap">
                         <h4 class="m-b-0 text-white card-title"><?php echo $title ?></h4>
                         <div class="ml-auto">
-                            <a href="javascript:void(0)" data-toggle="modal" data-target="#Addsetruang" class="btn-warning btn-sm">
+                            <a href="javascript:void(0)" data-toggle="modal" data-target="#Addunit" class="btn-warning btn-sm">
                                 <i class="mdi mdi-plus"></i>
                                 Create
                                 <?= $title ?></a>
@@ -23,8 +23,8 @@
                             <thead>
                                 <tr>
                                     <th>#</th>
-                                    <th>Program Studi</th>
-                                    <th>Ruangan</th>
+                                    <th>Nama Unit</th>
+                                    <th>Nama Gedung</th>
                                     <th>Aksi</th>
                                 </tr>
                             </thead>
@@ -35,13 +35,13 @@
                                     foreach ($data->result() as $item) : ?>
                                         <tr>
                                             <td><?= $i++; ?></td>
-                                            <td><?= $item->nama_prodi; ?></td>
-                                            <td><?= $item->nama_ruang; ?></td>
+                                            <td><?= $item->nama_unit; ?></td>
+                                            <td><?= $item->nama_gedung; ?></td>
                                             <td>
-                                                <a href="javascript:void(0)" data-toggle="modal" data-target="#Editsetruang<?= $item->id; ?>" data-id="<?= $item->id; ?>" class="btn btn-sm btn-outline-warning">
+                                                <a href="javascript:void(0)" data-toggle="modal" data-target="#Editunit<?= $item->id; ?>" data-id="<?= $item->id; ?>" class="btn btn-sm btn-outline-warning">
                                                     <i class="fa fa-pencil"></i>
                                                     Edit</a>
-                                                <a href="<?= site_url() ?>administrator/data-ruang/delete/<?= $item->id; ?>" class="btn btn-sm btn-outline-danger tombol-hapus">
+                                                <a href="<?= site_url() ?>administrator/data-unit/delete/<?= $item->id; ?>" class="btn btn-sm btn-outline-danger tombol-hapus">
                                                     <i class="fa fa-trash"></i>
                                                     Delete</a>
                                             </td>
@@ -57,45 +57,27 @@
     </div>
 </div>
 
-<!-- Modal Add setruang -->
-<div id="Addsetruang" class="modal fade in" tabindex="-1" role="dialog" aria-labelledby="AddsetruangLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
+<!-- Modal Add unit -->
+<div id="Addunit" class="modal fade in" tabindex="-1" role="dialog" aria-labelledby="AddunitLabel" aria-hidden="true">
+    <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title" id="AddsetruangLabel">Add
+                <h4 class="modal-title" id="AddunitLabel">Add
                     <?= $title ?></h4>
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
             </div>
-            <form class="form-horizontal" action="<?= site_url('administrator/set-data-ruang/insert') ?>" method="post">
+            <form class="form-horizontal" action="<?= site_url('administrator/data-unit/insert') ?>" method="post">
                 <div class="modal-body">
                     <div class="form-group">
-                        <label class="col-md-12">Program Studi</label>
+                        <label class="col-md-12">Nama unit</label>
                         <div class="col-md-12">
-                            <select class="form-control custom-select" name="kode_prodi" required="required">
-                                <option>--Select your Major--</option>
-                                <?php if (empty($prodi)) : ?>
-                                <?php else : ?>
-                                    <?php $i = 1;
-                                    foreach ($prodi->result() as $itemprodi) : ?>
-                                        <option value="<?= $itemprodi->kode_prodi; ?>"><?= $itemprodi->kode_prodi; ?>-<?= $itemprodi->nama_prodi; ?></option>
-                                    <?php endforeach; ?>
-                                <?php endif; ?>
-                            </select>
+                            <input type="text" class="form-control" name="nama_unit" value="" placeholder="type name unit" required="required">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-md-12">Nama setruang</label>
+                        <label class="col-md-12">Nama Gedung</label>
                         <div class="col-md-12">
-                            <select class="form-control custom-select" name="kode_prodi" required="required">
-                                <option>--Select your Room--</option>
-                                <?php if (empty($ruang)) : ?>
-                                <?php else : ?>
-                                    <?php $i = 1;
-                                    foreach ($ruang->result() as $itemruang) : ?>
-                                        <option value="<?= $itemruang->id; ?>"><?= $itemruang->kode_ruang; ?>-<?= $itemruang->nama_ruang; ?></option>
-                                    <?php endforeach; ?>
-                                <?php endif; ?>
-                            </select>
+                            <input type="text" class="form-control" name="nama_gedung" value="" placeholder="type name gedung" required="required">
                         </div>
                     </div>
                 </div>
@@ -112,35 +94,27 @@
 <?php else : ?>
     <?php $i = 1;
     foreach ($data->result() as $item) : ?>
-        <div id="Editsetruang<?= $item->id; ?>" class="modal fade in" tabindex="-1" role="dialog" aria-labelledby="EditsetruangLabel" aria-hidden="true">
-            <div class="modal-dialog modal-lg">
+        <div id="Editunit<?= $item->id; ?>" class="modal fade in" tabindex="-1" role="dialog" aria-labelledby="EditunitLabel" aria-hidden="true">
+            <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h4 class="modal-title" id="EditsetruangLabel">Edit
+                        <h4 class="modal-title" id="EditunitLabel">Edit
                             <?= $title ?></h4>
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                     </div>
-                    <form class="form-horizontal" action="<?= site_url('administrator/set-data-ruang/update') ?>" method="post">
+                    <form class="form-horizontal" action="<?= site_url('administrator/data-unit/update') ?>" method="post">
                         <div class="modal-body">
                             <div class="form-group">
-                                <label class="col-md-12">Program Studi</label>
+                                <label class="col-md-12">Nama Unit</label>
                                 <div class="col-md-12">
-                                    <select class="form-control custom-select" name="kode_prodi" required="required">
-                                        <option>--Select your Major--</option>
-                                        <?php if (empty($prodi)) : ?>
-                                        <?php else : ?>
-                                            <?php $i = 1;
-                                            foreach ($prodi->result() as $itemprodi) : ?>
-                                                <option value="<?= $itemprodi->kode_prodi; ?>" <?= ($itemprodi->kode_prodi == $item->kode_prodi) ? 'selected' : '' ?>><?= $itemprodi->kode_prodi; ?>-<?= $itemprodi->nama_prodi; ?></option>
-                                            <?php endforeach; ?>
-                                        <?php endif; ?>
-                                    </select>
+                                    <input type=" number" class="form-control" name="id" value="<?= $item->id; ?>" placeholder="Enter numeric value" hidden="hidden">
+                                    <input type="text" class="form-control" name="nama_unit" value="<?= $item->nama_unit; ?>" placeholder="type name unit" required="required">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-md-12">Nama setruang</label>
+                                <label class="col-md-12">Nama Gedung</label>
                                 <div class="col-md-12">
-                                    <input type="text" class="form-control" name="nama_ruang" value="<?= $item->nama_ruang; ?>" placeholder="type name room" required="required">
+                                    <input type="text" class="form-control" name="nama_gedung" value="<?= $item->nama_gedung; ?>" placeholder="type name gedung" required="required">
                                 </div>
                             </div>
                         </div>

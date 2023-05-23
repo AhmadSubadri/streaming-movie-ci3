@@ -122,6 +122,22 @@
                 </li>
                 <li>
                     <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false">
+                        <i class="mdi mdi-chart-bubble"></i>
+                        <span class="hide-menu">Ruang Master</span></a>
+                    <ul aria-expanded="false" class="collapse">
+                        <li>
+                            <a href="<?= site_url('administrator/data-unit'); ?>">Data Unit</a>
+                        </li>
+                        <li>
+                            <a href="<?= site_url('administrator/data-ruang'); ?>">Data Ruang</a>
+                        </li>
+                        <li>
+                            <a href="<?= site_url('administrator/set-data-ruang'); ?>">Set Ruangan</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false">
                         <i class="mdi mdi-account-key"></i>
                         <span class="hide-menu">Users Management</span></a>
                     <ul aria-expanded="false" class="collapse">
@@ -130,19 +146,6 @@
                         </li>
                         <li>
                             <a href="<?= site_url('administrator/data-user-level'); ?>">Data Users Level</a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false">
-                        <i class="mdi mdi-chart-bubble"></i>
-                        <span class="hide-menu">Ruang Master</span></a>
-                    <ul aria-expanded="false" class="collapse">
-                        <li>
-                            <a href="<?= site_url('administrator/data-ruang'); ?>">Data Ruang</a>
-                        </li>
-                        <li>
-                            <a href="<?= site_url('administrator/set-data-ruang'); ?>">Set Ruangan</a>
                         </li>
                     </ul>
                 </li>
