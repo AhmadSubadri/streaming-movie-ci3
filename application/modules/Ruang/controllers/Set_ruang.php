@@ -26,9 +26,15 @@ class Set_ruang extends MY_controller
 
     public function insert()
     {
-        $data = [
-            'kode_prodi' => $this->input->post('kode_prodi'),
-            'id_ruang' => $this->input->post('kode_prodi'),
-        ];
+        $ruang = $this->input->post('ruangansave');
+        foreach ($ruang as $rg) {
+            $data = [
+                'kode_prodi' => $this->input->post('kode_prodi'),
+                'id_ruang' => $rg,
+            ];
+            $this->m_setruang->insert($data);
+        }
+        $this->session->set_flashdata('msg', "Insert Set Room Success!");
+        redirect(site_url('administrator/set-data-ruang'));
     }
 }

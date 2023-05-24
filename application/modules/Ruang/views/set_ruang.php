@@ -212,9 +212,9 @@
                     unit: nama_unit
                 },
                 success: function(data) {
-                    var html = ''; // Inisialisasi html dengan nilai awal kosong
+                    var html = '';
                     for (var i = 0; i < data.length; i++) {
-                        html += '<input type="checkbox" id="md_checkbox_21' + data[i].id + '" name="ruangansave[]" class="filled-in chk-col-red"/> ' +
+                        html += '<input type="checkbox" id="md_checkbox_21' + data[i].id + '" name="ruangansave[]" value="' + data[i].id + '" class="filled-in chk-col-red"/> ' +
                             '<label for = "md_checkbox_21' + data[i].id + '" > ' + data[i].kode_ruang + ' - ' + data[i].nama_ruang + ' </label>&nbsp; &nbsp; &nbsp; <i class="text-danger">-</i>&nbsp; &nbsp; &nbsp;';
                     }
                     $('#idruangroom').html(html);

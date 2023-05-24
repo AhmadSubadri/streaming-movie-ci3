@@ -10,7 +10,9 @@ class Data_setruangmodel extends CI_Model
 
     public function get_setruang()
     {
-        $this->db->select('*')->from('tb_setruangan')->join('tb_ruangan', 'tb_ruangan.id = tb_setruangan.id_ruang');
+        $this->db->select('*')->from('tb_setruangan')
+            ->join('tb_prodi', 'tb_prodi.kode_prodi = tb_setruangan.kode_prodi')
+            ->join('tb_ruangan', 'tb_ruangan.id = tb_setruangan.id_ruang');
         $query = $this->db->get();
         return $query;
     }
