@@ -41,6 +41,7 @@ $route['administrator/data-ruang/autocomplete-to-room'] = 'Ruang/Data_ruang/get_
 // set ruangan
 $route['administrator/set-data-ruang'] = 'Ruang/Set_ruang';
 $route['administrator/set-data-ruang/insert'] = 'Ruang/Set_ruang/insert';
+$route['administrator/set-data-ruang/delete/(:any)'] = 'Ruang/Set_ruang/delete/$1';
 
 // Master Data
 // Yayasan

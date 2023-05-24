@@ -37,4 +37,11 @@ class Set_ruang extends MY_controller
         $this->session->set_flashdata('msg', "Insert Set Room Success!");
         redirect(site_url('administrator/set-data-ruang'));
     }
+
+    public function delete($id)
+    {
+        $this->m_setruang->Delete($id);
+        $this->session->set_flashdata('msg', 'Data Succes Delete');
+        redirect(base_url('administrator/set-data-ruang'));
+    }
 }
