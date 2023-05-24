@@ -5,7 +5,8 @@ class Dashboard_mahasiswa extends MY_controller
     {
         parent::__construct();
         $this->load->model('Dashboard_model', 'lmhs_model');
-        is_logged_in();
+        // is_logged_in();
+        is_mahasiswa();
     }
 
     public function index()

@@ -20,3 +20,11 @@ function is_logged_in()
         }
     }
 }
+
+function is_mahasiswa()
+{
+    $ci = get_instance();
+    if (!$ci->session->userdata('npm_mahasiswa')) {
+        redirect('auth');
+    }
+}
