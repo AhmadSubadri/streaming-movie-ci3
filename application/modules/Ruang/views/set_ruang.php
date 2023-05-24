@@ -41,7 +41,7 @@
                                                 <a href="javascript:void(0)" data-toggle="modal" data-target="#Editsetruang<?= $item->id; ?>" data-id="<?= $item->id; ?>" class="btn btn-sm btn-outline-warning">
                                                     <i class="fa fa-pencil"></i>
                                                     Edit</a>
-                                                <a href="<?= site_url() ?>administrator/data-ruang/delete/<?= $item->id; ?>" class="btn btn-sm btn-outline-danger tombol-hapus">
+                                                <a href="<?= site_url() ?>administrator/set-data-ruang/delete/<?= $item->id; ?>" class="btn btn-sm btn-outline-danger tombol-hapus">
                                                     <i class="fa fa-trash"></i>
                                                     Delete</a>
                                             </td>
