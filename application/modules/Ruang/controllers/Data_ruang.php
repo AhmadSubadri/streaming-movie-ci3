@@ -30,6 +30,15 @@ class Data_ruang extends MY_controller
         echo json_encode($data);
     }
 
+    public function get_autocomplete_ro_room()
+    {
+        $unit = $this->input->post('unit');
+        $gedung = $this->input->post('gedung');
+        $data = $this->m_ruang->search_data_ro_room($unit, $gedung);
+        header('Content-Type: application/json');
+        echo json_encode($data);
+    }
+
     public function insert()
     {
         $data = [

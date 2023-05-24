@@ -6,6 +6,7 @@ class Set_ruang extends MY_controller
         parent::__construct();
         is_logged_in();
         $this->load->model('Data_setruangmodel', 'm_setruang');
+        $this->load->model('Data_ruangmodel', 'm_ruang');
     }
 
     public function index()
@@ -13,7 +14,7 @@ class Set_ruang extends MY_controller
         $data = array(
             'title' => 'Set Data Ruang',
             'data' => $this->m_setruang->get_setruang(),
-            'ruang' => $this->m_setruang->get_Ruang(),
+            'unit' => $this->m_ruang->get_unit(),
             'prodi' => $this->m_setruang->get_data_prodi(),
         );
 

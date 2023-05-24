@@ -67,35 +67,55 @@
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
             </div>
             <form class="form-horizontal" action="<?= site_url('administrator/set-data-ruang/insert') ?>" method="post">
-                <div class="modal-body">
-                    <div class="form-group">
-                        <label class="col-md-12">Program Studi</label>
-                        <div class="col-md-12">
-                            <select class="form-control custom-select" name="kode_prodi" required="required">
-                                <option>--Select your Major--</option>
-                                <?php if (empty($prodi)) : ?>
-                                <?php else : ?>
-                                    <?php $i = 1;
-                                    foreach ($prodi->result() as $itemprodi) : ?>
-                                        <option value="<?= $itemprodi->kode_prodi; ?>"><?= $itemprodi->kode_prodi; ?>-<?= $itemprodi->nama_prodi; ?></option>
-                                    <?php endforeach; ?>
-                                <?php endif; ?>
-                            </select>
+                <div class="modal-body row">
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <label class="col-md-12">Program Studi</label>
+                            <div class="col-md-12">
+                                <select class="form-control custom-select" name="kode_prodi" required="required">
+                                    <option>--Select your Major--</option>
+                                    <?php if (empty($prodi)) : ?>
+                                    <?php else : ?>
+                                        <?php $i = 1;
+                                        foreach ($prodi->result() as $itemprodi) : ?>
+                                            <option value="<?= $itemprodi->kode_prodi; ?>"><?= $itemprodi->kode_prodi; ?>-<?= $itemprodi->nama_prodi; ?></option>
+                                        <?php endforeach; ?>
+                                    <?php endif; ?>
+                                </select>
+                            </div>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label class="col-md-12">Nama setruang</label>
-                        <div class="col-md-12">
-                            <select class="form-control custom-select" name="kode_prodi" required="required">
-                                <option>--Select your Room--</option>
-                                <?php if (empty($ruang)) : ?>
-                                <?php else : ?>
-                                    <?php $i = 1;
-                                    foreach ($ruang->result() as $itemruang) : ?>
-                                        <option value="<?= $itemruang->id; ?>"><?= $itemruang->kode_ruang; ?>-<?= $itemruang->nama_ruang; ?></option>
-                                    <?php endforeach; ?>
-                                <?php endif; ?>
-                            </select>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label class="col-md-12">Nama Unit</label>
+                            <div class="col-md-12">
+                                <select class="form-control custom-select" name="nama_unit" id="nama_unit" required="required">
+                                    <option value="">--Select your unit--</option>
+                                    <?php if (!empty($unit)) : ?>
+                                        <?php foreach ($unit->result() as $itemunit) : ?>
+                                            <option value="<?= $itemunit->unit; ?>"><?= $itemunit->id; ?>-<?= $itemunit->unit; ?></option>
+                                        <?php endforeach; ?>
+                                    <?php endif; ?>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label class="col-md-12">Nama Gedung</label>
+                            <div class="col-md-12">
+                                <select class="form-select custom-select" name="nama_gedung" id="nama_gedung">
+                                    <option class="disabled">--Select your building--</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <label class="col-md-12">Checked Room</label>
+                            <div class="col-md-12" id="idruangroom">
+
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -154,3 +174,53 @@
         </div>
     <?php endforeach; ?>
 <?php endif; ?>
+
+<script>
+    $(document).ready(function() {
+        $('#nama_unit').change(function() {
+            var nama_unit = $(this).val();
+            if (nama_unit !== '') {
+                $.ajax({
+                    url: '<?= site_url("administrator/data-ruang/autocomplete"); ?>',
+                    type: 'POST',
+                    dataType: 'json',
+                    data: {
+                        id: nama_unit
+                    },
+                    success: function(data) {
+                        var html = '<option selected="selected" disabled="disabled">--Select your building--</option>';
+                        for (var i = 0; i < data.length; i++) {
+                            html += '<option value="' + data[i].nama_gedung + '">' + data[i].id + ' - ' + data[i].nama_gedung + '</option>';
+                        }
+                        $('#nama_gedung').html(html);
+                    }
+                });
+            } else {
+                $('#nama_gedung').html('<option selected="selected" disabled="disabled">--Select your building--</option>');
+            }
+        });
+
+        $('#nama_gedung').change(function() {
+            var nama_gedung = $(this).val();
+            var nama_unit = myElement = document.getElementById("nama_unit").value;
+            $.ajax({
+                url: '<?= site_url("administrator/data-ruang/autocomplete-to-room"); ?>',
+                type: 'POST',
+                dataType: 'json',
+                data: {
+                    gedung: nama_gedung,
+                    unit: nama_unit
+                },
+                success: function(data) {
+                    var html = ''; // Inisialisasi html dengan nilai awal kosong
+                    for (var i = 0; i < data.length; i++) {
+                        html += '<input type="checkbox" id="md_checkbox_21' + data[i].id + '" name="ruangansave[]" class="filled-in chk-col-red"/> ' +
+                            '<label for = "md_checkbox_21' + data[i].id + '" > ' + data[i].kode_ruang + ' - ' + data[i].nama_ruang + ' </label>&nbsp; &nbsp; &nbsp; <i class="text-danger">-</i>&nbsp; &nbsp; &nbsp;';
+                    }
+                    $('#idruangroom').html(html);
+                }
+            });
+        });
+
+    });
+</script>

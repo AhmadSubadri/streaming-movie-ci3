@@ -36,6 +36,7 @@ $route['administrator/data-ruang/insert'] = 'Ruang/Data_ruang/insert';
 $route['administrator/data-ruang/update'] = 'Ruang/Data_ruang/update';
 $route['administrator/data-ruang/delete/(:any)'] = 'Ruang/Data_ruang/delete/$1';
 $route['administrator/data-ruang/autocomplete'] = 'Ruang/Data_ruang/get_autocomplete_unit';
+$route['administrator/data-ruang/autocomplete-to-room'] = 'Ruang/Data_ruang/get_autocomplete_ro_room';
 
 // set ruangan
 $route['administrator/set-data-ruang'] = 'Ruang/Set_ruang';

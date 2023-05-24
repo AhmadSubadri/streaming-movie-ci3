@@ -24,6 +24,16 @@ class Data_ruangmodel extends CI_Model
         return $query->result();
     }
 
+    public function search_data_ro_room($unit, $gedung)
+    {
+        $this->db->select('*');
+        $this->db->from('tb_ruangan')
+            ->where('nama_unit', $unit)
+            ->where('nama_gedung', $gedung);
+        $query = $this->db->get();
+        return $query->result();
+    }
+
     public function get_unit()
     {
         $this->db->select('MIN(id) AS id, nama_unit AS unit, MIN(nama_gedung) AS gedung');
