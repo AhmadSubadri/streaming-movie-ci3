@@ -36,7 +36,7 @@
                                         <tr>
                                             <td><?= $i++; ?></td>
                                             <td><?= $item->nama_prodi; ?></td>
-                                            <td><?= $item->nama_ruang; ?></td>
+                                            <td>Ruang <?= $item->nama_ruang; ?> (<?= $item->nama_unit; ?>-<?= $item->nama_gedung; ?>)</td>
                                             <td>
                                                 <a href="javascript:void(0)" data-toggle="modal" data-target="#Editsetruang<?= $item->id; ?>" data-id="<?= $item->id; ?>" class="btn btn-sm btn-outline-warning">
                                                     <i class="fa fa-pencil"></i>
