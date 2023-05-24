@@ -24,6 +24,24 @@ $route['prodi/data-dosen'] = 'Back_prodi/data_dosen/data_dosen';
 
 $route['404'] = 'Auth/block';
 
+// Data Unit
+$route['administrator/data-unit'] = 'Ruang/Data_unit';
+$route['administrator/data-unit/insert'] = 'Ruang/Data_unit/insert';
+$route['administrator/data-unit/update'] = 'Ruang/Data_unit/update';
+$route['administrator/data-unit/delete/(:any)'] = 'Ruang/Data_unit/delete/$1';
+
+// MAster Ruang
+$route['administrator/data-ruang'] = 'Ruang/Data_ruang';
+$route['administrator/data-ruang/insert'] = 'Ruang/Data_ruang/insert';
+$route['administrator/data-ruang/update'] = 'Ruang/Data_ruang/update';
+$route['administrator/data-ruang/delete/(:any)'] = 'Ruang/Data_ruang/delete/$1';
+$route['administrator/data-ruang/autocomplete'] = 'Ruang/Data_ruang/get_autocomplete_unit';
+$route['administrator/data-ruang/autocomplete-to-room'] = 'Ruang/Data_ruang/get_autocomplete_ro_room';
+
+// set ruangan
+$route['administrator/set-data-ruang'] = 'Ruang/Set_ruang';
+$route['administrator/set-data-ruang/insert'] = 'Ruang/Set_ruang/insert';
+
 // Master Data
 // Yayasan
 $route['administrator/data-yayasan'] = 'Master_data/Yayasan_master';
