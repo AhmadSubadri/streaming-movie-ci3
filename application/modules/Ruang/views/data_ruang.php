@@ -20,27 +20,25 @@
                             Info</h3>
                         <hr>
                         <table id="myTable" class="table table-bordered table-striped">
-                            <thead>
+                            <thead class="text-center">
                                 <tr>
                                     <th>#</th>
-                                    <th>Kode Ruang</th>
                                     <th>Nama Ruang</th>
-                                    <th>Nama Unit</th>
-                                    <th>Nama Gedung</th>
+                                    <th>Kapasitas</th>
+                                    <th>Unit-Gedung</th>
                                     <th>Aksi</th>
                                 </tr>
                             </thead>
-                            <tbody>
+                            <tbody class="text-center">
                                 <?php if (empty($data)) : ?>
                                 <?php else : ?>
                                     <?php $i = 1;
                                     foreach ($data->result() as $item) : ?>
                                         <tr>
                                             <td><?= $i++; ?></td>
-                                            <td><?= $item->kode_ruang; ?></td>
-                                            <td><?= $item->nama_ruang; ?></td>
-                                            <td><?= $item->nama_unit; ?></td>
-                                            <td><?= $item->nama_gedung; ?></td>
+                                            <td><?= $item->kode_ruang; ?> - <?= $item->nama_ruang; ?></td>
+                                            <td><?= $item->kapasitas; ?></td>
+                                            <td><?= $item->nama_unit; ?> - <?= $item->nama_gedung; ?></td>
                                             <td>
                                                 <a href="javascript:void(0)" data-toggle="modal" data-target="#Editruangan<?= $item->id; ?>" data-id="<?= $item->id; ?>" class="btn btn-sm btn-outline-warning">
                                                     <i class="fa fa-pencil"></i>
@@ -111,6 +109,14 @@
                             </div>
                         </div>
                     </div>
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <label class="col-md-12">Kapasitas</label>
+                            <div class="col-md-12">
+                                <input type="number" class="form-control" name="kapasitas" value="" placeholder="type Capacity" required="required">
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="submit" class="btn btn-info waves-effect btn-sm">Save</button>
@@ -175,6 +181,14 @@
                                     <label class="col-md-12">Nama Ruangan</label>
                                     <div class="col-md-12">
                                         <input type="text" class="form-control" name="nama_ruang" value="<?= $item->nama_ruang; ?>" placeholder="Type name room" required="required">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    <label class="col-md-12">Kapasitas</label>
+                                    <div class="col-md-12">
+                                        <input type="number" class="form-control" name="kapasitas" value="<?= $item->kapasitas; ?>" placeholder="Type Capacity" required="required">
                                     </div>
                                 </div>
                             </div>

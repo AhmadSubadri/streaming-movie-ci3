@@ -45,7 +45,8 @@ class Data_ruang extends MY_controller
             'kode_ruang' => $this->input->post('kode_ruang'),
             'nama_ruang' => $this->input->post('nama_ruang'),
             'nama_unit' => $this->input->post('nama_unit'),
-            'nama_gedung' => $this->input->post('nama_gedung')
+            'nama_gedung' => $this->input->post('nama_gedung'),
+            'kapasitas' => $this->input->post('kapasitas')
         ];
 
         $this->session->set_flashdata('msg', "Insert Data room Success!");
@@ -60,7 +61,8 @@ class Data_ruang extends MY_controller
             'kode_ruang' => $this->input->post('kode_ruang'),
             'nama_ruang' => $this->input->post('nama_ruang'),
             'nama_unit' => $this->input->post('nama_unit'),
-            'nama_gedung' => $this->input->post('nama_gedung')
+            'nama_gedung' => $this->input->post('nama_gedung'),
+            'kapasitas' => $this->input->post('kapasitas')
         ];
 
         $this->session->set_flashdata('msg', "Update Data room Success!");
