@@ -73,24 +73,18 @@
                 <li>
                     <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false">
                         <i class="mdi mdi-newspaper"></i>
-                        <span class="hide-menu">Program Studi</span></a>
+                        <span class="hide-menu">Akademik</span></a>
                     <ul aria-expanded="false" class="collapse">
                         <li>
-                            <a href="<?= site_url('tahun-akademik'); ?>">Tahun Akademik</a>
                         </li>
                         <li>
-                            <a href="#" class="has-arrow">Data Dosen</a>
-                            <ul aria-expanded="false" class="collapse">
-                                <li>
-                                    <a href="<?= site_url('data-matakuliah'); ?>">Data Matakuliah</a>
-                                </li>
-                                <li>
-                                    <a href="<?= site_url('data-kurikulum'); ?>">Data Kurikulum</a>
-                                </li>
-                                <li>
-                                    <a href="<?= site_url('kurikulum-prodi'); ?>">Kurikulum Prodi</a>
-                                </li>
-                            </ul>
+                            <a href="<?= site_url('prodi/data-matakuliah'); ?>">Data Matakuliah</a>
+                        </li>
+                        <li>
+                            <a href="<?= site_url('prodi/data-kurikulum'); ?>">Data Kurikulum</a>
+                        </li>
+                        <li>
+                            <a href="<?= site_url('prodi/kurikulum-prodi'); ?>">Kurikulum Prodi</a>
                         </li>
                     </ul>
                 </li>
@@ -110,8 +104,8 @@
                 <li>
                     <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false">
                         <i class="mdi mdi-chart-bubble"></i>
-                        <span class="hide-menu">Data Mahasiswa</span></a>
-
+                        <span class="hide-menu">Data Mahasiswa</span>
+                    </a>
                 </li>
             </ul>
         </nav>

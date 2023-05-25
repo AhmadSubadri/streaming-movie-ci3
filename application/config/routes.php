@@ -22,6 +22,9 @@ $route['prodi/update-detail'] = 'Back_prodi/dashboard/dashboard/Save_Profile';
 $route['prodi/data-mahasiswa'] = 'Back_prodi/data_mahasiswa/data_mahasiswa';
 $route['prodi/data-dosen'] = 'Back_prodi/data_dosen/data_dosen';
 
+$route['prodi/data-matakuliah'] = 'Back_prodi/matakuliah/data_matakuliah';
+$route['prodi/data-kurikulum'] = 'Back_prodi/kurikulum/data_kurikulum';
+
 $route['404'] = 'Auth/block';
 
 // Data Unit
