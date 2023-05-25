@@ -31,6 +31,15 @@ class Data_setruangmodel extends CI_Model
         return $query;
     }
 
+    public function Filter_Prodi($kode_prodi)
+    {
+        $this->db->select('*')->from('tb_setruangan')->where('tb_setruangan.kode_prodi', $kode_prodi)
+            ->join('tb_prodi', 'tb_prodi.kode_prodi = tb_setruangan.kode_prodi')
+            ->join('tb_ruangan', 'tb_ruangan.id = tb_setruangan.id_ruang');
+        $query = $this->db->get();
+        return $query;
+    }
+
     public function insert($data)
     {
         return $this->db->insert('tb_setruangan', $data);

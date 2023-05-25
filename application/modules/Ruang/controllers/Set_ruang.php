@@ -11,12 +11,22 @@ class Set_ruang extends MY_controller
 
     public function index()
     {
-        $data = array(
-            'title' => 'Set Data Ruang',
-            'data' => $this->m_setruang->get_setruang(),
-            'unit' => $this->m_ruang->get_unit(),
-            'prodi' => $this->m_setruang->get_data_prodi(),
-        );
+        $kode_prodi = $this->input->get('kode_prodi');
+        if ($kode_prodi != null) {
+            $data = [
+                'title' => 'Set Data Ruang',
+                'data' => $this->m_setruang->Filter_Prodi($kode_prodi),
+                'unit' => $this->m_ruang->get_unit(),
+                'prodi' => $this->m_setruang->get_data_prodi(),
+            ];
+        } else {
+            $data = [
+                'title' => 'Set Data Ruang',
+                'data' => $this->m_setruang->get_setruang(),
+                'unit' => $this->m_ruang->get_unit(),
+                'prodi' => $this->m_setruang->get_data_prodi(),
+            ];
+        }
 
         $this->load->view('template/header', $data);
         $this->load->view('template/sidemenu', $data);

@@ -19,8 +19,37 @@
                         <h3 class="card-title"><?= $title ?>
                             Info</h3>
                         <hr>
+                        <form class="form-horizontal" action="" method="get">
+                            <div class="modal-body">
+                                <div class="form-group">
+                                    <div class="row">
+                                        <label class="col-md-1">Unit</label>
+                                        <div class="col-md-8">
+                                            <select class="form-control" name="kode_prodi">
+                                                <?php if (empty($prodi)) : ?>
+                                                <?php else : ?>
+                                                    <option value="<?= null; ?>">--- Pilih Kode Prodi ---</option>
+                                                    <?php $i = 1;
+                                                    foreach ($prodi->result() as $item_prodi) : ?>
+                                                        <?php if (isset($_GET['kode_prodi'])) { ?>
+                                                            <option value="<?= $item_prodi->kode_prodi; ?>" <?= ($item_prodi->kode_prodi == $_GET['kode_prodi']) ? 'selected' : '' ?>><?= $item_prodi->nama_prodi; ?></option>
+                                                        <?php } else { ?>
+                                                            <option value="<?= $item_prodi->kode_prodi; ?>"><?= $item_prodi->nama_prodi; ?></option>
+                                                        <?php }; ?>
+                                                    <?php endforeach; ?>
+                                                <?php endif; ?>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <button type="submit" class="btn btn-warning waves-effect btn-sm"><i class="mdi mdi-filter-outline"> </i>Filter</button>
+                                            <a href="" class="btn btn-secondary btn-sm active" role="button" aria-pressed="true">Reset</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
                         <table id="myTable" class="table table-bordered table-striped">
-                            <thead class="text-center">
+                            <thead>
                                 <tr>
                                     <th>#</th>
                                     <th>Nama Ruang</th>
@@ -29,7 +58,7 @@
                                     <th>Aksi</th>
                                 </tr>
                             </thead>
-                            <tbody class="text-center">
+                            <tbody>
                                 <?php if (empty($data)) : ?>
                                 <?php else : ?>
                                     <?php $i = 1;
