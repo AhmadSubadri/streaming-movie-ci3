@@ -11,7 +11,6 @@ class Data_matakuliah extends MY_controller
     function index()
     {
         $kode_prodi = $this->input->get('kode_prodi');
-        // Cek apakah filter prodi ada atau tidak
         if ($kode_prodi != null) {
             $data = array(
                 'title' => 'Data Matakuliah',
