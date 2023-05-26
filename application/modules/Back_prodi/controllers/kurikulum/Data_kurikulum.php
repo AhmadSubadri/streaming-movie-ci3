@@ -20,4 +20,16 @@ class Data_kurikulum extends MY_controller
         $this->load->view('Back_prodi/kurikulum/data_kurikulum', $data);
         $this->load->view('template/footer', $data);
     }
+
+    public function detail($id)
+    {
+        $data = array(
+            'title' => 'Detail Kurikulum',
+            'data' => $this->mp_kurikulum->Get_DetailMK_byProdi($id),
+        );
+        $this->load->view('template/header', $data);
+        $this->load->view('template/sidemenu_prodi', $data);
+        $this->load->view('Back_prodi/kurikulum/detail', $data);
+        $this->load->view('template/footer', $data);
+    }
 }

@@ -23,7 +23,9 @@ $route['prodi/data-mahasiswa'] = 'Back_prodi/data_mahasiswa/data_mahasiswa';
 $route['prodi/data-dosen'] = 'Back_prodi/data_dosen/data_dosen';
 
 $route['prodi/data-matakuliah'] = 'Back_prodi/matakuliah/data_matakuliah';
+
 $route['prodi/data-kurikulum'] = 'Back_prodi/kurikulum/data_kurikulum';
+$route['prodi/data-kurikulum-detail/(:any)'] = 'Back_prodi/kurikulum/data_kurikulum/detail/$1';
 
 $route['404'] = 'Auth/block';
 

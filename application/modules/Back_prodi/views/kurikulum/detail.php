@@ -40,7 +40,7 @@
                                             <?php endif; ?>
                                         </td>
                                         <td>
-                                            <a href="<?= site_url('prodi/data-kurikulum-detail/' . $item->id) ?>" class="btn btn-sm btn-outline-success">
+                                            <a href="<?= site_url('prodi/data-kurikulum-detail/' . $item->nama_kurikulum) ?>" class="btn btn-sm btn-outline-success">
                                                 <i class="mdi mdi-information-outline"></i>
                                                 Detail</a>
                                         </td>
