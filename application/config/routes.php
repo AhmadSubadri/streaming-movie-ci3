@@ -48,6 +48,12 @@ $route['administrator/set-data-ruang'] = 'Ruang/Set_ruang';
 $route['administrator/set-data-ruang/insert'] = 'Ruang/Set_ruang/insert';
 $route['administrator/set-data-ruang/delete/(:any)'] = 'Ruang/Set_ruang/delete/$1';
 
+//bobot nilai
+$route['administrator/bobot-nilai'] = 'Akademik/Nilai_bobot';
+$route['administrator/bobot-nilai/insert'] = 'Akademik/Nilai_bobot/insert';
+$route['administrator/bobot-nilai/update'] = 'Akademik/Nilai_bobot/update';
+$route['administrator/bobot-nilai/delete/(:any)'] = 'Akademik/Nilai_bobot/delete/$1';
+
 // Master Data
 // Yayasan
 $route['administrator/data-yayasan'] = 'Master_data/Yayasan_master';
