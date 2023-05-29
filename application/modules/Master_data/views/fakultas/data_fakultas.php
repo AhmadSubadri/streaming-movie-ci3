@@ -16,7 +16,7 @@
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
-                        <h3 class="card-title"><?= $title ?>
+                        <h3 class="card-title"><?= $idd ?>
                             Info</h3>
                         <hr>
                         <table id="myTable" class="table table-bordered table-striped">
@@ -120,6 +120,7 @@
                                 <div class="col-md-12">
                                     <input type="number" class="form-control" name="kode_fak" value="<?= $item->kode_fak; ?>" placeholder="Enter numeric value" required="required">
                                     <input type="number" class="form-control" name="id" value="<?= $item->id; ?>" placeholder="Enter numeric value" hidden>
+                                    <input type="text" class="form-control" name="namefak" value="<?= $item->nama_fak; ?>" placeholder="Enter numeric value" hidden>
                                 </div>
                             </div>
                             <div class="form-group">

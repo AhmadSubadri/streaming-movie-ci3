@@ -1,6 +1,7 @@
 <?php
 
-class Fakultas_model extends CI_Model {
+class Fakultas_model extends CI_Model
+{
 
     public function __construct()
     {
@@ -37,18 +38,40 @@ class Fakultas_model extends CI_Model {
         return $query->row();
     }
 
-    public function Insert($data)
+    public function Insert($tb, $data)
     {
-        return $this->db->insert('tb_fakultas', $data);
+        return $this->db->insert($tb, $data);
     }
 
-    public function Update($data, $id)
+    public function Update($tb, $data, $id)
     {
-        return $this->db->update('tb_fakultas', $data, ['id' => $id]);
+        return $this->db->update($tb, $data, $id);
+    }
+    public function Get_Id_Users($nama)
+    {
+        $this->db->select('id_users')->from('tb_users')->where('nama_users', $nama);
+        $query = $this->db->get();
+        if ($query->num_rows() > 0) {
+            return $query->row()->id_users;
+        }
+        return false;
+    }
+
+    public function Get_Id_Del()
+    {
+        $query = $this->db->query("SELECT tb_users.id_users FROM tb_users JOIN tb_fakultas  where tb_users.nama_users = tb_fakultas.nama_fak ");
+        if ($query->num_rows() > 0) {
+            return $query->row()->id_users;
+        }
+        return false;
     }
 
     public function Delete($id)
     {
         return $this->db->delete('tb_fakultas', ['id' => $id]);
+    }
+    public function Deleteuser($ids)
+    {
+        return $this->db->delete('tb_users', ['id_users' => $ids]);
     }
 }
