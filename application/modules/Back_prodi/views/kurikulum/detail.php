@@ -20,7 +20,8 @@
                                 <tr>
                                     <th>#</th>
                                     <th>Kode Kurikulum</th>
-                                    <th>Nama Kurikulum</th>
+                                    <th>Nama Matakuliah</th>
+                                    <th>SKS</th>
                                     <th>Status</th>
                                     <th>Aksi</th>
                                 </tr>
@@ -31,7 +32,8 @@
                                     <tr>
                                         <td><?= $i++; ?></td>
                                         <td><?= $item->kode_kurikulum; ?></td>
-                                        <td><?= $item->nama_kurikulum; ?></td>
+                                        <td><?= $item->nama_mk; ?></td>
+                                        <td><?= $item->sks_mk; ?></td>
                                         <td>
                                             <?php if ($item->status == 1) : ?>
                                                 <span class="label label-success"> Active </span>

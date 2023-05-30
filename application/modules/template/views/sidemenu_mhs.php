@@ -14,7 +14,7 @@
             </div>
             <!-- User profile text-->
             <div class="profile-text">
-                <h5><?= $this->session->userdata('nama_users'); ?></h5>
+                <h5><?= $this->session->userdata('nama_mahasiswa'); ?></h5>
                 <a href="#" class="dropdown-toggle u-dropdown" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">
                     <a href="#" class="dropdown-toggle u-dropdown" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">
                         <i class="mdi mdi-settings"></i>

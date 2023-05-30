@@ -28,7 +28,9 @@ class Kurikulumprodi_model extends CI_Model
     public function Get_DetailMK_byProdi($id)
     {
         $this->db->select('*')->from('tb_kurikulum_prodi')
-            ->where('kode_kurikulum', $id)
+            ->where('tb_kurikulum_prodi.kode_kurikulum', $id)
+            ->join('tb_kurikulum', 'tb_kurikulum.id = tb_kurikulum_prodi.kode_kurikulum')
+            ->join('tb_matakuliah', 'tb_matakuliah.id = tb_kurikulum_prodi.kode_matakuliah')
             ->join('tb_prodi', 'tb_prodi.kode_prodi = tb_kurikulum_prodi.kode_prodi');
         $query = $this->db->get();
         return $query;
