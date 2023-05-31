@@ -61,14 +61,21 @@
                 <li class="nav-devider"></li>
                 <li class="nav-small-cap">Program Studi</li>
                 <li>
-                    <a class="has-arrow waves-effect waves-dark" href="<?= site_url('prodi/data-mahasiswa'); ?>" aria-expanded="false">
-                        <i class="mdi mdi-school"></i>
-                        <span class="hide-menu">Data Mahasiswa</span></a>
-                </li>
-                <li>
-                    <a class="has-arrow waves-effect waves-dark" href="<?= site_url('prodi/data-dosen'); ?>" aria-expanded="false">
-                        <i class="mdi mdi-account-key"></i>
-                        <span class="hide-menu">Data Dosen</span></a>
+                    <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false">
+                        <i class="mdi mdi-newspaper"></i>
+                        <span class="hide-menu">Master Data</span></a>
+                    <ul aria-expanded="false" class="collapse">
+                        <li>
+                            <a class="has-arrow waves-effect waves-dark" href="<?= site_url('prodi/data-mahasiswa'); ?>" aria-expanded="false">
+                                <i class="mdi mdi-school"></i>
+                                <span class="hide-menu">Data Mahasiswa</span></a>
+                        </li>
+                        <li>
+                            <a class="has-arrow waves-effect waves-dark" href="<?= site_url('prodi/data-dosen'); ?>" aria-expanded="false">
+                                <i class="mdi mdi-account-key"></i>
+                                <span class="hide-menu">Data Dosen</span></a>
+                        </li>
+                    </ul>
                 </li>
                 <li>
                     <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false">
@@ -83,18 +90,15 @@
                         <li>
                             <a href="<?= site_url('prodi/data-kurikulum'); ?>">Data Kurikulum</a>
                         </li>
-                        <li>
-                            <a href="<?= site_url('prodi/kurikulum-prodi'); ?>">Kurikulum Prodi</a>
-                        </li>
                     </ul>
                 </li>
                 <li>
                     <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false">
-                        <i class="mdi mdi-account-key"></i>
-                        <span class="hide-menu">Data Kurikulum</span></a>
+                        <i class="fa fa-graduation-cap"></i>
+                        <span class="hide-menu">Perkuliahan</span></a>
                     <ul aria-expanded="false" class="collapse">
                         <li>
-                            <a href="<?= site_url('data-users'); ?>">Data Users</a>
+                            <a href="<?= site_url('prodi/penjadwalan'); ?>">Penjadwalan</a>
                         </li>
                         <li>
                             <a href="<?= site_url('data-user-level'); ?>">Data Users Level</a>

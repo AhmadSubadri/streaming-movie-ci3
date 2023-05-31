@@ -26,7 +26,7 @@
                                 <div class="col-md-3 col-xs-6 b-r">
                                     <center class="m-t-30">
                                         <?php if (!$data->foto) : ?>
-                                            <img src="../assets/images/users/5.jpg" class="img-circle" width="150" />
+                                            <img src="<?= base_url('assets/images/users/5.jpg'); ?>" class="img-circle" width="150" />
                                         <?php else : ?>
                                             <img src="<?= base_url('uploads/profile/' . $data->foto); ?>" class="img-circle" width="150" />
                                         <?php endif; ?>
