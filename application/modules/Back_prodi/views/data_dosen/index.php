@@ -62,8 +62,6 @@
     </div>
 </div>
 
-
-
 <!-- Modal Edit dosen -->
 <?php $i = 1;
 foreach ($data->result() as $item) : ?>

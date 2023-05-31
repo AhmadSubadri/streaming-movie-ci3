@@ -28,8 +28,8 @@
                                     <th>Nama</th>
                                     <th>Jenis Kelamin</th>
                                     <th>Tempat/tgl lahir</th>
+                                    <th>Program Studi</th>
                                     <th>Alamat</th>
-                                    <th>Kode Pos</th>
                                     <th>email/telp</th>
                                     <th>Aksi</th>
                                 </tr>
@@ -45,14 +45,14 @@
                                             <td><?= $item->jenis_kelamin_dosen; ?></td>
                                             <td><?= $item->tempat_lahir_dosen; ?>,
                                                 <?= $item->tanggal_lahir_dosen; ?></td>
-                                            <td><?= $item->alamat_dosen; ?></td>
-                                            <td><?= $item->kode_pos_dosen; ?></td>
+                                            <td><?= $item->nama_prodi; ?></td>
+                                            <td><?= $item->alamat_dosen; ?><br>Kode POS <?= $item->kode_pos_dosen; ?></td>
                                             <td><?= $item->email_dosen; ?><br><?= $item->no_telepon_dosen; ?></td>
                                             <td>
-                                                <a href="javascript:void(0)" data-toggle="modal" data-target="#Editdosen<?= $item->id; ?>" data-id="<?= $item->id; ?>" class="btn btn-sm btn-outline-warning">
+                                                <a href="javascript:void(0)" data-toggle="modal" data-target="#Editdosen<?= $item->iddosen; ?>" data-id="<?= $item->iddosen; ?>" class="btn btn-sm btn-outline-warning">
                                                     <i class="fa fa-pencil"></i>
                                                     Edit</a>
-                                                <a onclick="DeleteDosen(<?= $item->id; ?>)" class="btn btn-sm btn-outline-danger">
+                                                <a onclick="DeleteDosen(<?= $item->iddosen; ?>)" class="btn btn-sm btn-outline-danger">
                                                     <i class="fa fa-trash"></i>
                                                     Delete</a>
                                             </td>
@@ -143,6 +143,17 @@
                             <input type="text" class="form-control" name="kode_pt" value="<?= $kodePT->kode_pt; ?>" placeholder="type name" readonly="readonly">
                         </div>
                     </div>
+                    <div class="form-group col-sm-12">
+                        <label class="col-md-12">Program Studi</label>
+                        <div class="col-md-12">
+                            <select class="form-control" name="kode_prodi">
+                                <option>---Select Program Studi---</option>
+                                <?php foreach ($prodi as $prod) : ?>
+                                    <option value="<?= $prod->kode_prodi ?>"><?= $prod->kode_prodi ?> - <?= $prod->nama_prodi; ?></option>
+                                <?php endforeach; ?>
+                            </select>
+                        </div>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="submit" class="btn btn-info waves-effect btn-sm">Save</button>
@@ -160,8 +171,8 @@
 <?php else : ?>
     <?php $i = 1;
     foreach ($data->result() as $item) : ?>
-        <div id="Editdosen<?= $item->id; ?>" class="modal fade in" tabindex="-1" role="dialog" aria-labelledby="EditdosenLabel" aria-hidden="true">
-            <div class="modal-dialog">
+        <div id="Editdosen<?= $item->iddosen; ?>" class="modal fade in" tabindex="-1" role="dialog" aria-labelledby="EditdosenLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h4 class="modal-title" id="EditdosenLabel">Edit
@@ -174,7 +185,7 @@
                                 <label class="col-md-12">NIP Dosen</label>
                                 <div class="col-md-12">
                                     <input type="number" class="form-control" name="nip" value="<?= $item->nip; ?>" placeholder="Enter numeric value" required="required">
-                                    <input type="number" class="form-control" name="id" value="<?= $item->id; ?>" placeholder="Enter numeric value" required="required" hidden>
+                                    <input type="number" class="form-control" name="id" value="<?= $item->iddosen; ?>" placeholder="Enter numeric value" required="required" hidden>
                                 </div>
                             </div>
                             <div class="form-group col-sm-6">
@@ -233,6 +244,17 @@
                                 <label class="col-md-12">Kode PT</label>
                                 <div class="col-md-12">
                                     <input type="text" class="form-control" name="kode_pt" value="<?= $item->kode_pt; ?>" placeholder="type name" readonly="readonly">
+                                </div>
+                            </div>
+                            <div class="form-group col-sm-12">
+                                <label class="col-md-12">Program Studi</label>
+                                <div class="col-md-12">
+                                    <select class="form-control" name="kode_prodi">
+                                        <option>---Select Program Studi---</option>
+                                        <?php foreach ($prodi as $prod) : ?>
+                                            <option value="<?= $prod->kode_prodi ?>" <?= ($item->kode_prodi == $prod->kode_prodi) ? 'selected' : ''; ?>><?= $prod->kode_prodi ?> - <?= $prod->nama_prodi; ?></option>
+                                        <?php endforeach; ?>
+                                    </select>
                                 </div>
                             </div>
                         </div>

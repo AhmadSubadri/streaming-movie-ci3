@@ -1,6 +1,7 @@
 <?php
 
-class Dosen_model extends CI_Model {
+class Dosen_model extends CI_Model
+{
 
     public function __construct()
     {
@@ -9,7 +10,8 @@ class Dosen_model extends CI_Model {
 
     public function Index()
     {
-        $this->db->select('*')->from('tb_dosen')->order_by('nama_dosen', 'DESC');
+        $this->db->select('*, tb_dosen.id as iddosen')->from('tb_dosen')->order_by('tb_dosen.nama_dosen', 'DESC')
+            ->join('tb_prodi', 'tb_prodi.kode_prodi = tb_dosen.kode_prodi');
         $query = $this->db->get();
         return $query;
     }
@@ -19,6 +21,13 @@ class Dosen_model extends CI_Model {
         $this->db->select('*')->from('tb_pt');
         $query = $this->db->get();
         return $query->row();
+    }
+
+    public function Get_Prodi()
+    {
+        $this->db->select('*')->from('tb_prodi');
+        $query = $this->db->get();
+        return $query->result();
     }
 
     public function Insert($data)

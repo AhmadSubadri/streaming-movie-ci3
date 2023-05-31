@@ -61,9 +61,9 @@
                 <li class="nav-devider"></li>
                 <li class="nav-small-cap">Program Studi</li>
                 <li>
-                    <a class="has-arrow waves-effect waves-dark" href="<?= site_url('prodi/data-mahasiswa'); ?>" aria-expanded="false">
+                    <a class="has-arrow waves-effect waves-dark" href="<?= site_url('mahasiswa/detail-mahasiswa'); ?>" aria-expanded="false">
                         <i class="mdi mdi-school"></i>
-                        <span class="hide-menu">Data Mahasiswa</span></a>
+                        <span class="hide-menu">Detail Mahasiswa</span></a>
                 </li>
                 <li>
                     <a class="has-arrow waves-effect waves-dark" href="<?= site_url('prodi/data-dosen'); ?>" aria-expanded="false">

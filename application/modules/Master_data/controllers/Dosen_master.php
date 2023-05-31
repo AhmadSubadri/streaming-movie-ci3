@@ -14,6 +14,7 @@ class Dosen_master extends MY_controller
             'title' => 'Data Dosen',
             'data' => $this->m_dosen->Index(),
             'kodePT' => $this->m_dosen->Get_Kode_PT(),
+            'prodi' => $this->m_dosen->Get_Prodi(),
         );
 
         $this->load->view('template/header', $data);
@@ -35,6 +36,7 @@ class Dosen_master extends MY_controller
             'no_telepon_dosen' => $this->input->post('no_telepon_dosen'),
             'email_dosen' => $this->input->post('email_dosen'),
             'kode_pt' => $this->input->post('kode_pt'),
+            'kode_prodi' => $this->input->post('kode_prodi'),
         ];
         $this->session->set_flashdata('msg', "Insert Data Lecturer Success!");
         $this->m_dosen->Insert($data);
@@ -55,6 +57,7 @@ class Dosen_master extends MY_controller
             'no_telepon_dosen' => $this->input->post('no_telepon_dosen'),
             'email_dosen' => $this->input->post('email_dosen'),
             'kode_pt' => $this->input->post('kode_pt'),
+            'kode_prodi' => $this->input->post('kode_prodi'),
         ];
 
         $this->session->set_flashdata('msg', "Update data Lecturer Success!");

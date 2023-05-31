@@ -10,6 +10,7 @@ $route['administrator'] = 'dashboard';
 
 // Mahasiswa
 $route['mahasiswa'] = 'Levelmahasiswa/Dashboard/Dashboard_mahasiswa';
+$route['mahasiswa/detail-mahasiswa'] = 'Levelmahasiswa/Profile/Profile';
 
 // Fakultas Route's
 $route['fakultas'] = 'Back_fakultas/dashboard/dashboard';
