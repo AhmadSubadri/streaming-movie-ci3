@@ -75,8 +75,8 @@
                             <div class="row">
                                 <div class="col-md-3 col-xs-6 b-r">
                                     <center class="m-t-30">
-                                        <?php if (!$data) : ?>
-                                            <img src="../assets/images/users/5.jpg" class="img-circle" width="150" />
+                                        <?php if (!$data->imagedosen) : ?>
+                                            <img src="<?= base_url('assets/images/users/5.jpg') ?>" class="img-circle" width="150" />
                                         <?php else : ?>
                                             <img src="<?= base_url('uploads/profile/' . $data->imagedosen); ?>" class="img-circle" width="150" />
                                         <?php endif; ?>

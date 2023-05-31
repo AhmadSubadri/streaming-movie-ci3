@@ -39,7 +39,7 @@ class Dashboard extends MY_controller
         ];
         $check2 = $this->mp_global->check_users($_SESSION['nama_users']);
         $pass_users = $this->input->post('password');
-        if ($pass_users == 0) {
+        if ($pass_users == NULL) {
             $data_users = [
                 'email_users' => $this->input->post('email'),
                 'pass_users' => $check2->pass_users
