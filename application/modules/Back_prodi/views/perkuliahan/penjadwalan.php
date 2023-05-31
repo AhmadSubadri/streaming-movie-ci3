@@ -47,9 +47,6 @@
                                             <a href="javascript:void(0)" data-toggle="modal" data-target="#Editjadwal<?= $item->idjadwalprodi; ?>" data-id="<?= $item->idjadwalprodi; ?>" class="btn btn-sm btn-outline-warning">
                                                 <i class="fa fa-pencil"></i>
                                                 Edit</a>
-                                            <button data-id="<?= $item->idjadwalprodi; ?>" class="btn btn-sm btn-outline-info">
-                                                <i class="fa fa-eye"></i>
-                                                Detail</button>
                                         </td>
                                     </tr>
                                 <?php endforeach; ?>
