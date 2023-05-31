@@ -94,7 +94,6 @@
             '<select class="form-select custom-select" name="matakuliah[' + id + '][]" id="autokommatakuliah' + id + '-' + start + '"></select>' +
             '</td>' +
             '<td><input name="is_pilihan[' + id + '][]" type="checkbox" value="1" id="is_pilihan' + id + '-' + start + '" class="chk-col-red" /><label for="is_pilihan' + id + '-' + start + '"></label></td>' +
-            // '<td><input name="is_paket[' + id + '][]" type="checkbox" value="1" id="is_paket' + id + '-' + start + '" class="chk-col-red" /><label for="is_paket' + id + '-' + start + '"></label></td>' +
             '<td><button class="btn btn-danger btn-sm" type="button" onclick="remove_persebaran_fields(this, \'' + id + '-' + start + '\');"><i class="fa fa-minus"></i></button></td>';
 
         objTo.appendChild(divtest);

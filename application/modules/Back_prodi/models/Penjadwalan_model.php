@@ -17,12 +17,40 @@ class Penjadwalan_model extends CI_Model
         return $query;
     }
 
+    public function insert($data)
+    {
+        return $this->db->insert('tb_prodi_jadwal_kuliah', $data);
+    }
+
+    public function update($data, $id)
+    {
+        return $this->db->update('tb_prodi_jadwal_kuliah', $data, ['id' => $id]);
+    }
+
+    public function Get_Persebaran_MKProdi($idprodi)
+    {
+        $this->db->select('*')->from('tb_kurikulum_prodi')
+            ->where('tb_kurikulum_prodi.kode_prodi', $idprodi)
+            ->join('tb_matakuliah', 'tb_matakuliah.kode_mk = tb_kurikulum_prodi.kode_matakuliah');
+        $query = $this->db->get();
+        return $query;
+    }
+
+    public function Get_ruang_Prodi($idprodi)
+    {
+        $this->db->select('*')->from('tb_setruangan')
+            ->where('tb_setruangan.kode_prodi', $idprodi)
+            ->join('tb_ruangan', 'tb_ruangan.id = tb_setruangan.id_ruang');
+        $query = $this->db->get();
+        return $query;
+    }
+
     public function Get_prodi_row()
     {
         $nama_prodi = $_SESSION['nama_users'];
         $this->db->select('*')->from('tb_prodi')
             ->where('nama_prodi', $nama_prodi);
-        $query = $this->db->get();
-        return $query->row();
+        $query = $this->db->get()->row();
+        return $query;
     }
 }

@@ -9,7 +9,7 @@
                             <h4 class="m-b-0 text-white card-title"><?php echo $title ?> <?= $this->session->userdata('nama_users'); ?></h4>
                         </div>
                         <div class="ml-auto">
-                            <a href="javascript:void(0)" data-toggle="modal" data-target="#Addkurikulum" class="btn-warning btn-sm">
+                            <a href="javascript:void(0)" data-toggle="modal" data-target="#Addjadwal" class="btn-warning btn-sm">
                                 <i class="mdi mdi-plus"></i>
                                 Create
                                 <?= $title ?></a>
@@ -72,33 +72,64 @@
                     <?= $title ?></h4>
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
             </div>
-            <form class="form-horizontal" action="<?= site_url('administrator/data-jadwal/insert') ?>" method="post">
+            <form class="form-horizontal" action="<?= site_url('prodi/penjadwalan/insert') ?>" method="post">
                 <div class="modal-body row">
                     <div class="form-group col-sm-6">
-                        <label class="col-md-12">Program Studi</label>
+                        <label class="col-md-12">Matakuliah</label>
                         <div class="col-md-12">
-                            <select class="form-control" name="kode_prodi" required>
-                                <?php if (empty($prodi)) : ?>
+                            <select class="form-control" name="kode_mk" required>
+                                <?php if (empty($mk)) : ?>
                                 <?php else : ?>
-                                    <option>--- Pilih Kode Prodi ---</option>
+                                    <option>--- Pilih Matakuliah ---</option>
                                     <?php $i = 1;
-                                    foreach ($prodi as $item_prodi) : ?>
-                                        <option value="<?= $item_prodi->kode_prodi; ?>"><?= $item_prodi->kode_prodi; ?>-<?= $item_prodi->nama_prodi; ?></option>
+                                    foreach ($mk->result() as $itemmk) : ?>
+                                        <option value="<?= $itemmk->kode_mk; ?>"><?= $itemmk->kode_mk; ?>-<?= $itemmk->nama_mk; ?></option>
                                     <?php endforeach; ?>
                                 <?php endif; ?>
                             </select>
                         </div>
                     </div>
                     <div class="form-group col-sm-6">
-                        <label class="col-md-12">Kode jadwal</label>
+                        <label class="col-md-12">Ruangan</label>
                         <div class="col-md-12">
-                            <input type="text" class="form-control" name="kode_jadwal" value="" placeholder="type nama jadwal akademik" required="required">
+                            <select class="form-control" name="kode_ruang" required>
+                                <?php if (empty($ruang)) : ?>
+                                <?php else : ?>
+                                    <option>--- Pilih Ruangan ---</option>
+                                    <?php $i = 1;
+                                    foreach ($ruang->result() as $itemrg) : ?>
+                                        <option value="<?= $itemrg->kode_ruang; ?>"><?= $itemrg->kode_ruang; ?>-<?= $itemrg->nama_ruang; ?></option>
+                                    <?php endforeach; ?>
+                                <?php endif; ?>
+                            </select>
                         </div>
                     </div>
                     <div class="form-group col-sm-12">
-                        <label class="col-md-12">Nama jadwal</label>
+                        <label class="col-md-12">Hari</label>
                         <div class="col-md-12">
-                            <input type="text" class="form-control" name="nama_jadwal" value="" placeholder="type nama jadwal" required="required">
+                            <select class="form-control" name="hari">
+                                <option>--- Select Day ---</option>
+                                <option value="Senin">Senin</option>
+                                <option value="Selasa">Selasa</option>
+                                <option value="Rabu">Rabu</option>
+                                <option value="Kamis">Kamis</option>
+                                <option value="Jum'at">Jum'at</option>
+                                <option value="Sabtu">Sabtu</option>
+                                <option value="Minggu">Minggu</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group col-sm-12">
+                        <label class="col-md-12">Jam Perkuliahan</label>
+                        <div class="col-md-12">
+                            <div class="input-daterange input-group" id="date-range">
+                                <input type="time" class="form-control" name="jam_mulai">
+                                <input type="text" class="form-control" name="kode_prodi" value="<?= $prodi->kode_prodi; ?>" hidden>
+                                <div class="input-group-append">
+                                    <span class="input-group-text bg-info b-0 text-white">s/d</span>
+                                </div>
+                                <input type="time" class="form-control" name="jam_selesai">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -119,47 +150,71 @@
     <?php $i = 1;
     foreach ($data->result() as $item) : ?>
         <div id="Editjadwal<?= $item->idjadwalprodi; ?>" class="modal fade in" tabindex="-1" role="dialog" aria-labelledby="EditjadwalLabel" aria-hidden="true">
-            <div class="modal-dialog">
+            <div class="modal-dialog modal-lg">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h4 class="modal-title" id="EditjadwalLabel">Edit
                             <?= $title ?></h4>
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                     </div>
-                    <form class="form-horizontal" action="<?= site_url('administrator/data-jadwal/update') ?>" method="post">
+                    <form class="form-horizontal" action="<?= site_url('prodi/penjadwalan/update') ?>" method="post">
                         <div class="modal-body row">
-                            <div class="form-group col-sm-12">
-                                <label class="col-md-12">Program Studi</label>
+                            <div class="form-group col-sm-6">
+                                <label class="col-md-12">Matakuliah</label>
                                 <div class="col-md-12">
-                                    <select class="form-control" name="kode_prodi" required>
-                                        <?php if (empty($prodi)) : ?>
+                                    <select class="form-control" name="kode_mk" required>
+                                        <?php if (empty($mk)) : ?>
                                         <?php else : ?>
-                                            <option>--- Pilih Kode Prodi ---</option>
+                                            <option>--- Pilih Matakuliah ---</option>
                                             <?php $i = 1;
-                                            foreach ($prodi as $item_prodi) : ?>
-                                                <option value="<?= $item_prodi->kode_prodi; ?>" <?= ($item->kode_prodi == $item_prodi->kode_prodi) ? 'selected' : ''; ?>><?= $item_prodi->kode_prodi; ?>-<?= $item_prodi->nama_prodi; ?></option>
+                                            foreach ($mk->result() as $itemmk) : ?>
+                                                <option value="<?= $itemmk->kode_mk; ?>" <?= ($item->kode_mk == $itemmk->kode_mk) ? 'selected' : ''; ?>><?= $itemmk->kode_mk; ?>-<?= $itemmk->nama_mk; ?></option>
                                             <?php endforeach; ?>
                                         <?php endif; ?>
                                     </select>
-                                    <input hidden class="form-control" name="id" value="<?= $item->idjadwalprodi; ?>" required="required">
+                                </div>
+                            </div>
+                            <div class="form-group col-sm-6">
+                                <label class="col-md-12">Ruangan</label>
+                                <div class="col-md-12">
+                                    <select class="form-control" name="kode_ruang" required>
+                                        <?php if (empty($ruang)) : ?>
+                                        <?php else : ?>
+                                            <option>--- Pilih Ruangan ---</option>
+                                            <?php $i = 1;
+                                            foreach ($ruang->result() as $itemrg) : ?>
+                                                <option value="<?= $itemrg->kode_ruang; ?>" <?= ($item->kode_ruang == $itemrg->kode_ruang) ? 'selected' : ''; ?>><?= $itemrg->kode_ruang; ?>-<?= $itemrg->nama_ruang; ?></option>
+                                            <?php endforeach; ?>
+                                        <?php endif; ?>
+                                    </select>
                                 </div>
                             </div>
                             <div class="form-group col-sm-12">
-                                <label class="col-md-12">Kode jadwal</label>
+                                <label class="col-md-12">Hari</label>
                                 <div class="col-md-12">
-                                    <input type="text" class="form-control" name="kode_jadwal" value="<?= $item->kode_jadwal; ?>" placeholder="type nama jadwal" required="required">
+                                    <select class="form-control" name="hari">
+                                        <option>--- Select Day ---</option>
+                                        <option value="Senin" <?= ($item->hari == "Senin") ? 'selected' : ''; ?>>Senin</option>
+                                        <option value="Selasa" <?= ($item->hari == "Selasa") ? 'selected' : ''; ?>>Selasa</option>
+                                        <option value="Rabu" <?= ($item->hari == "Rabu") ? 'selected' : ''; ?>>Rabu</option>
+                                        <option value="Kamis" <?= ($item->hari == "Kamis") ? 'selected' : ''; ?>>Kamis</option>
+                                        <option value="Jum'at" <?= ($item->hari == "Jum'at") ? 'selected' : ''; ?>>Jum'at</option>
+                                        <option value="Sabtu" <?= ($item->hari == "Sabtu") ? 'selected' : ''; ?>>Sabtu</option>
+                                        <option value="Minggu" <?= ($item->hari == "Minggu") ? 'selected' : ''; ?>>Minggu</option>
+                                    </select>
                                 </div>
                             </div>
-                            <div class="form-group col-sm-6">
-                                <label class="col-md-12">Nama jadwal</label>
+                            <div class="form-group col-sm-12">
+                                <label class="col-md-12">Jam Perkuliahan</label>
                                 <div class="col-md-12">
-                                    <input type="text" class="form-control" name="nama_jadwal" value="<?= $item->nama_jadwal; ?>" placeholder="type nama jadwal" required="required">
-                                </div>
-                            </div>
-                            <div class="form-group col-sm-6">
-                                <label class="col-md-12">Status jadwal</label>
-                                <div class="col-md-12">
-                                    <input type="text" class="form-control" name="status" value="<?= $item->status; ?>" placeholder="type nama jadwal" required="required">
+                                    <div class="input-daterange input-group" id="date-range">
+                                        <input type="time" class="form-control" name="jam_mulai" value="<?= $item->jam_mulai; ?>">
+                                        <input type="text" class="form-control" name="idjadwalprodi" value="<?= $item->idjadwalprodi; ?>" hidden>
+                                        <div class="input-group-append">
+                                            <span class="input-group-text bg-info b-0 text-white">s/d</span>
+                                        </div>
+                                        <input type="time" class="form-control" name="jam_selesai" value="<?= $item->jam_selesai; ?>">
+                                    </div>
                                 </div>
                             </div>
                         </div>
