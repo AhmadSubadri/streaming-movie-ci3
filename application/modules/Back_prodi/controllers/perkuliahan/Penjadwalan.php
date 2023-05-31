@@ -10,13 +10,14 @@ class Penjadwalan extends MY_controller
 
     public function index()
     {
+        $nama_prodi = $this->mp_penjadwalan->Get_prodi_row();
         $data = array(
             'title' => 'Data Penjadwalan',
-            'data' => $this->mp_matakuliah->Get_matakuliah($prodi->kode_prodi),
+            'data' => $this->mp_penjadwalan->Get_Jadwal_Prodi($nama_prodi->kode_prodi),
         );
         $this->load->view('template/header', $data);
         $this->load->view('template/sidemenu_prodi', $data);
-        $this->load->view('Back_prodi/data_matakuliah/data_matakuliah', $data);
+        $this->load->view('Back_prodi/perkuliahan/penjadwalan', $data);
         $this->load->view('template/footer', $data);
     }
 }

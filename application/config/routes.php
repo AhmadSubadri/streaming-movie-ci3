@@ -23,7 +23,7 @@ $route['prodi/update-detail'] = 'Back_prodi/dashboard/dashboard/Save_Profile';
 $route['prodi/data-mahasiswa'] = 'Back_prodi/data_mahasiswa/data_mahasiswa';
 $route['prodi/data-dosen'] = 'Back_prodi/data_dosen/data_dosen';
 
-$route['prodi/penjadwalan'] = 'Back_prodi/data_dosen/data_dosen';
+$route['prodi/penjadwalan'] = 'Back_prodi/perkuliahan/penjadwalan';
 
 $route['prodi/data-matakuliah'] = 'Back_prodi/matakuliah/data_matakuliah';
 
