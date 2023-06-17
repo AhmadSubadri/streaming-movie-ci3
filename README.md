@@ -1,6 +1,5 @@
-# SIAKAD New Version
+# MAJU JAYA MOVIE ALL GENRE FROM INDONESIA
 
 ## Getting started
 
-Streaming movie all genre from indonesia
-**DILARANG PUSH TANPA COMMIT !!!!**
+**Streaming movie all genre from indonesia**
