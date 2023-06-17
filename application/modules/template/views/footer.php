@@ -1,143 +1,62 @@
-<!-- ============================================================== -->
-<!-- Right sidebar -->
-<!-- ============================================================== -->
-<!-- .right-sidebar -->
-<div class="right-sidebar">
-    <div class="slimscrollright">
-        <div class="rpanel-title">
-            Color Setting
-            <span>
-                <i class="ti-close right-side-toggle"></i>
-            </span>
-        </div>
-        <div class="r-panel-body">
-            <ul id="themecolors" class="m-t-20">
-                <li>
-                    <b>With Light sidebar</b>
-                </li>
-                <li>
-                    <a href="javascript:void(0)" data-theme="default" class="default-theme">1</a>
-                </li>
-                <li>
-                    <a href="javascript:void(0)" data-theme="green" class="green-theme">2</a>
-                </li>
-                <li>
-                    <a href="javascript:void(0)" data-theme="red" class="red-theme">3</a>
-                </li>
-                <li>
-                    <a href="javascript:void(0)" data-theme="blue" class="blue-theme working">4</a>
-                </li>
-                <li>
-                    <a href="javascript:void(0)" data-theme="purple" class="purple-theme">5</a>
-                </li>
-                <li>
-                    <a href="javascript:void(0)" data-theme="megna" class="megna-theme">6</a>
-                </li>
-                <li class="d-block m-t-30">
-                    <b>With Dark sidebar</b>
-                </li>
-                <li>
-                    <a href="javascript:void(0)" data-theme="default-dark" class="default-dark-theme">7</a>
-                </li>
-                <li>
-                    <a href="javascript:void(0)" data-theme="green-dark" class="green-dark-theme">8</a>
-                </li>
-                <li>
-                    <a href="javascript:void(0)" data-theme="red-dark" class="red-dark-theme">9</a>
-                </li>
-                <li>
-                    <a href="javascript:void(0)" data-theme="blue-dark" class="blue-dark-theme">10</a>
-                </li>
-                <li>
-                    <a href="javascript:void(0)" data-theme="purple-dark" class="purple-dark-theme">11</a>
-                </li>
-                <li>
-                    <a href="javascript:void(0)" data-theme="megna-dark" class="megna-dark-theme ">12</a>
-                </li>
-            </ul>
+<!-- Footer Section Begin -->
+<footer class="footer">
+    <div class="page-up">
+        <a href="#" id="scrollToTopButton"><span class="arrow_carrot-up"></span></a>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="footer__logo">
+                    <a href="<?= site_url('') ?>">
+                        <img src="<?= base_url(); ?>assets/img/54d078ea33a04971aa7c021c6b51c21d.png" alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="footer__nav">
+                    <ul>
+                        <li class="active"><a href="./index.html">Homepage</a></li>
+                        <li><a href="./categories.html">Categories</a></li>
+                        <li><a href="./blog.html">Our Blog</a></li>
+                        <li><a href="#">Contacts</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    Copyright &copy;<script>
+                        document.write(new Date().getFullYear());
+                    </script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="" target="_blank">asdev</a>
+                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+
+            </div>
         </div>
     </div>
-</div>
-<!-- ============================================================== -->
-<!-- End Right sidebar -->
-<!-- ============================================================== -->
-</div>
-<!-- ============================================================== -->
-<!-- End Container fluid -->
-<!-- ============================================================== -->
-<!-- ============================================================== -->
-<!-- footer -->
-<!-- ============================================================== -->
-<footer class="footer">
-    ©
-    <script>
-        document.write(new Date().getFullYear())
-    </script>
-    <a href="https://upy.ac.id">Universitas PGRI Yogyakarta</a>. All Right Reserved. Made with
-    <svg viewbox="0 0 1792 1792" preserveaspectratio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" style="height: 0.8rem;">
-        <path d="M896 1664q-26 0-44-18l-624-602q-10-8-27.5-26T145 952.5 77 855 23.5 734 0 596q0-220 127-344t351-124q62 0 126.5 21.5t120 58T820 276t76 68q36-36 76-68t95.5-68.5 120-58T1314 128q224 0 351 124t127 344q0 221-229 450l-623 600q-18 18-44 18z" fill="#e25555"></path>
-    </svg>
-    by Tim Umang-Umang.
 </footer>
+<!-- Footer Section End -->
+
+<!-- Search model Begin -->
+<div class="search-model">
+    <div class="h-100 d-flex align-items-center justify-content-center">
+        <div class="search-close-switch"><i class="icon_close"></i></div>
+        <form class="search-model-form">
+            <input type="text" id="search-input" placeholder="Search here.....">
+        </form>
+    </div>
 </div>
-</div>
+<!-- Search model end -->
+
+<!-- Js Plugins -->
+<script src="<?= base_url(); ?>assets/js/jquery-3.3.1.min.js"></script>
+<script src="<?= base_url(); ?>assets/js/bootstrap.min.js"></script>
+<script src="<?= base_url(); ?>assets/js/player.js"></script>
+<script src="<?= base_url(); ?>assets/js/jquery.nice-select.min.js"></script>
+<script src="<?= base_url(); ?>assets/js/mixitup.min.js"></script>
+<script src="<?= base_url(); ?>assets/js/jquery.slicknav.js"></script>
+<script src="<?= base_url(); ?>assets/js/owl.carousel.min.js"></script>
+<script src="<?= base_url(); ?>assets/js/main.js"></script>
 
 
-<!-- Bootstrap tether Core JavaScript -->
-<script src="<?= base_url(); ?>assets/plugins/bootstrap/js/popper.min.js"></script>
-
-<script src="<?= base_url(); ?>assets/plugins/bootstrap/js/bootstrap.min.js"></script>
-<!-- slimscrollbar scrollbar JavaScript -->
-<script src="<?= base_url(); ?>assets/js/jquery.slimscroll.js"></script>
-<!--Wave Effects -->
-<script src="<?= base_url(); ?>assets/js/waves.js"></script>
-<!--Menu sidebar -->
-<script src="<?= base_url(); ?>assets/js/sidebarmenu.js"></script>
-<!--stickey kit -->
-<script src="<?= base_url(); ?>assets/plugins/sticky-kit-master/dist/sticky-kit.min.js"></script>
-<script src="<?= base_url(); ?>assets/plugins/sparkline/jquery.sparkline.min.js"></script>
-<!--Custom JavaScript -->
-<script src="<?= base_url(); ?>assets/js/custom.min.js"></script>
-<!-- ============================================================== -->
-<!-- Style switcher -->
-<!-- ============================================================== -->
-<script src="<?= base_url(); ?>assets/plugins/styleswitcher/jQuery.style.switcher.js"></script>
-<script src="<?= base_url(); ?>assets/plugins/datatables/jquery.dataTables.min.js"></script>
-<script src="<?= base_url(); ?>assets/js/datatable.js"></script>
-<!--morris JavaScript -->
-<script src="<?= base_url(); ?>assets/plugins/raphael/raphael-min.js"></script>
-<script src="<?= base_url(); ?>assets/plugins/morrisjs/morris.min.js"></script>
-<script src="<?= base_url(); ?>assets/js/dashboard1.js"></script>
-<script src="<?= base_url(); ?>assets/plugins/sweetalert/sweetalert.min.js"></script>
-<script src="<?= base_url(); ?>assets/plugins/sweetalert/mysweetalerts.js"></script>
-<script src="<?= base_url(); ?>assets/plugins/toast-master/js/jquery.toast.js"></script>
-<script src="<?= base_url(); ?>assets/js/mytoastr.js"></script>
-<script src="<?= base_url(); ?>assets/plugins/dff/dff.js" type="text/javascript"></script>
-
-<script src="<?= base_url(); ?>assets/plugins/typeahead.js-master/dist/typeahead.bundle.min.js"></script>
-<script src="<?= base_url(); ?>assets/plugins/typeahead.js-master/dist/my_typeahead.js"></script>
-<script src="<?= base_url(); ?>assets/plugins/tinymce/tinymce.min.js"></script>
-<script src="<?= base_url(); ?>assets/plugins/select2/dist/js/select2.full.min.js" type="text/javascript"></script>
-
-<script>
-    $(document).ready(function() {
-
-        if ($("#mymce").length > 0) {
-            tinymce.init({
-                selector: "textarea#mymce",
-                theme: "modern",
-                height: 300,
-                plugins: [
-                    "advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker",
-                    "searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking",
-                    "save table contextmenu directionality emoticons template paste textcolor"
-                ],
-                toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent",
-
-            });
-        }
-    });
-</script>
 </body>
 
 </html>

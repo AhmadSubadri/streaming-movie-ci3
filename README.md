@@ -1,8 +1,6 @@
 # SIAKAD New Version
 
-
-
 ## Getting started
 
-Ini adalah Repository Pengembangan Akademik Universitas PGRI Yogyakarta.
+Streaming movie all genre from indonesia
 **DILARANG PUSH TANPA COMMIT !!!!**
