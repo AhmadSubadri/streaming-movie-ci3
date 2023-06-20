@@ -13,8 +13,12 @@
                 <div class="header__nav">
                     <nav class="header__menu mobile-menu">
                         <ul>
-                            <li class="active"><a href="./index.html">Homepage</a></li>
-                            <li><a href="./categories.html">Categories <span class="arrow_carrot-down"></span></a>
+                            <li class="<?php if ($this->uri->uri_string() == "") {
+                                            echo "active";
+                                        } ?>"><a href="<?= site_url('') ?>">Home</a></li>
+                            <li class="<?php if ($this->uri->uri_string() == "categories") {
+                                            echo "active";
+                                        } ?>"><a href="<?= site_url('categories') ?>">Categories <span class="arrow_carrot-down"></span></a>
                                 <ul class="dropdown">
                                     <li><a href="./categories.html">Categories</a></li>
                                     <li><a href="./anime-details.html">Anime Details</a></li>
