@@ -9,4 +9,8 @@ $route['categories'] = 'categories/categories/index';
 $route['login'] = 'auth/login/index';
 $route['logout'] = 'auth/login/logout';
 
-$route['dashboard'] = 'backend/dashboard/index';
+$route['dashboard'] = 'backend/DashboardController/dashboard/index';
+
+$route['data-user'] = 'backend/AdminController/AdminController/index';
+$route['data-user/insert'] = 'backend/AdminController/AdminController/store';
+$route['data-user/delete/(:any)'] = 'backend/AdminController/AdminController/delete/$1';

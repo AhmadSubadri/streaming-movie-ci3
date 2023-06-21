@@ -19,19 +19,7 @@ class Login extends MY_controller
                 $email = $this->input->post('email');
                 $password = $this->input->post('password');
 
-                $data = array(
-                    'email' => $email,
-                    'password' => md5($password)
-                );
-
-                $cek = $this->m_login->get_admin($data)->row();
-                if ($cek > 0) {
-                    $data_session = array(
-                        'email' => $email,
-                        'username' => $cek->username,
-                        'status' => "is_login"
-                    );
-                    $this->session->set_userdata($data_session);
+                if ($this->m_login->LogVerify_Admin($email, $password)) {
                     $this->session->set_flashdata('msg', "good Job, Login Successfuly!.");
                     $this->session->set_flashdata('msg_class', 'alert-success');
                     redirect(site_url('dashboard'));
