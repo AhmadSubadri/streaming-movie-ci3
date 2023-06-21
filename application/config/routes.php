@@ -7,3 +7,6 @@ $route['translate_uri_dashes'] = FALSE;
 
 $route['categories'] = 'categories/categories/index';
 $route['login'] = 'auth/login/index';
+$route['logout'] = 'auth/login/logout';
+
+$route['dashboard'] = 'backend/dashboard/index';

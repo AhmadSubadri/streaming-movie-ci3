@@ -2,17 +2,22 @@
 <section class="login spad">
     <div class="container">
         <div class="row">
+            <?php $this->load->view('template/alert.php'); ?>
             <div class="col-lg-6">
                 <div class="login__form">
                     <h3>Login</h3>
-                    <form action="#">
+                    <form action="<?= site_url('login') ?>" method="post">
                         <div class="input__item">
-                            <input type="text" placeholder="Email address">
-                            <span class="icon_mail"></span>
+                            <input type="email" name="email" placeholder="Email address">
+                            <div class="alert-danger text-center">
+                                <?= form_error('email') ?>
+                            </div>
                         </div>
                         <div class="input__item">
-                            <input type="text" placeholder="Password">
-                            <span class="icon_lock"></span>
+                            <input type="password" name="password" placeholder="Password">
+                            <div class="alert-danger text-center">
+                                <?= form_error('password') ?>
+                            </div>
                         </div>
                         <button type="submit" class="site-btn">Login Now</button>
                     </form>
@@ -21,8 +26,8 @@
             </div>
             <div class="col-lg-6">
                 <div class="login__register">
-                    <h3>Dont’t Have An Account?</h3>
-                    <a href="#" class="primary-btn">Register Now</a>
+                    <h3>Don't forget your username and password</h3>
+                    <h3>Change passwords periodically !!! </h3>
                 </div>
             </div>
         </div>
@@ -32,11 +37,7 @@
                     <div class="login__social__links">
                         <span>or</span>
                         <ul>
-                            <li><a href="#" class="facebook"><i class="fa fa-facebook"></i> Sign in With
-                                    Facebook</a></li>
                             <li><a href="#" class="google"><i class="fa fa-google"></i> Sign in With Google</a></li>
-                            <li><a href="#" class="twitter"><i class="fa fa-twitter"></i> Sign in With Twitter</a>
-                            </li>
                         </ul>
                     </div>
                 </div>
