@@ -54,23 +54,41 @@ class AdminController extends MY_controller
         }
     }
 
-    public function edit($id)
-    {
-        // Menampilkan halaman edit admin berdasarkan ID
-        $data['admin'] = $this->m_admin->getAdminById($id);
-        $this->load->view('admin/edit', $data);
-    }
-
     public function update($id)
     {
-        // Mengupdate admin berdasarkan ID
-        $data = array(
-            'nama' => $this->input->post('nama'),
-            'email' => $this->input->post('email'),
-            'password' => $this->input->post('password')
-        );
-        $this->m_admin->updateAdmin($id, $data);
-        redirect('data-user');
+        $cek = $this->m_admin->getAdminById($id);
+        if ($this->input->method() === 'post') {
+            if ($this->input->post('password') == null) {
+                $data = array(
+                    'nama' => $this->input->post('nama'),
+                    'username' => $this->input->post('username'),
+                    'email' => $this->input->post('email'),
+                    'password' => $cek->password
+                );
+                $this->m_admin->updateAdmin($id, $data);
+                $this->session->set_flashdata('msg', "good Job, Update Successfuly!.");
+                $this->session->set_flashdata('msg_class', 'alert-success');
+                redirect('data-user');
+            } else {
+                $data = array(
+                    'nama' => $this->input->post('nama'),
+                    'username' => $this->input->post('username'),
+                    'email' => $this->input->post('email'),
+                    'password' => password_hash($this->input->post('password'), PASSWORD_ARGON2I)
+                );
+                $this->m_admin->updateAdmin($id, $data);
+                $this->session->set_flashdata('msg', "good Job, Update Successfuly!.");
+                $this->session->set_flashdata('msg_class', 'alert-success');
+                redirect('data-user');
+            }
+        } else {
+            $data = [
+                'data' => $this->m_admin->getAdminById($id)
+            ];
+            $this->load->view('partials/head', $data);
+            $this->load->view('v_admin/edit', $data);
+            $this->load->view('partials/footer', $data);
+        }
     }
 
     public function delete($id)

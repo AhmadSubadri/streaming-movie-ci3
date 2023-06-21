@@ -33,7 +33,7 @@
                                         <td><?= $item->username; ?></td>
                                         <td><?= $item->email; ?></td>
                                         <td>
-                                            <a href="<?= site_url('data-user/edit/' . $item->id) ?>" class="btn btn-sm btn-success m-1">Edit</a>
+                                            <a href="<?= site_url('data-user/update/' . $item->id) ?>" class="btn btn-sm btn-success m-1">Edit</a>
                                             <a href="<?= site_url('data-user/delete/' . $item->id) ?>" class="btn btn-sm btn-danger m-1">Delete</a>
                                         </td>
                                     </tr>

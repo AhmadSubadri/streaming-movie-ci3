@@ -13,4 +13,5 @@ $route['dashboard'] = 'backend/DashboardController/dashboard/index';
 
 $route['data-user'] = 'backend/AdminController/AdminController/index';
 $route['data-user/insert'] = 'backend/AdminController/AdminController/store';
+$route['data-user/update/(:any)'] = 'backend/AdminController/AdminController/update/$1';
 $route['data-user/delete/(:any)'] = 'backend/AdminController/AdminController/delete/$1';
