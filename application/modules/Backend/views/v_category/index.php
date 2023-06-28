@@ -5,10 +5,10 @@
             <div class="card-body">
                 <div class="d-sm-flex d-block align-items-center justify-content-between mb-9">
                     <div class="mb-3 mb-sm-0">
-                        <h5 class="card-title fw-semibold">Data User</h5>
+                        <h5 class="card-title fw-semibold">Data Category</h5>
                     </div>
                     <div>
-                        <a href="<?= site_url('data-user/insert') ?>" class="btn btn-sm btn-primary m-1"><i class="ti ti-circle-plus"></i> Tambah Data</a>
+                        <a href="<?= site_url('data-category/insert') ?>" class="btn btn-sm btn-primary m-1"><i class="ti ti-circle-plus"></i> Tambah Data</a>
                     </div>
                 </div>
                 <div class="table-responsive">
@@ -16,10 +16,8 @@
                         <thead>
                             <tr>
                                 <th>#</th>
-                                <th>Name</th>
-                                <th>Username</th>
-                                <th>Email</th>
-                                <th>Aksi</th>
+                                <th>Category Name</th>
+                                <th>Act.</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -29,12 +27,10 @@
                                 foreach ($data as $item) : ?>
                                     <tr>
                                         <td><?= $i++; ?></td>
-                                        <td><?= $item->nama; ?></td>
-                                        <td><?= $item->username; ?></td>
-                                        <td><?= $item->email; ?></td>
+                                        <td><?= $item->kategori; ?></td>
                                         <td>
-                                            <a href="<?= site_url('data-user/update/' . $item->id) ?>" class="btn btn-sm btn-success m-1">Edit</a>
-                                            <a href="<?= site_url('data-user/delete/' . $item->id) ?>" class="btn btn-sm btn-danger m-1">Delete</a>
+                                            <a href="<?= site_url('data-category/update/' . $item->id) ?>" class="btn btn-sm btn-success m-1">Edit</a>
+                                            <a href="<?= site_url('data-category/delete/' . $item->id) ?>" class="btn btn-sm btn-danger m-1">Delete</a>
                                         </td>
                                     </tr>
                                 <?php endforeach; ?>

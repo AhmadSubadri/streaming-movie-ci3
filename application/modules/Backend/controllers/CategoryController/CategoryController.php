@@ -7,7 +7,7 @@ class CategoryController extends MY_controller
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('category/Category-model', 'm_category');
+        $this->load->model('CategoryModel/Category_model', 'm_category');
         $this->load->model('auth/Login_model', 'm_login');
         if (!$this->m_login->CurrentUser()) {
             $this->session->set_flashdata('msg', "Make sure you have logged in account!.");
@@ -18,50 +18,64 @@ class CategoryController extends MY_controller
 
     public function index()
     {
-        // Menampilkan daftar kategori
-        $data['categories'] = $this->CategoryModel->getCategories();
-        $this->load->view('category/index', $data);
-    }
-
-    public function create()
-    {
-        // Menampilkan halaman tambah kategori
-        $this->load->view('category/create');
+        $data = array(
+            'title' => 'Video',
+            'data' => $this->m_category->getCategories()
+        );
+        $this->load->view('partials/head', $data);
+        $this->load->view('v_category/index', $data);
+        $this->load->view('partials/footer', $data);
     }
 
     public function store()
     {
-        // Menyimpan kategori baru ke database
-        $data = array(
-            'nama' => $this->input->post('nama'),
-            'deskripsi' => $this->input->post('deskripsi')
-        );
-        $this->CategoryModel->createCategory($data);
-        redirect('category');
-    }
-
-    public function edit($id)
-    {
-        // Menampilkan halaman edit kategori berdasarkan ID
-        $data['category'] = $this->CategoryModel->getCategoryById($id);
-        $this->load->view('category/edit', $data);
+        if ($this->input->method() === 'post') {
+            $this->form_validation->set_rules($this->m_category->rules());
+            if ($this->form_validation->run() == FALSE) {
+                $this->load->view('partials/head');
+                $this->load->view('v_category/add');
+                $this->load->view('partials/footer');
+            } else {
+                $data = array(
+                    'kategori' => $this->input->post('kategori'),
+                );
+                $this->m_category->createCategory($data);
+                $this->session->set_flashdata('msg', "good Job, Insert Successfuly!.");
+                $this->session->set_flashdata('msg_class', 'alert-success');
+                redirect(site_url('data-category'));
+            }
+        } else {
+            $this->load->view('partials/head');
+            $this->load->view('v_category/add');
+            $this->load->view('partials/footer');
+        }
     }
 
     public function update($id)
     {
-        // Mengupdate kategori berdasarkan ID
-        $data = array(
-            'nama' => $this->input->post('nama'),
-            'deskripsi' => $this->input->post('deskripsi')
-        );
-        $this->CategoryModel->updateCategory($id, $data);
-        redirect('category');
+        if ($this->input->method() === 'post') {
+            $data = array(
+                'kategori' => $this->input->post('kategori'),
+            );
+            $this->m_category->updateCategory($id, $data);
+            $this->session->set_flashdata('msg', "good Job, Update Successfuly!.");
+            $this->session->set_flashdata('msg_class', 'alert-success');
+            redirect('data-category');
+        } else {
+            $data = [
+                'data' => $this->m_category->getCategoryById($id)
+            ];
+            $this->load->view('partials/head', $data);
+            $this->load->view('v_category/edit', $data);
+            $this->load->view('partials/footer', $data);
+        }
     }
 
     public function delete($id)
     {
-        // Menghapus kategori berdasarkan ID
-        $this->CategoryModel->deleteCategory($id);
-        redirect('category');
+        $this->m_category->deleteCategory($id);
+        $this->session->set_flashdata('msg', "good Job, Delete Successfuly!.");
+        $this->session->set_flashdata('msg_class', 'alert-success');
+        redirect('data-category');
     }
 }
