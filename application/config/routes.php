@@ -7,6 +7,11 @@ $route['translate_uri_dashes'] = FALSE;
 
 $route['categories'] = 'categories/categories/index';
 $route['video/(:any)'] = 'template/home/read/$1';
+$route['coment/save'] = 'template/home/save_comment_ajax';
+$route['coment/read'] = 'template/home/get_new_comments_ajax';
+$route['coment/like'] = 'template/home/like';
+$route['coment/dislike'] = 'template/home/dislike';
+$route['coment/getlikedislikecounts'] = 'template/home/get_like_dislike_counts';
 
 $route['login'] = 'auth/login/index';
 $route['logout'] = 'auth/login/logout';
