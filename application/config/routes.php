@@ -6,6 +6,8 @@ $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
 $route['categories'] = 'categories/categories/index';
+$route['video/(:any)'] = 'template/home/read/$1';
+
 $route['login'] = 'auth/login/index';
 $route['logout'] = 'auth/login/logout';
 

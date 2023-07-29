@@ -55,10 +55,18 @@ class Video_model extends CI_Model
         return $this->db->insert('tb_video', $data);
     }
 
+    public function createEpisode($episode)
+    {
+        // Menyimpan video baru ke database
+        return $this->db->insert('tb_episode', $episode);
+    }
+
     public function getVideoById($id)
     {
         // Mendapatkan informasi video berdasarkan ID
-        $query = $this->db->get_where('tb_video', array('id' => $id));
+        $this->db->select('*')->from('tb_video')->where('tb_video.id', $id)
+            ->join('tb_episode', 'tb_episode.video_id = tb_video.uniq_id');
+        $query = $this->db->get();
         return $query->row();
     }
 

@@ -41,8 +41,8 @@
                                             <?php endif; ?>
                                         </td>
                                         <td>
-                                            <a href="<?= site_url('data-video/update/' . $item->id) ?>" class="btn btn-sm btn-success m-1">Edit</a>
-                                            <a href="<?= site_url('data-video/delete/' . $item->id) ?>" class="btn btn-sm btn-danger m-1">Delete</a>
+                                            <a href="<?= site_url('data-video/update/' . $item->idvideo) ?>" class="btn btn-sm btn-success m-1">Edit</a>
+                                            <a href="<?= site_url('data-video/delete/' . $item->idvideo) ?>" class="btn btn-sm btn-danger m-1">Delete</a>
                                         </td>
                                     </tr>
                                 <?php endforeach; ?>

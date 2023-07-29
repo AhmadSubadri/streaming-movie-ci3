@@ -12,6 +12,7 @@
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="32x32" href="<?= base_url() ?>assets/img/logo.png">
 
     <!-- Css Styles -->
     <link rel="stylesheet" href="<?= base_url(); ?>assets/css/bootstrap.min.css" type="text/css">
@@ -22,6 +23,7 @@
     <link rel="stylesheet" href="<?= base_url(); ?>assets/css/owl.carousel.min.css" type="text/css">
     <link rel="stylesheet" href="<?= base_url(); ?>assets/css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="<?= base_url(); ?>assets/css/style.css" type="text/css">
+    <!-- <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" /> -->
 </head>
 
 <body>

@@ -52,6 +52,7 @@ class VideoController extends MY_controller
                 } else {
                     date_default_timezone_set('Asia/Jakarta');
                     $uploadData = $this->upload->data();
+                    $uniq_id = uniqid("vd_uniq");
                     $data = array(
                         'judul' => $this->input->post('judul'),
                         'durasi' => $this->input->post('durasi'),
@@ -60,9 +61,15 @@ class VideoController extends MY_controller
                         'tanggal_unggah' => date('Y-m-d H:i:s'),
                         'deskripsi' => $this->input->post('deskripsi'),
                         'url_video' => $this->input->post('url_video'),
-                        'slug' => $this->input->post('slug')
+                        'slug' => $this->input->post('slug'),
+                        'uniq_id' => $uniq_id
                     );
+                    $episode = [
+                        'episode' => $this->input->post('episode'),
+                        'video_id' => $data['uniq_id']
+                    ];
                     $this->m_video->createVideo($data);
+                    $this->m_video->createEpisode($episode);
                     $this->session->set_flashdata('msg', "good Job, Insert Successfuly!.");
                     $this->session->set_flashdata('msg_class', 'alert-success');
                     redirect(site_url('data-video'));
@@ -78,24 +85,60 @@ class VideoController extends MY_controller
         }
     }
 
-    public function edit($id)
-    {
-        // Menampilkan halaman edit video berdasarkan ID
-        $data['video'] = $this->m_video->getVideoById($id);
-        $this->load->view('video/edit', $data);
-    }
-
     public function update($id)
     {
-        // Mengupdate video berdasarkan ID
-        $data = array(
-            'judul' => $this->input->post('judul'),
-            'durasi' => $this->input->post('durasi'),
-            'kategori' => $this->input->post('kategori'),
-            'deskripsi' => $this->input->post('deskripsi')
-        );
-        $this->m_video->updateVideo($id, $data);
-        redirect('video');
+        if ($this->input->method() === 'post') {
+            $config['upload_path'] = './assets/dashboard/images/thumbnile/';
+            $config['allowed_types'] = 'jpg|jpeg|png'; // Ekstensi file yang diperbolehkan untuk diunggah
+            $config['max_size'] = 2024; // Ukuran maksimum file (dalam kilobyte)
+
+            $this->load->library('upload', $config);
+            $cekdata = $this->m_video->getVideoById($id);
+            if (!$this->upload->do_upload('thumbnail')) {
+                $this->session->set_flashdata('msg', "Sorry, Check your image!.");
+                $this->session->set_flashdata('msg_class', 'alert-danger');
+                redirect('data-video/insert');
+            } else {
+                $path = './assets/dashboard/images/thumbnile/' . $cekdata->thumbnail;
+                if ($cekdata->thumbnail && file_exists($path)) {
+                    chmod($path, 0777);
+                    unlink($path);
+                }
+            }
+            date_default_timezone_set('Asia/Jakarta');
+            $uploadData = $this->upload->data();
+            $uniq_id = uniqid("vd_uniq");
+            $data = array(
+                'judul' => $this->input->post('judul'),
+                'durasi' => $this->input->post('durasi'),
+                'kategori_id' => $this->input->post('kategori_id'),
+                'tanggal_unggah' => date('Y-m-d H:i:s'),
+                'deskripsi' => $this->input->post('deskripsi'),
+                'url_video' => $this->input->post('url_video'),
+                'slug' => $this->input->post('slug'),
+                'uniq_id' => $uniq_id
+            );
+            $episode = [
+                'episode' => $this->input->post('episode'),
+                'video_id' => $data['uniq_id']
+            ];
+            $this->m_video->createVideo($data);
+            $this->m_video->createEpisode($episode);
+            $this->session->set_flashdata('msg', "good Job, Insert Successfuly!.");
+            $this->session->set_flashdata('msg_class', 'alert-success');
+            redirect(site_url('data-video'));
+
+            // $this->m_video->updateVideo($id, $data);
+            // redirect('video');
+        } else {
+            $data = [
+                'category' => $this->m_category->getCategories(),
+                'video' => $this->m_video->getVideoById($id)
+            ];
+            $this->load->view('partials/head', $data);
+            $this->load->view('v_video/edit', $data);
+            $this->load->view('partials/footer', $data);
+        }
     }
 
     public function delete($id)

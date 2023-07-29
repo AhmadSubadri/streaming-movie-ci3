@@ -74,6 +74,12 @@
                         </div>
                         <div class="col-sm-12">
                             <div class="mb-3">
+                                <label for="disabledSelect" class="form-label">Episode <small>(jika hanya 1 atau tidak ada episode isi Ep 01)</small></label>
+                                <input type="text" placeholder="Ep 01" class="form-control" name="episode" id="exampleInputEmail1" aria-describedby="emailHelp" required />
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Description Video</label>
                                 <textarea class="form-control" id="teksarea" name="deskripsi"></textarea>
                                 <div id="emailHelp" class="form-text text-danger">
