@@ -43,31 +43,21 @@
                                 </span>
                                 <span class="hide-menu">Data Video</span>
                             </a>
+                            <a class="sidebar-link dropdown-item" href="<?= site_url('data-slide') ?>" aria-expanded="false">
+                                <span>
+                                    <i class="ti ti-cards"></i>
+                                </span>
+                                <span class="hide-menu">Slide</span>
+                            </a>
                         </div>
                     </div>
                 </li>
                 <li class="sidebar-item">
-                    <a class="sidebar-link" href="<?= site_url('gejala') ?>" aria-expanded="false">
+                    <a class="sidebar-link" href="<?= site_url('video-views') ?>" aria-expanded="false">
                         <span>
                             <i class="ti ti-cards"></i>
                         </span>
-                        <span class="hide-menu">Data Gejala</span>
-                    </a>
-                </li>
-                <li class="sidebar-item">
-                    <a class="sidebar-link" href="<?= site_url('bobot') ?>" aria-expanded="false">
-                        <span>
-                            <i class="ti ti-ruler-off"></i>
-                        </span>
-                        <span class="hide-menu">Bobot</span>
-                    </a>
-                </li>
-                <li class="sidebar-item">
-                    <a class="sidebar-link" href="<?= site_url('pasien') ?>" aria-expanded="false">
-                        <span>
-                            <i class="ti ti-user-plus"></i>
-                        </span>
-                        <span class="hide-menu">Riwayat Pasien</span>
+                        <span class="hide-menu">Data Video View</span>
                     </a>
                 </li>
                 <li class="nav-small-cap">

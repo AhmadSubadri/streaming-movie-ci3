@@ -16,7 +16,11 @@ class Dashboard extends MY_controller
     public function index()
     {
         $data = array(
-            'title' => 'Dashboard'
+            'title' => 'Dashboard',
+            'video' => $this->m_dashboard->TotalVideo(),
+            'admin' => $this->m_dashboard->TotalAdmin(),
+            'kategori' => $this->m_dashboard->TotalKategori(),
+            'user' => $this->m_dashboard->TotalUser(),
         );
         $this->load->view('partials/head', $data);
         $this->load->view('dashboard', $data);

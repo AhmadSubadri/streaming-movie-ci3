@@ -13,15 +13,21 @@ class Video_fmodel extends CI_Model
         $this->load->database();
     }
 
+    public function getSlides()
+    {
+        // Mendapatkan daftar semua slide
+        $query = $this->db->get('tb_Slide');
+        return $query->result();
+    }
+
     public function getVideos()
     {
-        $this->db->select('tb_video.*, tb_video.id as idvideo, tb_kategori.*, COUNT(tb_episode.id) AS jumlah_episode, COUNT(tb_komentar.id) AS jumlah_komentar');
+        $this->db->select('tb_video.*, tb_video.id as idvideo, tb_kategori.*, COUNT(tb_episode.id) AS jumlah_episode');
         $this->db->from('tb_video');
         $this->db->join('tb_episode', 'tb_episode.video_id = tb_video.uniq_id');
         $this->db->join('tb_kategori', 'tb_kategori.id = tb_video.kategori_id');
-        $this->db->join('tb_komentar', 'tb_komentar.video_id = tb_video.id');
         $this->db->group_by('tb_video.id');
-        $this->db->order_by('tb_video.tanggal_unggah', 'desc');
+        $this->db->order_by('tb_video.tanggal_unggah', 'ASC');
         $query = $this->db->get();
         return $query->result();
     }

@@ -14,7 +14,8 @@ class Home extends MY_controller
     {
         $data = array(
             'title' => 'Home',
-            'videos' => $this->m_video->getVideos()
+            'videos' => $this->m_video->getVideos(),
+            'slide' => $this->m_video->getSlides(),
         );
         $this->load->view('template/head', $data);
         $this->load->view('template/slide', $data);

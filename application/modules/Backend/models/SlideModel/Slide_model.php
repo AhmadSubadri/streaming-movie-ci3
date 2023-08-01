@@ -13,20 +13,14 @@ class Slide_model extends CI_Model
     public function getSlides()
     {
         // Mendapatkan daftar semua slide
-        $query = $this->db->get('Slide');
+        $query = $this->db->get('tb_Slide');
         return $query->result();
-    }
-
-    public function createSlide($data)
-    {
-        // Menyimpan slide baru ke database
-        $this->db->insert('Slide', $data);
     }
 
     public function getSlideById($id)
     {
         // Mendapatkan informasi slide berdasarkan ID
-        $query = $this->db->get_where('Slide', array('id' => $id));
+        $query = $this->db->get_where('tb_Slide', array('id' => $id));
         return $query->row();
     }
 
@@ -34,13 +28,13 @@ class Slide_model extends CI_Model
     {
         // Mengupdate slide berdasarkan ID
         $this->db->where('id', $id);
-        $this->db->update('Slide', $data);
+        $this->db->update('tb_Slide', $data);
     }
 
     public function deleteSlide($id)
     {
         // Menghapus slide berdasarkan ID
         $this->db->where('id', $id);
-        $this->db->delete('Slide');
+        $this->db->delete('tb_Slide');
     }
 }

@@ -97,7 +97,7 @@ class VideoController extends MY_controller
             if (!$this->upload->do_upload('thumbnail')) {
                 $this->session->set_flashdata('msg', "Sorry, Check your image!.");
                 $this->session->set_flashdata('msg_class', 'alert-danger');
-                redirect('data-video/insert');
+                redirect('data-video/update/' . $id);
             } else {
                 $path = './assets/dashboard/images/thumbnile/' . $cekdata->thumbnail;
                 if ($cekdata->thumbnail && file_exists($path)) {
@@ -124,7 +124,7 @@ class VideoController extends MY_controller
             ];
             $this->m_video->createVideo($data);
             $this->m_video->createEpisode($episode);
-            $this->session->set_flashdata('msg', "good Job, Insert Successfuly!.");
+            $this->session->set_flashdata('msg', "good Job, Update Successfuly!.");
             $this->session->set_flashdata('msg_class', 'alert-success');
             redirect(site_url('data-video'));
 

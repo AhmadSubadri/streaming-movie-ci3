@@ -47,8 +47,8 @@
                         </div>
                         <div class="col-sm-6">
                             <div class="mb-3">
-                                <label for="disabledSelect" class="form-label">Url Video</label>
-                                <input type="url" placeholder="URL" class="form-control" name="url_video" id="exampleInputEmail1" aria-describedby="emailHelp" />
+                                <label for="disabledSelect" class="form-label">ID Video From dailymotion</label>
+                                <input type="text" placeholder="URL" class="form-control" name="url_video" id="exampleInputEmail1" aria-describedby="emailHelp" />
                                 <div id="emailHelp" class="form-text text-danger">
                                     <?= form_error('url_video ') ?>
                                 </div>

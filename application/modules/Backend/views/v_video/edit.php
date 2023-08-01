@@ -47,7 +47,7 @@
                         </div>
                         <div class="col-sm-6">
                             <div class="mb-3">
-                                <label for="disabledSelect" class="form-label">ID Video from drive</label>
+                                <label for="disabledSelect" class="form-label">ID Video from dailymotion</label>
                                 <input type="url" placeholder="URL" value="<?= $video->url_video ?>" class="form-control" name="url_video" id="exampleInputEmail1" aria-describedby="emailHelp" />
                                 <div id="emailHelp" class="form-text text-danger">
                                     <?= form_error('url_video ') ?>

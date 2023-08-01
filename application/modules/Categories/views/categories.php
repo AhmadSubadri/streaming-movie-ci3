@@ -35,16 +35,17 @@
                         $this->db->join('tb_episode', 'tb_episode.video_id = tb_video.uniq_id');
                         $this->db->join('tb_komentar', 'tb_komentar.video_id = tb_video.id', 'left');
                         $this->db->group_by('tb_video.id');
-                        $this->db->order_by('tb_video.tanggal_unggah', 'desc');
+                        $this->db->order_by('tb_video.tanggal_unggah', 'ASC');
                         $query = $this->db->get()->result(); ?>
                         <div class="row">
                             <?php foreach ($query as $videodata) : ?>
-                                <?php $jumlalh_tonton = $this->db->select('COUNT(tb_riwayat_tontonan_tanpa_akun.id) as jumlah_tonton')->from('tb_riwayat_tontonan_tanpa_akun')->where('video_id', $videodata->idvideo)->order_by('jumlah_tonton', 'DESC')->get()->row(); ?>
+                                <?php $jumlalh_tonton = $this->db->select('COUNT(tb_riwayat_tontonan_tanpa_akun.id) as jumlah_tonton')->from('tb_riwayat_tontonan_tanpa_akun')->where('video_id', $videodata->idvideo)->order_by('jumlah_tonton', 'ASC')->get()->row(); ?>
+                                <?php $jumlah_komentar = $this->db->select('COUNT(tb_komentar.id) as jumlah_komentar')->from('tb_komentar')->where('video_id', $videodata->idvideo)->order_by('jumlah_komentar', 'ASC')->get()->row() ?>
                                 <div class="col-lg-4 col-md-6 col-sm-6">
                                     <div class="product__item">
                                         <div class="product__item__pic set-bg" data-setbg="<?= base_url('assets/dashboard/images/thumbnile/' . $videodata->thumbnail); ?>">
                                             <!-- <div class="ep">18 / 18</div> -->
-                                            <div class="comment"><i class="fa fa-comments"></i> <?= $videodata->jumlah_komentar ?></div>
+                                            <div class="comment"><i class="fa fa-comments"></i> <?= $jumlah_komentar->jumlah_komentar ?></div>
                                             <div class="view"><i class="fa fa-eye"></i> <?= $jumlalh_tonton->jumlah_tonton ?></div>
                                         </div>
                                         <div class="product__item__text">
@@ -69,8 +70,9 @@
                         <div class="filter__gallery">
                             <?php foreach ($videos as $videodata) : ?>
                                 <?php $jumlalh_tonton = $this->db->select('COUNT(tb_riwayat_tontonan_tanpa_akun.id) as jumlah_tonton')->from('tb_riwayat_tontonan_tanpa_akun')->where('video_id', $videodata->idvideo)->order_by('jumlah_tonton', 'DESC')->get()->row() ?>
+                                <?php $jumlah_komentar = $this->db->select('COUNT(tb_komentar.id) as jumlah_komentar')->from('tb_komentar')->where('video_id', $videodata->idvideo)->order_by('jumlah_komentar', 'ASC')->get()->row() ?>
                                 <div class="product__sidebar__view__item set-bg mix day years" data-setbg="<?= base_url('assets/dashboard/images/thumbnile/' . $videodata->thumbnail); ?>">
-                                    <div class="ep"><i class="fa fa-comments"></i> <?= $videodata->jumlah_komentar ?></div>
+                                    <div class="ep"><i class="fa fa-comments"></i> <?= $jumlah_komentar->jumlah_komentar ?></div>
                                     <div class="view"><i class="fa fa-eye"></i> <?= $jumlalh_tonton->jumlah_tonton ?></div>
                                     <h5><a href="<?= site_url('video/' . $videodata->slug) ?>"><?= $videodata->judul ?></a></h5>
                                 </div>

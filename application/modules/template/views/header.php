@@ -19,7 +19,7 @@
                             <li class="<?php if ($this->uri->uri_string() == "categories") {
                                             echo "active";
                                         } ?>"><a href="<?= site_url('categories') ?>">Categories</a></li>
-                            <li><a href="./blog.html">Our Blog</a></li>
+                            <!-- <li><a href="./blog.html">Our Blog</a></li> -->
                             <li><a href="#">Contacts</a></li>
                         </ul>
                     </nav>
@@ -28,7 +28,7 @@
             <div class="col-lg-2">
                 <div class="header__right">
                     <a href="#" class="search-switch"><span class="icon_search"></span></a>
-                    <a href="./login.html"><span class="icon_profile"></span></a>
+                    <a href="<?= site_url('login') ?>"><span class="icon_profile"></span></a>
                 </div>
             </div>
         </div>

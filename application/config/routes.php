@@ -23,6 +23,11 @@ $route['data-user/insert'] = 'backend/AdminController/AdminController/store';
 $route['data-user/update/(:any)'] = 'backend/AdminController/AdminController/update/$1';
 $route['data-user/delete/(:any)'] = 'backend/AdminController/AdminController/delete/$1';
 
+$route['data-slide'] = 'backend/SlideController/SlideController/index';
+$route['data-slide/insert'] = 'backend/SlideController/SlideController/store';
+$route['data-slide/update/(:any)'] = 'backend/SlideController/SlideController/update/$1';
+$route['data-slide/delete/(:any)'] = 'backend/SlideController/SlideController/delete/$1';
+
 $route['data-video'] = 'backend/VideoController/VideoController/index';
 $route['data-video/insert'] = 'backend/VideoController/VideoController/store';
 $route['data-video/update/(:any)'] = 'backend/VideoController/VideoController/update/$1';

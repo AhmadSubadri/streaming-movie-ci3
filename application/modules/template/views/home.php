@@ -21,12 +21,13 @@
                             <!-- Tampilkan pesan jika tidak ada video -->
                         <?php else : ?>
                             <?php foreach ($videos as $video) : ?>
-                                <?php $jumlalh_tonton = $this->db->select('COUNT(tb_riwayat_tontonan_tanpa_akun.id) as jumlah_tonton')->from('tb_riwayat_tontonan_tanpa_akun')->where('video_id', $video->idvideo)->order_by('jumlah_tonton', 'DESC')->get()->row() ?>
+                                <?php $jumlalh_tonton = $this->db->select('COUNT(tb_riwayat_tontonan_tanpa_akun.id) as jumlah_tonton')->from('tb_riwayat_tontonan_tanpa_akun')->where('video_id', $video->idvideo)->order_by('jumlah_tonton', 'ASC')->get()->row() ?>
+                                <?php $jumlah_komentar = $this->db->select('COUNT(tb_komentar.id) as jumlah_komentar')->from('tb_komentar')->where('video_id', $video->idvideo)->order_by('jumlah_komentar', 'ASC')->get()->row() ?>
                                 <div class="col-lg-4 col-md-6 col-sm-6">
                                     <div class="product__item">
                                         <div class="product__item__pic set-bg" data-setbg="<?= base_url('assets/dashboard/images/thumbnile/' . $video->thumbnail); ?>">
                                             <!-- <div class="ep"><?= $video->jumlah_episode ?> / <?= $video->jumlah_episode ?></div> -->
-                                            <div class="comment"><i class="fa fa-comments"></i> <?= $video->jumlah_komentar ?></div>
+                                            <div class="comment"><i class="fa fa-comments"></i> <?= $jumlah_komentar->jumlah_komentar ?></div>
                                             <div class="view"><i class="fa fa-eye"></i> <?= $jumlalh_tonton->jumlah_tonton ?></div>
                                         </div>
                                         <div class="product__item__text">
@@ -53,9 +54,10 @@
                                 <!-- Tampilkan pesan jika tidak ada video -->
                             <?php else : ?>
                                 <?php foreach ($videos as $video) : ?>
-                                    <?php $jumlalh_tonton = $this->db->select('COUNT(tb_riwayat_tontonan_tanpa_akun.id) as jumlah_tonton')->from('tb_riwayat_tontonan_tanpa_akun')->where('video_id', $video->idvideo)->order_by('jumlah_tonton', 'DESC')->get()->row() ?>
+                                    <?php $jumlalh_tonton = $this->db->select('COUNT(tb_riwayat_tontonan_tanpa_akun.id) as jumlah_tonton')->from('tb_riwayat_tontonan_tanpa_akun')->where('video_id', $video->idvideo)->order_by('jumlah_tonton', 'ASC')->get()->row() ?>
+                                    <?php $jumlah_komentar = $this->db->select('COUNT(tb_komentar.id) as jumlah_komentar')->from('tb_komentar')->where('video_id', $video->idvideo)->order_by('jumlah_komentar', 'ASC')->get()->row() ?>
                                     <div class="product__sidebar__view__item set-bg mix day years" data-setbg="<?= base_url('assets/dashboard/images/thumbnile/' . $video->thumbnail); ?>">
-                                        <div class="ep"><i class="fa fa-comments"></i> <?= $video->jumlah_komentar ?></div>
+                                        <div class="ep"><i class="fa fa-comments"></i> <?= $jumlah_komentar->jumlah_komentar ?></div>
                                         <div class="view"><i class="fa fa-eye"></i> <?= $jumlalh_tonton->jumlah_tonton ?></div>
                                         <h5><a href="<?= site_url('video/' . $video->slug) ?>"><?= $video->judul ?></a></h5>
                                     </div>
