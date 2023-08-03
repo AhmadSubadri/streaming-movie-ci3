@@ -16,9 +16,17 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <div class="anime__video__player">
+                <!-- <div class="anime__video__player">
                     <iframe frameborder="0" width="100%" height="500" src="https://www.dailymotion.com/embed/video/<?= $videos->url_video; ?>?autoplay=0" allowfullscreen allow="autoplay"></iframe>
+                </div> -->
+                <div class="anime__video__player">
+                    <?php
+                    // Ubah URL video untuk menambahkan parameter ui-logo=false
+                    $video_url = "https://www.dailymotion.com/embed/video/" . $videos->url_video . "?autoplay=0&ui-logo=0";
+                    ?>
+                    <iframe frameborder="0" width="100%" height="500" src="<?= $video_url; ?>" allowfullscreen allow="autoplay"></iframe>
                 </div>
+
                 <div class="anime__details__episodes">
                     <div class="anime__like__dislike">
                         <button id="likeButton" class="btn btn-sm btn-primary"><i class="fa fa-thumbs-up"></i>
